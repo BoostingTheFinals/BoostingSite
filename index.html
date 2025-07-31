@@ -375,6 +375,58 @@ section.reviews h2 {
 <meta name="google-site-verification" content="0fuuB-bwYyKYeehrVw0aDo7gsHo0bVrtXqtkR7tW6tE" />
 </head>
 <body>
+  <div style="margin-top: 20px;">
+  <h3 style="margin-bottom: 10px;">Boosting Price Calculator</h3>
+
+  <label for="currentRS">Current RS:</label>
+  <input type="number" id="currentRS" placeholder="e.g., 15" style="margin-right: 10px;" />
+
+  <label for="desiredRS">Desired RS:</label>
+  <input type="number" id="desiredRS" placeholder="e.g., 40" />
+
+  <div id="priceResult" style="margin-top: 15px; font-weight: bold; color: #00ffff;">
+    Enter RS values to see the price.
+  </div>
+</div>
+
+<script>
+  const priceTiers = [
+    { min: 0, max: 10000, price: 6.0 },
+    { min: 10000, max: 20000, price: 1.8 },
+    { min: 20000, max: 30000, price: 1.5 },
+    { min: 30000, max: 40000, price: 6.0 },
+    { min: 40000, max: 52000, price: 18.2 },
+  ];
+
+  function calculatePrice() {
+    const current = parseInt(document.getElementById("currentRS").value);
+    const desired = parseInt(document.getElementById("desiredRS").value);
+    const result = document.getElementById("priceResult");
+
+    if (!result) return;
+
+    if (isNaN(current) || isNaN(desired) || current >= desired) {
+      result.innerText = "Please enter valid RS values.";
+      return;
+    }
+
+    let total = 0;
+    for (const tier of priceTiers) {
+      const from = Math.max(current * 1000, tier.min);
+      const to = Math.min(desired * 1000, tier.max);
+      if (to > from) {
+        total += ((to - from) / 1000) * tier.price;
+      }
+    }
+
+    result.innerText = `Estimated Price: €${total.toFixed(2)}`;
+  }
+
+  // Hook the inputs
+  document.getElementById("currentRS").addEventListener("input", calculatePrice);
+  document.getElementById("desiredRS").addEventListener("input", calculatePrice);
+</script>
+
   <header style="background-color: #0e0e0e; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333;">
   <div>
    <img src="favicon.png" alt="Logo" style="height: 70px;">
