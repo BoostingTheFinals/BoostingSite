@@ -470,32 +470,49 @@ section.reviews h2 {
   ];
 
   function calculatePrice() {
-    const current = parseInt(document.getElementById("currentRS").value) * 1000;
-    const desired = parseInt(document.getElementById("desiredRS").value) * 1000;
+    const currentInput = parseFloat(document.getElementById("currentRS").value);
+    const desiredInput = parseFloat(document.getElementById("desiredRS").value);
     const result = document.getElementById("priceResult");
 
     if (!result) return;
 
-    if (isNaN(current) || isNaN(desired) || current >= desired) {
-      result.innerText = "Please enter valid RS values.";
+    if (
+      isNaN(currentInput) ||
+      isNaN(desiredInput) ||
+      currentInput >= desiredInput ||
+      currentInput < 0 ||
+      desiredInput > 52
+    ) {
+      result.innerText = "Please enter valid RS values between 0 and 52.";
       return;
     }
 
+    const current = currentInput * 1000;
+    const desired = desiredInput * 1000;
+
     let total = 0;
-    for (const tier of blockPrices) {
-      if (current < tier.max && desired > tier.min) {
-        total += tier.price;
+
+    for (const block of blockPrices) {
+      const start = Math.max(current, block.min);
+      const end = Math.min(desired, block.max);
+
+      if (start < end) {
+        const overlap = end - start;
+        const blockSize = block.max - block.min;
+        const portion = overlap / blockSize;
+        total += block.price * portion;
       }
     }
 
     result.innerText = `Estimated Price: €${total.toFixed(2)}`;
   }
 
-  // Attach listeners after DOM is ready
   window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("currentRS").addEventListener("input", calculatePrice);
     document.getElementById("desiredRS").addEventListener("input", calculatePrice);
   });
+</script>
+
 </script>
 
             
