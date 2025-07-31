@@ -445,6 +445,17 @@ section.reviews h2 {
       <table>
         <thead>
           <tr>
+            <div class="calculator">
+  <h3>Boosting Price Calculator</h3>
+  <label for="currentRS">Current RS:</label>
+  <input type="number" id="currentRS" placeholder="e.g., 10" oninput="calculatePrice()" />
+
+  <label for="desiredRS">Desired RS:</label>
+  <input type="number" id="desiredRS" placeholder="e.g., 40" oninput="calculatePrice()" />
+
+  <div class="result" id="priceResult">Enter RS values to see the price.</div>
+</div>
+
             <th>Range</th>
             <th>Price (€)</th>
             <th>Price per 1000 RS (€)</th>
