@@ -31,6 +31,8 @@ function calculatePrice() {
   const desired = parseInt(document.getElementById("desiredRS").value);
   const result = document.getElementById("priceResult");
 
+  if (!result) return; // Safety check
+
   if (isNaN(current) || isNaN(desired) || current >= desired) {
     result.innerText = "Please enter valid RS values.";
     return;
@@ -38,8 +40,8 @@ function calculatePrice() {
 
   let total = 0;
   for (const tier of priceTiers) {
-    const from = Math.max(current, tier.min);
-    const to = Math.min(desired, tier.max);
+    const from = Math.max(current * 1000, tier.min);
+    const to = Math.min(desired * 1000, tier.max);
     if (to > from) {
       total += ((to - from) / 1000) * tier.price;
     }
