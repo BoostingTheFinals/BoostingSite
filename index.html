@@ -446,18 +446,18 @@ section.reviews h2 {
       <table>
         <thead>
           <tr>
-<div style="margin-top: 30px;">
+<div style="margin-top: 30px; text-align: center;">
+  <label for="currentRS" style="display: inline-block; margin-right: 5px;">Current RS:</label>
+  <input type="number" id="currentRS" placeholder="e.g., 20" style="display: inline-block; margin-right: 15px;" />
 
-  <label for="currentRS">Current RS:</label>
-  <input type="number" id="currentRS" placeholder="e.g., 20" style="margin-right: 10px;" />
-
-  <label for="desiredRS">Desired RS:</label>
-  <input type="number" id="desiredRS" placeholder="e.g., 40" />
+  <label for="desiredRS" style="display: inline-block; margin-right: 5px;">Desired RS:</label>
+  <input type="number" id="desiredRS" placeholder="e.g., 40" style="display: inline-block;" />
 
   <div id="priceResult" style="margin-top: 15px; font-weight: bold; color: #00ffff;">
     Enter RS values to see the price.
   </div>
 </div>
+
 
 <script>
   const blockPrices = [
