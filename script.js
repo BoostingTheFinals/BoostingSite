@@ -1,15 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const questions = document.querySelectorAll(".faq-question");
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    const answer = button.nextElementSibling;
+    const icon = button.querySelector('span');
 
-  questions.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const answer = btn.nextElementSibling;
+    button.setAttribute('aria-expanded', !expanded);
 
-      document.querySelectorAll(".faq-answer").forEach((a) => {
-        if (a !== answer) a.style.display = "none";
-      });
-
-      answer.style.display = answer.style.display === "block" ? "none" : "block";
-    });
+    if (!expanded) {
+      answer.classList.add('open');
+      // answer.removeAttribute('hidden'); // No hidden attribute now
+      icon.textContent = '−';
+    } else {
+      answer.classList.remove('open');
+      // answer.setAttribute('hidden', ''); // No hidden attribute now
+      icon.textContent = '+';
+    }
   });
 });
+
