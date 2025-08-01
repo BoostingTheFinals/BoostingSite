@@ -567,11 +567,17 @@ section:hover {
   margin: 3rem 0;
 }
 
+/* Process Steps - Fixed Timeline */
+.process-container {
+  position: relative;
+  margin: 3rem 0;
+}
+
 .process-timeline {
   position: absolute;
   left: 50%;
-  top: 0;
-  bottom: 0;
+  top: 60px; /* Start after first step number */
+  bottom: 60px; /* End before last step number */
   width: 2px;
   background: linear-gradient(to bottom, #00c8ff, #66d9ff);
   transform: translateX(-50%);
@@ -613,6 +619,7 @@ section:hover {
   box-shadow: 0 8px 25px rgba(0, 200, 255, 0.3);
   z-index: 3;
   position: relative;
+  border: 4px solid rgba(10, 10, 10, 1); /* Add border to separate from timeline */
 }
 
 .step-content {
@@ -622,6 +629,7 @@ section:hover {
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.4s ease;
+  max-width: calc(50% - 60px); /* Ensure content doesn't overlap */
 }
 
 .step-content:hover {
@@ -639,6 +647,32 @@ section:hover {
 .step-description {
   color: #cbd5e1;
   line-height: 1.6;
+}
+
+/* Mobile Responsiveness for Process Steps */
+@media (max-width: 1024px) {
+  .process-timeline {
+    display: none; /* Hide the timeline on tablets and mobile */
+  }
+  
+  .step {
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .step:nth-child(even) {
+    flex-direction: column !important;
+  }
+  
+  .step-content {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .step-number {
+    border: none; /* Remove border on mobile since no timeline */
+  }
 }
 
 /* Enhanced Features */
