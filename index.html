@@ -7,709 +7,251 @@
 <meta name="description" content="Professional boosting services by a Top 100 player in The Finals. Manual play, fast & discreet boosting to your desired rank." />
 <meta name="keywords" content="The Finals boosting, account boosting, FPS boosting, manual boosting, top 100 player, rank boosting" />
 <meta name="author" content="The Finals Boosting" />
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-  /* Reset & base */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: #121212;
-    color: #eee;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    animation: fadeIn 1s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-
-  /* Container */
-  .container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    animation: slideUp 0.7s ease forwards;
-  }
-
-  @keyframes slideUp {
-    from {transform: translateY(20px); opacity: 0;}
-    to {transform: translateY(0); opacity: 1;}
-  }
-
-  /* Header */
-  header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  header h1 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: #00c8ff;
-    letter-spacing: 2px;
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-  header p {
-    font-size: 1.1rem;
-    color: #aaa;
-    margin-top: 0.3rem;
-  }
-  @keyframes glow {
-    from {text-shadow: 0 0 5px #00c8ff;}
-    to {text-shadow: 0 0 20px #00ffff;}
-  }
-
-  /* About Section */
-  section.about {
-    background: #1f1f1f;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
-    transition: transform 0.3s ease;
-  }
-  section.about:hover {
-    transform: scale(1.02);
-  }
-  section.about h2 {
-    color: #00c8ff;
-    margin-bottom: 1rem;
-  }
-  section.about p {
-    font-size: 1rem;
-    color: #ddd;
-    line-height: 1.5;
-  }
-
-  /* Features */
-  .features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    justify-content: center;
-  }
-  .feature {
-    background: #222;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    flex: 1 1 150px;
-    max-width: 200px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 200, 255, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
-  }
-  .feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #00c8ff;
-  }
-  .feature span.emoji {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .feature strong {
-    font-size: 1.1rem;
-    color: #00c8ff;
-  }
-
-  /* Services description */
-  section.services {
-    background: #1f1f1f;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease;
-  }
-  section.services:hover {
-    transform: scale(1.02);
-  }
-  section.services p {
-    margin-bottom: 0.8rem;
-  }
-  section.services strong {
-    color: #00c8ff;
-  }
-
-  /* Pricing */
-  section.pricing {
-    background: #1f1f1f;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
-    margin-bottom: 2rem;
-    overflow-x: auto;
-    transition: transform 0.3s ease;
-  }
-  section.pricing:hover {
-    transform: scale(1.02);
-  }
-  section.pricing h2 {
-    color: #00c8ff;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  section.pricing table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    font-size: 1rem;
-    color: #ddd;
-  }
-  section.pricing th, section.pricing td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #333;
-  }
-  section.pricing thead {
-    background-color: #004c6d;
-  }
-  section.pricing tbody tr:hover {
-    background-color: rgba(0, 200, 255, 0.1);
-  }
-
-  /* FAQ */
-  section.faq {
-    background: #1f1f1f;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease;
-  }
-  section.faq:hover {
-    transform: scale(1.02);
-  }
-  section.faq h2 {
-    color: #00c8ff;
-    margin-bottom: 1rem;
-  }
-  section.faq p {
-    margin-bottom: 0.8rem;
-  }
-  section.faq strong {
-    color: #00c8ff;
-  }
-  /* FAQ Accordion */
-.faq-item {
-  margin-bottom: 1rem;
-}
-
-.faq-question {
-  width: 100%;
-  background-color: #222;
-  border: none;
-  border-radius: 6px;
-  padding: 1rem;
-  color: #eee;
-  font-size: 1rem;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s ease;
-}
-
-.faq-question:hover, .faq-question[aria-expanded="true"] {
-  background-color: #00c8ff;
-  color: #121212;
-}
-
-.faq-answer {
-  overflow: hidden;
-  max-height: 0;
-  padding: 0 1rem;
-  color: #ddd;
-  background-color: #1f1f1f;
-  border-left: 3px solid #00c8ff;
-  border-radius: 0 0 6px 6px;
-  transition: max-height 0.35s ease, padding 0.35s ease;
-}
-
-.faq-answer.open {
-  padding: 1rem;
-  max-height: 500px; /* adjust if needed */
-}
-
-.icon {
-  font-weight: bold;
-  transition: transform 0.3s ease;
-}
-
-.faq-question[aria-expanded="true"] .icon {
-  transform: rotate(45deg);
-}
-
-
-  /* Contact Form */
-  section.contact {
-    background: #1f1f1f;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
-    margin-bottom: 2rem;
-  }
-  section.contact h2 {
-    color: #00c8ff;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  input, textarea {
-    background: #222;
-    border: 1px solid #444;
-    color: #eee;
-    padding: 0.8rem 1rem;
-    margin-bottom: 1rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  input:focus, textarea:focus {
-    border-color: #00c8ff;
-    outline: none;
-  }
-  button {
-    background: #00c8ff;
-    border: none;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #121212;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  button:hover {
-    background: #00b3e6;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-    border-top: 1px solid #222;
-    margin-top: auto;
-  }
-  footer a {
-    color: #00c8ff;
-    text-decoration: none;
-  }
-  footer a:hover {
-    text-decoration: underline;
-  }
-  .contact-info {
-    margin: 1rem 0 0;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    .features {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  section.reviews {
-  background: #1f1f1f;
-  padding: 1.5rem 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
-  margin-bottom: 2rem;
-  transition: transform 0.3s ease;
-}
-section.reviews:hover {
-  transform: scale(1.02);
-}
-section.reviews h2 {
-  color: #00c8ff;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.review-box {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.review {
-  background-color: #222;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 200, 255, 0.15);
-  transition: transform 0.3s ease;
-}
-.review:hover {
-  transform: translateY(-3px);
-}
-.review p {
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-.review .stars {
-  color: gold;
-  margin-bottom: 0.3rem;
-}
-.review span {
-  color: #888;
-  font-size: 0.9rem;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 <link rel="icon" href="favicon.png" type="image/png">
 <meta name="google-site-verification" content="0fuuB-bwYyKYeehrVw0aDo7gsHo0bVrtXqtkR7tW6tE" />
 </head>
 <body>
-  
-  <header style="background-color: #0e0e0e; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333;">
-  <div>
-   <img src="favicon.png" alt="Logo" style="height: 70px;">
-  </div>
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#accounts">Accounts for Sale</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-
-</header>
-
-<script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      const answer = button.nextElementSibling;
-
-      // Toggle aria-expanded
-      button.setAttribute('aria-expanded', !expanded);
-
-      if (!expanded) {
-        answer.classList.add('open');
-        answer.removeAttribute('hidden');
-      } else {
-        answer.classList.remove('open');
-        answer.setAttribute('hidden', '');
-      }
-    });
-  });
-</script>
-
-<script>
-  function buyAccount(accountId) {
-    alert("To purchase account ID: " + accountId + ", please contact us via Discord or email.");
-  }
-</script>
-
-
-</body>
-</html>
-
-  <header>
-    <h1>The Finals Boosting</h1>
-    <p>Pro Account Boosting by Top 100 Players</p>
+  <header class="main-header">
+    <div class="logo">
+      <img src="favicon.png" alt="The Finals Boosting Logo">
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#accounts">Accounts</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <main class="container">
-    <section class="about" id="about">
-      <h2 style="text-align: center;">About us</h2>
-      <p style="text-align: center;">Since the Open Beta of The Finals, each member of our team has invested over <strong>1,600 hours</strong> mastering the game. Across every season from Season 1 through Season 7, we have consistently ranked in the <strong>Top 100 worldwide</strong>, showcasing our individual dedication and collective expertise.</p>
-      <p style="text-align: center;">Our experience competing on a global scale has sharpened our reflexes, strategic decision-making, and teamwork skills, enabling us to excel in this fast-paced, high-stakes competitive shooter. The Finals is more than just a game to us—it’s where we push our limits, elevate our gameplay, and prove our skill in every match.</p>
+    <section class="hero">
+      <h1>The Finals Boosting</h1>
+      <p>Professional Account Boosting by Top 100 Players</p>
     </section>
 
-    <section class="features">
-      <div class="feature"><span class="emoji">🎯</span><strong>Top 100 Players</strong></div>
-      <div class="feature"><span class="emoji">⚡</span><strong>Fast & Cheap</strong></div>
-      <div class="feature"><span class="emoji">👥</span><strong>Full Team Available</strong></div>
-      <div class="feature"><span class="emoji">🧠</span><strong>Account & Driver Boosting</strong></div>
-      <div class="feature"><span class="emoji">⏱️</span><strong>2000+ Hours Played</strong></div>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Since the Open Beta of The Finals, each member of our team has invested over <strong>1,600 hours</strong> mastering the game. Across every season from Season 1 through Season 7, we have consistently ranked in the <strong>Top 100 worldwide</strong>, showcasing our individual dedication and collective expertise.</p>
+      <p>Our experience competing on a global scale has sharpened our reflexes, strategic decision-making, and teamwork skills, enabling us to excel in this fast-paced, high-stakes competitive shooter.</p>
     </section>
 
-    <section class="services" id="services">
-      <p style="text-align: center;">We are dedicated FPS veterans and top-tier competitive players offering professional account driving services. <strong>At The Finals Boosting</strong>, we personally play on your account to help you reach your desired rank—fast, safe, and discreet.</p>
-      <p style="text-align: center;"><strong>Manual Play</strong> – No bots, cheats, or outsourcing involved at all</p>
-      <p style="text-align: center;"><strong>Private</strong> – No chats, friend requests, or outside interaction</p>
-      <p style="text-align: center;"><strong>Fast</strong> – Efficient, top-speed, high-performance gameplay only</p>
-      <p style="text-align: center;"><strong>Reliable</strong> – Regular updates and fast progress completion</p>
-      <p style="text-align: center;"><strong>Transparent</strong> – Stream or recording available on request (+15%)</p>
-      <p style="text-align: center;"><strong>Experienced</strong> – Proven record in competitive play (top 100)</p>
-      <p style="text-align: center;"><strong>Security</strong> – Your account handled with utmost care and focus</p>
-      <p style="text-align: center;"><strong>Contact me</strong> on Discord or email to get started today!</p>
-    </section>
-
-    <section class="pricing" id="pricing">
-      <h2>Pricing | Without Fees</h2>
-      <table>
-        <thead>
-          <tr>
-<div style="margin-top: 30px; text-align: center;">
-  <label for="currentRS" style="display: inline-block; margin-right: 5px;">Current RS:</label>
-  <input type="number" id="currentRS" placeholder="e.g., 20" style="display: inline-block; margin-right: 15px;" />
-
-  <label for="desiredRS" style="display: inline-block; margin-right: 5px;">Desired RS:</label>
-  <input type="number" id="desiredRS" placeholder="e.g., 40" style="display: inline-block;" />
-
-  <div id="priceResult" style="margin-top: 15px; font-weight: bold; color: #00ffff;">
-    Enter RS values to see the price.
-  </div>
-</div>
-
-
-<script>
-  const blockPrices = [
-    { min: 0, max: 10000, price: 6 },
-    { min: 10000, max: 20000, price: 15 },
-    { min: 20000, max: 30000, price: 35 },
-    { min: 30000, max: 40000, price: 60 },
-    { min: 40000, max: 52000, price: 230 },
-  ];
-
-  function calculatePrice() {
-    const currentInput = parseFloat(document.getElementById("currentRS").value);
-    const desiredInput = parseFloat(document.getElementById("desiredRS").value);
-    const result = document.getElementById("priceResult");
-
-    if (!result) return;
-
-    if (
-      isNaN(currentInput) ||
-      isNaN(desiredInput) ||
-      currentInput >= desiredInput ||
-      currentInput < 0 ||
-      desiredInput > 52
-    ) {
-      result.innerText = "Please enter valid RS values between 0 and 52.";
-      return;
-    }
-
-    const current = currentInput * 1000;
-    const desired = desiredInput * 1000;
-
-    let total = 0;
-
-    for (const block of blockPrices) {
-      const start = Math.max(current, block.min);
-      const end = Math.min(desired, block.max);
-
-      if (start < end) {
-        const overlap = end - start;
-        const blockSize = block.max - block.min;
-        const portion = overlap / blockSize;
-        total += block.price * portion;
-      }
-    }
-
-    result.innerText = `Estimated Price: €${total.toFixed(2)}`;
-  }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("currentRS").addEventListener("input", calculatePrice);
-    document.getElementById("desiredRS").addEventListener("input", calculatePrice);
-  });
-</script>
-
-</script>
-
-            
-<div style="display: flex; justify-content: center; margin-top: 20px;">
-  <table style="border-collapse: collapse; text-align: center;">
-    <thead>
-      <tr>
-        <th>Range</th>
-        <th>Price (€)</th>
-        <th>Price per 1000 RS (€)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>0 → 10k 🌫️</td><td>6 €</td><td>0.6 €</td></tr>
-      <tr><td>10 → 20k 🪙</td><td>15 €</td><td>1.5 €</td></tr>
-      <tr><td>20 → 30k ⚪</td><td>35 €</td><td>3.5 €</td></tr>
-      <tr><td>30 → 40k 💎</td><td>60 €</td><td>6 €</td></tr>
-      <tr><td>40 → 52k ♦️</td><td>230 €</td><td>19.2 €</td></tr>
-    </tbody>
-  </table>
-</div>
-<!-- 🟦 BEGIN SHOP SECTION -->
-<section class="shop-section" id="accounts">
-  <div class="shop">
-    <h2>Accounts for Sale</h2>
-    <div class="account-grid">
-      <div class="account-card">
-        <h3>Diamond S2-7 | Ruby S5-7 (EU)</h3>
-        <p><strong>Linked Email:</strong> Yes</p>
-        <p><strong>Platform:</strong> PC</p>
-        <p><strong>Price:</strong> €500</p>
-        <button onclick="buyAccount('diamond-eu')">Buy Now</button>
+    <div class="features">
+      <div class="feature">
+        <span class="emoji">🎯</span>
+        <strong>Top 100 Players</strong>
       </div>
-      <div class="account-card">
-        <h3>Diamond S7 (EU)</h3>
-        <p><strong>Linked Email:</strong> No</p>
-        <p><strong>Platform:</strong> PC</p>
-        <p><strong>Price:</strong> 40</p>
-        <button onclick="buyAccount('gold-na')">Buy Now</button>
+      <div class="feature">
+        <span class="emoji">⚡</span>
+        <strong>Fast & Reliable</strong>
+      </div>
+      <div class="feature">
+        <span class="emoji">👥</span>
+        <strong>Full Team Available</strong>
+      </div>
+      <div class="feature">
+        <span class="emoji">🧠</span>
+        <strong>Manual Play Only</strong>
+      </div>
+      <div class="feature">
+        <span class="emoji">⏱️</span>
+        <strong>1600+ Hours Experience</strong>
       </div>
     </div>
-  </div>
-</section>
-<!-- 🟥 END SHOP SECTION -->
 
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>We are dedicated FPS veterans and top-tier competitive players offering professional account boosting services. We personally play on your account to help you reach your desired rank—fast, safe, and discreet.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        <div style="text-align: center;">
+          <strong style="color: #00c8ff;">Manual Play</strong>
+          <p>No bots, cheats, or automation</p>
+        </div>
+        <div style="text-align: center;">
+          <strong style="color: #00c8ff;">Private</strong>
+          <p>No chats or friend requests</p>
+        </div>
+        <div style="text-align: center;">
+          <strong style="color: #00c8ff;">Fast</strong>
+          <p>Efficient, high-performance gameplay</p>
+        </div>
+        <div style="text-align: center;">
+          <strong style="color: #00c8ff;">Secure</strong>
+          <p>Your account handled with care</p>
+        </div>
+      </div>
+    </section>
 
+    <section id="pricing">
+      <h2>Pricing Calculator</h2>
+      <div class="pricing-calculator">
+        <div class="calculator-inputs">
+          <div class="input-group">
+            <label for="currentRS">Current RS</label>
+            <input type="number" id="currentRS" placeholder="e.g., 20" min="0" max="52">
+          </div>
+          <div class="input-group">
+            <label for="desiredRS">Desired RS</label>
+            <input type="number" id="desiredRS" placeholder="e.g., 40" min="0" max="52">
+          </div>
+        </div>
+        <div id="priceResult">Enter RS values to see the price.</div>
+      </div>
 
+      <div class="pricing-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Range</th>
+              <th>Price (€)</th>
+              <th>Price per 1000 RS (€)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0 → 10k 🌫️</td><td>6 €</td><td>0.6 €</td></tr>
+            <tr><td>10 → 20k 🪙</td><td>15 €</td><td>1.5 €</td></tr>
+            <tr><td>20 → 30k ⚪</td><td>35 €</td><td>3.5 €</td></tr>
+            <tr><td>30 → 40k 💎</td><td>60 €</td><td>6 €</td></tr>
+            <tr><td>40 → 52k ♦️</td><td>230 €</td><td>19.2 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
+    <section id="accounts">
+      <h2>Accounts for Sale</h2>
+      <div class="account-grid">
+        <div class="account-card">
+          <h3>Diamond S2-7 | Ruby S5-7</h3>
+          <p><strong>Region:</strong> EU</p>
+          <p><strong>Linked Email:</strong> Yes</p>
+          <p><strong>Platform:</strong> PC</p>
+          <p><strong>Price:</strong> €500</p>
+          <button onclick="buyAccount('diamond-eu')">Contact to Buy</button>
+        </div>
+        <div class="account-card">
+          <h3>Diamond S7</h3>
+          <p><strong>Region:</strong> EU</p>
+          <p><strong>Linked Email:</strong> No</p>
+          <p><strong>Platform:</strong> PC</p>
+          <p><strong>Price:</strong> €40</p>
+          <button onclick="buyAccount('diamond-s7')">Contact to Buy</button>
+        </div>
+      </div>
+    </section>
 
-  </div>
-</section>
+    <section class="reviews" id="reviews">
+      <h2>Client Reviews</h2>
+      <div class="review-grid">
+        <div class="review">
+          <p>"Incredibly fast and professional service. Got me from Bronze to Diamond in just two days. The communication was excellent throughout the process."</p>
+          <div class="stars">★★★★★</div>
+          <div class="author">- GameMaster_2023</div>
+        </div>
+        <div class="review">
+          <p>"Best boosting service I've used. They kept me updated on progress and my account was completely safe. Will definitely use again next season."</p>
+          <div class="stars">★★★★★</div>
+          <div class="author">- ProPlayer_EU</div>
+        </div>
+        <div class="review">
+          <p>"Super clean service, no issues at all. They even gave me tips on how to maintain my rank. Highly recommended!"</p>
+          <div class="stars">★★★★★</div>
+          <div class="author">- FinalsBeast</div>
+        </div>
+      </div>
+    </section>
 
-    <section class="reviews">
-  <h2>Client Reviews</h2>
-  <div class="review-box">
-    <div class="review">
-      <p>“Insanely fast and efficient boosting. Got me from 20k to 30k in just one evening. Absolute pro.”</p>
-      <div class="stars">★★★★★</div>
-      <span>- Anonymus</span>
-    </div>
-    <div class="review">
-      <p>“Always updated me on progress. No issues, no delays. Trustworthy and very skilled.”</p>
-      <div class="stars">★★★★★</div>
-      <span>- Anonymus</span>
-    </div>
-    <div class="review">
-      <p>“Best boosting experience I’ve had. Super clean, no mess. Will use again.”</p>
-      <div class="stars">★★★★★</div>
-      <span>- Anonymus</span>
-    </div>
-  </div>
-</section>
-<section class="faq" id="faq">
-  <h2 style="text-align: center;">FAQ</h2>
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Will I get banned?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          We use manual play only, no hacks or cheats. We also use VPN when needed to ensure account safety.
+        </div>
+      </div>
 
-  <button class="faq-question" aria-expanded="false">
-    Will I get banned? <span aria-hidden="true">+</span>
-  </button>
-  <div class="faq-answer">We use manual play, no hacks. Also we use VPN if needed.</div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I watch while you play?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes, streaming service is available for an additional 15% fee.
+        </div>
+      </div>
 
-  <button class="faq-question" aria-expanded="false">
-    Can I watch while you play? <span aria-hidden="true">+</span>
-  </button>
-  <div class="faq-answer">Yes, stream add-on is available. +15%</div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How long will my boost take?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Duration depends on the number of points needed, but we work efficiently to complete orders as quickly as possible.
+        </div>
+      </div>
 
-  <button class="faq-question" aria-expanded="false">
-    How long will my boost take? <span aria-hidden="true">+</span>
-  </button>
-  <div class="faq-answer">Depends on how many points, but we are very fast.</div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is my account safe?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          We never share your information and use manual boosting only. Your account security is our top priority.
+        </div>
+      </div>
 
-  <button class="faq-question" aria-expanded="false">
-    Is my account safe? <span aria-hidden="true">+</span>
-  </button>
-  <div class="faq-answer">We never share your info and use manual boosting only.</div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I pay?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          We accept payments via PayPal and Wise for your convenience.
+        </div>
+      </div>
 
-  <button class="faq-question" aria-expanded="false">
-    How do I pay? <span aria-hidden="true">+</span>
-  </button>
-  <div class="faq-answer">Payments are accepted via PayPal and Wise.</div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What platforms do you support?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Currently we offer services for PC only.
+        </div>
+      </div>
+    </section>
 
-  <button class="faq-question" aria-expanded="false">
-    Can I cancel my order? <span aria-hidden="true">+</span>
-  </button>
-  <div class="faq-answer">Yes, cancellations are possible within 24 hours of order placement.</div>
-
-  <button class="faq-question" aria-expanded="false">
-    What about TOS and The Finals? <span aria-hidden="true">+</span>
-  </button>
-  <div class="faq-answer">Not affiliated with Embark Studios or THE FINALS. All services are manual, no cheats or automation used.</div>
-
-  <button class="faq-question" aria-expanded="false">
-    If order not achieved, then will I get refunded? <span aria-hidden="true">+</span>
-  </button>
-  <div class="faq-answer">Yes, if the order isn't fulfilled, you'll receive a refund.</div>
-
-  <button class="faq-question" aria-expanded="false">
-    What platforms do you support? <span aria-hidden="true">+</span>
-  </button>
-  <div class="faq-answer">Currently offering services for PC only.</div>
-</section>
-
-
-<script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      const answer = button.nextElementSibling;
-
-      button.setAttribute('aria-expanded', !expanded);
-      answer.classList.toggle('open');
-    });
-  });
-</script>
-
-
-
-    <section class="contact" id="contact">
+    <section id="contact">
       <h2>Contact Us</h2>
-      <form action="https://formspree.io/f/xblkkyyv" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      <div class="contact-form">
+        <form action="https://formspree.io/f/xblkkyyv" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="_replyto" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message (include current rank, desired rank, and any questions)" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </section>
   </main>
 
-<footer>
-  <div>Contact Email: <a href="mailto:boostingthefinals@gmail.com">boostingthefinals@gmail.com</a></div>
+  <footer>
+    <div class="footer-links">
+      <div>Email: <a href="mailto:boostingthefinals@gmail.com">boostingthefinals@gmail.com</a></div>
+      <div>Discord: <a href="#" onclick="copyDiscordName(); return false;" title="Click to copy">boostingthefinals</a></div>
+      <div>PayPal: <a href="https://www.paypal.me/boostingthefinals" target="_blank">paypal.me/boostingthefinals</a></div>
+      <div>Wise: <a href="https://wise.com/pay/me/zetenyz" target="_blank">wise.com/pay/me/zetenyz</a></div>
+    </div>
+    <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+      Not affiliated with Embark Studios or The Finals. All services are manual play only.
+    </p>
+  </footer>
 
-  <div>
-    Discord: 
-    <a href="#" 
-       onclick="copyDiscordName(); return false;" 
-       title="Click to copy Discord name"
-       style="cursor: pointer;"
-    >
-      boostingthefinals
-    </a>
-  </div>
-
-  <div>
-    PayPal: 
-    <a href="https://www.paypal.me/boostingthefinals" target="_blank" rel="noopener noreferrer">
-      paypal.me/boostingthefinals
-    </a>
-  </div>
-
-  <div>
-    Wise: 
-    <a href="https://wise.com/pay/me/zetenyz" target="_blank" rel="noopener noreferrer">
-      wise.com/pay/me/zetenyz
-    </a>
-  </div>
-</footer>
-
-<script>
-function copyDiscordName() {
-  navigator.clipboard.writeText('boostingthefinals').then(() => {
-    alert('Discord name copied to clipboard!');
-  });
-}
-</script>
-
-
-
-
-
+  <script src="script.js"></script>
+</body>
+</html>
