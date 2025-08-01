@@ -1,16 +1,31 @@
-
-    // Create animated particles
-    function createParticles() {
-      const particles = document.getElementById('particles');
-      for (let i = 0; i < 30; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 20 + 's';
-        particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-        particles.appendChild(particle);
-      }
-    }
+// Enhanced animated particles system
+function createParticles() {
+  const particles = document.getElementById('particles');
+  if (!particles) return;
+  
+  // Clear existing particles
+  particles.innerHTML = '';
+  
+  // Create more particles for full-page effect
+  const particleCount = window.innerWidth < 768 ? 20 : 50;
+  
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    // Random horizontal position
+    particle.style.left = Math.random() * 100 + '%';
+    
+    // Stagger animation delays for continuous effect
+    particle.style.animationDelay = Math.random() * 25 + 's';
+    
+    // Vary animation duration for more natural movement
+    const duration = Math.random() * 15 + 15; // 15-30 seconds
+    particle.style.animationDuration = duration + 's';
+    
+    particles.appendChild(particle);
+  }
+}
 
     // Pricing Calculator
     const blockPrices = [
