@@ -1,74 +1,57 @@
-// Enhanced animated particles system with more coverage
-function createParticles() {
-  const particles = document.getElementById('particles');
-  if (!particles) return;
-  
-  // Clear existing particles
-  particles.innerHTML = '';
-  
-  // Significantly increase particle count for full coverage
-  const particleCount = window.innerWidth < 768 ? 40 : 80;
-  
-  for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
+function createFullBackgroundParticles() {
+    const particles = document.getElementById('particles');
+    if (!particles) return;
     
-    // Random horizontal position across full width
-    particle.style.left = Math.random() * 100 + '%';
+    // Clear existing particles
+    particles.innerHTML = '';
     
-    // Stagger animation delays for continuous effect (longer cycle)
-    particle.style.animationDelay = Math.random() * 40 + 's';
+    // Create LOTS of particles for full coverage
+    const particleCount = window.innerWidth < 768 ? 60 : 120;
     
-    // Vary animation duration for more natural movement
-    const duration = Math.random() * 20 + 15; // 15-35 seconds
-    particle.style.animationDuration = duration + 's';
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // Random horizontal position across full width
+        particle.style.left = Math.random() * 100 + '%';
+        
+        // Staggered start times for continuous effect
+        particle.style.animationDelay = (Math.random() * 40) + 's';
+        
+        particles.appendChild(particle);
+    }
     
-    // Add random opacity variation
-    particle.style.opacity = 0.3 + Math.random() * 0.7;
-    
-    particles.appendChild(particle);
-  }
+    // Add ambient floating particles
+    createAmbientParticles();
 }
 
-// Create section-specific particles for enhanced effects
-function createSectionParticles(section, count = 8) {
-  if (!section) return;
-  
-  // Remove existing section particles
-  const existingParticles = section.querySelector('.section-particles');
-  if (existingParticles) {
-    existingParticles.remove();
-  }
-  
-  const sectionParticles = document.createElement('div');
-  sectionParticles.className = 'section-particles';
-  
-  for (let i = 0; i < count; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'section-particle';
+function createAmbientParticles() {
+    const particles = document.getElementById('particles');
+    if (!particles) return;
     
-    // Random size
-    const size = Math.random() * 4 + 1;
-    particle.style.width = size + 'px';
-    particle.style.height = size + 'px';
-    
-    // Random position
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    
-    // Random animation delay
-    particle.style.animationDelay = Math.random() * 15 + 's';
-    
-    // Random animation duration
-    const duration = Math.random() * 10 + 10;
-    particle.style.animationDuration = duration + 's';
-    
-    sectionParticles.appendChild(particle);
-  }
-  
-  section.appendChild(sectionParticles);
+    // Create static floating particles distributed across viewport
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'ambient-particle';
+        
+        // Random size
+        const size = Math.random() * 4 + 1;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        
+        // Random position across entire viewport
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        
+        // Random animation delay
+        particle.style.animationDelay = Math.random() * 12 + 's';
+        
+        // Random opacity
+        particle.style.opacity = Math.random() * 0.6 + 0.2;
+        
+        particles.appendChild(particle);
+    }
 }
-
 // Enhanced particle creation for all sections
 function initializeSectionParticles() {
   // Add particles to hero section
@@ -159,40 +142,21 @@ function calculatePrice() {
   const progress = Math.min((desiredInput / 52) * 100, 100);
   progressBar.style.width = progress + "%";
 
-// Calculate base price (example)
-let basePrice = calculateBasePrice(desiredInput); // Your custom function
-let finalPrice = basePrice;
-let streamingFee = 0;
-
-// Apply streaming increase (+15%) if selected
-if (streaming) {
-  streamingFee = basePrice * 0.15;
-  finalPrice += streamingFee;
-}
-
-// Optionally calculate rush price
-let rushPrice = finalPrice + rushFee; // Assume rushFee already defined
-
-// Update progress bar
-const progress = Math.min((desiredInput / 52) * 100, 100);
-progressBar.style.width = progress + "%";
-
-// Update result
-result.innerHTML = `
-  <div style="margin-bottom: 1.5rem;">
-    <div style="font-size: 2.2rem; font-weight: 900; color: #00ffff; margin-bottom: 0.5rem;">
-      €${finalPrice.toFixed(2)}
+  result.innerHTML = `
+    <div style="margin-bottom: 1.5rem;">
+      <div style="font-size: 2.2rem; font-weight: 900; color: #00ffff; margin-bottom: 0.5rem;">
+        €${finalPrice.toFixed(2)}
+      </div>
+      ${discount > 0 ? `<div style="color: #22c55e; font-weight: 600;">💚 Saved €${discount.toFixed(2)} (20% bulk discount)</div>` : ''}
+      ${rushPrice > finalPrice ? `<div style="color: #f59e0b; font-size: 0.9rem; margin-top: 0.5rem;">Rush 24h: €${rushPrice.toFixed(2)}</div>` : ''}
     </div>
-    ${streaming ? `<div style="color: #22c55e; font-weight: 600;">+ Streaming €${streamingFee.toFixed(2)} (15%)</div>` : ''}
-    ${rushPrice > finalPrice ? `<div style="color: #f59e0b; font-size: 0.9rem; margin-top: 0.5rem;">Rush 24h: €${rushPrice.toFixed(2)}</div>` : ''}
-  </div>
-  <div style="font-size: 1rem; color: #cbd5e1;">
-    📅 Estimated completion: ${estimatedHours}<br>
-    🎯 Target rank: ${getRankName(desiredInput)}<br>
-    🛡️ Includes 48h rank protection
-  </div>
-`;
-
+    <div style="font-size: 1rem; color: #cbd5e1;">
+      📅 Estimated completion: ${estimatedHours}<br>
+      🎯 Target rank: ${getRankName(desiredInput)}<br>
+      🛡️ Includes 48h rank protection
+    </div>
+  `;
+}
 
 function getRankName(rs) {
   if (rs < 10) return "Bronze 🌫️";
