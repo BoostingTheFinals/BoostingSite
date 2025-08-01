@@ -141,22 +141,25 @@ section.reviews h2 {
 
 /* 🔧 Styled same as reviews section */
 
-.shop {
+.shop-section {
+  padding: 4rem 0;
   background: #1a1a1a;
+}
+
+.shop {
+  background: #1f1f1f;
   padding: 2rem;
   border-radius: 10px;
-  margin: 4rem auto;
   box-shadow: 0 0 15px rgba(0, 200, 255, 0.15);
   max-width: 1000px;
-  width: 90%;
+  margin: 0 auto;
   text-align: center;
 }
 
 .shop h2 {
   color: #00c8ff;
-  text-align: center;
-  margin-bottom: 2rem;
   font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .account-grid {
@@ -187,9 +190,9 @@ section.reviews h2 {
 }
 
 .account-card p {
-  margin: 0.3rem 0;
   color: #ccc;
   font-size: 0.95rem;
+  margin: 0.3rem 0;
 }
 
 .account-card button {
@@ -207,4 +210,3 @@ section.reviews h2 {
 .account-card button:hover {
   background: #00b3e6;
 }
-
