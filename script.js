@@ -164,7 +164,7 @@ function calculatePrice() {
       <div style="font-size: 2.2rem; font-weight: 900; color: #00ffff; margin-bottom: 0.5rem;">
         €${finalPrice.toFixed(2)}
       </div>
-      ${discount > 0 ? `<div style="color: #22c55e; font-weight: 600;">💚 Saved €${discount.toFixed(2)} (20% bulk discount)</div>` : ''}
+      ${discount > 0 ? `<div style="color: #22c55e; font-weight: 600;"> With Streaming€${discount.toFixed(2)} (15%)</div>` : ''}
       ${rushPrice > finalPrice ? `<div style="color: #f59e0b; font-size: 0.9rem; margin-top: 0.5rem;">Rush 24h: €${rushPrice.toFixed(2)}</div>` : ''}
     </div>
     <div style="font-size: 1rem; color: #cbd5e1;">
