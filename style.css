@@ -87,6 +87,11 @@ body {
   background: #33ccff;
   box-shadow: 0 0 9px #33ccff, 0 0 18px #33ccff35;
 }
+/* Floating particles distributed throughout page */
+.floating-particle {
+  box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  animation: gentleFloat 15s ease-in-out infinite;
+}
 
 /* Enhanced floating animations with better coverage */
 @keyframes float {
