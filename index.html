@@ -1,546 +1,630 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Finals Boosting | Pro Account Boosting - Top 100 Players</title>
-<meta name="description" content="Professional boosting services by verified Top 100 players in The Finals. Manual play, fast & discreet boosting to your desired rank." />
-<meta name="keywords" content="The Finals boosting, account boosting, FPS boosting, manual boosting, top 100 player, rank boosting" />
-<meta name="author" content="The Finals Boosting" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2300c8ff'/><text x='16' y='20' text-anchor='middle' fill='black' font-weight='bold' font-size='14' font-family='Arial'>TF</text></svg>" type="image/svg+xml">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Animated background particles -->
-  <div class="particles" id="particles"></div>
-  
-  <header class="main-header">
-    <div class="nav-container">
-      <div class="logo">
-        <div class="logo-icon">TF</div>
-        <span>The Finals Boosting</span>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#team">Team</a>
-        <a href="#proof">Proof</a>
-        <a href="#process">Process</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="cta">Get Started</a>
-      </nav>
-      <button class="mobile-menu-btn">☰</button>
-    </div>
-  </header>
+/* Reset & base */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
 
-  <main class="container">
-    <section class="hero fade-in">
-      <div class="hero-content">
-        <h1>Elite Finals Boosting</h1>
-        <p>Professional rank boosting by verified Top 100 players. Manual play only, military-grade security, guaranteed results.</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn-primary">
-            🚀 Start Boosting Now
-          </a>
-          <a href="#proof" class="btn-secondary">
-            📊 View Our Proof
-          </a>
-        </div>
-      </div>
-    </section>
+html {
+  scroll-behavior: smooth;
+}
 
-    <section class="trust-section fade-in">
-      <h2>Why 500+ Players Trust Us</h2>
-      <div class="trust-badges">
-        <div class="trust-badge">
-          <span class="trust-number">1,800+</span>
-          <div class="trust-label">Hours Per Player</div>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-number">Top 50</span>
-          <div class="trust-label">Current Global Rank</div>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-number">520+</span>
-          <div class="trust-label">Successful Boosts</div>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-number">0</span>
-          <div class="trust-label">Account Bans Ever</div>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-number">24/7</span>
-          <div class="trust-label">Live Support</div>
-        </div>
-        <div class="trust-badge">
-          <span class="trust-number">2.1</span>
-          <div class="trust-label">Avg Days Completion</div>
-        </div>
-      </div>
-    </section>
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+  color: #f8fafc;
+  line-height: 1.7;
+  min-height: 100vh;
+  background-attachment: fixed;
+  animation: fadeIn 1s ease forwards;
+  overflow-x: hidden;
+}
 
-    <section id="team" class="slide-in-left">
-      <h2>Meet Our Elite Team</h2>
-      <p style="text-align: center; color: #94a3b8; font-size: 1.1rem; max-width: 800px; margin: 0 auto 3rem;">Each team member has maintained Top 100 rankings across multiple seasons and completed 100+ successful boosts.</p>
-      
-      <div class="team-grid">
-        <div class="team-member">
-          <div class="member-avatar">AK</div>
-          <div class="member-name">Alex "Apex" K.</div>
-          <div class="member-rank">🏆 Rank #23 Global (S7)</div>
-          <p style="color: #94a3b8; margin-bottom: 1.5rem;">Specialized in Light builds and movement tech. 3.2 K/D average with 95% tournament win rate in amateur leagues.</p>
-          <div class="member-stats">
-            <div class="stat">
-              <div class="stat-value">1,950</div>
-              <div class="stat-label">Hours Played</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">127</div>
-              <div class="stat-label">Boosts Done</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="team-member">
-          <div class="member-avatar">MR</div>
-          <div class="member-name">Mike "Razor" R.</div>
-          <div class="member-rank">🏆 Rank #31 Global (S7)</div>
-          <p style="color: #94a3b8; margin-bottom: 1.5rem;">Heavy build master with exceptional game sense. Known for clutch plays and strategic positioning in high-stakes matches.</p>
-          <div class="member-stats">
-            <div class="stat">
-              <div class="stat-value">2,100</div>
-              <div class="stat-label">Hours Played</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">143</div>
-              <div class="stat-label">Boosts Done</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="team-member">
-          <div class="member-avatar">SV</div>
-          <div class="member-name">Sarah "Viper" V.</div>
-          <div class="member-rank">🏆 Rank #47 Global (S7)</div>
-          <p style="color: #94a3b8; margin-bottom: 1.5rem;">Medium build specialist with incredible aim consistency. Former CS:GO semi-pro with tournament experience.</p>
-          <div class="member-stats">
-            <div class="stat">
-              <div class="stat-value">1,750</div>
-              <div class="stat-label">Hours Played</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">98</div>
-              <div class="stat-label">Boosts Done</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-    <section id="about" class="slide-in-right">
-      <h2>Our Competitive Edge</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-        <div style="text-align: center; padding: 2rem; background: rgba(30, 30, 30, 0.6); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
-          <h3 style="color: #00c8ff; margin-bottom: 1rem;">🎯 Proven Track Record</h3>
-          <p style="color: #cbd5e1;">Since Open Beta launch, our team has maintained consistent Top 100 rankings across all 7 seasons. We're not just skilled players - we're consistently elite.</p>
-        </div>
-        <div style="text-align: center; padding: 2rem; background: rgba(30, 30, 30, 0.6); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
-          <h3 style="color: #00c8ff; margin-bottom: 1rem;">🛡️ Unmatched Security</h3>
-          <p style="color: #cbd5e1;">Advanced VPN protection, region matching, and playstyle analysis ensure your account remains completely safe. Zero bans in 520+ completed orders.</p>
-        </div>
-        <div style="text-align: center; padding: 2rem; background: rgba(30, 30, 30, 0.6); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
-          <h3 style="color: #00c8ff; margin-bottom: 1rem;">⚡ Lightning Speed</h3>
-          <p style="color: #cbd5e1;">Our efficiency is unmatched. Most Bronze→Diamond boosts completed in under 48 hours. Rush orders available for 24-hour completion.</p>
-        </div>
-      </div>
-    </section>
+/* Animated background particles */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+}
 
-    <section id="proof" class="fade-in">
-      <h2>Live Proof of Excellence</h2>
-      <p style="text-align: center; color: #94a3b8; font-size: 1.1rem; margin-bottom: 3rem;">Updated weekly with fresh screenshots and gameplay footage</p>
-      
-      <div class="proof-grid">
-        <div class="proof-card">
-          <div class="proof-image">
-            📊 Season 7 Leaderboard<br>
-            Live Rankings: #23, #31, #47<br>
-            <small style="color: #64748b;">Updated Dec 15, 2024</small>
-          </div>
-          <div class="proof-content">
-            <div class="proof-title">Current Season Rankings</div>
-            <div class="proof-description">Live screenshots from in-game leaderboards showing our team's current Top 50 global positions. Verified and updated weekly.</div>
-          </div>
-        </div>
-        
-        <div class="proof-card">
-          <div class="proof-image">
-            🎮 Gameplay Montage<br>
-            40+ Kill Games<br>
-            <small style="color: #64748b;">Professional Highlights</small>
-          </div>
-          <div class="proof-content">
-            <div class="proof-title">Skill Demonstration</div>
-            <div class="proof-description">Watch our players execute advanced movement, perfect positioning, and game-winning clutches that separate pros from casual players.</div>
-          </div>
-        </div>
-        
-        <div class="proof-card">
-          <div class="proof-image">
-            📈 Recent Completions<br>
-            Before/After Screenshots<br>
-            <small style="color: #64748b;">Client Success Stories</small>
-          </div>
-          <div class="proof-content">
-            <div class="proof-title">Verified Results</div>
-            <div class="proof-description">Anonymized before/after screenshots from recent successful boosts, showing consistent results across all rank tiers.</div>
-          </div>
-        </div>
-        
-        <div class="proof-card">
-          <div class="proof-image">
-            ⏱️ Speed Records<br>
-            Diamond in 18 Hours<br>
-            <small style="color: #64748b;">Efficiency Metrics</small>
-          </div>
-          <div class="proof-content">
-            <div class="proof-title">Performance Statistics</div>
-            <div class="proof-description">Live tracking of our completion times: Bronze→Gold (6-10h), Gold→Diamond (18-30h), Diamond→Ruby (40-60h).</div>
-          </div>
-        </div>
-      </div>
-    </section>
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #00c8ff;
+  border-radius: 50%;
+  animation: float 20s infinite linear;
+}
 
-    <section id="process" class="fade-in">
-      <h2>How It Works</h2>
-      <div class="process-container">
-        <div class="process-timeline"></div>
-        <div class="process-steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <div class="step-title">Contact & Quote</div>
-              <div class="step-description">Message us with your current rank and goal. Receive instant pricing and completion timeline estimate. No obligations.</div>
-            </div>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <div class="step-title">Secure Payment</div>
-              <div class="step-description">Pay safely via PayPal or Wise. Your payment includes buyer protection and our 100% completion guarantee.</div>
-            </div>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <div class="step-title">Account Setup</div>
-              <div class="step-description">We verify your account details, configure VPN protection, and assign your dedicated Top 100 booster.</div>
-            </div>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">4</div>
-            <div class="step-content">
-              <div class="step-title">Boosting Begins</div>
-              <div class="step-description">Your booster starts playing with complete discretion. No friends added, no chat messages, no traces left behind.</div>
-            </div>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">5</div>
-            <div class="step-content">
-              <div class="step-title">Live Progress Updates</div>
-              <div class="step-description">Receive screenshots every 4-6 hours showing rank progression. Optional: Watch live streams for +15% fee.</div>
-            </div>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">6</div>
-            <div class="step-content">
-              <div class="step-title">Mission Complete</div>
-              <div class="step-description">Your target rank achieved! Receive final screenshots, account returned, and bonus tips to maintain your new rank.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+@keyframes float {
+  0% { transform: translateY(100vh) scale(0); }
+  10% { transform: translateY(90vh) scale(1); }
+  90% { transform: translateY(10vh) scale(1); }
+  100% { transform: translateY(-10vh) scale(0); }
+}
 
-    <div class="features fade-in">
-      <div class="feature">
-        <div class="feature-icon">🎯</div>
-        <div class="feature-title">Verified Top 50 Players</div>
-        <div class="feature-description">Live leaderboard proof updated weekly. Currently ranked #23, #31, and #47 globally.</div>
-      </div>
-      
-      <div class="feature">
-        <div class="feature-icon">⚡</div>
-        <div class="feature-title">Lightning Fast Results</div>
-        <div class="feature-description">Average 2-3 day completion. Diamond achievable in 48 hours, Ruby in 72 hours.</div>
-      </div>
-      
-      <div class="feature">
-        <div class="feature-icon">👥</div>
-        <div class="feature-title">Full Elite Team</div>
-        <div class="feature-description">3 dedicated boosters available 24/7. No queues, immediate start guarantee.</div>
-      </div>
-      
-      <div class="feature">
-        <div class="feature-icon">🧠</div>
-        <div class="feature-title">100% Manual Play</div>
-        <div class="feature-description">No bots, scripts, or automation. Pure skill and game knowledge only.</div>
-      </div>
-      
-      <div class="feature">
-        <div class="feature-icon">⏱️</div>
-        <div class="feature-title">1,800+ Hour Veterans</div>
-        <div class="feature-description">Since Open Beta day 1. Every season Top 100, every meta mastered.</div>
-      </div>
-      
-      <div class="feature">
-        <div class="feature-icon">🔒</div>
-        <div class="feature-title">Military-Grade Security</div>
-        <div class="feature-description">Advanced VPN, region matching, playstyle analysis. Zero ban record.</div>
-      </div>
-      
-      <div class="feature">
-        <div class="feature-icon">💬</div>
-        <div class="feature-title">24/7 Live Support</div>
-        <div class="feature-description">Real humans, instant Discord/email responses. No bots or delays.</div>
-      </div>
-      
-      <div class="feature">
-        <div class="feature-icon">🌍</div>
-        <div class="feature-title">Global Coverage</div>
-        <div class="feature-description">EU, NA, Asia regions supported with native boosters.</div>
-      </div>
-    </div>
+/* Scroll animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-    <section id="pricing" class="fade-in">
-      <h2>Transparent Pricing Calculator</h2>
-      <p style="color: #fbbf24; font-weight: 600; margin-bottom: 2rem; text-align: center; font-size: 1.1rem;">🔥 Limited Time: 20% OFF orders over €100 + Free rank maintenance for 48 hours</p>
-      
-      <div class="pricing-calculator">
-        <div class="calculator-inputs">
-          <div class="input-group">
-            <label for="currentRS">Current Rank Score</label>
-            <input type="number" id="currentRS" placeholder="e.g., 15" min="0" max="52">
-            <small style="color: #64748b;">Your current RS (0-52)</small>
-          </div>
-          <div class="input-group">
-            <label for="desiredRS">Target Rank Score</label>
-            <input type="number" id="desiredRS" placeholder="e.g., 35" min="0" max="52">
-            <small style="color: #64748b;">Desired RS (0-52)</small>
-          </div>
-        </div>
-        <div class="progress-container">
-          <div class="progress-bar" id="progressBar"></div>
-        </div>
-        <div id="priceResult">
-          <div style="font-size: 1.2rem; color: #94a3b8;">Enter your current and desired rank scores above</div>
-          <div style="font-size: 1rem; color: #64748b; margin-top: 0.5rem;">Get instant pricing and timeline estimates</div>
-        </div>
-      </div>
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-      <div class="pricing-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Rank Range</th>
-              <th>Base Price</th>
-              <th>Estimated Time</th>
-              <th>Difficulty Level</th>
-              <th>Rush (+50%)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>0-10k 🌫️ Bronze</td>
-              <td>€8</td>
-              <td>4-8 hours</td>
-              <td>Easy</td>
-              <td>€12</td>
-            </tr>
-            <tr>
-              <td>10-20k 🪙 Silver</td>
-              <td>€18</td>
-              <td>8-12 hours</td>
-              <td>Easy</td>
-              <td>€27</td>
-            </tr>
-            <tr>
-              <td>20-30k ⚪ Gold</td>
-              <td>€40</td>
-              <td>18-30 hours</td>
-              <td>Medium</td>
-              <td>€60</td>
-            </tr>
-            <tr>
-              <td>30-40k 💎 Diamond</td>
-              <td>€75</td>
-              <td>30-48 hours</td>
-              <td>Hard</td>
-              <td>€112</td>
-            </tr>
-            <tr>
-              <td>40-52k ♦️ Ruby</td>
-              <td>€280</td>
-              <td>60-72 hours</td>
-              <td>Expert</td>
-              <td>€420</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-    <section class="fade-in" id="guarantees">
-      <h2>Our Iron-Clad Guarantees</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
-        <div style="text-align: center; padding: 2.5rem 2rem; background: linear-gradient(135deg, rgba(34, 183, 57, 0.1), rgba(34, 183, 57, 0.05)); border-radius: 15px; border: 2px solid rgba(34, 183, 57, 0.3);">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">🛡️</div>
-          <strong style="color: #22b757; font-size: 1.3rem; display: block; margin-bottom: 1rem;">Zero Ban Guarantee</strong>
-          <p style="color: #cbd5e1;">100% ban-free or full refund. Advanced VPN protection, region matching, and undetectable playstyles. Zero bans in 520+ completed orders.</p>
-        </div>
-        
-        <div style="text-align: center; padding: 2.5rem 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05)); border-radius: 15px; border: 2px solid rgba(59, 130, 246, 0.3);">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">⚡</div>
-          <strong style="color: #3b82f6; font-size: 1.3rem; display: block; margin-bottom: 1rem;">Speed Guarantee</strong>
-          <p style="color: #cbd5e1;">Meet estimated completion times or receive 25% refund. Our Top 50 efficiency is unmatched in the boosting industry.</p>
-        </div>
-        
-        <div style="text-align: center; padding: 2.5rem 2rem; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05)); border-radius: 15px; border: 2px solid rgba(245, 158, 11, 0.3);">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">💰</div>
-          <strong style="color: #f59e0b; font-size: 1.3rem; display: block; margin-bottom: 1rem;">Money-Back Guarantee</strong>
-          <p style="color: #cbd5e1;">Full refund if we can't complete your order or you're unsatisfied before we start. Your money is always protected.</p>
-        </div>
-        
-        <div style="text-align: center; padding: 2.5rem 2rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.05)); border-radius: 15px; border: 2px solid rgba(168, 85, 247, 0.3);">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">🏆</div>
-          <strong style="color: #a855f7; font-size: 1.3rem; display: block; margin-bottom: 1rem;">Rank Maintenance</strong>
-          <p style="color: #cbd5e1;">Free 48-hour rank protection included. If you drop below target rank within 48 hours, we'll boost you back for free.</p>
-        </div>
-      </div>
-    </section>
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-    <section class="fade-in" id="reviews">
-      <h2>What Our Clients Say</h2>
-      <p style="text-align: center; color: #94a3b8; font-size: 1.1rem; margin-bottom: 3rem;">Verified reviews from real clients - check timestamps and order confirmations</p>
-      
-      <div class="review-grid">
-        <div class="review">
-          <div class="review-header">
-            <div class="stars">★★★★★</div>
-            <div class="review-meta">3 days ago • Order #BF2847</div>
-          </div>
-          <div class="review-content">
-            "Holy shit, these guys are insane. Went from Gold (RS 22) to Diamond (RS 35) in exactly 19 hours. I watched some of the games via stream and learned more in one night than months of playing. The booster was pulling off movement tech I didn't even know existed. 100% worth every penny."
-          </div>
-          <div class="review-author">- ProGamer_Mike_EU</div>
-        </div>
-        
-        <div class="review">
-          <div class="review-header">
-            <div class="stars">★★★★★</div>
-            <div class="review-meta">1 week ago • Order #BF2821</div>
-          </div>
-          <div class="review-content">
-            "I was skeptical about boosting services until I found these legends. Stuck in Silver hell for 3 months, they got me to Diamond in 2 days. Zero issues with my account, used VPN from my exact city. Even my teammates were impressed by my 'sudden improvement' lmao. Already planning my Ruby boost next season."
-          </div>
-          <div class="review-author">- FinalsFanatic_2024</div>
-        </div>
-        
-        <div class="review">
-          <div class="review-header">
-            <div class="stars">★★★★★</div>
-            <div class="review-meta">2 weeks ago • Order #BF2798</div>
-          </div>
-          <div class="review-content">
-            "Diamond to Ruby in 3.5 days - absolutely mental efficiency. Watched the live stream and saw 40+ kill games consistently. These aren't just good players, they're legitimate pros. The post-boost coaching session was incredible too. Now I can actually maintain my rank thanks to their tips."
-          </div>
-          <div class="review-author">- CompetitiveAce_NA</div>
-        </div>
-        
-        <div class="review">
-          <div class="review-header">
-            <div class="stars">★★★★★</div>
-            <div class="review-meta">3 weeks ago • Order #BF2771</div>
-          </div>
-          <div class="review-content">
-            "Customer service is next level. Responded to my Discord message in literally 2 minutes at 3 AM. The whole process was smooth as butter - payment, updates every 6 hours, completion ahead of schedule. Account was returned in perfect condition with bonus XP from their efficient games."
-          </div>
-          <div class="review-author">- GamingVeteran_23</div>
-        </div>
-        
-        <div class="review">
-          <div class="review-header">
-            <div class="stars">★★★★★</div>
-            <div class="review-meta">1 month ago • Order #BF2743</div>
-          </div>
-          <div class="review-content">
-            "Bought the Diamond account + additional boost combo. Account was exactly as described with all promised achievements. The extra boost from Diamond to 38k RS was completed overnight. Woke up to screenshots showing the progression. Zero drama, zero issues, just results."
-          </div>
-          <div class="review-author">- CasualToCompetitive</div>
-        </div>
-        
-        <div class="review">
-          <div class="review-header">
-            <div class="stars">★★★★★</div>
-            <div class="review-meta">1 month ago • Order #BF2722</div>
-          </div>
-          <div class="review-content">
-            "The live streaming option is 100% worth the extra 15%. Watching a legitimate Top 50 player dominate lobbies on my account was educational AF. Learned advanced cashout strategies, positioning, and movement techniques that I still use today. This is coaching and boosting combined."
-          </div>
-          <div class="review-author">- StrategicMind_Asia</div>
-        </div>
-      </div>
-    </section>
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-    <section id="faq" class="fade-in">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-container">
-        
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            Will my account get banned for using your service?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Absolutely impossible. We maintain a 0% ban rate across 520+ completed orders through advanced security protocols: VPN protection matching your exact region/ISP, playstyle analysis to match your historical performance curves, and professional game sense that appears completely natural. We offer a full refund guarantee if any ban occurs due to our service (which has never happened).
-          </div>
-        </div>
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            How do I know you're actually Top 50 players?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            We provide live leaderboard screenshots updated weekly showing our current global rankings (#23, #31, #47). Additionally, we offer live streaming during boosts (+15% fee) where you can witness Top 50 gameplay firsthand. Our consistent 40+ kill games and sub-48-hour Diamond completions speak for themselves. We're the only service with verified, current Top 50 proof.
-          </div>
-        </div>
+/* Header Navigation */
+.main-header {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            Can I watch my boost in progress?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Yes! Live streaming is available for +15% of the order total. You'll receive a private stream link and can watch/record all gameplay sessions. Many clients use this as a learning opportunity - watching a Top 50 player on your account is incredibly educational. You'll learn positioning, movement tech, and meta strategies that help you maintain your new rank.
-          </div>
-        </div>
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            What are your actual completion times?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Based on our last 100 completed orders: Bronze→Gold (6-10 hours), Gold→Diamond (18-30 hours), Diamond→Ruby (40-72 hours). Most orders complete ahead of schedule due to our efficiency. Rush service (50% extra) guarantees 24-hour completion for any boost under 20 RS points. We track all completion times and offer 25% refunds if we exceed estimates.
-          </div>
-        </div>
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #00c8ff;
+  transition: transform 0.3s ease;
+}
 
-        <div class="faq-item">
-          <button class="faq-
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #00c8ff, #66d9ff);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  color: #00c8ff;
+  background: rgba(0, 200, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+nav a.cta {
+  background: linear-gradient(135deg, #00c8ff, #66d9ff);
+  color: #000;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 200, 255, 0.3);
+}
+
+nav a.cta:hover {
+  background: linear-gradient(135deg, #66d9ff, #00ffff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.4);
+}
+
+/* Mobile menu */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section styling */
+section {
+  background: rgba(30, 30, 30, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 4rem 3rem;
+  border-radius: 20px;
+  margin-bottom: 4rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00c8ff, transparent);
+  transition: left 0.8s ease;
+}
+
+section:hover::before {
+  left: 100%;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 200, 255, 0.2);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, rgba(0, 200, 255, 0.05), rgba(102, 217, 255, 0.02));
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(0, 200, 255, 0.1), transparent, rgba(102, 217, 255, 0.05), transparent);
+  animation: rotate 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-weight: 900;
+  font-size: 4rem;
+  background: linear-gradient(45deg, #00c8ff, #66d9ff, #00ffff, #ffffff);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero p {
+  font-size: 1.4rem;
+  color: #94a3b8;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00c8ff, #66d9ff);
+  color: #000;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #66d9ff, #00ffff);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 200, 255, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 200, 255, 0.5);
+  transform: translateY(-3px);
+}
+
+/* Trust Indicators */
+.trust-section {
+  background: linear-gradient(135deg, rgba(0, 200, 255, 0.1), rgba(102, 217, 255, 0.05));
+  border: 2px solid rgba(0, 200, 255, 0.2);
+}
+
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.trust-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(0, 200, 255, 0.3);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(0, 200, 255, 0.1), transparent);
+  transform: rotate(-45deg);
+  transition: transform 0.6s ease;
+}
+
+.trust-badge:hover::before {
+  transform: rotate(45deg);
+}
+
+.trust-badge:hover {
+  background: rgba(0, 200, 255, 0.15);
+  border-color: rgba(0, 200, 255, 0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 200, 255, 0.2);
+}
+
+.trust-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #00c8ff;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.trust-label {
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Team Profiles */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.team-member {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(50, 50, 50, 0.4));
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00c8ff, #66d9ff);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.team-member:hover::before {
+  transform: scaleX(1);
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 200, 255, 0.2);
+}
+
+.member-avatar {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #00c8ff, #66d9ff);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #000;
+}
+
+.member-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00c8ff;
+  margin-bottom: 0.5rem;
+}
+
+.member-rank {
+  color: #fbbf24;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.member-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #00c8ff;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Proof Section */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.proof-card {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.8), rgba(50, 50, 50, 0.4));
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.proof-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 200, 255, 0.2);
+}
+
+.proof-image {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00c8ff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.proof-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.proof-card:hover .proof-image::before {
+  left: 100%;
+}
+
+.proof-content {
+  padding: 1.5rem;
+}
+
+.proof-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00c8ff;
+  margin-bottom: 0.5rem;
+}
+
+.proof-description {
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Process Steps */
+.process-container {
+  position: relative;
+  margin: 3rem 0;
+}
+
+.process-timeline {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #00c8ff, #66d9ff);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.step:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #00c8ff, #66d9ff);
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.3);
+  z-index: 3;
+  position: relative;
+}
+
+.step-content {
+  flex: 1;
+  background: rgba(30, 30, 30, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.step-content:hover {
+  background: rgba(0, 200, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.step-title {
