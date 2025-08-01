@@ -190,4 +190,51 @@ section.reviews h2 {
 .account-card button:hover {
   background: #00b3e6;
 }
+.account-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.account-card {
+  background: #222;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.account-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00c8ff;
+}
+
+.account-card h3 {
+  color: #00c8ff;
+  margin-bottom: 0.5rem;
+}
+
+.account-card p {
+  margin-bottom: 0.4rem;
+  color: #ccc;
+}
+
+.account-card button {
+  margin-top: 0.5rem;
+  background: #00c8ff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  color: #121212;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.account-card button:hover {
+  background: #00b3e6;
+}
 
