@@ -380,9 +380,16 @@ section.reviews h2 {
   <div>
    <img src="favicon.png" alt="Logo" style="height: 70px;">
   </div>
-  <nav style="display: flex; gap: 22px;">
-     <img src="favicon.png" alt="Logo" style="height: 70px;">
-  </nav>
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#accounts">Accounts for Sale</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+
 </header>
 
 <script>
@@ -421,7 +428,7 @@ section.reviews h2 {
   </header>
 
   <main class="container">
-    <section class="about">
+    <section class="about" id="about">
       <h2 style="text-align: center;">About us</h2>
       <p style="text-align: center;">Since the Open Beta of The Finals, each member of our team has invested over <strong>1,600 hours</strong> mastering the game. Across every season from Season 1 through Season 7, we have consistently ranked in the <strong>Top 100 worldwide</strong>, showcasing our individual dedication and collective expertise.</p>
       <p style="text-align: center;">Our experience competing on a global scale has sharpened our reflexes, strategic decision-making, and teamwork skills, enabling us to excel in this fast-paced, high-stakes competitive shooter. The Finals is more than just a game to us—it’s where we push our limits, elevate our gameplay, and prove our skill in every match.</p>
@@ -435,7 +442,7 @@ section.reviews h2 {
       <div class="feature"><span class="emoji">⏱️</span><strong>2000+ Hours Played</strong></div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
       <p style="text-align: center;">We are dedicated FPS veterans and top-tier competitive players offering professional account driving services. <strong>At The Finals Boosting</strong>, we personally play on your account to help you reach your desired rank—fast, safe, and discreet.</p>
       <p style="text-align: center;"><strong>Manual Play</strong> – No bots, cheats, or outsourcing involved at all</p>
       <p style="text-align: center;"><strong>Private</strong> – No chats, friend requests, or outside interaction</p>
@@ -447,7 +454,7 @@ section.reviews h2 {
       <p style="text-align: center;"><strong>Contact me</strong> on Discord or email to get started today!</p>
     </section>
 
-    <section class="pricing">
+    <section class="pricing" id="pricing">
       <h2>Pricing | Without Fees</h2>
       <table>
         <thead>
@@ -540,7 +547,7 @@ section.reviews h2 {
   </table>
 </div>
 <!-- 🟦 BEGIN SHOP SECTION -->
-<section class="shop-section">
+<section class="shop-section" id="accounts">
   <div class="shop">
     <h2>Accounts for Sale</h2>
     <div class="account-grid">
@@ -590,7 +597,7 @@ section.reviews h2 {
     </div>
   </div>
 </section>
-<section class="faq">
+<section class="faq" id="faq">
   <h2 style="text-align: center;">FAQ</h2>
 
   <button class="faq-question" aria-expanded="false">
@@ -654,7 +661,7 @@ section.reviews h2 {
 
 
 
-    <section class="contact">
+    <section class="contact" id="contact">
       <h2>Contact Us</h2>
       <form action="https://formspree.io/f/xblkkyyv" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
