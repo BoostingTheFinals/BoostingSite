@@ -564,8 +564,8 @@ section:hover {
 /* Process Steps - Clean Centered Timeline */
 .process-container {
   position: relative;
-  margin: 3rem 0;
-  max-width: 800px;
+  margin: 2rem 0;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -573,8 +573,8 @@ section:hover {
 .process-timeline {
   position: absolute;
   left: 50%;
-  top: 80px; /* Start after first step number */
-  bottom: 80px; /* End before last step number */
+  top: 50px;
+  height: calc(100% - 100px);
   width: 2px;
   background: linear-gradient(to bottom, #00c8ff, #66d9ff);
   transform: translateX(-50%);
@@ -584,7 +584,7 @@ section:hover {
 .process-steps {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.5rem;
   position: relative;
   z-index: 2;
   align-items: center;
@@ -597,12 +597,12 @@ section:hover {
   text-align: center;
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .step-number {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   background: linear-gradient(135deg, #00c8ff, #66d9ff);
   color: #000;
   border-radius: 50%;
@@ -610,20 +610,20 @@ section:hover {
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.3rem;
   flex-shrink: 0;
-  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 200, 255, 0.3);
   z-index: 3;
   position: relative;
-  border: 6px solid rgba(10, 10, 10, 1);
-  margin-bottom: 2rem;
+  border: 4px solid rgba(10, 10, 10, 1);
+  margin-bottom: 1rem;
 }
 
 .step-content {
   width: 100%;
   background: rgba(30, 30, 30, 0.6);
-  padding: 2.5rem;
-  border-radius: 20px;
+  padding: 1.5rem;
+  border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.4s ease;
   backdrop-filter: blur(10px);
@@ -639,17 +639,17 @@ section:hover {
 .step-title {
   color: #00c8ff;
   font-weight: 700;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
 .step-description {
   color: #cbd5e1;
-  line-height: 1.7;
-  font-size: 1.1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
   text-align: center;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -670,47 +670,47 @@ section:hover {
   }
   
   .step-number {
-    width: 70px;
-    height: 70px;
-    font-size: 1.8rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
     border: none;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
   
   .step-content {
-    padding: 2rem;
+    padding: 1.25rem;
   }
   
   .step-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   
   .step-description {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 768px) {
   .process-steps {
-    gap: 3rem;
+    gap: 2rem;
   }
   
   .step-number {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
   }
   
   .step-content {
-    padding: 1.5rem;
+    padding: 1rem;
   }
   
   .step-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   .step-description {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 }
 
