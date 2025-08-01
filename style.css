@@ -88,27 +88,23 @@ body {
   box-shadow: 0 0 9px #33ccff, 0 0 18px #33ccff35;
 }
 
-/* Enhanced floating animations with more variety */
+/* Enhanced floating animations with better coverage */
 @keyframes float {
   0% { 
     transform: translateY(100vh) translateX(0px) scale(0) rotate(0deg); 
     opacity: 0;
   }
-  5% { 
-    transform: translateY(95vh) translateX(5px) scale(0.3) rotate(45deg); 
-    opacity: 0.6;
-  }
-  15% { 
-    transform: translateY(85vh) translateX(15px) scale(1) rotate(90deg); 
-    opacity: 1;
+  10% { 
+    transform: translateY(90vh) translateX(10px) scale(0.8) rotate(45deg); 
+    opacity: 0.8;
   }
   50% { 
-    transform: translateY(50vh) translateX(-8px) scale(1.2) rotate(180deg); 
-    opacity: 0.9;
+    transform: translateY(50vh) translateX(-5px) scale(1.2) rotate(180deg); 
+    opacity: 1;
   }
-  85% { 
-    transform: translateY(15vh) translateX(20px) scale(0.8) rotate(270deg); 
-    opacity: 0.7;
+  90% { 
+    transform: translateY(10vh) translateX(15px) scale(0.8) rotate(315deg); 
+    opacity: 0.8;
   }
   100% { 
     transform: translateY(-10vh) translateX(0px) scale(0) rotate(360deg); 
@@ -121,21 +117,17 @@ body {
     transform: translateY(100vh) translateX(0px) scale(0) rotate(0deg); 
     opacity: 0;
   }
-  8% { 
-    transform: translateY(92vh) translateX(-8px) scale(0.4) rotate(30deg); 
-    opacity: 0.5;
-  }
-  20% { 
-    transform: translateY(80vh) translateX(12px) scale(1) rotate(60deg); 
+  15% { 
+    transform: translateY(85vh) translateX(-12px) scale(1) rotate(60deg); 
     opacity: 1;
   }
   50% { 
-    transform: translateY(50vh) translateX(-15px) scale(1.1) rotate(180deg); 
-    opacity: 0.95;
+    transform: translateY(50vh) translateX(20px) scale(1.1) rotate(180deg); 
+    opacity: 1;
   }
-  80% { 
-    transform: translateY(20vh) translateX(25px) scale(0.9) rotate(300deg); 
-    opacity: 0.8;
+  85% { 
+    transform: translateY(15vh) translateX(-8px) scale(0.9) rotate(300deg); 
+    opacity: 0.9;
   }
   100% { 
     transform: translateY(-10vh) translateX(0px) scale(0) rotate(360deg); 
@@ -148,21 +140,17 @@ body {
     transform: translateY(100vh) translateX(0px) scale(0) rotate(0deg); 
     opacity: 0;
   }
-  3% { 
-    transform: translateY(97vh) translateX(12px) scale(0.2) rotate(60deg); 
-    opacity: 0.4;
-  }
-  12% { 
-    transform: translateY(88vh) translateX(-10px) scale(1) rotate(120deg); 
+  8% { 
+    transform: translateY(92vh) translateX(15px) scale(1) rotate(120deg); 
     opacity: 1;
   }
-  45% { 
-    transform: translateY(55vh) translateX(18px) scale(1.3) rotate(200deg); 
-    opacity: 0.8;
+  50% { 
+    transform: translateY(50vh) translateX(-18px) scale(1.3) rotate(200deg); 
+    opacity: 1;
   }
-  75% { 
-    transform: translateY(25vh) translateX(-22px) scale(0.7) rotate(280deg); 
-    opacity: 0.6;
+  92% { 
+    transform: translateY(8vh) translateX(25px) scale(0.7) rotate(280deg); 
+    opacity: 0.7;
   }
   100% { 
     transform: translateY(-10vh) translateX(0px) scale(0) rotate(360deg); 
@@ -175,30 +163,52 @@ body {
     transform: translateY(100vh) translateX(0px) scale(0) rotate(0deg); 
     opacity: 0;
   }
-  10% { 
-    transform: translateY(90vh) translateX(20px) scale(0.5) rotate(45deg); 
-    opacity: 0.8;
-  }
-  25% { 
-    transform: translateY(75vh) translateX(-15px) scale(1) rotate(90deg); 
+  20% { 
+    transform: translateY(80vh) translateX(30px) scale(1) rotate(90deg); 
     opacity: 1;
   }
   40% { 
-    transform: translateY(60vh) translateX(25px) scale(1.1) rotate(135deg); 
-    opacity: 0.9;
+    transform: translateY(60vh) translateX(-25px) scale(1.2) rotate(180deg); 
+    opacity: 1;
   }
   60% { 
-    transform: translateY(40vh) translateX(-20px) scale(1.2) rotate(180deg); 
-    opacity: 0.85;
+    transform: translateY(40vh) translateX(35px) scale(1.1) rotate(270deg); 
+    opacity: 1;
   }
   80% { 
-    transform: translateY(20vh) translateX(30px) scale(0.8) rotate(270deg); 
-    opacity: 0.7;
+    transform: translateY(20vh) translateX(-20px) scale(0.8) rotate(350deg); 
+    opacity: 0.8;
   }
   100% { 
     transform: translateY(-10vh) translateX(0px) scale(0) rotate(360deg); 
     opacity: 0;
   }
+}
+
+/* New gentle floating animation for distributed particles */
+@keyframes gentleFloat {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translateY(-20px) translateX(10px) scale(1.2) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-10px) translateX(-15px) scale(0.8) rotate(180deg);
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-30px) translateX(20px) scale(1.1) rotate(270deg);
+    opacity: 0.6;
+  }
+}
+
+/* Floating particles distributed throughout page */
+.floating-particle {
+  box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  animation: gentleFloat 15s ease-in-out infinite;
 }
 
 /* Apply different animations for natural variety */
