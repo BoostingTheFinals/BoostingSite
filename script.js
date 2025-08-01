@@ -237,3 +237,62 @@ function initializeScrollAnimations() {
             createSectionParticles(entry.target, 6);
           }, 200);
         }
+      }
+    });
+  }, observerOptions);
+
+  // Observe all fade-in elements
+  document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+// Initialize everything when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize main background particles
+  createParticles();
+  
+  // Initialize section-specific particles
+  initializeSectionParticles();
+  
+  // Initialize scroll animations
+  initializeScrollAnimations();
+  
+  // Initialize FAQ functionality
+  initializeFAQ();
+  
+  // Initialize pricing calculator
+  const currentInput = document.getElementById('currentRS');
+  const desiredInput = document.getElementById('desiredRS');
+  
+  if (currentInput && desiredInput) {
+    currentInput.addEventListener('input', calculatePrice);
+    desiredInput.addEventListener('input', calculatePrice);
+  }
+  
+  // Recreate particles on window resize for optimal coverage
+  window.addEventListener('resize', () => {
+    clearTimeout(window.resizeTimeout);
+    window.resizeTimeout = setTimeout(() => {
+      createParticles();
+      initializeSectionParticles();
+    }, 250);
+  });
+});
+
+// Additional utility functions
+function copyDiscordName() {
+  navigator.clipboard.writeText('boostingthefinals').then(() => {
+    const notification = document.getElementById('notification');
+    if (notification) {
+      notification.classList.add('show');
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+  });
+}
+
+function openLiveChat() {
+  window.open('https://discord.com/users/boostingthefinals', '_blank');
+}
