@@ -200,3 +200,9 @@ section.reviews h2 {
 .account-card button:hover {
   background: #00b3e6;
 }
+.account-card p,
+.account-card h3 {
+  text-align: center;
+  margin: 0.3rem 0;
+}
+
