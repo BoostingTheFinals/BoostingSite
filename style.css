@@ -152,11 +152,12 @@ section.reviews h2 {
 .account-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
 }
+
 
 .account-card {
   background: #222;
