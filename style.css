@@ -176,7 +176,9 @@ section.reviews h2 {
 .account-card p {
   margin-bottom: 0.4rem;
   color: #ccc;
+  text-align: center;
 }
+
 
 .account-card button {
   margin-top: 0.5rem;
