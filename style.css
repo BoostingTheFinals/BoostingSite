@@ -210,3 +210,7 @@ section.reviews h2 {
 .account-card button:hover {
   background: #00b3e6;
 }
+html {
+  scroll-behavior: smooth;
+}
+
