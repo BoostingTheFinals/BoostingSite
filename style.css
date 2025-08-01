@@ -152,12 +152,12 @@ section.reviews h2 {
 .account-grid {
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
+  text-align: center;
   padding: 1rem;
 }
-
 
 .account-card {
   background: #222;
@@ -177,7 +177,6 @@ section.reviews h2 {
 .account-card h3 {
   color: #00c8ff;
   margin-bottom: 0.5rem;
-  text-align: center;
 }
 
 .account-card p {
@@ -200,10 +199,5 @@ section.reviews h2 {
 
 .account-card button:hover {
   background: #00b3e6;
-}
-.account-card p,
-.account-card h3 {
-  text-align: center;
-  margin: 0.3rem 0;
 }
 
