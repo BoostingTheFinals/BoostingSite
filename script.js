@@ -1,4 +1,4 @@
-// Pricing Calculator
+// Pricing Calculator (existing code)
 const blockPrices = [
   { min: 0, max: 10000, price: 6 },
   { min: 10000, max: 20000, price: 15 },
@@ -41,3 +41,103 @@ function calculatePrice() {
       total += block.price * portion;
     }
   }
+
+  result.innerText = `Total Price: €${total.toFixed(2)}`;
+  result.style.color = "#00ffff";
+}
+
+// FAQ Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+      const answer = this.nextElementSibling;
+      const icon = this.querySelector('.faq-icon');
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      
+      // Close all other FAQ items
+      faqQuestions.forEach(otherQuestion => {
+        if (otherQuestion !== this) {
+          const otherAnswer = otherQuestion.nextElementSibling;
+          const otherIcon = otherQuestion.querySelector('.faq-icon');
+          
+          otherQuestion.setAttribute('aria-expanded', 'false');
+          otherAnswer.classList.remove('open');
+          otherIcon.textContent = '+';
+        }
+      });
+      
+      // Toggle current FAQ item
+      if (isExpanded) {
+        this.setAttribute('aria-expanded', 'false');
+        answer.classList.remove('open');
+        icon.textContent = '+';
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+        answer.classList.add('open');
+        icon.textContent = '−';
+      }
+    });
+  });
+});
+
+// Auto-calculate price when inputs change
+document.addEventListener('DOMContentLoaded', function() {
+  const currentInput = document.getElementById("currentRS");
+  const desiredInput = document.getElementById("desiredRS");
+  
+  if (currentInput && desiredInput) {
+    currentInput.addEventListener('input', calculatePrice);
+    desiredInput.addEventListener('input', calculatePrice);
+  }
+});
+
+// Account purchase function
+function buyAccount(accountType) {
+  const subject = encodeURIComponent(`Account Purchase Inquiry - ${accountType}`);
+  const body = encodeURIComponent(`Hi, I'm interested in purchasing the ${accountType} account. Please provide more details about the purchase process.`);
+  window.location.href = `mailto:boostingthefinals@gmail.com?subject=${subject}&body=${body}`;
+}
+
+// Discord name copy function
+function copyDiscordName() {
+  const discordName = 'boostingthefinals';
+  
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(discordName).then(() => {
+      alert('Discord username copied to clipboard!');
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+      fallbackCopyTextToClipboard(discordName);
+    });
+  } else {
+    fallbackCopyTextToClipboard(discordName);
+  }
+}
+
+function fallbackCopyTextToClipboard(text) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+  
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  
+  try {
+    const successful = document.execCommand('copy');
+    if (successful) {
+      alert('Discord username copied to clipboard!');
+    } else {
+      alert('Failed to copy Discord username');
+    }
+  } catch (err) {
+    console.error('Fallback: Oops, unable to copy', err);
+    alert('Failed to copy Discord username');
+  }
+  
+  document.body.removeChild(textArea);
+}
