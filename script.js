@@ -106,6 +106,7 @@ function calculatePrice() {
   const desiredInput = parseFloat(document.getElementById("desiredRS").value);
   const result = document.getElementById("priceResult");
   const progressBar = document.getElementById("progressBar");
+  const streamingCheckbox = document.getElementById("streamingOption");
 
   if (!result) return;
 
@@ -126,7 +127,7 @@ function calculatePrice() {
 
   const current = currentInput * 1000;
   const desired = desiredInput * 1000;
-  let total = 0;
+  let basePrice = 0;
 
   for (const block of blockPrices) {
     const start = Math.max(current, block.min);
@@ -136,16 +137,17 @@ function calculatePrice() {
       const overlap = end - start;
       const blockSize = block.max - block.min;
       const portion = overlap / blockSize;
-      total += block.price * portion;
+      basePrice += block.price * portion;
     }
   }
 
-  // Calculate discount for orders over €100
-  const discount = total > 100 ? total * 0.2 : 0;
-  const finalPrice = total - discount;
+  // Check if streaming is selected
+  const isStreaming = streamingCheckbox && streamingCheckbox.checked;
+  const streamingPrice = isStreaming ? basePrice * 0.15 : 0;
+  const totalPrice = basePrice + streamingPrice;
   
   // Calculate rush price
-  const rushPrice = finalPrice * 1.5;
+  const rushPrice = totalPrice * 1.5;
   
   // Estimate completion time
   const rsGap = desiredInput - currentInput;
@@ -162,10 +164,10 @@ function calculatePrice() {
   result.innerHTML = `
     <div style="margin-bottom: 1.5rem;">
       <div style="font-size: 2.2rem; font-weight: 900; color: #00ffff; margin-bottom: 0.5rem;">
-        €${finalPrice.toFixed(2)}
+        €${totalPrice.toFixed(2)}
       </div>
-      ${discount > 0 ? `<div style="color: #22c55e; font-weight: 600;">💚 Saved €${discount.toFixed(2)} (20% bulk discount)</div>` : ''}
-      ${rushPrice > finalPrice ? `<div style="color: #f59e0b; font-size: 0.9rem; margin-top: 0.5rem;">Rush 24h: €${rushPrice.toFixed(2)}</div>` : ''}
+      ${isStreaming ? `<div style="color: #22c55e; font-weight: 600;">🎥 Streaming +€${streamingPrice.toFixed(2)} (Optimal Experience)</div>` : ''}
+      ${rushPrice > totalPrice ? `<div style="color: #f59e0b; font-size: 0.9rem; margin-top: 0.5rem;">Rush 24h: €${rushPrice.toFixed(2)}</div>` : ''}
     </div>
     <div style="font-size: 1rem; color: #cbd5e1;">
       📅 Estimated completion: ${estimatedHours}<br>
@@ -264,10 +266,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize pricing calculator
   const currentInput = document.getElementById('currentRS');
   const desiredInput = document.getElementById('desiredRS');
+  const streamingCheckbox = document.getElementById('streamingOption');
   
   if (currentInput && desiredInput) {
     currentInput.addEventListener('input', calculatePrice);
     desiredInput.addEventListener('input', calculatePrice);
+  }
+  
+  if (streamingCheckbox) {
+    streamingCheckbox.addEventListener('change', calculatePrice);
   }
   
   // Recreate particles on window resize for optimal coverage
