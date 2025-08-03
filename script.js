@@ -91,6 +91,164 @@ function initializeSectionParticles() {
     }
   });
 }
+// Custom smooth scroll function with easing
+function smoothScrollTo(targetPosition, duration) {
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  let startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+    window.scrollTo(0, run);
+    
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  // Easing function for smooth animation
+  function easeInOutQuad(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animation);
+}
+
+// Update active navigation link
+function updateActiveNavLink(targetId) {
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === targetId) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Scroll spy functionality - highlights current section in nav
+function initializeScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  
+  function updateActiveSection() {
+    const scrollPosition = window.pageYOffset + 150;
+    let currentSection = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        currentSection = sectionId;
+      }
+    });
+    
+    // Update active nav link
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + currentSection) {
+        link.classList.add('active');
+      }
+    });
+  }
+  
+  // Throttle scroll events for better performance
+  let ticking = false;
+  
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateActiveSection);
+      ticking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', () => {
+    requestTick();
+    ticking = false;
+  });
+  
+  // Initial call
+  updateActiveSection();
+}
+
+// Mobile menu functionality
+function initializeMobileMenu() {
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('nav');
+  
+  if (mobileMenuBtn && nav) {
+    mobileMenuBtn.addEventListener('click', function() {
+      nav.classList.toggle('mobile-open');
+      this.classList.toggle('active');
+      
+      // Change hamburger icon
+      if (nav.classList.contains('mobile-open')) {
+        this.innerHTML = '✕';
+      } else {
+        this.innerHTML = '☰';
+      }
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = nav.querySelectorAll('a');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+  }
+}
+
+function closeMobileMenu() {
+  const nav = document.querySelector('nav');
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  
+  if (nav && mobileMenuBtn) {
+    nav.classList.remove('mobile-open');
+    mobileMenuBtn.classList.remove('active');
+    mobileMenuBtn.innerHTML = '☰';
+  }
+}
+
+// Header scroll effects
+function initializeHeaderEffects() {
+  const header = document.querySelector('.main-header');
+  let lastScrollTop = 0;
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    
+    // Add scrolled class for styling
+    if (scrollTop > 50) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+    
+    // Hide/show header based on scroll direction
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      header.classList.add('header-hidden');
+    } else {
+      header.classList.remove('header-hidden');
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+}
 
 // Pricing Calculator
 const blockPrices = [
@@ -293,4 +451,5 @@ function copyDiscordName() {
 function openLiveChat() {
   window.open('https://discord.com/users/boostingthefinals', '_blank');
 }
+
 
