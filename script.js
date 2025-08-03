@@ -308,10 +308,10 @@ function calculatePrice() {
   // Estimate completion time
   const rsGap = desiredInput - currentInput;
   let estimatedHours;
-  if (rsGap <= 10) estimatedHours = "6-12 hours";
-  else if (rsGap <= 20) estimatedHours = "18-30 hours";
-  else if (rsGap <= 30) estimatedHours = "30-48 hours";
-  else estimatedHours = "60-72 hours";
+  if (rsGap <= 10) estimatedHours = "1-3 days";
+  else if (rsGap <= 20) estimatedHours = "5-8 days";
+  else if (rsGap <= 30) estimatedHours = "10-15 days";
+  else estimatedHours = "14+ days";
 
   // Update progress bar
   const progress = Math.min((desiredInput / 52) * 100, 100);
@@ -451,5 +451,6 @@ function copyDiscordName() {
 function openLiveChat() {
   window.open('https://discord.com/users/boostingthefinals', '_blank');
 }
+
 
 
