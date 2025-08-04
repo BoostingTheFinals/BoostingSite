@@ -7,13 +7,13 @@
 
 html {
   scroll-behavior: smooth;
-  /* Scale the entire document to 70% */
-  zoom: 0.7;
-  -moz-transform: scale(0.7);
+  /* Scale the entire document to 80% */
+  zoom: 0.8;
+  -moz-transform: scale(0.8);
   -moz-transform-origin: 0 0;
-  -webkit-transform: scale(0.7);
+  -webkit-transform: scale(0.8);
   -webkit-transform-origin: 0 0;
-  transform: scale(0.7);
+  transform: scale(0.8);
   transform-origin: 0 0;
 }
 
@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
   position: relative;
   /* Additional scaling fallback */
-  width: 142.86%; /* 100% / 0.7 to compensate for scaling */
+  width: 125%; /* 100% / 0.8 to compensate for scaling */
 }
 
 @keyframes fadeIn {
@@ -322,6 +322,14 @@ body {
 
 /* Enhanced mobile responsiveness */
 @media (max-width: 768px) {
+  html {
+    zoom: 0.65; /* Adjusted for mobile from 0.6 to 0.65 */
+  }
+  
+  body {
+    width: 153.85%; /* Adjust compensation for 65% zoom */
+  }
+  
   .particles {
     opacity: 0.4;
   }
@@ -337,6 +345,14 @@ body {
 }
 
 @media (max-width: 480px) {
+  html {
+    zoom: 0.6; /* Adjusted for very small screens from 0.55 to 0.6 */
+  }
+  
+  body {
+    width: 166.67%; /* Adjust compensation for 60% zoom */
+  }
+  
   .particles {
     opacity: 0.3;
   }
@@ -1785,11 +1801,11 @@ footer {
 
 @media (max-width: 768px) {
   html {
-    zoom: 0.6; /* Further scale down for mobile */
+    zoom: 0.65; /* Adjusted for mobile from 0.65 to match 80% scaling */
   }
   
   body {
-    width: 166.67%; /* Adjust compensation for 60% zoom */
+    width: 153.85%; /* Adjust compensation for 65% zoom */
   }
   
   .container {
@@ -1893,11 +1909,11 @@ footer {
 
 @media (max-width: 480px) {
   html {
-    zoom: 0.55; /* Even further scale down for very small screens */
+    zoom: 0.6; /* Adjusted for very small screens to match 80% scaling */
   }
   
   body {
-    width: 181.82%; /* Adjust compensation for 55% zoom */
+    width: 166.67%; /* Adjust compensation for 60% zoom */
   }
 }
 
@@ -1944,4 +1960,3 @@ footer {
 body {
   padding-bottom: 0;
 }
-
