@@ -1047,14 +1047,19 @@ Special: Would like live streaming option"></textarea>
             </div>
             
 <form action="https://formspree.io/f/xblkkyyv" method="POST">
-  <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="message" value="New order request received. Check your site inbox.">
+  <!-- Hidden email input (user has to fill it or you collect it via JavaScript) -->
+  <label style="display:none;">
+    Your email:
+    <input type="email" name="email" required>
+  </label>
+
+  <input type="hidden" name="message" value="New order request received. Check your inbox.">
 
   <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
     🚀 Send Order Request
   </button>
 </form>
+
         </div>
         
         <div class="contact-methods">
@@ -1147,6 +1152,7 @@ Special: Would like live streaming option"></textarea>
   
 </body>
 </html>
+
 
 
 
