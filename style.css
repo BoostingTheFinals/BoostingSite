@@ -861,13 +861,14 @@ section:hover {
   line-height: 1.6;
 }
 
-/* Process Steps - Clean Centered Timeline */
+/* Process Steps - Fixed Centering */
 .process-container {
   position: relative;
-  margin: 2rem 0;
+  margin: 2rem auto;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .process-timeline {
@@ -888,6 +889,7 @@ section:hover {
   position: relative;
   z-index: 2;
   align-items: center;
+  width: 100%;
 }
 
 .step {
@@ -897,7 +899,7 @@ section:hover {
   text-align: center;
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .step-number {
@@ -1924,3 +1926,21 @@ footer {
 .mb-1 { margin-bottom: 0.5rem; }
 .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 2rem; }
+
+/* Fix bottom spacing */
+main.container {
+  margin-bottom: 0;
+}
+
+main.container section:last-of-type {
+  margin-bottom: 2rem;
+}
+
+footer {
+  margin-top: 3rem;
+}
+
+/* Remove excessive margins */
+body {
+  padding-bottom: 0;
+}
