@@ -1927,36 +1927,21 @@ footer {
 .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 2rem; }
 
-/* Fix blank space at bottom */
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
+/* Fix bottom spacing */
 main.container {
-  flex: 1;
   margin-bottom: 0;
+}
+
+main.container section:last-of-type {
+  margin-bottom: 2rem;
 }
 
 footer {
-  margin-top: 2rem;
-  margin-bottom: 0;
-  flex-shrink: 0;
+  margin-top: 3rem;
 }
 
-/* Remove any extra spacing from sections */
-section {
-  margin-bottom: 3rem;
+/* Remove excessive margins */
+body {
+  padding-bottom: 0;
 }
 
-section:last-child {
-  margin-bottom: 1rem;
-}
