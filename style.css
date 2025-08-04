@@ -7,8 +7,17 @@
 
 html {
   scroll-behavior: smooth;
+  /* Scale the entire document to 70% */
+  zoom: 0.7;
+  -moz-transform: scale(0.7);
+  -moz-transform-origin: 0 0;
+  -webkit-transform: scale(0.7);
+  -webkit-transform-origin: 0 0;
+  transform: scale(0.7);
+  transform-origin: 0 0;
 }
 
+/* Alternative scaling method for better browser compatibility */
 body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
@@ -19,6 +28,8 @@ body {
   animation: fadeIn 1s ease forwards;
   overflow-x: hidden;
   position: relative;
+  /* Additional scaling fallback */
+  width: 142.86%; /* 100% / 0.7 to compensate for scaling */
 }
 
 @keyframes fadeIn {
@@ -1511,6 +1522,248 @@ footer {
   line-height: 1.6;
 }
 
+/* Accounts Section Styles */
+.accounts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+.account-card {
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(50, 50, 50, 0.6));
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.account-card.premium {
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  background: linear-gradient(135deg, rgba(40, 35, 20, 0.9), rgba(60, 50, 30, 0.6));
+}
+
+.account-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00c8ff, transparent);
+  transition: left 0.8s ease;
+}
+
+.account-card.premium::before {
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+}
+
+.account-card:hover::before {
+  left: 100%;
+}
+
+.account-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 200, 255, 0.2);
+  border-color: rgba(0, 200, 255, 0.4);
+}
+
+.account-card.premium:hover {
+  box-shadow: 0 25px 50px rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.account-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.premium-badge {
+  background: linear-gradient(135deg, #ffd700, #ffed4e) !important;
+  color: #000 !important;
+}
+
+.account-rank-display {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 200, 255, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 200, 255, 0.2);
+}
+
+.account-card.premium .account-rank-display {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.2);
+}
+
+.rank-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+.rank-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #00c8ff;
+  margin-bottom: 0.25rem;
+}
+
+.account-card.premium .rank-title {
+  color: #ffd700;
+}
+
+.rank-score {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.account-features {
+  margin-bottom: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  color: #cbd5e1;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.account-pricing {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+
+.original-price {
+  font-size: 1.2rem;
+  color: #64748b;
+  text-decoration: line-through;
+  margin-bottom: 0.5rem;
+}
+
+.current-price {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #00c8ff;
+  margin-bottom: 0.5rem;
+}
+
+.account-card.premium .current-price {
+  color: #ffd700;
+}
+
+.savings {
+  color: #22c55e;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.account-guarantees {
+  margin-bottom: 2rem;
+}
+
+.guarantee {
+  color: #22c55e;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.buy-account-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #00c8ff, #66d9ff);
+  color: #000;
+  border: none;
+  padding: 1.25rem 2rem;
+  font-weight: 800;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.3);
+}
+
+.premium-btn {
+  background: linear-gradient(135deg, #ffd700, #ffed4e) !important;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3) !important;
+}
+
+.buy-account-btn:hover {
+  background: linear-gradient(135deg, #66d9ff, #00ffff);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 200, 255, 0.4);
+}
+
+.premium-btn:hover {
+  background: linear-gradient(135deg, #ffed4e, #fff59d) !important;
+  box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4) !important;
+}
+
+.account-info-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.info-card {
+  background: rgba(30, 30, 30, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: rgba(0, 200, 255, 0.1);
+  border-color: rgba(0, 200, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  color: #00c8ff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.info-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
   .contact-grid {
@@ -1529,6 +1782,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+  html {
+    zoom: 0.6; /* Further scale down for mobile */
+  }
+  
+  body {
+    width: 166.67%; /* Adjust compensation for 60% zoom */
+  }
+  
   .container {
     padding: 0 1rem;
   }
@@ -1596,6 +1857,25 @@ footer {
     grid-template-columns: 1fr;
   }
   
+  .accounts-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .account-card {
+    padding: 2rem;
+  }
+  
+  .account-rank-display {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .current-price {
+    font-size: 2.5rem !important;
+  }
+  
   .chat-widget {
     bottom: 20px;
     right: 20px;
@@ -1606,6 +1886,16 @@ footer {
   .footer-links {
     flex-direction: column;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    zoom: 0.55; /* Even further scale down for very small screens */
+  }
+  
+  body {
+    width: 181.82%; /* Adjust compensation for 55% zoom */
   }
 }
 
