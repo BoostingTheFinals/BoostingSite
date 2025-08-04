@@ -325,7 +325,6 @@ function calculatePrice() {
     <div style="font-size: 1rem; color: #cbd5e1;">
       📅 Estimated completion: ${estimatedHours}<br>
       🎯 Target rank: ${getRankName(desiredInput)}<br>
-      🛡️ Includes 48h rank protection
     </div>
   `;
 }
@@ -518,5 +517,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
 
 
