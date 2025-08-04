@@ -812,7 +812,7 @@ section:hover {
 /* Proof Section */
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Fixed: Forces exactly 3 equal columns */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   margin: 3rem 0;
 }
@@ -1960,4 +1960,5 @@ footer {
 body {
   padding-bottom: 0;
 }
+
 
