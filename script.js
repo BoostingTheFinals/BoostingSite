@@ -452,5 +452,71 @@ function openLiveChat() {
   window.open('https://discord.com/users/boostingthefinals', '_blank');
 }
 
+// Form submission handler
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contactForm');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitBtn = document.getElementById('submitBtn');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // Hide previous messages
+      if (successMessage) successMessage.style.display = 'none';
+      if (errorMessage) errorMessage.style.display = 'none';
+      
+      // Disable submit button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '⏳ Sending...';
+      
+      // Create FormData object
+      const formData = new FormData(form);
+      
+      // Submit to Formspree
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Success
+          if (successMessage) {
+            successMessage.style.display = 'block';
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+          }
+          form.reset();
+          
+          // Reset button after delay
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '🚀 Send Order Request';
+          }, 3000);
+          
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        // Error
+        console.error('Form submission error:', error);
+        if (errorMessage) {
+          errorMessage.style.display = 'block';
+          errorMessage.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '🚀 Send Order Request';
+      });
+    });
+  }
+});
 
 
