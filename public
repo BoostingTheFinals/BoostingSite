@@ -6,3 +6,14 @@
   <rect width='32' height='32' fill='#00c8ff'/>
   <text x='16' y='20' text-anchor='middle' fill='black' font-weight='bold' font-size='14' font-family='Arial'>TF</text>
 </svg>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://thefinalsboosting.com/</loc>
+    <lastmod>2025-08-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+
