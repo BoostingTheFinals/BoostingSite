@@ -26,14 +26,15 @@ body {
 
 .ui-scale {
   transform: scale(var(--ui-scale));
-  transform-origin: top center;   /* scales from the center, not left */
-  width: 100%;                    /* let it take full width */
-  display: flex;                  /* use flex to center child */
+  transform-origin: top center;
+  width: 100%;
+  display: flex;
   justify-content: center;
+  align-items: flex-start;  /* ⬅️ makes sure it sticks to the top */
 }
 
 .ui-scale > * {
-  width: calc(100% / var(--ui-scale)); /* expand inner content to keep layout */
+  width: calc(100% / var(--ui-scale));
 }
 
 /* Don’t shrink on small screens */
@@ -1969,6 +1970,7 @@ footer {
 body {
   padding-bottom: 0;
 }
+
 
 
 
