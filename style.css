@@ -21,7 +21,7 @@ body {
 
 :root {
   /* Adjust this number to shrink or enlarge the whole UI */
-  --ui-scale: 0.7; /* 85% of original size */
+  --ui-scale: 0.5; /* 85% of original size */
 }
 
 .ui-scale {
@@ -1964,6 +1964,7 @@ footer {
 body {
   padding-bottom: 0;
 }
+
 
 
 
