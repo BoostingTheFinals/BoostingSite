@@ -25,18 +25,17 @@ body {
 }
 
 .ui-scale {
-  transform: scale(var(--ui-scale));
+  position: absolute;        /* take it out of normal flow */
+  top: 0;
+  left: 50%;                 /* center horizontally */
+  transform: scale(var(--ui-scale)) translateX(-50%);
   transform-origin: top center;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;  /* ⬅️ makes sure it sticks to the top */
 }
 
 .ui-scale > * {
   width: calc(100% / var(--ui-scale));
 }
-
 /* Don’t shrink on small screens */
 @media (max-width: 768px) {
   :root { --ui-scale: 0.4; }
@@ -1970,6 +1969,7 @@ footer {
 body {
   padding-bottom: 0;
 }
+
 
 
 
