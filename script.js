@@ -1,33 +1,20 @@
-// Enhanced animated particles system with more coverage
 function createParticles() {
-  const particles = document.getElementById('particles');
-  if (!particles) return;
-  
-  // Clear existing particles
-  particles.innerHTML = '';
-  
-  // Significantly increase particle count for full coverage
-  const particleCount = window.innerWidth < 768 ? 40 : 80;
-  
-  for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    
-    // Random horizontal position across full width
-    particle.style.left = Math.random() * 100 + '%';
-    
-    // Stagger animation delays for continuous effect (longer cycle)
-    particle.style.animationDelay = Math.random() * 40 + 's';
-    
-    // Vary animation duration for more natural movement
-    const duration = Math.random() * 20 + 15; // 15-35 seconds
-    particle.style.animationDuration = duration + 's';
-    
-    // Add random opacity variation
-    particle.style.opacity = 0.3 + Math.random() * 0.7;
-    
-    particles.appendChild(particle);
-  }
+const particles = document.getElementById('particles');
+if (!particles) return;
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+
+particles.innerHTML = '';
+const particleCount = window.innerWidth < 768 ? 20 : 50; // reduced for perf
+for (let i = 0; i < particleCount; i++) {
+const p = document.createElement('div');
+p.className = 'particle';
+p.style.left = Math.random() * 100 + '%';
+p.style.animationDelay = Math.random() * 40 + 's';
+p.style.animationDuration = (Math.random() * 20 + 15) + 's';
+p.style.opacity = 0.3 + Math.random() * 0.7;
+particles.appendChild(p);
+}
 }
 
 // Create section-specific particles for enhanced effects
@@ -517,6 +504,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
 
 
 
