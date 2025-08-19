@@ -38,7 +38,7 @@ body {
 
 /* Don’t shrink on small screens */
 @media (max-width: 768px) {
-  :root { --ui-scale: 0.5; }
+  :root { --ui-scale: 0.4; }
 }
 
 @keyframes fadeIn {
@@ -1969,6 +1969,7 @@ footer {
 body {
   padding-bottom: 0;
 }
+
 
 
 
