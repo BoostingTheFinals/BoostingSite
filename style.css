@@ -1,44 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(
-    135deg,
-    #0a0a0a 0%,
-    #1a1a1a 50%,
-    #0d0d0d 100%
-  );
-  color: #f8fafc;
-  line-height: 1.7;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
 /* Reset & base */
 * {
   margin: 0; padding: 0; box-sizing: border-box;
 }
 
-:root {
-  /* Adjust this number to shrink or enlarge the whole UI */
-  --ui-scale: 0.5; /* 85% of original size */
+html {
+  scroll-behavior: smooth;
+  /* Scale the entire document to 80% */
+  zoom: 0.8;
+  -moz-transform: scale(0.8);
+  -moz-transform-origin: 0 0;
+  -webkit-transform: scale(0.8);
+  -webkit-transform-origin: 0 0;
+  transform: scale(0.8);
+  transform-origin: 0 0;
 }
 
-.ui-scale {
-  position: absolute;        /* take it out of normal flow */
-  top: 0;
-  left: 50%;                 /* center horizontally */
-  transform: scale(var(--ui-scale)) translateX(-50%);
-  transform-origin: top center;
-  width: 100%;
-}
-
-.ui-scale > * {
-  width: calc(100% / var(--ui-scale));
-}
-/* Don’t shrink on small screens */
-@media (max-width: 768px) {
-  :root { --ui-scale: 0.4; }
+/* Alternative scaling method for better browser compatibility */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
+  color: #f8fafc;
+  line-height: 1.7;
+  min-height: 100vh;
+  background-attachment: fixed;
+  animation: fadeIn 1s ease forwards;
+  overflow-x: hidden;
+  position: relative;
+  /* Additional scaling fallback */
+  width: 125%; /* 100% / 0.8 to compensate for scaling */
 }
 
 @keyframes fadeIn {
@@ -1969,15 +1960,5 @@ footer {
 body {
   padding-bottom: 0;
 }
-
-
-
-
-
-
-
-
-
-
 
 
