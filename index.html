@@ -54,25 +54,29 @@
   <!-- Animated background particles -->
   <div class="particles" id="particles"></div>
   
-  <header class="main-header">
-    <div class="nav-container">
-      <div class="logo">
-        <div class="logo-icon">TF</div>
-        <span>The Finals Boosting</span>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#team">Team</a>
-        <a href="#proof">Proof</a>
-        <a href="#process">Process</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact" class="cta">Get Started</a>
-      </nav>
-      <button class="mobile-menu-btn">☰</button>
-    </div>
-  </header>
+<header class="main-header" role="banner">
+<div class="nav-container">
+<div class="logo" aria-label="The Finals Boosting home">
+<div class="logo-icon" aria-hidden="true">TF</div>
+<span>The Finals Boosting</span>
+</div>
+
+
+<button class="mobile-menu-btn" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">☰</button>
+
+
+<nav id="primary-nav" aria-label="Primary">
+<a href="#about">About</a>
+<a href="#team">Team</a>
+<a href="#proof">Proof</a>
+<a href="#process">Process</a>
+<a href="#pricing">Pricing</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="#contact" class="cta">Get Started</a>
+</nav>
+</div>
+</header>
 
   <main class="container">
     <section class="hero fade-in">
@@ -1197,6 +1201,7 @@ Special: Would like live streaming option"></textarea>
   
 </body>
 </html>
+
 
 
 
