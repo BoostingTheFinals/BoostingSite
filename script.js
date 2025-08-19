@@ -1,20 +1,33 @@
+// Enhanced animated particles system with more coverage
 function createParticles() {
-const particles = document.getElementById('particles');
-if (!particles) return;
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-
-particles.innerHTML = '';
-const particleCount = window.innerWidth < 768 ? 20 : 50; // reduced for perf
-for (let i = 0; i < particleCount; i++) {
-const p = document.createElement('div');
-p.className = 'particle';
-p.style.left = Math.random() * 100 + '%';
-p.style.animationDelay = Math.random() * 40 + 's';
-p.style.animationDuration = (Math.random() * 20 + 15) + 's';
-p.style.opacity = 0.3 + Math.random() * 0.7;
-particles.appendChild(p);
-}
+  const particles = document.getElementById('particles');
+  if (!particles) return;
+  
+  // Clear existing particles
+  particles.innerHTML = '';
+  
+  // Significantly increase particle count for full coverage
+  const particleCount = window.innerWidth < 768 ? 40 : 80;
+  
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    // Random horizontal position across full width
+    particle.style.left = Math.random() * 100 + '%';
+    
+    // Stagger animation delays for continuous effect (longer cycle)
+    particle.style.animationDelay = Math.random() * 40 + 's';
+    
+    // Vary animation duration for more natural movement
+    const duration = Math.random() * 20 + 15; // 15-35 seconds
+    particle.style.animationDuration = duration + 's';
+    
+    // Add random opacity variation
+    particle.style.opacity = 0.3 + Math.random() * 0.7;
+    
+    particles.appendChild(particle);
+  }
 }
 
 // Create section-specific particles for enhanced effects
@@ -239,68 +252,51 @@ function initializeHeaderEffects() {
 
 // Pricing Calculator
 const blockPrices = [
-{ min: 0, max: 10000, price: 8 }, // Bronze 0–10k €8
-{ min: 10000, max: 20000, price: 20 }, // Silver 10–20k €20
-{ min: 20000, max: 30000, price: 40 }, // Gold 20–30k €40
-{ min: 30000, max: 40000, price: 75 }, // Diamond 30–40k €75
-{ min: 40000, max: 52000, price: 270 } // Ruby 40–52k €270
+  { min: 0, max: 10000, price: 8 },
+  { min: 10000, max: 20000, price: 18 },
+  { min: 20000, max: 30000, price: 40 },
+  { min: 30000, max: 40000, price: 75 },
+  { min: 40000, max: 52000, price: 280 },
 ];
 
-
-function getRankName(rs) {
-if (rs < 10) return 'Bronze 🌫️';
-if (rs < 20) return 'Silver 🪙';
-if (rs < 30) return 'Gold ⚪';
-if (rs < 40) return 'Diamond 💎';
-return 'Ruby ♦️';
-}
-
-
 function calculatePrice() {
-const currentEl = document.getElementById('currentRS');
-const desiredEl = document.getElementById('desiredRS');
-const result = document.getElementById('priceResult');
-const progressBar = document.getElementById('progressBar');
-if (!currentEl || !desiredEl || !result || !progressBar) return;
+  const currentInput = parseFloat(document.getElementById("currentRS").value);
+  const desiredInput = parseFloat(document.getElementById("desiredRS").value);
+  const result = document.getElementById("priceResult");
+  const progressBar = document.getElementById("progressBar");
 
+  if (!result) return;
 
-const currentInput = parseFloat(currentEl.value);
-const desiredInput = parseFloat(desiredEl.value);
+  if (
+    isNaN(currentInput) ||
+    isNaN(desiredInput) ||
+    currentInput >= desiredInput ||
+    currentInput < 0 ||
+    desiredInput > 52
+  ) {
+    result.innerHTML = `
+      <div style="font-size: 1.2rem; color: #f87171;">Please enter valid RS values</div>
+      <div style="font-size: 1rem; color: #64748b; margin-top: 0.5rem;">Current RS must be less than target RS (0-52 range)</div>
+    `;
+    progressBar.style.width = "0%";
+    return;
+  }
 
+  const current = currentInput * 1000;
+  const desired = desiredInput * 1000;
+  let total = 0;
 
-if (
-Number.isNaN(currentInput) ||
-Number.isNaN(desiredInput) ||
-currentInput >= desiredInput ||
-currentInput < 0 ||
-desiredInput > 52
-) {
-result.innerHTML = `
-<div style="font-size:1.1rem;color:#f87171;">Please enter valid RS values</div>
-<div style="font-size:.95rem;color:#94a3b8;">Current must be less than target (0–52)</div>
-`;
-progressBar.style.width = '0%';
-return;
-}
+  for (const block of blockPrices) {
+    const start = Math.max(current, block.min);
+    const end = Math.min(desired, block.max);
 
-
-const current = currentInput * 1000;
-const desired = desiredInput * 1000;
-
-
-let total = 0;
-for (const b of blockPrices) {
-const start = Math.max(current, b.min);
-const end = Math.min(desired, b.max);
-if (start < end) {
-const overlap = end - start;
-const size = b.max - b.min;
-total += b.price * (overlap / size);
-}
-}
-
-
-/
+    if (start < end) {
+      const overlap = end - start;
+      const blockSize = block.max - block.min;
+      const portion = overlap / blockSize;
+      total += block.price * portion;
+    }
+  }
 
   // Calculate discount for orders over €100
   const discount = total > 100 ? total * 0.2 : 0;
@@ -521,8 +517,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
-
 
 
 
