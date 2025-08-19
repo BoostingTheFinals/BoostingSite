@@ -239,51 +239,68 @@ function initializeHeaderEffects() {
 
 // Pricing Calculator
 const blockPrices = [
-  { min: 0, max: 10000, price: 8 },
-  { min: 10000, max: 20000, price: 18 },
-  { min: 20000, max: 30000, price: 40 },
-  { min: 30000, max: 40000, price: 75 },
-  { min: 40000, max: 52000, price: 280 },
+{ min: 0, max: 10000, price: 8 }, // Bronze 0–10k €8
+{ min: 10000, max: 20000, price: 20 }, // Silver 10–20k €20
+{ min: 20000, max: 30000, price: 40 }, // Gold 20–30k €40
+{ min: 30000, max: 40000, price: 75 }, // Diamond 30–40k €75
+{ min: 40000, max: 52000, price: 270 } // Ruby 40–52k €270
 ];
 
+
+function getRankName(rs) {
+if (rs < 10) return 'Bronze 🌫️';
+if (rs < 20) return 'Silver 🪙';
+if (rs < 30) return 'Gold ⚪';
+if (rs < 40) return 'Diamond 💎';
+return 'Ruby ♦️';
+}
+
+
 function calculatePrice() {
-  const currentInput = parseFloat(document.getElementById("currentRS").value);
-  const desiredInput = parseFloat(document.getElementById("desiredRS").value);
-  const result = document.getElementById("priceResult");
-  const progressBar = document.getElementById("progressBar");
+const currentEl = document.getElementById('currentRS');
+const desiredEl = document.getElementById('desiredRS');
+const result = document.getElementById('priceResult');
+const progressBar = document.getElementById('progressBar');
+if (!currentEl || !desiredEl || !result || !progressBar) return;
 
-  if (!result) return;
 
-  if (
-    isNaN(currentInput) ||
-    isNaN(desiredInput) ||
-    currentInput >= desiredInput ||
-    currentInput < 0 ||
-    desiredInput > 52
-  ) {
-    result.innerHTML = `
-      <div style="font-size: 1.2rem; color: #f87171;">Please enter valid RS values</div>
-      <div style="font-size: 1rem; color: #64748b; margin-top: 0.5rem;">Current RS must be less than target RS (0-52 range)</div>
-    `;
-    progressBar.style.width = "0%";
-    return;
-  }
+const currentInput = parseFloat(currentEl.value);
+const desiredInput = parseFloat(desiredEl.value);
 
-  const current = currentInput * 1000;
-  const desired = desiredInput * 1000;
-  let total = 0;
 
-  for (const block of blockPrices) {
-    const start = Math.max(current, block.min);
-    const end = Math.min(desired, block.max);
+if (
+Number.isNaN(currentInput) ||
+Number.isNaN(desiredInput) ||
+currentInput >= desiredInput ||
+currentInput < 0 ||
+desiredInput > 52
+) {
+result.innerHTML = `
+<div style="font-size:1.1rem;color:#f87171;">Please enter valid RS values</div>
+<div style="font-size:.95rem;color:#94a3b8;">Current must be less than target (0–52)</div>
+`;
+progressBar.style.width = '0%';
+return;
+}
 
-    if (start < end) {
-      const overlap = end - start;
-      const blockSize = block.max - block.min;
-      const portion = overlap / blockSize;
-      total += block.price * portion;
-    }
-  }
+
+const current = currentInput * 1000;
+const desired = desiredInput * 1000;
+
+
+let total = 0;
+for (const b of blockPrices) {
+const start = Math.max(current, b.min);
+const end = Math.min(desired, b.max);
+if (start < end) {
+const overlap = end - start;
+const size = b.max - b.min;
+total += b.price * (overlap / size);
+}
+}
+
+
+/
 
   // Calculate discount for orders over €100
   const discount = total > 100 ? total * 0.2 : 0;
@@ -504,6 +521,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
 
 
 
