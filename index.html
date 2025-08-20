@@ -1314,6 +1314,131 @@
                 gap: 1.5rem;
             }
         }
+        .site-footer {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 60px 20px 30px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-column p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 8px 0;
+}
+
+.footer-column ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #00c6ff;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 15px;
+}
+.site-footer {
+  background: rgba(0, 0, 0, 0.35); /* transparent dark */
+  backdrop-filter: blur(6px);      /* glass effect */
+  color: #fff;
+  padding: 60px 20px 30px;
+  text-align: left;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0, 198, 255, 0.25); /* cyan accent line */
+  box-shadow: 0 -4px 20px rgba(0, 198, 255, 0.15); /* subtle glow on top */
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #00c6ff; /* cyan accent */
+}
+
+.footer-column p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin: 8px 0;
+}
+
+.footer-column ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #00c6ff;
+  text-shadow: 0 0 8px rgba(0,198,255,0.8);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 15px;
+}
+.site-footer {
+  background: none !important;   /* no background at all */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  color: #fff;
+  padding: 60px 20px 30px;
+  text-align: left;
+  font-size: 0.95rem;
+  border-top: none;              /* remove line */
+  box-shadow: none;              /* remove glow */
+}
+
+
     </style>
 </head>
 <body>
@@ -1615,11 +1740,46 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; Manual boosting by trusted professionals. Secure, reliable, and tailored to your desired rank. Prices in EUR.</p>
-        </div>
-    </footer>
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <div class="footer-column">
+      <h3>The Finals Boosting</h3>
+      <p>Professional rank boosting services for The Finals. Fast, secure, and reliable boosting with guaranteed results.</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="#services">Account Driver</a></li>
+        <li><a href="#services">Selfplay Boost</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Payment Methods</h3>
+      <ul>
+        <li>PayPal</li>
+        <li>Wise</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© Manual boosting by trusted professionals. Secure, reliable, and tailored to your desired rank. Prices in EUR.</p>
+  </div>
+</footer>
+
+
 
     <script>
         // Supabase configuration
@@ -1809,3 +1969,4 @@
     </script>
 </body>
 </html>
+
