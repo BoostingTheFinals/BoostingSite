@@ -95,11 +95,12 @@
         // Step 2: add Wise fee
         finalEUR = eurNeeded * (1 + wiseFee);
 
-        document.getElementById("final-price").innerHTML =
-          `Wise Final Price: €${finalEUR.toFixed(2)}<br>
-           <a href="https://wise.com/pay/me/zetenyz" 
-              target="_blank" class="pay-link">Pay Now</a>`;
-      }
+          document.getElementById("final-price").innerHTML =
+    `Wise Final Price: €${finalEUR.toFixed(2)}<br>
+     <a href="https://wise.com/pay/me/zetenyz?amount=${finalEUR.toFixed(2)}&currency=EUR" 
+        target="_blank" class="pay-link">Pay with Wise</a><br>
+     <small style="color:#ccc;">⚠️ Please don’t change the amount in Wise.</small>`;
+}
     }
   </script>
 </body>
