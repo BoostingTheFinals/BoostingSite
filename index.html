@@ -1437,6 +1437,39 @@
   border-top: none;              /* remove line */
   box-shadow: none;              /* remove glow */
 }
+/* Rank text colors */
+.bronze {
+  color: #cd7f32; /* bronze */
+  text-shadow: 0 0 5px rgba(205,127,50,0.6);
+}
+.silver {
+  color: #d9d9d9; /* lighter silver */
+  text-shadow: 0 0 6px rgba(217,217,217,0.8);
+}
+.gold {
+  color: #ffd700; /* gold */
+  text-shadow: 0 0 5px rgba(255,215,0,0.6);
+}
+.platinum {
+  color: #a9a9a9; /* darker grey */
+  text-shadow: 0 0 5px rgba(169,169,169,0.6);
+}
+
+.diamond {
+  color: #00cfff; /* diamond blue */
+  text-shadow: 0 0 5px rgba(0,207,255,0.6);
+}
+.ruby {
+  color: #e0115f; /* ruby red */
+  text-shadow: 0 0 5px rgba(224,17,95,0.6);
+}
+.pricing-tier {
+  text-align: center;        /* centers text horizontally */
+  display: flex;             /* enable flexbox */
+  flex-direction: column;    /* stack content vertically */
+  align-items: center;       /* center items horizontally */
+  justify-content: center;   /* optional: center vertically if card has fixed height */
+}
 
 
     </style>
@@ -1521,7 +1554,7 @@
                 <div class="pricing-content active" id="account-driver">
                     <div class="pricing-grid fade-in">
                         <div class="pricing-tier">
-                            <div class="tier-rank">Bronze → Silver</div>
+                            <div class="tier-rank"><span class="bronze">Bronze</span> → <span class="silver">Silver</span></div>
                             <div class="tier-price"><span class="currency">€</span>10</div>
                             <ul class="tier-features">
                                 <li>1 day completion</li>
@@ -1531,7 +1564,7 @@
                             <a href="checkout.html?service=Bronze%20to%20Silver&huf=3900" class="buy-btn">Buy Now</a>
                         </div>
                         <div class="pricing-tier">
-                            <div class="tier-rank">Silver → Gold</div>
+                            <div class="tier-rank"><span class="silver">Silver</span> → <span class="gold">Gold</span></div>
                             <div class="tier-price"><span class="currency">€</span>20</div>
                             <ul class="tier-features">
                                 <li>1 day completion</li>
@@ -1541,7 +1574,7 @@
                             <a href="checkout.html?service=Silver%20to%20Gold&huf=7800" class="buy-btn">Buy Now</a>
                         </div>
                         <div class="pricing-tier">
-                            <div class="tier-rank">Gold → Platinum</div>
+                             <div class="tier-rank"><span class="gold">Gold</span> → <span class="platinum">Platinum</span></div>
                             <div class="tier-price"><span class="currency">€</span>45</div>
                             <ul class="tier-features">
                                 <li>1-2 days completion</li>
@@ -1551,7 +1584,7 @@
                             <a href="checkout.html?service=Gold%20to%20Platinum&huf=17550" class="buy-btn">Buy Now</a>
                         </div>
                         <div class="pricing-tier featured">
-                            <div class="tier-rank">Platinum → Diamond</div>
+                            <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
                             <div class="tier-price"><span class="currency">€</span>75</div>
                             <ul class="tier-features">
                                 <li>2-3 days completion</li>
@@ -1561,7 +1594,7 @@
                             <a href="checkout.html?service=Platinum%20to%20Diamond&huf=29250" class="buy-btn">Buy Now</a>
                         </div>
                         <div class="pricing-tier">
-                            <div class="tier-rank">Diamond → Ruby</div>
+                            <div class="tier-rank"><span class="diamond">Diamond</span> → <span class="ruby">Ruby</span></div>
                             <div class="tier-price"><span class="currency">€</span>270</div>
                             <ul class="tier-features">
                                 <li>4-8 days completion</li>
@@ -1577,7 +1610,7 @@
                 <div class="pricing-content" id="selfplay">
                     <div class="pricing-grid fade-in">
                         <div class="pricing-tier">
-                            <div class="tier-rank">Bronze → Silver</div>
+                            <div class="tier-rank"><span class="bronze">Bronze</span> → <span class="silver">Silver</span></div>
                             <div class="tier-price"><span class="currency">€</span>15</div>
                             <ul class="tier-features">
                                 <li>1 day completion</li>
@@ -1587,7 +1620,7 @@
                             <a href="checkout.html?service=Bronze%20to%20Silver%20(Selfplay)&huf=5850" class="buy-btn">Buy Now</a>
                         </div>
                         <div class="pricing-tier">
-                            <div class="tier-rank">Silver → Gold</div>
+                            <div class="tier-rank"><span class="silver">Silver</span> → <span class="gold">Gold</span></div>
                             <div class="tier-price"><span class="currency">€</span>30</div>
                             <ul class="tier-features">
                                 <li>1-2 days completion</li>
@@ -1597,7 +1630,7 @@
                             <a href="checkout.html?service=Silver%20to%20Gold%20(Selfplay)&huf=11700" class="buy-btn">Buy Now</a>
                         </div>
                         <div class="pricing-tier">
-                            <div class="tier-rank">Gold → Platinum</div>
+                            <div class="tier-rank"><span class="gold">Gold</span> → <span class="platinum">Platinum</span></div>
                             <div class="tier-price"><span class="currency">€</span>65</div>
                             <ul class="tier-features">
                                 <li>3 days completion</li>
@@ -1607,7 +1640,7 @@
                             <a href="checkout.html?service=Gold%20to%20Platinum%20(Selfplay)&huf=25350" class="buy-btn">Buy Now</a>
                         </div>
                         <div class="pricing-tier">
-                            <div class="tier-rank">Platinum → Diamond</div>
+                            <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
                             <div class="tier-price"><span class="currency">€</span>110</div>
                             <ul class="tier-features">
                                 <li>3-5 days completion</li>
@@ -1617,7 +1650,7 @@
                             <a href="checkout.html?service=Platinum%20to%20Diamond%20(Selfplay)&huf=42900" class="buy-btn">Buy Now</a>
                         </div>
                         <div class="pricing-tier">
-                            <div class="tier-rank">Diamond → Ruby</div>
+                            <div class="tier-rank"><span class="diamond">Diamond</span> → <span class="ruby">Ruby</span></div>
                             <div class="tier-price"><span class="currency">€</span>450</div>
                             <ul class="tier-features">
                                 <li>8-14 days completion</li>
@@ -1969,5 +2002,6 @@
     </script>
 </body>
 </html>
+
 
 
