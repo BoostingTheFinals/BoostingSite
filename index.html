@@ -2231,6 +2231,14 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 .services-header {
   margin-bottom: 8rem; /* increased from 6rem */
 }
+    .pricing-toggle {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 </style>
 
 <script>
@@ -2692,4 +2700,5 @@ document.getElementById("tier-price").innerText = "€" + displayPrice;
     
 </body>
 </html>
+
 
