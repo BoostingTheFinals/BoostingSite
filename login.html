@@ -2,137 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | The Finals Boosting</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Checkout</title>
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #0a0a0a;
-      font-family: Arial, sans-serif;
+    body { 
+      background: #0d0d0d; 
+      color: white; 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      padding: 40px; 
+    }
+    h1 { 
+      color: #00ffcc; 
+      margin-bottom: 20px; 
+    }
+    .payment-option {
+      display: inline-block;
+      margin: 20px;
+      padding: 20px 30px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00ffcc, #0077ff);
       color: #fff;
-    }
-    .login-container {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 255, 204, 0.4);
-      border-radius: 15px;
-      padding: 40px;
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
-    }
-    .login-container h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      background: linear-gradient(90deg, #00ffcc, #0077ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .login-container p {
-      margin-bottom: 25px;
-      color: rgba(255, 255, 255, 0.8);
-    }
-    .login-container input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-    }
-    .login-container input:focus {
-      box-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
-    }
-    .login-container button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 25px;
-      font-size: 1rem;
       font-weight: bold;
-      color: #fff;
       cursor: pointer;
-      background: linear-gradient(90deg, #00ffcc, #0077ff);
-      transition: all 0.3s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .login-container button:hover {
+    .payment-option:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+      box-shadow: 0 0 20px rgba(0,255,204,0.7);
     }
-    #orderResult {
-      margin-top: 20px;
-      text-align: left;
-      font-size: 0.9rem;
-      line-height: 1.4;
+    #final-price { 
+      margin-top: 30px; 
+      font-size: 1.5rem; 
+      font-weight: bold; 
+    }
+    a.pay-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #00ffcc;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    a.pay-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+  <h1>Checkout</h1>
+  <p id="service-name">Service: ...</p>
 
-  <div class="login-container">
-    <h2>Login / Order Tracking</h2>
-    <p>Enter your <strong>Order ID</strong> below to check your boost progress.</p>
-
-    <form id="trackForm">
-      <input type="text" id="orderId" placeholder="Order ID" required>
-      <button type="submit">Check Status</button>
-    </form>
-
-    <div id="orderResult"></div>
+  <div>
+    <div class="payment-option" onclick="selectPayment('paypal')">Pay with PayPal</div>
+    <div class="payment-option" onclick="selectPayment('wise')">Pay with Wise</div>
   </div>
 
-  <!-- Supabase client -->
-<script src="https://unpkg.com/@supabase/supabase-js"></script>
-<script>
-  const SUPABASE_URL = "https://niafcsftujniaubkhejm.supabase.co"; 
-  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pYWZjc2Z0dWpuaWF1YmtoZWptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU2MTkwOTYsImV4cCI6MjA3MTE5NTA5Nn0.AKm5911zzcctrfzSDWgm6M-gih5dTXbzOO4ZwGA9mu4";
+  <div id="final-price">Select a payment method</div>
 
-  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  <script>
+    // Read params from URL
+    const params = new URLSearchParams(window.location.search);
+    const serviceName = params.get("service");
+    const targetHUF = Number(params.get("huf"));
 
-  document.getElementById("trackForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
+    document.getElementById("service-name").innerText = "Service: " + serviceName;
 
-    const orderId = document.getElementById("orderId").value.trim();
-    const resultDiv = document.getElementById("orderResult");
+    // Settings
+    const fxRateMid = 390; // FIXED RATE (update manually if needed)
+    const paypalFee = 0.034;   // PayPal Hungary: 3.4%
+    const paypalFixed = 0.35;  // Fixed fee
+    const paypalFxMargin = 0.035; // PayPal’s weaker FX rate (~3.5%)
+    const wiseFee = 0.01; // Wise ~1%
 
-    if (!orderId) {
-      resultDiv.innerHTML = `<span style="color:#ff4d4d;">⚠️ Please enter an Order ID or Email.</span>`;
-      return;
+    function selectPayment(method) {
+      let finalEUR;
+
+      if (method === 'paypal') {
+        // Step 1: convert HUF → EUR using PayPal’s weaker FX
+        let eurNeeded = targetHUF / (fxRateMid * (1 - paypalFxMargin));
+
+        // Step 2: add PayPal fees
+        finalEUR = (eurNeeded + paypalFixed) / (1 - paypalFee);
+
+        document.getElementById("final-price").innerHTML =
+          `PayPal Final Price: €${finalEUR.toFixed(2)}<br>
+           <a href="https://paypal.me/BoostingTheFinals/${finalEUR.toFixed(2)}" 
+              target="_blank" class="pay-link">Pay Now</a>`;
+      } 
+      else if (method === 'wise') {
+        // Step 1: convert HUF → EUR at mid-market
+        let eurNeeded = targetHUF / fxRateMid;
+
+        // Step 2: add Wise fee
+        finalEUR = eurNeeded * (1 + wiseFee);
+
+        document.getElementById("final-price").innerHTML =
+          `Wise Final Price: €${finalEUR.toFixed(2)}<br>
+           <a href="https://wise.com/pay/YOURWISE" 
+              target="_blank" class="pay-link">Pay Now</a>`;
+      }
     }
-
-    console.log("DEBUG searching for:", orderId);
-
-    // Search by order_id OR email
-    const { data, error } = await supabase
-      .from("orders")
-      .select("order_id, email, package, status, eta")
-      .or(`order_id.eq.${orderId},email.eq.${orderId}`)
-      .maybeSingle();
-
-    console.log("DEBUG result:", data);
-    console.log("DEBUG error:", error);
-
-    if (error || !data) {
-      resultDiv.innerHTML = `<span style="color:#ff4d4d;">❌ Order not found.</span>`;
-      return;
-    }
-
-    resultDiv.innerHTML = `
-      <p><strong>Order ID:</strong> ${data.order_id}</p>
-      <p><strong>Email:</strong> ${data.email}</p>
-      <p><strong>Package:</strong> ${data.package || "—"}</p>
-      <p><strong>Status:</strong> ${data.status}</p>
-      <p><strong>ETA:</strong> ${data.eta}</p>
-    `;
-  });
-</script>
-
-
+  </script>
 </body>
 </html>
