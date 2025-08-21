@@ -1837,6 +1837,35 @@ body {
                 </div>
             </div>
         </section>
+        <section class="order-calculator" id="calculator">
+    <div class="container">
+        <div class="calculator-header fade-in">
+            <h2 style="background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc); background-size: 300% 300%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; font-weight: 700; animation: gradient-flow 5s ease infinite; font-size: 1.5rem; margin-bottom: 2rem;">PRICE CALCULATOR</h2>
+        </div>
+
+        <div class="calculator-box fade-in">
+            <div class="calc-toggle">
+                <button class="calc-option active" data-type="driver">Account Driver</button>
+                <button class="calc-option" data-type="selfplay">Selfplay</button>
+            </div>
+
+<div class="calc-select">
+    <label for="startRank">Current Rank: <span id="startValue">0</span></label>
+    <input type="range" id="startRank" min="0" max="51000" value="0" step="1000">
+</div>
+
+<div class="calc-select">
+    <label for="endRank">Target Rank: <span id="endValue">10000</span></label>
+    <input type="range" id="endRank" min="1000" max="52000" value="10000" step="1000">
+</div>
+            <div class="calc-result">
+                <div id="calcResult">✅ Total Price: €10</div>
+            </div>
+
+            <button class="calc-btn" onclick="window.location.href='#contact'">Order Now</button>
+        </div>
+    </div>
+</section>
 
         <section class="process" id="process">
             <div class="container">
@@ -2215,10 +2244,113 @@ body {
                 calculatePrice(); // Initial calculation
             }
         });
-        
+        // Price Calculator - Fixed to match actual pricing
+const rankTiers = {
+    driver: {
+        'Bronze to Silver': { start: 0, end: 10000, price: 10 },
+        'Silver to Gold': { start: 10000, end: 20000, price: 20 },
+        'Gold to Platinum': { start: 20000, end: 30000, price: 45 },
+        'Platinum to Diamond': { start: 30000, end: 40000, price: 75 },
+        'Diamond to Ruby': { start: 40000, end: 52000, price: 270 }
+    },
+    selfplay: {
+        'Bronze to Silver': { start: 0, end: 10000, price: 15 },
+        'Silver to Gold': { start: 10000, end: 20000, price: 30 },
+        'Gold to Platinum': { start: 20000, end: 30000, price: 65 },
+        'Platinum to Diamond': { start: 30000, end: 40000, price: 110 },
+        'Diamond to Ruby': { start: 40000, end: 52000, price: 450 }
+    }
+};
+
+let calcSelectedType = "driver";
+
+// Calculator toggle handler
+document.querySelectorAll(".calc-option").forEach(option => {
+    option.addEventListener("click", () => {
+        document.querySelectorAll(".calc-option").forEach(opt => opt.classList.remove("active"));
+        option.classList.add("active");
+        calcSelectedType = option.getAttribute("data-type");
+        calculatePrice();
+    });
+});
+
+function getRankName(value) {
+    if (value < 10000) return "Bronze";
+    if (value < 20000) return "Silver";
+    if (value < 30000) return "Gold";
+    if (value < 40000) return "Platinum";
+    if (value < 52000) return "Diamond";
+    return "Ruby";
+}
+
+function calculatePrice() {
+    const start = parseInt(document.getElementById("startRank").value);
+    const end = parseInt(document.getElementById("endRank").value);
+    
+    // Update display values
+    document.getElementById("startValue").textContent = `${start.toLocaleString()} (${getRankName(start)})`;
+    document.getElementById("endValue").textContent = `${end.toLocaleString()} (${getRankName(end)})`;
+    
+    if (end <= start) {
+        document.getElementById("calcResult").innerHTML = "❌ Target rank must be higher than current rank";
+        return;
+    }
+    
+    let total = 0;
+    const tiers = rankTiers[calcSelectedType];
+    
+    // Calculate price by adding each tier that the boost crosses
+    Object.values(tiers).forEach(tier => {
+        if (start < tier.end && end > tier.start) {
+            // This tier is crossed by the boost
+            const boostStart = Math.max(start, tier.start);
+            const boostEnd = Math.min(end, tier.end);
+            
+            if (boostEnd > boostStart) {
+                // Calculate what portion of this tier is being boosted
+                const tierTotal = tier.end - tier.start;
+                const tierBoosted = boostEnd - boostStart;
+                const tierPrice = (tierBoosted / tierTotal) * tier.price;
+                total += tierPrice;
+            }
+        }
+    });
+    
+    document.getElementById("calcResult").innerHTML = `✅ Total Price: <span style="color: #00ffcc; font-weight: bold;">€${Math.round(total)}</span>`;
+}
+
+// Initialize calculator when DOM is loaded
+if (document.getElementById("startRank")) {
+    document.getElementById("startRank").addEventListener("input", calculatePrice);
+    document.getElementById("endRank").addEventListener("input", calculatePrice);
+    calculatePrice();
+}
+// Simple slider management
+function handleSliderChange() {
+    const startSlider = document.getElementById("startRank");
+    const endSlider = document.getElementById("endRank");
+    
+    const startVal = parseInt(startSlider.value);
+    const endVal = parseInt(endSlider.value);
+    
+    // If end becomes lower than start, adjust it
+    if (endVal <= startVal) {
+        endSlider.value = Math.min(startVal + 1000, 52000);
+    }
+    
+    calculatePrice();
+}
+
+// Simple event listeners
+if (document.getElementById("startRank")) {
+    document.getElementById("startRank").addEventListener("input", handleSliderChange);
+    document.getElementById("endRank").addEventListener("input", calculatePrice);
+    calculatePrice();
+}
     </script>
 </body>
 </html>
+
 
 
 
