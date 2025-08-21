@@ -1475,6 +1475,47 @@ body {
   background: radial-gradient(circle at top, #00111a, #000);
   background-attachment: fixed;
 }
+.pricing-tier {
+  transition: transform 0.08s ease, box-shadow 0.1s ease; /* faster */
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.pricing-tier:hover {
+  box-shadow: 0 25px 50px rgba(0, 255, 204, 0.5),
+              0 0 40px rgba(0, 119, 255, 0.7);
+}
+
+.discord-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.7),
+              0 0 40px rgba(0, 119, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 9999;
+}
+
+.discord-btn img {
+  width: 32px;
+  height: 32px;
+  filter: invert(1) drop-shadow(0 0 4px #00eaff);
+}
+
+.discord-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(0, 234, 255, 0.9),
+              0 0 50px rgba(0, 119, 255, 0.8);
+}
+
+
 
     </style>
 </head>
@@ -1815,10 +1856,37 @@ body {
     <p>© Manual boosting by trusted professionals. Secure, reliable, and tailored to your desired rank. Prices in EUR.</p>
   </div>
 </footer>
+<a href="https://discord.gg/uCthWEWbay" target="_blank" class="discord-btn">
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord">
+</a>
 
 
 
     <script>
+
+  document.querySelectorAll('.pricing-tier').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // make tilt stronger (+20 instead of +10)
+      const rotateX = ((y - centerY) / centerY) * 20; 
+      const rotateY = ((x - centerX) / centerX) * 20; 
+
+      card.style.transform = `perspective(800px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.08)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = "perspective(800px) rotateX(0) rotateY(0) scale(1)";
+    });
+  });
+
+
+
+
         // Supabase configuration
         const SUPABASE_URL = "https://niafcsftujniaubkhejm.supabase.co";
         const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5pYWZjc2Z0dWpuaWF1YmtoZWptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU2MTkwOTYsImV4cCI6MjA3MTE5NTA5Nn0.AKm5911zzcctrfzSDWgm6M-gih5dTXbzOO4ZwGA9mu4";
@@ -2003,9 +2071,11 @@ body {
                 calculatePrice(); // Initial calculation
             }
         });
+        
     </script>
 </body>
 </html>
+
 
 
 
