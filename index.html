@@ -1899,6 +1899,27 @@ input[type="range"]::-moz-range-thumb:hover {
 input[type="range"]:focus {
     box-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
 }
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.hero-content .highlight {
+  font-weight: 600;
+  background: linear-gradient(90deg, #00f7ff, #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
     </style>
 </head>
 <body>
@@ -1934,15 +1955,22 @@ input[type="range"]:focus {
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Boosting excellence with speed and precision.</h1>
-                    <p>Professional The Finals boosting services with 99.9% success rate. Get your dream rank with our elite team of top-tier players. Safe, fast, and guaranteed results.</p>
-                    <a href="#contact" class="btn">Order Now</a>
-                </div>
-            </div>
-        </section>
+       <section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>
+        Boosting excellence with <span class="highlight">speed</span> and <span class="highlight">precision</span>.
+      </h1>
+      <p>
+        Professional The Finals boosting services with <span class="highlight">99.9% success rate</span>. 
+        Get your dream rank with our elite team of top-tier players. 
+        Safe, fast, and <span class="highlight">guaranteed results</span>.
+      </p>
+      <a href="#contact" class="btn">Order Now</a>
+    </div>
+  </div>
+</section>
+
 
         <section class="services" id="services">
             <div class="container">
