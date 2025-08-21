@@ -1645,7 +1645,260 @@ body {
   width: 90%;  /* same scaling as PayPal */
   height: auto;
 }
+/* Price Calculator Title Styling */
+.calculator-header h2 {
+    position: relative;
+    padding-bottom: 8px;
+}
 
+.calculator-header h2::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+    background-size: 300% 300%;
+    animation: gradient-flow 5s ease infinite;
+    transition: transform 0.4s ease;
+    border-radius: 1px;
+}
+
+.calculator-header h2:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Enhanced calc-option styling to match other pills */
+.calc-option {
+    background: #111;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.4);
+    padding: 12px 32px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    min-width: 160px;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.calc-option::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+}
+
+.calc-option:hover {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 255, 204, 0.2);
+}
+
+.calc-option:hover::before {
+    left: 125%;
+}
+
+.calc-option.active {
+    background: linear-gradient(135deg, #00ffcc, #0077ff);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.4),
+                0 0 40px rgba(0, 119, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.calc-option.active::before {
+    background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+}
+
+.calc-option.active:hover::before {
+    left: 125%;
+}
+
+/* Enhanced calc-btn styling */
+.calc-btn {
+    background: linear-gradient(90deg, #00ffcc, #0077ff);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+    position: relative;
+    overflow: hidden;
+    animation: pulse 3.5s infinite ease-in-out;
+}
+
+.calc-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+}
+
+.calc-btn:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+    background: linear-gradient(90deg, #00e6b8, #0066dd);
+}
+
+.calc-btn:hover::before {
+    left: 125%;
+}
+
+@keyframes pulse {
+    0%   { box-shadow: 0 0 15px rgba(0, 255, 204, 0.4); }
+    50%  { box-shadow: 0 0 25px rgba(0, 255, 204, 0.7); }
+    100% { box-shadow: 0 0 15px rgba(0, 255, 204, 0.4); }
+}
+/* Cyan slider styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    margin: 15px 0;
+}
+
+/* Webkit browsers (Chrome, Safari) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00ffcc, #0077ff);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.9);
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00ffcc, #0077ff);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.9);
+}
+
+/* Track styling for filled portion */
+input[type="range"]::-webkit-slider-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+}
+
+/* Add glow effect to slider track */
+input[type="range"]:focus {
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
+}
+/* Enhanced slider styling with fill */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+
+/* Remove the track styling that conflicts with our fill */
+input[type="range"]::-webkit-slider-track {
+    background: transparent;
+}
+
+input[type="range"]::-moz-range-track {
+    background: transparent;
+    border: none;
+}
+
+/* Keep the thumb styling the same */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00ffcc, #0077ff);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.9);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00ffcc, #0077ff);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.9);
+}
+
+input[type="range"]:focus {
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
+}
     </style>
 </head>
 <body>
@@ -2338,13 +2591,35 @@ function handleSliderChange() {
         endSlider.value = Math.min(startVal + 1000, 52000);
     }
     
+    updateSliderFill(startSlider);
+    updateSliderFill(endSlider);
     calculatePrice();
 }
 
-// Simple event listeners
+// Update slider fill effect
+function updateSliderFill(slider) {
+    const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+    slider.style.background = `linear-gradient(to right, 
+        #00ffcc 0%, 
+        #0077ff ${value}%, 
+        rgba(255, 255, 255, 0.1) ${value}%, 
+        rgba(255, 255, 255, 0.1) 100%)`;
+}
+
+// Initialize sliders
 if (document.getElementById("startRank")) {
-    document.getElementById("startRank").addEventListener("input", handleSliderChange);
-    document.getElementById("endRank").addEventListener("input", calculatePrice);
+    const startSlider = document.getElementById("startRank");
+    const endSlider = document.getElementById("endRank");
+    
+    startSlider.addEventListener("input", handleSliderChange);
+    endSlider.addEventListener("input", () => {
+        updateSliderFill(endSlider);
+        calculatePrice();
+    });
+    
+    // Initial setup
+    updateSliderFill(startSlider);
+    updateSliderFill(endSlider);
     calculatePrice();
 }
     </script>
