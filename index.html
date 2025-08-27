@@ -3031,6 +3031,61 @@ input[type="range"]:focus {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+/* Unified Section Titles */
+.services-header h2,
+.pricing-header h2,
+.process-header h2,
+.faq-header h2,
+.calculator-header h2,
+.contact h2 {
+  font-size: 2rem; /* consistent size */
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease infinite;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+/* Decorative underline hover effect */
+.services-header h2::after,
+.pricing-header h2::after,
+.process-header h2::after,
+.faq-header h2::after,
+.calculator-header h2::after,
+.contact h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  animation: gradient-flow 5s ease infinite;
+  transition: transform 0.4s ease;
+  border-radius: 1px;
+}
+
+.services-header h2:hover::after,
+.pricing-header h2:hover::after,
+.process-header h2:hover::after,
+.faq-header h2:hover::after,
+.calculator-header h2:hover::after,
+.contact h2:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Gradient flow animation */
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
     </style>
 </head>
@@ -3358,7 +3413,7 @@ input[type="range"]:focus {
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer" id="faq2" role="region" aria-labelledby="faq2-label">
-                            <p>Account Driver works if your console account is linked to Steam. Selfplay is available on all platforms.</p>
+                            <p></p>
                         </div>
                     </div>
 
@@ -3788,7 +3843,6 @@ if (document.getElementById("startRank")) {
     </script>
 </body>
 </html>
-
 
 
 
