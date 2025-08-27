@@ -2937,6 +2937,101 @@ input[type="range"]:focus {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
+        /* FAQ Styling */
+.faq {
+  padding: 8rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease infinite;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 255, 204, 0.15),
+              0 12px 40px rgba(0, 119, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00ffcc;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgba(0,255,204,0.05), rgba(0,119,255,0.05));
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #ffffff;
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #00ffcc;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+  color: #0077ff;
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+}
+
+.faq-answer.open {
+  max-height: 500px;
+  opacity: 1;
+  padding: 1rem 1.5rem;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
     </style>
 </head>
 <body>
