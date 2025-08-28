@@ -3223,6 +3223,63 @@ input[type="range"]:focus {
     #6e6e6e   /* steel tone */
   );
 }
+.section-header h2 {
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 2rem;
+  animation: gradient-flow 5s ease infinite;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* Underline animation (glow effect) */
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  animation: gradient-flow 5s ease infinite;
+  transition: transform 0.4s ease;
+  border-radius: 1px;
+}
+
+.section-header h2:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Gradient animation */
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.section-header {
+  text-align: center;  /* centers the heading */
+  margin-bottom: 4rem; /* optional: spacing below */
+}
+
+.section-header h2 {
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 2rem;
+  animation: gradient-flow 5s ease infinite;
+  position: relative;
+  padding-bottom: 8px;
+  margin: 0 auto; /* makes inline-block stay centered */
+}
 
     </style>
 </head>
@@ -3278,27 +3335,7 @@ input[type="range"]:focus {
 </section>
 
 
-        <section class="services" id="services">
-            <div class="container">
-                <div class="services-header fade-in">
-                    <h2>SERVICES</h2>
-                </div>
-                <div class="services-grid">
-                    <div class="service fade-in">
-                        <div class="service-icon">🎮</div>
-                        <div class="service-number">Boosted by Pros</div>
-                        <h3>Account Driver</h3>
-                        <p>Account Driver is our premium boosting option where a trusted professional plays on your account to secure your desired rank. For safety, we use AnyDesk for secure remote access, ensuring your personal information stays protected. To guarantee transparency, both you and the booster stay in a live Discord call, so you can follow progress in real time and feel confident everything is handled smoothly and discreetly.</p>
-                    </div>
-                    <div class="service fade-in">
-                        <div class="service-icon">👥</div>
-                        <div class="service-number">Play with Pros</div>
-                        <h3>Selfplay</h3>
-                        <p>Selfplay is our boosting option where you play alongside two professional players. With expert support and coordinated gameplay, you'll achieve higher win rates and smoothly reach your desired rank, all while maintaining full control of your account.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="services" id="services"> <div class="container"> <div class="section-header fade-in"> <h2>Our Services</h2> </div> <div class="services-grid"> <div class="service fade-in"> <div class="service-icon"> <i class="fas fa-gamepad"></i> </div> <h3>Account Driver</h3> <p>Professional player takes control of your account using secure remote access. Complete transparency with live Discord monitoring. Safe, fast, and efficient rank progression.</p> </div> <div class="service fade-in"> <div class="service-icon"> <i class="fas fa-users"></i> </div> <h3>Selfplay Boost</h3> <p>Play alongside two professional players for coordinated team gameplay. Maintain full control of your account while achieving higher win rates and smooth rank progression.</p> </div> </div> </div> </section>
 
         <section class="pricing" id="pricing">
             <div class="container">
