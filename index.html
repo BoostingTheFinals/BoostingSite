@@ -3136,25 +3136,6 @@ input[type="range"]:focus {
     gap: 10px;
 }
 
-.most-popular-label {
-    background: linear-gradient(90deg, #00ffcc, #0077ff);
-    color: #fff;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 20px;
-    text-transform: uppercase;
-    box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
-    letter-spacing: 1px;
-    text-align: center;
-    animation: glowPulse 2s infinite;
-}
-
-@keyframes glowPulse {
-    0% { box-shadow: 0 0 10px rgba(0, 255, 204, 0.6); }
-    50% { box-shadow: 0 0 20px rgba(0, 255, 204, 0.9); }
-    100% { box-shadow: 0 0 10px rgba(0, 255, 204, 0.6); }
-}
 .pricing-tier {
     position: relative; /* allows positioning label inside */
 }
@@ -3182,7 +3163,31 @@ input[type="range"]:focus {
     50% { box-shadow: 0 0 20px rgba(0, 255, 204, 0.9); }
     100% { box-shadow: 0 0 10px rgba(0, 255, 204, 0.6); }
 }
+.fade-in {
+  animation: fadeInUp 0.4s ease;
+}
+.pricing-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
 
+        .pricing-content.active {
+            display: block;
+            animation: fadeInContent 0.5s ease forwards;
+        }
+
+        @keyframes fadeInContent {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -3704,24 +3709,37 @@ input[type="range"]:focus {
                 });
             });
 
-            // Pricing toggle functionality
-            const toggleOptions = document.querySelectorAll('.toggle-option');
-            const pricingContents = document.querySelectorAll('.pricing-content');
+// Pricing toggle functionality
+const toggleOptions = document.querySelectorAll('.toggle-option');
+const pricingContents = document.querySelectorAll('.pricing-content');
 
-            toggleOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    // Remove active class from all options and contents
-                    toggleOptions.forEach(opt => opt.classList.remove('active'));
-                    pricingContents.forEach(content => content.classList.remove('active'));
+function animateSwitch(target) {
+    const content = document.getElementById(target);
 
-                    // Add active class to clicked option
-                    option.classList.add('active');
-                    
-                    // Show corresponding pricing content
-                    const targetType = option.getAttribute('data-type');
-                    document.getElementById(targetType).classList.add('active');
-                });
-            });
+    // restart animation by removing and re-adding class
+    content.classList.remove('fade-in');
+    void content.offsetWidth; // forces reflow
+    content.classList.add('fade-in');
+}
+
+toggleOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        // Remove active class from all options and contents
+        toggleOptions.forEach(opt => opt.classList.remove('active'));
+        pricingContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to clicked option
+        option.classList.add('active');
+        
+        // Show corresponding pricing content
+        const targetType = option.getAttribute('data-type');
+        document.getElementById(targetType).classList.add('active');
+
+        // Run animation BOTH ways
+        animateSwitch(targetType);
+    });
+});
+
 
             // Intersection Observer for fade-in animations
             const observerOptions = {
