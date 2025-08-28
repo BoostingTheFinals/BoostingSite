@@ -3086,6 +3086,102 @@ input[type="range"]:focus {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+.most-popular-label {
+    background: linear-gradient(90deg, #00ffcc, #0077ff);
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+    letter-spacing: 1px;
+}
+.most-popular-label {
+    position: relative;
+    top: -10px;
+    margin: 0 auto 10px auto;
+    display: inline-block;
+    background: linear-gradient(90deg, #00ffcc, #0077ff);
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+    letter-spacing: 1px;
+    text-align: center;
+    animation: glowPulse 2s infinite;
+}
+
+/* Optional glowing animation */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+    }
+}
+.pricing-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.most-popular-label {
+    background: linear-gradient(90deg, #00ffcc, #0077ff);
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+    letter-spacing: 1px;
+    text-align: center;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 10px rgba(0, 255, 204, 0.6); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 204, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(0, 255, 204, 0.6); }
+}
+.pricing-tier {
+    position: relative; /* allows positioning label inside */
+}
+
+.most-popular-label {
+    position: absolute;
+    top: -15px; /* raise it slightly above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #00ffcc, #0077ff);
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.6);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 10px rgba(0, 255, 204, 0.6); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 204, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(0, 255, 204, 0.6); }
+}
 
     </style>
 </head>
@@ -3211,18 +3307,23 @@ input[type="range"]:focus {
                                 <i class="fas fa-shopping-cart"></i> Buy Now
                                 </a>
                         </div>
-                        <div class="pricing-tier featured">
-                            <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
-                            <div class="tier-price">75<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>2-3 days completion</li>
-                                <li>AnyDesk security</li>
-                                <li>Elite driver</li>
-                            </ul>
-                            <a href="checkout.html?service=Platinum%20to%20Diamond&huf=29250" class="buy-btn">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                                </a>
-                        </div>
+<div class="pricing-tier featured">
+    <div class="most-popular-label">Most Popular</div>
+    <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
+    <div class="tier-price">75<span class="currency">€</span></div>
+    <ul class="tier-features">
+        <li>2-3 days completion</li>
+        <li>AnyDesk security</li>
+        <li>Elite driver</li>
+    </ul>
+    <a href="checkout.html?service=Platinum%20to%20Diamond&huf=29250" class="buy-btn">
+        <i class="fas fa-shopping-cart"></i> Buy Now
+    </a>
+</div>
+
+
+
+
                         <div class="pricing-tier">
                             <div class="tier-rank"><span class="diamond">Diamond</span> → <span class="ruby">Ruby (Hold)</span></div>
                             <div class="tier-price">270<span class="currency">€</span></div>
@@ -3277,18 +3378,20 @@ input[type="range"]:focus {
                                 <i class="fas fa-shopping-cart"></i> Buy Now
                                 </a>
                         </div>
-                        <div class="pricing-tier">
-                            <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
-                            <div class="tier-price">120<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>3-5 days completion</li>
-                                <li>Play with elite players</li>
-                                <li>Your account stays safe</li>
-                            </ul>
-                            <a href="checkout.html?service=Platinum%20to%20Diamond%20(Selfplay)&huf=42900" class="buy-btn">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                                </a>
-                        </div>
+<div class="pricing-tier">
+    <div class="most-popular-label">Most Popular</div>
+    <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
+    <div class="tier-price">120<span class="currency">€</span></div>
+    <ul class="tier-features">
+        <li>3-5 days completion</li>
+        <li>Play with elite players</li>
+        <li>Your account stays safe</li>
+    </ul>
+    <a href="checkout.html?service=Platinum%20to%20Diamond%20(Selfplay)&huf=42900" class="buy-btn">
+        <i class="fas fa-shopping-cart"></i> Buy Now
+    </a>
+</div>
+
                         <div class="pricing-tier">
                             <div class="tier-rank"><span class="diamond">Diamond</span> → <span class="ruby">Ruby (Hold)</span></div>
                             <div class="tier-price">450<span class="currency">€</span></div>
@@ -3843,6 +3946,7 @@ if (document.getElementById("startRank")) {
     </script>
 </body>
 </html>
+
 
 
 
