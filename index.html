@@ -3188,6 +3188,23 @@ input[type="range"]:focus {
                 transform: translateY(0);
             }
         }
+        #startValue, #endValue {
+  font-weight: bold;
+}
+
+#startValue.bronze, #endValue.bronze,
+#startValue.silver, #endValue.silver,
+#startValue.gold, #endValue.gold,
+#startValue.platinum, #endValue.platinum,
+#startValue.diamond, #endValue.diamond,
+#startValue.ruby, #endValue.ruby {
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s linear infinite;
+}
+
+
     </style>
 </head>
 <body>
@@ -3428,14 +3445,29 @@ input[type="range"]:focus {
             </div>
 
 <div class="calc-select">
-    <label for="startRank">Current Rank: <span id="startValue">0</span></label>
-    <input type="range" id="startRank" min="0" max="51000" value="0" step="1000">
+  <label for="startRank">
+    Current Rank: 
+    <span id="startValue" class="bronze">
+      <span class="rank-name">Bronze</span>
+      <span class="rank-number">0</span>
+    </span>
+  </label>
+  <input type="range" id="startRank" min="0" max="51000" value="0" step="1000">
 </div>
 
 <div class="calc-select">
-    <label for="endRank">Target Rank: <span id="endValue">10000</span></label>
-    <input type="range" id="endRank" min="1000" max="52000" value="10000" step="1000">
+  <label for="endRank">
+    Target Rank: 
+    <span id="endValue" class="silver">
+      <span class="rank-name">Silver</span>
+      <span class="rank-number">10000</span>
+    </span>
+  </label>
+  <input type="range" id="endRank" min="1000" max="52000" value="10000" step="1000">
 </div>
+
+
+
             <div class="calc-result">
                 <div id="calcResult">Total Price: €10</div>
             </div>
@@ -3963,6 +3995,183 @@ if (document.getElementById("startRank")) {
     updateSliderFill(endSlider);
     calculatePrice();
 }
+function getRank(value) {
+    if (value < 10000) return "bronze";
+    if (value < 20000) return "silver";
+    if (value < 30000) return "gold";
+    if (value < 40000) return "platinum";
+    if (value < 50000) return "diamond";
+    return "ruby";
+  }
+
+  function updateRank(spanId, value) {
+    const span = document.getElementById(spanId);
+    const rank = getRank(value);
+
+    // reset class and apply the rank class
+    span.className = rank;
+    span.textContent = rank.charAt(0).toUpperCase() + rank.slice(1);
+  }
+
+  // attach slider listeners
+  document.getElementById("startRank").addEventListener("input", e => {
+    updateRank("startValue", +e.target.value);
+  });
+  document.getElementById("endRank").addEventListener("input", e => {
+    updateRank("endValue", +e.target.value);
+  });
+
+  // initialize on page load
+  updateRank("startValue", +document.getElementById("startRank").value);
+  updateRank("endValue", +document.getElementById("endRank").value);
+  function updateRank(spanId, value) {
+  const span = document.getElementById(spanId);
+  const rank = getRank(value);
+
+  // reset class and apply the rank class
+  span.className = rank;
+
+  // Show Rank Name + Number (e.g. "Diamond (42000)")
+  span.textContent = `${rank.charAt(0).toUpperCase() + rank.slice(1)} (${value})`;
+}
+
+function getRank(value) {
+  if (value < 10000) return "bronze";
+  if (value < 20000) return "silver";
+  if (value < 30000) return "gold";
+  if (value < 40000) return "platinum";
+  if (value < 50000) return "diamond";
+  return "ruby";
+}
+
+function updateRank(spanId, value) {
+  const span = document.getElementById(spanId);
+  const rank = getRank(value);
+
+  // Apply the rank gradient class
+  span.className = rank;
+
+  // Show rank name + number in the same style
+  span.textContent = `${rank.charAt(0).toUpperCase() + rank.slice(1)} ${value}`;
+}
+
+// Attach listeners
+document.getElementById("startRank").addEventListener("input", e => {
+  updateRank("startValue", +e.target.value);
+});
+document.getElementById("endRank").addEventListener("input", e => {
+  updateRank("endValue", +e.target.value);
+});
+
+// Init
+updateRank("startValue", +document.getElementById("startRank").value);
+updateRank("endValue", +document.getElementById("endRank").value);
+
+function getRank(value) {
+  if (value < 10000) return "bronze";
+  if (value < 20000) return "silver";
+  if (value < 30000) return "gold";
+  if (value < 40000) return "platinum";
+  if (value < 50000) return "diamond";
+  return "ruby";
+}
+
+function updateRank(spanId, value) {
+  const span = document.getElementById(spanId);
+  const rank = getRank(value);
+
+  // reset all possible classes, then add the new one
+  span.classList.remove("bronze", "silver", "gold", "platinum", "diamond", "ruby");
+  span.classList.add(rank);
+
+  // show both name + number
+  const rankName = rank.charAt(0).toUpperCase() + rank.slice(1);
+  span.textContent = `${rankName} ${value}`;
+}
+
+// listeners
+document.getElementById("startRank").addEventListener("input", e => {
+  updateRank("startValue", +e.target.value);
+});
+document.getElementById("endRank").addEventListener("input", e => {
+  updateRank("endValue", +e.target.value);
+});
+
+// initialize
+updateRank("startValue", +document.getElementById("startRank").value);
+updateRank("endValue", +document.getElementById("endRank").value);
+
+function getRank(value) {
+  if (value < 10000) return "bronze";
+  if (value < 20000) return "silver";
+  if (value < 30000) return "gold";
+  if (value < 40000) return "platinum";
+  if (value < 50000) return "diamond";
+  return "ruby";
+}
+
+function updateRank(wrapperId, value) {
+  const wrapper   = document.getElementById(wrapperId);
+  const rankSpan  = wrapper.querySelector(".rank-name");
+  const numberSpan = wrapper.querySelector(".rank-number");
+
+  const rank = getRank(value);
+
+  // reset and apply correct gradient class
+  rankSpan.classList.remove("bronze","silver","gold","platinum","diamond","ruby");
+  rankSpan.classList.add(rank);
+
+  // update text
+  rankSpan.textContent   = rank.charAt(0).toUpperCase() + rank.slice(1);
+  numberSpan.textContent = value;
+}
+
+// attach events
+document.getElementById("startRank").addEventListener("input", e => {
+  updateRank("startValue", +e.target.value);
+});
+document.getElementById("endRank").addEventListener("input", e => {
+  updateRank("endValue", +e.target.value);
+});
+
+// initialize
+updateRank("startValue", +document.getElementById("startRank").value);
+updateRank("endValue", +document.getElementById("endRank").value);
+
+function getRank(value) {
+  if (value < 10000) return "bronze";
+  if (value < 20000) return "silver";
+  if (value < 30000) return "gold";
+  if (value < 40000) return "platinum";
+  if (value < 50000) return "diamond";
+  return "ruby";
+}
+
+function updateRank(wrapperId, value) {
+  const wrapper = document.getElementById(wrapperId);
+  const rankSpan = wrapper.querySelector(".rank-name");
+  const numSpan = wrapper.querySelector(".rank-number");
+
+  const rank = getRank(value);
+
+  // Apply class to the wrapper so BOTH name + number inherit gradient
+  wrapper.className = rank;
+
+  // Update texts
+  rankSpan.textContent = rank.charAt(0).toUpperCase() + rank.slice(1);
+  numSpan.textContent = value;
+}
+
+document.getElementById("startRank").addEventListener("input", e => {
+  updateRank("startValue", +e.target.value);
+});
+document.getElementById("endRank").addEventListener("input", e => {
+  updateRank("endValue", +e.target.value);
+});
+
+// Init
+updateRank("startValue", +document.getElementById("startRank").value);
+updateRank("endValue", +document.getElementById("endRank").value);
     </script>
 </body>
 </html>
