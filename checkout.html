@@ -68,39 +68,31 @@
 
     // Settings
     const fxRateMid = 390; // FIXED RATE (update manually if needed)
-    const paypalFee = 0.034;   // PayPal Hungary: 3.4%
-    const paypalFixed = 0.35;  // Fixed fee
-    const paypalFxMargin = 0.035; // PayPal’s weaker FX rate (~3.5%)
     const wiseFee = 0.01; // Wise ~1%
 
     function selectPayment(method) {
       let finalEUR;
 
-      if (method === 'paypal') {
-        // Step 1: convert HUF → EUR using PayPal’s weaker FX
-        let eurNeeded = targetHUF / (fxRateMid * (1 - paypalFxMargin));
-
-        // Step 2: add PayPal fees
-        finalEUR = (eurNeeded + paypalFixed) / (1 - paypalFee);
+      if (method === 'binance') {
+        // Binance: straight conversion HUF → EUR (no fee added here)
+        finalEUR = targetHUF / fxRateMid;
 
         document.getElementById("final-price").innerHTML =
-          `PayPal Final Price: €${finalEUR.toFixed(2)}<br>
-           <a href="https://paypal.me/BoostingTheFinals/${finalEUR.toFixed(2)}" 
-              target="_blank" class="pay-link">Pay Now</a>`;
+          `Binance Final Price: €${finalEUR.toFixed(2)}<br>
+           <a href="https://www.binance.com/" target="_blank" class="pay-link">Pay with Binance</a><br>
+           <small style="color:#ccc;">⚠️ Please send the exact amount in EUR via Binance Pay.</small>`;
       } 
       else if (method === 'wise') {
-        // Step 1: convert HUF → EUR at mid-market
+        // Wise: HUF → EUR at mid-market + ~1% fee
         let eurNeeded = targetHUF / fxRateMid;
-
-        // Step 2: add Wise fee
         finalEUR = eurNeeded * (1 + wiseFee);
 
-          document.getElementById("final-price").innerHTML =
-    `Wise Final Price: €${finalEUR.toFixed(2)}<br>
-     <a href="https://wise.com/pay/me/zetenyz?amount=${finalEUR.toFixed(2)}&currency=EUR" 
-        target="_blank" class="pay-link">Pay with Wise</a><br>
-     <small style="color:#ccc;">⚠️ Please don’t change the amount in Wise.</small>`;
-}
+        document.getElementById("final-price").innerHTML =
+          `Wise Final Price: €${finalEUR.toFixed(2)}<br>
+           <a href="https://wise.com/pay/me/zetenyz?amount=${finalEUR.toFixed(2)}&currency=EUR" 
+              target="_blank" class="pay-link">Pay with Wise</a><br>
+           <small style="color:#ccc;">⚠️ Please don’t change the amount in Wise.</small>`;
+      }
     }
   </script>
 </body>
