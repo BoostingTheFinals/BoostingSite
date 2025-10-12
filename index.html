@@ -4023,7 +4023,7 @@ function calculatePrice() {
         if (end > 50000) {
         const above50k = Math.min(end, 54000) - Math.max(start, 50000);
         if (above50k > 0) {
-            total += (above50k / 1000) * 50;
+            total += (above50k / 1000) * 35;
         }
     }
     document.getElementById("calcResult").innerHTML = `Total Price: <span style="color: #00ffcc; font-weight: bold;">€${Math.round(total)}</span>`;
@@ -4259,6 +4259,7 @@ updateRank("endValue", +document.getElementById("endRank").value);
     </script>
 </body>
 </html>
+
 
 
 
