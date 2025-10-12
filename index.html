@@ -3534,7 +3534,7 @@ input[type="range"]:focus {
       <span class="rank-number">0</span>
     </span>
   </label>
-  <input type="range" id="startRank" min="0" max="53000" value="0" step="500">
+  <input type="range" id="startRank" min="0" max="53000" value="0" step="1000">
 </div>
 
 <div class="calc-select">
@@ -3545,7 +3545,7 @@ input[type="range"]:focus {
       <span class="rank-number">10000</span>
     </span>
   </label>
-  <input type="range" id="endRank" min="500" max="54000" value="10000" step="500">
+  <input type="range" id="endRank" min="1000" max="54000" value="10000" step="1000">
 </div>
 
 
@@ -3956,14 +3956,14 @@ const rankTiers = {
         'Silver to Gold': { start: 10000, end: 20000, price: 20 },
         'Gold to Platinum': { start: 20000, end: 30000, price: 45 },
         'Platinum to Diamond': { start: 30000, end: 40000, price: 75 },
-        'Diamond to Ruby': { start: 40000, end: 50000, price: 270 }
+        'Diamond to Ruby': { start: 40000, end: 52000, price: 270 }
     },
     selfplay: {
         'Bronze to Silver': { start: 0, end: 10000, price: 15 },
         'Silver to Gold': { start: 10000, end: 20000, price: 30 },
         'Gold to Platinum': { start: 20000, end: 30000, price: 65 },
         'Platinum to Diamond': { start: 30000, end: 40000, price: 110 },
-        'Diamond to Ruby': { start: 40000, end: 50000, price: 450 }
+        'Diamond to Ruby': { start: 40000, end: 52000, price: 450 }
     }
 };
 
@@ -4020,12 +4020,7 @@ function calculatePrice() {
             }
         }
     });
-        if (end > 50000) {
-        const above50k = Math.min(end, 54000) - Math.max(start, 50000);
-        if (above50k > 0) {
-            total += (above50k / 1000) * 35;
-        }
-    }
+    
     document.getElementById("calcResult").innerHTML = `Total Price: <span style="color: #00ffcc; font-weight: bold;">€${Math.round(total)}</span>`;
 }
 
@@ -4256,13 +4251,17 @@ document.getElementById("endRank").addEventListener("input", e => {
 // Init
 updateRank("startValue", +document.getElementById("startRank").value);
 updateRank("endValue", +document.getElementById("endRank").value);
+
+// Add €50 per 1k for ranks above 50k
+if (end > 50000) {
+    const above50k = Math.min(end, 54000) - Math.max(start, 50000);
+    if (above50k > 0) {
+        total += (above50k / 1000) * 50;
+    }
+}
     </script>
 </body>
 </html>
-
-
-
-
 
 
 
