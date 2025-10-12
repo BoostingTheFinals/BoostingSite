@@ -4252,16 +4252,10 @@ document.getElementById("endRank").addEventListener("input", e => {
 updateRank("startValue", +document.getElementById("startRank").value);
 updateRank("endValue", +document.getElementById("endRank").value);
 
-// Add €50 per 1k for ranks above 50k
-if (end > 50000) {
-    const above50k = Math.min(end, 54000) - Math.max(start, 50000);
-    if (above50k > 0) {
-        total += (above50k / 1000) * 50;
-    }
-}
     </script>
 </body>
 </html>
+
 
 
 
