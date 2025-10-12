@@ -3964,6 +3964,7 @@ const rankTiers = {
         'Gold to Platinum': { start: 20000, end: 30000, price: 65 },
         'Platinum to Diamond': { start: 30000, end: 40000, price: 110 },
         'Diamond to Ruby': { start: 40000, end: 50000, price: 400 }
+        
     }
 };
 
@@ -3979,14 +3980,6 @@ document.querySelectorAll(".calc-option").forEach(option => {
     });
 });
 
-function getRankName(value) {
-    if (value < 10000) return "Bronze";
-    if (value < 20000) return "Silver";
-    if (value < 30000) return "Gold";
-    if (value < 40000) return "Platinum";
-    if (value < 49999) return "Diamond";
-    return "Ruby";
-}
 
 function calculatePrice() {
     const start = parseInt(document.getElementById("startRank").value);
@@ -4074,14 +4067,6 @@ if (document.getElementById("startRank")) {
     updateSliderFill(endSlider);
     calculatePrice();
 }
-function getRank(value) {
-    if (value < 10000) return "bronze";
-    if (value < 20000) return "silver";
-    if (value < 30000) return "gold";
-    if (value < 40000) return "platinum";
-    if (value < 50000) return "diamond";
-    return "ruby";
-  }
 
   function updateRank(spanId, value) {
     const span = document.getElementById(spanId);
@@ -4114,14 +4099,6 @@ function getRank(value) {
   span.textContent = `${rank.charAt(0).toUpperCase() + rank.slice(1)} (${value})`;
 }
 
-function getRank(value) {
-  if (value < 10000) return "bronze";
-  if (value < 20000) return "silver";
-  if (value < 30000) return "gold";
-  if (value < 40000) return "platinum";
-  if (value < 50000) return "diamond";
-  return "ruby";
-}
 
 function updateRank(spanId, value) {
   const span = document.getElementById(spanId);
@@ -4146,14 +4123,6 @@ document.getElementById("endRank").addEventListener("input", e => {
 updateRank("startValue", +document.getElementById("startRank").value);
 updateRank("endValue", +document.getElementById("endRank").value);
 
-function getRank(value) {
-  if (value < 10000) return "bronze";
-  if (value < 20000) return "silver";
-  if (value < 30000) return "gold";
-  if (value < 40000) return "platinum";
-  if (value < 50000) return "diamond";
-  return "ruby";
-}
 
 function updateRank(spanId, value) {
   const span = document.getElementById(spanId);
@@ -4180,14 +4149,6 @@ document.getElementById("endRank").addEventListener("input", e => {
 updateRank("startValue", +document.getElementById("startRank").value);
 updateRank("endValue", +document.getElementById("endRank").value);
 
-function getRank(value) {
-  if (value < 10000) return "bronze";
-  if (value < 20000) return "silver";
-  if (value < 30000) return "gold";
-  if (value < 40000) return "platinum";
-  if (value < 50000) return "diamond";
-  return "ruby";
-}
 
 function updateRank(wrapperId, value) {
   const wrapper   = document.getElementById(wrapperId);
@@ -4218,11 +4179,11 @@ updateRank("startValue", +document.getElementById("startRank").value);
 updateRank("endValue", +document.getElementById("endRank").value);
 
 function getRank(value) {
-  if (value < 10000) return "bronze";
-  if (value < 20000) return "silver";
-  if (value < 30000) return "gold";
-  if (value < 40000) return "platinum";
-  if (value < 50000) return "diamond";
+  if (value < 9999) return "bronze";
+  if (value < 19999) return "silver";
+  if (value < 29999) return "gold";
+  if (value < 39999) return "platinum";
+  if (value < 49999) return "diamond";
   return "ruby";
 }
 
@@ -4262,6 +4223,7 @@ if (end > 50000) {
     </script>
 </body>
 </html>
+
 
 
 
