@@ -3341,6 +3341,51 @@ input[type="range"]:focus {
   color: #00ffcc;
   font-weight: 600;
 }
+/* --- Calculator cyan glow border (only touch: price calculator) --- */
+/* Place this immediately after the existing .calculator-box rule */
+
+.calculator-box {
+  position: relative; /* ensure pseudo-element positions correctly */
+  z-index: 1;
+}
+
+/* gradient border that shows as a glowing cyan edge (like pricing cards) */
+.calculator-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2px;                     /* thickness of the glowing edge */
+  border-radius: 20px;              /* match .calculator-box radius */
+  background: linear-gradient(135deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  /* use mask to keep only the border visible (same technique used for .service::before) */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  animation: gradientBorder 6s ease infinite;
+  box-shadow: 0 8px 30px rgba(0, 255, 204, 0.09), 0 0 30px rgba(0, 119, 255, 0.06);
+}
+
+/* stronger glow on hover (subtle) */
+.calculator-box:hover::before {
+  box-shadow: 0 18px 60px rgba(0, 255, 204, 0.18), 0 0 60px rgba(0, 119, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* animation for the gradient movement */
+@keyframes gradientBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
     </style>
 </head>
 <body>
