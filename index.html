@@ -4239,6 +4239,62 @@ section h2:hover::after,
 .section-header h2:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
+/* === Centered Underline Animation for Navigation Links === */
+.nav-links a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+/* Default gradient underline — centered animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  height: 2px;
+  width: 100%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  background: linear-gradient(90deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  border-radius: 2px;
+  transition: transform 0.35s ease;
+  animation: gradient-flow 5s ease infinite;
+}
+
+/* Hover effect — grows from middle */
+.nav-links a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Hover color change */
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* === Disable underline for login button === */
+.nav-links a.login-btn::after {
+  display: none !important;
+}
+
+.nav-links a.login-btn {
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 8px 18px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a.login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.6);
+}
 
     </style>
 </head>
