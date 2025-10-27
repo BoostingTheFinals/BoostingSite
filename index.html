@@ -3613,6 +3613,117 @@ input[type="range"]:focus {
 .payment-title:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
+.faq-question {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #00ffcc;
+  transform: translateY(-2px);
+}
+
+.faq-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  background: #00ffcc;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.faq-icon::before {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 0;
+}
+
+.faq-answer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 2rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+}
+
+.faq-answer.open {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 0.5rem;
+}
+.faq-icon {
+  position: relative;
+  width: 16px;   /* smaller icon */
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;   /* thinner line */
+  height: 2px;
+  background: #000;  /* black lines */
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.faq-icon::before {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon::after {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 0;
+}
+.faq-icon::before,
+.faq-icon::after {
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
 
     </style>
 </head>
@@ -4128,30 +4239,16 @@ input[type="range"]:focus {
             // Body loaded animation
             document.body.classList.add('loaded');
 
-            // FAQ functionality
-            document.querySelectorAll('.faq-question').forEach(button => {
-                button.addEventListener('click', () => {
-                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+           document.querySelectorAll('.faq-question').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
 
-                    // Close all other FAQ answers
-                    document.querySelectorAll('.faq-question').forEach(btn => {
-                        btn.setAttribute('aria-expanded', 'false');
-                        const ans = btn.nextElementSibling;
-                        ans.classList.remove('open');
-                        const ic = btn.querySelector('.faq-icon');
-                        if (ic) ic.textContent = '+';
-                    });
+    const answer = btn.nextElementSibling;
+    answer.classList.toggle('open', !expanded);
+  });
+});
 
-                    // If this one was not already open, open it
-                    if (!isExpanded) {
-                        button.setAttribute('aria-expanded', 'true');
-                        const answer = button.nextElementSibling;
-                        answer.classList.add('open');
-                        const icon = button.querySelector('.faq-icon');
-                        if (icon) icon.textContent = '–';
-                    }
-                });
-            });
 
 // Pricing toggle functionality
 const toggleOptions = document.querySelectorAll('.toggle-option');
