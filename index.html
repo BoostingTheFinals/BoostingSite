@@ -4118,6 +4118,127 @@ input[type="range"]:focus {
   font-size: 0.95rem;
   line-height: 1.7;
 }
+/* === Centered Underline Animation for Section Titles === */
+section h2,
+.services-header h2,
+.pricing-header h2,
+.process-header h2,
+.faq-header h2,
+.contact h2,
+.calculator-header h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 2.3rem;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 6s ease infinite;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Underline grows from center --- */
+section h2::after,
+.services-header h2::after,
+.pricing-header h2::after,
+.process-header h2::after,
+.faq-header h2::after,
+.contact h2::after,
+.calculator-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  height: 2px;
+  width: 100%;
+  max-width: 100%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  background: linear-gradient(90deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  border-radius: 2px;
+  transition: transform 0.5s ease;
+  animation: gradient-flow 5s ease infinite;
+}
+
+/* --- On hover: expands from center outwards --- */
+section h2:hover::after,
+.services-header h2:hover::after,
+.pricing-header h2:hover::after,
+.process-header h2:hover::after,
+.faq-header h2:hover::after,
+.contact h2:hover::after,
+.calculator-header h2:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+/* Center all section headers properly */
+.services-header,
+.pricing-header,
+.process-header,
+.faq-header,
+.contact,
+.calculator-header,
+.payment-methods {
+  text-align: center;
+}
+
+/* Make titles inline so underline matches width */
+.services-header h2,
+.pricing-header h2,
+.process-header h2,
+.faq-header h2,
+.contact h2,
+.calculator-header h2,
+.payment-title {
+  display: inline-block;
+}
+
+/* Fix for Contact Us specifically */
+.contact h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* === Perfectly Centered Underline for Section Headers (Our Services, etc.) === */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 6s ease infinite;
+  margin-bottom: 2.5rem;
+}
+
+/* Animated underline grows from center outward */
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  height: 2px;
+  width: 100%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  background: linear-gradient(90deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  border-radius: 2px;
+  transition: transform 0.45s ease;
+  animation: gradient-flow 5s ease infinite;
+}
+
+/* Hover animation */
+.section-header h2:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
 
     </style>
 </head>
