@@ -3417,6 +3417,202 @@ input[type="range"]:focus {
 .services .service p {
   color: #eaeaea;
 }
+.payment-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-text {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.4px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.payment-text:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 6px rgba(0,255,204,0.6);
+}
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.payment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.payment-icon {
+  width: 80px;
+  height: 80px;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  border: 2px solid #00ffcc;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 0 12px rgba(0, 255, 204, 0.3);
+}
+
+.payment-item a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.7);
+}
+
+.payment-text {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.payment-text:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 6px rgba(0,255,204,0.6);
+}
+.payment-icon {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+/* Specific tweaks to normalize logo proportions */
+.payment-icon.wise {
+  width: 60px;   /* smaller width to match Binance visual weight */
+  height: auto;
+}
+
+.payment-icon.binance {
+  width: 60px;
+  height: auto;
+}
+/* Layout stays the same */
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.payment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo boxes */
+.payment-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  border: 2px solid #00ffcc;
+  border-radius: 12px;
+  width: 90px;
+  height: 90px;
+  box-shadow: 0 0 12px rgba(0, 255, 204, 0.3);
+  transition: transform 0.6s ease, box-shadow 0.6s ease; /* slower, smoother */
+}
+
+.payment-item a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+}
+
+/* Logo sizing */
+.payment-icon {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.payment-icon.wise,
+.payment-icon.binance {
+  width: 60px;
+  height: auto;
+}
+
+/* Text styling (cyan) */
+.payment-text {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #00ffcc;
+  text-align: center;
+  letter-spacing: 0.4px;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.payment-text:hover {
+  text-shadow: 0 0 8px rgba(0,255,204,0.8);
+}
+.payment-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  border: 2px solid #00ffcc;
+  border-radius: 12px;
+  width: 90px;
+  height: 90px;
+  box-shadow: 0 0 12px rgba(0, 255, 204, 0.3);
+  transition: transform 0.35s ease, box-shadow 0.35s ease; /* faster + smooth */
+}
+
+.payment-item a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+}
+.payment-title {
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 700;
+  animation: gradient-flow 5s ease infinite;
+  position: relative;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 2.5rem;
+}
+
+/* same underline animation as PROCESS, SERVICES, etc. */
+.payment-title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  animation: gradient-flow 5s ease infinite;
+  transition: transform 0.4s ease;
+  border-radius: 1px;
+}
+
+.payment-title:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
 
     </style>
 </head>
@@ -3714,31 +3910,37 @@ input[type="range"]:focus {
                     </div>
                 </div>
 
-                <div class="payment-methods fade-in">
-                    <div class="payment-title">ACCEPTED PAYMENT METHODS</div>
-                    <div class="payment-icons">
-                        
-<a href="https://wise.com" target="_blank" rel="noopener noreferrer" class="payment-logo">
-  <svg class="payment-icon wise" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-    <path fill="#00C851" d="M8 4h32L26 44h-8l6-16H14L8 4z"/>
-  </svg>
-</a>
-<a href="https://binance.com" target="_blank" rel="noopener noreferrer" class="payment-logo">
-  <svg class="payment-icon binance" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-    <g fill="#F3BA2F">
-      <polygon points="14.5,20.2 23.8,10.9 33.2,20.2 38.6,14.8 23.8,0 9.1,14.8"/>
-      <rect x="1.4" y="20.1" transform="matrix(0.7071 0.7071 -0.7071 0.7071 18.5 3.3)" width="7.7" height="7.7"/>
-      <polygon points="14.5,27.8 23.8,37.2 33.2,27.8 38.6,33.1 38.6,33.1 23.8,48 9.1,33.2 9.0,33.1"/>
-      <rect x="38.6" y="20.1" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 89.4 11.0)" width="7.7" height="7.7"/>
-      <polygon points="29.3,24.0 29.3,24.0 23.8,18.5 19.8,22.6 19.8,22.6 19.3,23.1 18.3,24.0 18.3,24.0 18.2,24.0 18.3,24.1 23.8,29.5 29.3,24.0 29.3,24.0"/>
-    </g>
-  </svg>
-</a>
+               <div class="payment-methods fade-in">
+  <h2 class="payment-title">ACCEPTED PAYMENT METHODS</h2>
 
 
-                    </div>
-                </div>
-            </div>
+  <div class="payment-icons">
+    <div class="payment-item">
+      <a href="https://wise.com" target="_blank" rel="noopener noreferrer">
+        <svg class="payment-icon wise" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <path fill="#00C851" d="M8 4h32L26 44h-8l6-16H14L8 4z"/>
+        </svg>
+      </a>
+      <p class="payment-text">wise.com</p>
+    </div>
+
+    <div class="payment-item">
+      <a href="https://binance.com" target="_blank" rel="noopener noreferrer">
+        <svg class="payment-icon binance" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+          <g fill="#F3BA2F">
+            <polygon points="14.5,20.2 23.8,10.9 33.2,20.2 38.6,14.8 23.8,0 9.1,14.8"/>
+            <rect x="1.4" y="20.1" transform="matrix(0.7071 0.7071 -0.7071 0.7071 18.5 3.3)" width="7.7" height="7.7"/>
+            <polygon points="14.5,27.8 23.8,37.2 33.2,27.8 38.6,33.1 23.8,48 9.1,33.2"/>
+            <rect x="38.6" y="20.1" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 89.4 11.0)" width="7.7" height="7.7"/>
+            <polygon points="29.3,24.0 23.8,18.5 19.8,22.6 19.3,23.1 18.3,24.0 23.8,29.5 29.3,24.0"/>
+          </g>
+        </svg>
+      </a>
+      <p class="payment-text">binance.com</p>
+    </div>
+  </div>
+</div>
+
         </section>
 
         <section class="faq" id="faq">
@@ -4380,6 +4582,44 @@ document.getElementById("endRank").addEventListener("input", e => {
 // Init
 updateRank("startValue", +document.getElementById("startRank").value);
 updateRank("endValue", +document.getElementById("endRank").value);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const calcResult = document.getElementById("calcResult");
+  const options = document.querySelectorAll(".calc-option");
+
+  let currentPrice = 10; // starting value (matches your default)
+
+  function animatePrice(from, to, duration = 800) {
+    const start = performance.now();
+
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const value = from + (to - from) * progress;
+      const formatted = value.toFixed(2).replace(/\.00$/, ''); // remove .00 if integer
+      calcResult.textContent = `Total Price: €${formatted}`;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  options.forEach(option => {
+    option.addEventListener("click", () => {
+      // Example logic for demo — adjust with your own price calculation
+      const newPrice = option.textContent.includes("Account Driver") ? 39.99 : 29.99;
+
+      // Animate only number
+      animatePrice(currentPrice, newPrice);
+      currentPrice = newPrice;
+
+      // Toggle active class for visuals
+      options.forEach(o => o.classList.remove("active"));
+      option.classList.add("active");
+    });
+  });
+});
+
 
     </script>
 </body>
