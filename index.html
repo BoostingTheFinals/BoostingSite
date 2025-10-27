@@ -3385,6 +3385,38 @@ input[type="range"]:focus {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+/* --- Make Account Driver & Selfplay Boost tiles matte-black like pricing cards --- */
+/* Put this after your existing .service rules (or at the end of the stylesheet) */
+
+.services .service {
+  background: #0b0b0b !important;                   /* matte black base */
+  border-radius: 16px;                              /* match current radius */
+  border: 1px solid rgba(255,255,255,0.04);         /* subtle edge for depth */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);      /* subtle heavy shadow like pricing */
+  padding: 2.5rem 2rem;                             /* keep original spacing */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  background-clip: padding-box;                     /* keep any gradient-border pseudo visible */
+  position: relative;                               /* ensure ::before aligns correctly */
+}
+
+/* Hover effect matching pricing cards */
+.services .service:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 255, 204, 0.09), 0 0 40px rgba(0,119,255,0.06);
+}
+
+/* Preserve existing gradient-border pseudo-element (if present) — ensure it's on top */
+.services .service::before {
+  /* if you already have a global .service::before gradient border, these lines ensure it shows */
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* If you want inner text to remain clearly readable, enforce contrast */
+.services .service h3,
+.services .service p {
+  color: #eaeaea;
+}
 
     </style>
 </head>
