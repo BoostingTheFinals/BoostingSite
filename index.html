@@ -3724,6 +3724,400 @@ input[type="range"]:focus {
 .faq-icon::after {
   box-shadow: 0 0 4px rgba(0,0,0,0.3);
 }
+/* Enhanced FAQ Styling */
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 204, 0.15);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.05);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 255, 204, 0.5);
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.3), 0 0 40px rgba(0, 119, 255, 0.2);
+}
+
+.faq-question {
+  background: linear-gradient(90deg, rgba(0,255,204,0.1), rgba(0,119,255,0.1));
+  padding: 1.5rem 2rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: linear-gradient(90deg, rgba(0,255,204,0.2), rgba(0,119,255,0.2));
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+.faq-question[aria-expanded="true"] {
+  background: linear-gradient(90deg, rgba(0,255,204,0.25), rgba(0,119,255,0.25));
+  box-shadow: 0 0 25px rgba(0,255,204,0.4);
+}
+
+.faq-icon {
+  color: #00ffcc;
+  transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+  color: #0077ff;
+}
+
+.faq-answer {
+  padding: 0 2rem 1.5rem 2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.02);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.faq-answer.open {
+  max-height: 500px;
+  opacity: 1;
+}
+.faq {
+  padding: 8rem 0;
+  background: transparent;
+  text-align: center;
+  position: relative;
+}
+
+.faq-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease infinite;
+  margin-bottom: 0.5rem;
+}
+
+.faq-subtext {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.faq-container {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0,255,204,0.15);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.faq-item.active {
+  border-color: rgba(0,255,204,0.6);
+  box-shadow: 0 0 25px rgba(0,255,204,0.25), 0 0 50px rgba(0,119,255,0.2);
+  transform: translateY(-3px);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.faq-question:hover {
+  background: rgba(255,255,255,0.05);
+  color: #00ffcc;
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  color: #00ffcc;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  color: #0077ff;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 2rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 400px;
+  opacity: 1;
+  padding-bottom: 1.5rem;
+}
+
+/* Subtle glow animation */
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* === Premium Grid FAQ Section === */
+.faq {
+  padding: 8rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: radial-gradient(circle at top, rgba(0,17,26,0.7), rgba(0,0,0,0.95));
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.faq-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease infinite;
+}
+
+.faq-subtitle {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  animation: gradientBorder 8s ease infinite;
+}
+
+.faq-box:hover::before {
+  opacity: 1;
+}
+
+.faq-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,255,204,0.15), 0 15px 40px rgba(0,119,255,0.1);
+}
+
+.faq-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00ffcc, #0077ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #000;
+  font-size: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,255,204,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-box:hover .faq-icon-wrap {
+  transform: scale(1.1) rotate(8deg);
+  box-shadow: 0 0 25px rgba(0,255,204,0.7);
+}
+
+.faq-box h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.faq-box p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+}
+
+/* Optional subtle motion */
+@keyframes gradientBorder {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (max-width: 768px) {
+  .faq {
+    padding: 6rem 0;
+  }
+
+  .faq-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .faq-header h2 {
+    font-size: 2rem;
+  }
+}
+/* === Vertical Accordion FAQ === */
+.faq {
+  padding: 8rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faq-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease infinite;
+}
+
+.faq-subtitle {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(0,255,204,0.4);
+  box-shadow: 0 0 12px rgba(0,255,204,0.1);
+  transform: translateY(-2px);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1.3rem 1.6rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #00ffcc;
+}
+
+.faq-icon {
+  font-size: 1rem;
+  color: #00ffcc;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+  color: #0077ff;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 1.6rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.35s ease;
+}
+
+.faq-answer.open {
+  max-height: 400px;
+  opacity: 1;
+  padding: 1rem 1.6rem 1.3rem;
+}
+
+.faq-answer p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
 
     </style>
 </head>
@@ -4054,55 +4448,67 @@ input[type="range"]:focus {
 
         </section>
 
-        <section class="faq" id="faq">
-            <div class="container">
-                <div class="faq-header fade-in">
-                    <h2>FAQ</h2>
-                </div>
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <h2>Frequently Asked Questions</h2>
+    </div>
 
-                <div class="faq-list">
-                    <div class="faq-item fade-in">
-                        <button class="faq-question" id="faq1-label" aria-expanded="false" aria-controls="faq1">
-                            <span>Is boosting safe?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer" id="faq1" role="region" aria-labelledby="faq1-label">
-                            <p>Yes. We use AnyDesk for secure access and keep you in a live Discord call with the booster, so your account details remain private and protected.</p>
-                        </div>
-                    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is your boosting service safe?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. All boosting is handled manually by professional players. We never use cheats or bots — your account's security is our top priority.</p>
+        </div>
+      </div>
 
-                    <div class="faq-item fade-in">
-                        <button class="faq-question" id="faq2-label" aria-expanded="false" aria-controls="faq2">
-                            <span>Do you boost console accounts (PlayStation, Xbox)?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer" id="faq2" role="region" aria-labelledby="faq2-label">
-                            <p>Account Driver works if your console account is linked to Steam. Selfplay is available on all platforms.</p>
-                        </div>
-                    </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do you boost console accounts (PlayStation, Xbox)?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Account Driver works if your console account is linked to Steam. Selfplay is available on all platforms.</p>
+        </div>
+      </div>
 
-                    <div class="faq-item fade-in">
-                        <button class="faq-question" id="faq3-label" aria-expanded="false" aria-controls="faq3">
-                            <span>Can I play on my account during the boost (Account Driver)?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer" id="faq3" role="region" aria-labelledby="faq3-label">
-                            <p>We strongly recommend against playing during active boosting for security and efficiency reasons.</p>
-                        </div>
-                    </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Can I play on my account during the boost (Account Driver)?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We strongly recommend against playing during active boosting for security and efficiency reasons.</p>
+        </div>
+      </div>
 
-                    <div class="faq-item fade-in">
-                        <button class="faq-question" id="faq4-label" aria-expanded="false" aria-controls="faq4">
-                            <span>What is your refund policy?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer" id="faq4" role="region" aria-labelledby="faq4-label">
-                            <p>Full refund within 12 hours (before the boost starts). During a boost, partial refund based on progress. If the order isn't completed as purchased, full refund.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>What is your refund policy?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Full refund within 12 hours (before the boost starts). During a boost, partial refund based on progress. If the order isn't completed as purchased, full refund.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>How many customers have you helped and what ranks?</span>
+          <i class="fa-solid fa-chevron-down faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We've helped 4 customers reach safe Ruby and 5 achieve Diamond in Season 7. In the ongoing Season 8, we've already boosted 2 players to Diamond and 1 to Ruby — all within just 2 months since launching our service.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
         <section class="contact" id="contact">
             <div class="container">
