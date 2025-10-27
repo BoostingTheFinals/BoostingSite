@@ -3306,7 +3306,41 @@ input[type="range"]:focus {
   padding-bottom: 8px;
   margin: 0 auto; /* makes inline-block stay centered */
 }
+.discounts-info {
+  margin: 2rem 0 1.5rem 0;
+  padding: 1.5rem;
+  background: rgba(0, 255, 204, 0.08);
+  border: 1px solid rgba(0, 255, 204, 0.3);
+  border-radius: 12px;
+}
 
+.discounts-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #00ffcc;
+  text-align: center;
+  font-weight: 600;
+}
+
+.discount-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.discount-pill {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  border-left: 3px solid #00ffcc;
+}
+
+.discount-pill strong {
+  color: #00ffcc;
+  font-weight: 600;
+}
     </style>
 </head>
 <body>
@@ -3550,9 +3584,27 @@ input[type="range"]:focus {
 
 
 
-            <div class="calc-result">
-                <div id="calcResult">Total Price: €10</div>
-            </div>
+           <div class="calc-result">
+    <div id="calcResult">Total Price: €10</div>
+</div>
+
+<!-- ADD DISCOUNT SECTION HERE -->
+<div class="discounts-info">
+  <h3>💰 Available Discounts</h3>
+  <div class="discount-pills">
+    <div class="discount-pill">
+      <strong>Referral:</strong> 10% off (stack to 20%)
+    </div>
+    <div class="discount-pill">
+      <strong>Loyalty:</strong> 5% off after 3 orders
+    </div>
+    <div class="discount-pill">
+      <strong>Early Bird:</strong> 10% off first 2 weeks of season
+    </div>
+  </div>
+</div>
+<!-- END DISCOUNT SECTION -->
+
 <button class="calc-btn" onclick="window.location.href='#contact'">
   <i class="fas fa-shopping-cart"></i> Buy now
 </button>
