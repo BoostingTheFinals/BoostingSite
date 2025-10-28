@@ -15,7 +15,7 @@
   <meta property="og:title" content="The Finals Boosting Services">
   <meta property="og:description" content="Cheap, fast & reliable boosting in The Finals. Reach your dream rank today.">
   <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
-  <meta property="og:url" content="https://thefinalsboosting.com">
+  <meta property="og:url" content="https://yourwebsite.com">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
@@ -4295,6 +4295,73 @@ section h2:hover::after,
   transform: scale(1.05);
   box-shadow: 0 0 12px rgba(0, 200, 255, 0.6);
 }
+.payment-title {
+  position: relative;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.9;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease infinite;
+  padding-bottom: 8px;
+}
+
+.payment-title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  animation: gradient-flow 5s ease infinite;
+  transition: transform 0.4s ease;
+  border-radius: 1px;
+}
+
+.payment-title:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+.payment-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease infinite;
+  padding-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.payment-title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%; /* full underline */
+  height: 2px;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  animation: gradient-flow 5s ease infinite;
+  transition: transform 0.4s ease;
+  border-radius: 1px;
+}
+
+.payment-title:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
 
     </style>
 </head>
@@ -5304,7 +5371,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </script>
 </body>
 </html>
-
 
 
 
