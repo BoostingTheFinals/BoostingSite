@@ -4556,6 +4556,136 @@ footer.site-footer .footer-bottom p {
     align-items: center;
     gap: 0.2rem;
 }
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-video-bg iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* 16:9 Aspect Ratio */
+    min-height: 100vh;
+    min-width: 177.77vh; /* 16:9 Aspect Ratio */
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Dark overlay for text readability */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 17, 26, 0.8) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+}
+
+/* Ensure content stays above video */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile: Hide video, show gradient */
+@media (max-width: 768px) {
+    .hero-video-bg iframe {
+        display: none;
+    }
+    
+    .hero-video-bg {
+        background: radial-gradient(circle at top, rgba(0,17,26,0.9), rgba(0,0,0,1));
+    }
+}
+/* YouTube Video Background - Cleaner Fade */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-video-bg iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Simple dark overlay with subtle vignette */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at center, 
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.75) 100%
+        );
+    z-index: 1;
+}
+
+/* Ensure content stays above video */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile: Hide video, show gradient */
+@media (max-width: 768px) {
+    .hero-video-bg iframe {
+        display: none;
+    }
+    
+    .hero-video-bg {
+        background: radial-gradient(circle at top, rgba(0,17,26,0.9), rgba(0,0,0,1));
+    }
+}
     </style>
 </head>
 <body>
@@ -4601,6 +4731,16 @@ footer.site-footer .footer-bottom p {
 
     <main>
        <section class="hero">
+            <div class="hero-video-bg">
+<iframe 
+    id="heroVideo"
+    src="https://www.youtube.com/embed/Sux2XfDazt8?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&playlist=Sux2XfDazt8&rel=0&modestbranding=1"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+></iframe>
+        <div class="video-overlay"></div>
+    </div>
   <div class="container">
     <div class="hero-content">
       <h1>
