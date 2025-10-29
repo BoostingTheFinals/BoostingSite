@@ -4383,6 +4383,35 @@ section h2:hover::after,
   justify-items: center;  /* ✅ center items */
   text-align: center;     /* ✅ center text */
 }
+footer.site-footer {
+  text-align: center; /* footer itself centered */
+}
+
+.footer-column h3 {
+  text-align: center; /* headlines centered */
+}
+
+/* text + lists aligned left */
+.footer-column p,
+.footer-column ul {
+  text-align: left;
+}
+
+/* add a clean symbol before every list item */
+.footer-column ul li {
+  list-style: none;      /* remove normal bullets */
+  position: relative;
+  padding-left: 18px;    /* space for icon */
+}
+
+.footer-column ul li::before {
+  content: "•";          /* clean minimal bullet */
+  position: absolute;
+  left: 0;
+  color: #00c6ff;        /* glowing cyan bullet */
+  font-size: 1.1rem;
+  line-height: 1;
+}
 
     </style>
 </head>
