@@ -4362,6 +4362,27 @@ section h2:hover::after,
 .payment-title:hover::after {
   transform: translateX(-50%) scaleX(1);
 }
+.site-footer {
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  color: #fff;
+  padding: 60px 20px 30px;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: none;
+  box-shadow: none;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  justify-items: center;  /* ✅ center items */
+  text-align: center;     /* ✅ center text */
+}
 
     </style>
 </head>
