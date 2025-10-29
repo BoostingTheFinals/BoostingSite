@@ -5366,9 +5366,99 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+ window.addEventListener("load", () => {
+    const banner = document.getElementById("halloween-banner");
+    const header = document.querySelector("header");
+    if (header) {
+      // Add top margin to the header so it doesn’t get covered
+      header.style.marginTop = banner.offsetHeight + "px";
+    }
 
+    const countdownEl = document.getElementById("countdown");
+    const endDate = new Date("Nov 6, 2025 23:59:59").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      if (distance <= 0) {
+        countdownEl.textContent = "Expired";
+        banner.style.transition = "opacity 1s ease";
+        banner.style.opacity = 0;
+        setTimeout(() => banner.remove(), 1000);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+      countdownEl.textContent = `${days}d ${hours}h ${minutes}m`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  });
 
     </script>
+    <div id="halloween-banner" style="
+  background: #ff6600;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3000;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.6);
+">
+  🎃 Halloween Sale – <strong>10% OFF</strong> all orders! |
+  Ends in: <span id="countdown">Loading...</span>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("halloween-banner");
+  const header = document.querySelector("header");
+
+  // Push everything down so banner doesn't cover nav
+  const bannerHeight = banner.offsetHeight;
+  if (header) {
+    header.style.marginTop = bannerHeight + "px";
+  } else {
+    document.body.style.paddingTop = bannerHeight + "px";
+  }
+
+  const countdownEl = document.getElementById("countdown");
+  const endDate = new Date("November 6, 2025 23:59:59").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = endDate - now;
+
+    if (distance <= 0) {
+      countdownEl.textContent = "Expired";
+      banner.style.transition = "opacity 1s ease";
+      banner.style.opacity = 0;
+      setTimeout(() => banner.remove(), 1000);
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    countdownEl.textContent = `${days}d ${hours}h ${minutes}m`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
+</script>
+
+</div>
 </body>
 </html>
 
