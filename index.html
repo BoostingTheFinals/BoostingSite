@@ -28,7 +28,6 @@
   <link rel="canonical" href="https://yourwebsite.com">
 
   <!-- Scripts & Styles -->
-   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -5500,7 +5499,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function onSubmit(token) {
   const form = document.getElementById("contact-form");
   const honeypot = form.querySelector('[name="_honeypot"]').value;
-  if (honeypot) return; // bot check
+  if (honeypot) return; // bot detected
 
   const name = form.querySelector('[name="name"]').value.trim();
   const email = form.querySelector('[name="email"]').value.trim();
@@ -5531,7 +5530,6 @@ async function onSubmit(token) {
   }
 }
 </script>
-<script src="https://www.google.com/recaptcha/api.js"></script>
 </script>
 </div>
 </body>
