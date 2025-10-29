@@ -5402,28 +5402,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     </script>
 <div id="halloween-banner" style="
-  background: #00ffff; /* cyan background */
-  color: #000; /* dark text for contrast */
+  background: linear-gradient(90deg, #00d4ff, #007bff);
+  color: #000;
   font-weight: 600;
   text-align: center;
-  padding: 10px 0;
-  font-size: 1rem;
-  letter-spacing: 0.3px;
+  padding: 12px 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.6px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 3000;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); /* cyan glow */
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
 ">
-  🎃 Halloween Sale – <strong>10% OFF</strong> all orders! |
-  Ends in: <span id="countdown">Loading...</span>
-  <script>
+  🎃 <span>Halloween Sale – <strong>10% OFF</strong> all orders!</span> | 
+  <span>Ends in:</span> <span id="countdown" style="font-weight:700;">Loading...</span>
+</div>
+
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("halloween-banner");
   const header = document.querySelector("header");
 
-  // Push everything down so banner doesn't cover nav
+  // Push content down
   const bannerHeight = banner.offsetHeight;
   if (header) {
     header.style.marginTop = bannerHeight + "px";
