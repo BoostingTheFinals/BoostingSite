@@ -28,6 +28,7 @@
   <link rel="canonical" href="https://yourwebsite.com">
 
   <!-- Scripts & Styles -->
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -4754,23 +4755,35 @@ section h2:hover::after,
 
 
 
-        <section class="contact" id="contact">
-            <div class="container">
-                <h2 class="fade-in">Contact us</h2>
-                <form action="https://getform.io/f/amdykkgb" method="POST" class="fade-in contact-form">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="buy-btn">Send Message</button>
-                </form>
-            </div>
-        </section>
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="fade-in">Contact us</h2>
+    <form id="contact-form" class="fade-in contact-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      </div>
+
+      <!-- Honeypot field -->
+      <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+      <button 
+        class="buy-btn g-recaptcha" 
+        data-sitekey="6LfXIfsrAAAAAAAuZK4JUlh20CxIRALgYCt8E_Ag" 
+        data-callback="onSubmit"
+        data-action="submit"
+        type="submit"
+      >
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
     </main>
 
 <footer class="site-footer">
@@ -5399,7 +5412,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCountdown();
     setInterval(updateCountdown, 1000);
   });
-
     </script>
 <div id="halloween-banner" style="
   background: #00ffff; /* cyan background */
@@ -5457,6 +5469,42 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 });
+</script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+async function onSubmit(token) {
+  const form = document.getElementById("contact-form");
+  const honeypot = form.querySelector('[name="_honeypot"]').value;
+  if (honeypot) return; // bot check
+
+  const name = form.querySelector('[name="name"]').value.trim();
+  const email = form.querySelector('[name="email"]').value.trim();
+  const message = form.querySelector('[name="message"]').value.trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (name.length < 2) return alert("Please enter a valid name.");
+  if (!emailPattern.test(email)) return alert("Please enter a valid email address.");
+  if (message.length < 10) return alert("Please enter a longer message (at least 10 characters).");
+
+  // Prepare form data
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch("https://getform.io/f/amdykkgb", {
+      method: "POST",
+      body: formData
+    });
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+      form.reset();
+    } else {
+      alert("Error sending message. Please try again later.");
+    }
+  } catch (err) {
+    alert("Network error. Please try again later.");
+  }
+}
 </script>
 
 </div>
