@@ -4539,6 +4539,23 @@ footer.site-footer .footer-bottom p {
     font-size: 0.96rem;
     text-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
 }
+
+/* Original Price Strikethrough */
+.original-price {
+    display: block;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: line-through;
+    margin-bottom: 0.3rem;
+    font-weight: 300;
+}
+
+.tier-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
     </style>
 </head>
 <body>
@@ -4615,145 +4632,177 @@ footer.site-footer .footer-bottom p {
                 </div>
 
 
-                <!-- Account Driver Pricing -->
-                <div class="pricing-content active" id="account-driver">
-                    <div class="pricing-grid fade-in">
-                        <div class="pricing-tier">
-                            <div class="tier-rank"><span class="bronze">Bronze</span> → <span class="silver">Silver</span></div>
-                            <div class="tier-price">10<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>1 day completion</li>
-                                <li>AnyDesk security</li>
-                                <li>Professional driver</li>
-                            </ul>
-                            <a href="checkout.html?service=Bronze%20to%20Silver&huf=3900" class="buy-btn">
-                                  <i class="fas fa-shopping-cart"></i> Buy Now
-</a>
-                        </div>
-                        <div class="pricing-tier">
-                            <div class="tier-rank"><span class="silver">Silver</span> → <span class="gold">Gold</span></div>
-                            <div class="tier-price">20<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>1 day completion</li>
-                                <li>AnyDesk security</li>
-                                <li>Professional driver</li>
-                            </ul>
-                            <a href="checkout.html?service=Silver%20to%20Gold&huf=7800" class="buy-btn">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                                </a>
-                        </div>
-                        <div class="pricing-tier">
-                             <div class="tier-rank"><span class="gold">Gold</span> → <span class="platinum">Platinum</span></div>
-                            <div class="tier-price">45<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>1-2 days completion</li>
-                                <li>AnyDesk security</li>
-                                <li>Professional driver</li>
-                            </ul>
-                            <a href="checkout.html?service=Gold%20to%20Platinum&huf=17550" class="buy-btn">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                                </a>
-                        </div>
-<div class="pricing-tier featured">
-    <div class="most-popular-label">Most Popular</div>
-    <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
-    <div class="tier-price">75<span class="currency">€</span></div>
-    <ul class="tier-features">
-        <li>2-3 days completion</li>
-        <li>AnyDesk security</li>
-        <li>Elite driver</li>
-    </ul>
-    <a href="checkout.html?service=Platinum%20to%20Diamond&huf=29250" class="buy-btn">
-        <i class="fas fa-shopping-cart"></i> Buy Now
-    </a>
-</div>
-
-
-
-
-                        <div class="pricing-tier">
-                            <div class="tier-rank"><span class="diamond">Diamond</span> → <span class="ruby">Ruby (Hold)</span></div>
-                            <div class="tier-price">300<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>4-8 days completion</li>
-                                <li>AnyDesk security</li>
-                                <li>Master tier driver</li>
-                            </ul>
-                            <a href="checkout.html?service=Diamond%20to%20Ruby&huf=105300" class="buy-btn">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                                </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Selfplay Pricing -->
-                <div class="pricing-content" id="selfplay">
-                    <div class="pricing-grid fade-in">
-                        <div class="pricing-tier">
-                            <div class="tier-rank"><span class="bronze">Bronze</span> → <span class="silver">Silver</span></div>
-                            <div class="tier-price">15<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>1 day completion</li>
-                                <li>Play with professionals</li>
-                                <li>Your account stays safe</li>
-                            </ul>
-                            <a href="checkout.html?service=Bronze%20to%20Silver%20(Selfplay)&huf=5850" class="buy-btn">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                                </a>
-                        </div>
-                        <div class="pricing-tier">
-                            <div class="tier-rank"><span class="silver">Silver</span> → <span class="gold">Gold</span></div>
-                            <div class="tier-price">30<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>1-2 days completion</li>
-                                <li>Play with professionals</li>
-                                <li>Your account stays safe</li>
-                            </ul>
-                            <a href="checkout.html?service=Silver%20to%20Gold%20(Selfplay)&huf=11700" class="buy-btn">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                                </a>
-                        </div>
-                        <div class="pricing-tier">
-                            <div class="tier-rank"><span class="gold">Gold</span> → <span class="platinum">Platinum</span></div>
-                            <div class="tier-price">65<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>3 days completion</li>
-                                <li>Play with professionals</li>
-                                <li>Your account stays safe</li>
-                            </ul>
-                            <a href="checkout.html?service=Gold%20to%20Platinum%20(Selfplay)&huf=25350" class="buy-btn">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                                </a>
-                        </div>
-<div class="pricing-tier">
-    <div class="most-popular-label">Most Popular</div>
-    <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
-    <div class="tier-price">120<span class="currency">€</span></div>
-    <ul class="tier-features">
-        <li>3-5 days completion</li>
-        <li>Play with elite players</li>
-        <li>Your account stays safe</li>
-    </ul>
-    <a href="checkout.html?service=Platinum%20to%20Diamond%20(Selfplay)&huf=42900" class="buy-btn">
-        <i class="fas fa-shopping-cart"></i> Buy Now
-    </a>
-</div>
-
-                        <div class="pricing-tier">
-                            <div class="tier-rank"><span class="diamond">Diamond</span> → <span class="ruby">Ruby (Hold)</span></div>
-                            <div class="tier-price">500<span class="currency">€</span></div>
-                            <ul class="tier-features">
-                                <li>8-14 days completion</li>
-                                <li>Play with master players</li>
-                                <li>Your account stays safe</li>
-                            </ul>
-                            <a href="checkout.html?service=Diamond%20to%20Ruby%20(Selfplay)&huf=175500" class="buy-btn">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                                </a>
-                        </div>
-                    </div>
-                </div>
+<!-- Account Driver Pricing -->
+<div class="pricing-content active" id="account-driver">
+    <div class="pricing-grid fade-in">
+        <div class="pricing-tier">
+            <div class="tier-rank"><span class="bronze">Bronze</span> → <span class="silver">Silver</span></div>
+            <div class="tier-price">
+                <span class="original-price">€10</span>
+                9<span class="currency">€</span>
             </div>
+            <ul class="tier-features">
+                <li>1 day completion</li>
+                <li>AnyDesk security</li>
+                <li>Professional driver</li>
+            </ul>
+            <a href="checkout.html?service=Bronze%20to%20Silver&huf=3510" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+        
+        <div class="pricing-tier">
+            <div class="tier-rank"><span class="silver">Silver</span> → <span class="gold">Gold</span></div>
+            <div class="tier-price">
+                <span class="original-price">€20</span>
+                18<span class="currency">€</span>
+            </div>
+            <ul class="tier-features">
+                <li>1 day completion</li>
+                <li>AnyDesk security</li>
+                <li>Professional driver</li>
+            </ul>
+            <a href="checkout.html?service=Silver%20to%20Gold&huf=7020" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+        
+        <div class="pricing-tier">
+            <div class="tier-rank"><span class="gold">Gold</span> → <span class="platinum">Platinum</span></div>
+            <div class="tier-price">
+                <span class="original-price">€45</span>
+                41<span class="currency">€</span>
+            </div>
+            <ul class="tier-features">
+                <li>1-2 days completion</li>
+                <li>AnyDesk security</li>
+                <li>Professional driver</li>
+            </ul>
+            <a href="checkout.html?service=Gold%20to%20Platinum&huf=15990" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+        
+        <div class="pricing-tier featured">
+            <div class="most-popular-label">Most Popular</div>
+            <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
+            <div class="tier-price">
+                <span class="original-price">€75</span>
+                68<span class="currency">€</span>
+            </div>
+            <ul class="tier-features">
+                <li>2-3 days completion</li>
+                <li>AnyDesk security</li>
+                <li>Elite driver</li>
+            </ul>
+            <a href="checkout.html?service=Platinum%20to%20Diamond&huf=26520" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+        
+        <div class="pricing-tier">
+            <div class="tier-rank"><span class="diamond">Diamond</span> → <span class="ruby">Ruby (Hold)</span></div>
+            <div class="tier-price">
+                <span class="original-price">€300</span>
+                270<span class="currency">€</span>
+            </div>
+            <ul class="tier-features">
+                <li>4-8 days completion</li>
+                <li>AnyDesk security</li>
+                <li>Master tier driver</li>
+            </ul>
+            <a href="checkout.html?service=Diamond%20to%20Ruby&huf=105300" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Selfplay Pricing -->
+<div class="pricing-content" id="selfplay">
+    <div class="pricing-grid fade-in">
+        <div class="pricing-tier">
+            <div class="tier-rank"><span class="bronze">Bronze</span> → <span class="silver">Silver</span></div>
+            <div class="tier-price">
+                <span class="original-price">€15</span>
+                14<span class="currency">€</span>
+            </div>
+            <ul class="tier-features">
+                <li>1 day completion</li>
+                <li>Play with professionals</li>
+                <li>Your account stays safe</li>
+            </ul>
+            <a href="checkout.html?service=Bronze%20to%20Silver%20(Selfplay)&huf=5460" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+        
+        <div class="pricing-tier">
+            <div class="tier-rank"><span class="silver">Silver</span> → <span class="gold">Gold</span></div>
+            <div class="tier-price">
+                <span class="original-price">€30</span>
+                27<span class="currency">€</span>
+            </div>
+            <ul class="tier-features">
+                <li>1-2 days completion</li>
+                <li>Play with professionals</li>
+                <li>Your account stays safe</li>
+            </ul>
+            <a href="checkout.html?service=Silver%20to%20Gold%20(Selfplay)&huf=10530" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+        
+        <div class="pricing-tier">
+            <div class="tier-rank"><span class="gold">Gold</span> → <span class="platinum">Platinum</span></div>
+            <div class="tier-price">
+                <span class="original-price">€65</span>
+                59<span class="currency">€</span>
+            </div>
+            <ul class="tier-features">
+                <li>3 days completion</li>
+                <li>Play with professionals</li>
+                <li>Your account stays safe</li>
+            </ul>
+            <a href="checkout.html?service=Gold%20to%20Platinum%20(Selfplay)&huf=23010" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+        
+        <div class="pricing-tier featured">
+            <div class="most-popular-label">Most Popular</div>
+            <div class="tier-rank"><span class="platinum">Platinum</span> → <span class="diamond">Diamond</span></div>
+            <div class="tier-price">
+                <span class="original-price">€120</span>
+                108<span class="currency">€</span>
+            </div>
+            <ul class="tier-features">
+                <li>3-5 days completion</li>
+                <li>Play with elite players</li>
+                <li>Your account stays safe</li>
+            </ul>
+            <a href="checkout.html?service=Platinum%20to%20Diamond%20(Selfplay)&huf=42120" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+        
+        <div class="pricing-tier">
+            <div class="tier-rank"><span class="diamond">Diamond</span> → <span class="ruby">Ruby (Hold)</span></div>
+            <div class="tier-price">
+                <span class="original-price">€500</span>
+                450<span class="currency">€</span>
+            </div>
+            <ul class="tier-features">
+                <li>8-14 days completion</li>
+                <li>Play with master players</li>
+                <li>Your account stays safe</li>
+            </ul>
+            <a href="checkout.html?service=Diamond%20to%20Ruby%20(Selfplay)&huf=175500" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+    </div>
+</div>
         </section>
         <section class="order-calculator" id="calculator">
     <div class="container">
