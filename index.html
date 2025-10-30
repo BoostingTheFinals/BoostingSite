@@ -4696,112 +4696,6 @@ footer.site-footer .footer-bottom p {
         font-weight: 700;
     }
 }
-/* ============================================
-   FAQ CHEVRON ICON - OVERRIDE
-   Animates from RIGHT (→) to DOWN (↓)
-   ============================================ */
-
-.faq-icon {
-  position: relative !important;
-  display: inline-block !important;
-  width: 16px !important;
-  height: 16px !important;
-  background: none !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Chevron arrow shape */
-.faq-icon::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  width: 10px !important;
-  height: 10px !important;
-  border-width: 2px 2px 0 0 !important;
-  border-style: solid !important;
-  border-color: #00ffcc !important;
-  box-sizing: border-box !important;
-  transition: transform 0.25s ease !important;
-  
-  /* Default state: pointing RIGHT */
-  transform: translate(-50%, -50%) rotate(45deg) !important;
-}
-
-/* Expanded state: pointing DOWN */
-.faq-question[aria-expanded="true"] .faq-icon::before {
-  transform: translate(-50%, -50%) rotate(-45deg) !important;
-}
-.magic-btn {
-  --btn-main-size: 1.4em;
-  --btn-text: #ffffff;
-  --btn-bg: #07c1ff;
-  --btn-bg-hover: #0092ff;
-  --btn-outline: #07c1ff40;
-  --btn-shadow: #00000040;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  padding: 0.5em 1.4em;
-  border-radius: 999px;
-  font-size: var(--btn-main-size);
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: var(--btn-text);
-  background: var(--btn-bg);
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 0 0.3em var(--btn-bg);
-  transition: 0.5s;
-}
-
-.magic-btn:hover {
-  box-shadow: 0 0 1em var(--btn-bg);
-  background: var(--btn-bg-hover);
-  animation: ripple 1s infinite linear;
-}
-
-.magic-btn i {
-  transition: 0.5s;
-}
-
-.magic-btn:hover i {
-  transform: translateX(4px);
-  filter: drop-shadow(5px 5px 2.5px var(--btn-shadow));
-}
-
-.magic-btn:active {
-  transform: scale(0.95);
-}
-
-@keyframes ripple {
-  0% {
-    outline: 0em solid transparent;
-    outline-offset: -0.1em;
-  }
-  50% {
-    outline: 0.2em solid var(--btn-outline);
-    outline-offset: 0.2em;
-  }
-  100% {
-    outline: 0.4em solid transparent;
-    outline-offset: 0.4em;
-  }
-}
-.magic-btn {
-  gap: 0.6em;
-}
-
-.magic-btn i {
-  font-size: 0.9em;
-}
-
-
     </style>
 </head>
 <body>
@@ -4850,13 +4744,10 @@ footer.site-footer .footer-bottom p {
             <div class="hero-video-bg">
 <iframe 
     id="heroVideo"
-    src="https://www.youtube.com/embed/Sux2XfDazt8?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&playlist=Sux2XfDazt8&rel=0&modestbranding=1&vq=hd1080"
-    width="1920"
-    height="1080"
+    src="https://www.youtube.com/embed/Sux2XfDazt8?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&playlist=Sux2XfDazt8&rel=0&modestbranding=1"
     frameborder="0"
     allow="autoplay; encrypted-media"
     allowfullscreen
-    style="width: 100%; height: 100%; object-fit: cover; min-width: 1920px; min-height: 1080px;"
 ></iframe>
         <div class="video-overlay"></div>
     </div>
@@ -4870,10 +4761,9 @@ footer.site-footer .footer-bottom p {
         in The Finals with our elite team of top tier players. 
         Safe, fast, and <span class="highlight">guaranteed results</span>.
       </p>
-<a href="#pricing" class="btn magic-btn">
-    <i class="fas fa-rocket"></i> Get Started Now
-</a>
-
+                                <a href="#pricing" class="btn">
+                        <i class="fas fa-rocket"></i> Get Started Now
+                    </a>
     </div>
   </div>
 </section>
