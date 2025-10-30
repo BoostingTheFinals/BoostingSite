@@ -4839,6 +4839,348 @@ footer.site-footer .footer-bottom p {
 .back-to-top:hover svg {
   transform: translateY(-50%) rotate(-90deg);
 }
+/* ==== FINAL LAYOUT BALANCE FIX FOR 1080p ==== */
+
+/* Keep smaller base */
+html {
+  font-size: 80%;
+}
+
+/* Hero Section */
+.hero h1 {
+  font-size: 3.2rem;
+}
+.hero p {
+  font-size: 1.15rem;
+  max-width: 600px;
+}
+.hero .btn {
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 10px;
+  box-shadow: 0 0 18px rgba(0,255,204,0.4);
+}
+
+/* Pricing Grid — ensure side-by-side cards */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Make each card smaller but visible side-by-side */
+.pricing-tier {
+  padding: 1.8rem 1.5rem;
+  min-width: 240px;
+}
+
+/* Calculator — smaller & tighter */
+.calculator-box {
+  max-width: 400px;
+  padding: 20px;
+  margin-top: 30px;
+}
+.calc-option {
+  font-size: 0.9rem;
+  padding: 8px 20px;
+}
+.calc-btn {
+  font-size: 1rem;
+  padding: 10px 30px;
+}
+
+/* Process — 1-2-3 side by side */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.step-number {
+  width: 70px;
+  height: 70px;
+  font-size: 1.5rem;
+}
+
+/* Footer — make larger again */
+.site-footer,
+footer p,
+.footer-column p,
+.footer-column ul li a {
+  font-size: 0.95rem !important;
+  line-height: 1.7;
+}
+.footer-column h3 {
+  font-size: 1.3rem;
+}
+.footer-container {
+  gap: 50px;
+}
+
+/* Ensure consistent spacing for all main sections */
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+/* ==== FIXED FINAL ADJUSTMENTS ==== */
+
+/* Make payment boxes & logos smaller */
+.payment-logo {
+  width: 65px;    /* was 90px */
+  height: 65px;   /* was 90px */
+  padding: 12px;  /* tighter */
+  border-radius: 10px;
+  margin: 6px;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+.payment-logo img,
+.payment-icon {
+  width: 70% !important;
+  height: auto !important;
+  transform: scale(0.9);
+}
+
+/* Adjust "Accepted Payment Methods" title spacing */
+.payment-title {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Force all 5 pricing tiers in one row on 1080p */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(180px, 1fr)); /* 5 cards side by side */
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 100%;
+}
+
+/* Make each pricing card smaller */
+.pricing-tier {
+  padding: 1.5rem 1.2rem;
+  border-radius: 10px;
+  min-width: 180px;
+  max-width: 220px;
+  transform: scale(0.95);
+}
+
+.tier-rank {
+  font-size: 0.95rem;
+}
+.tier-price {
+  font-size: 1.3rem !important;
+}
+.tier-features li {
+  font-size: 0.8rem;
+}
+.buy-btn {
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
+
+/* Adjust spacing so layout fits tighter on screen */
+.pricing {
+  padding: 5rem 0;
+}
+/* ==== HEADER + PRICING FINAL BALANCE ==== */
+
+/* Smaller header / nav area */
+header {
+  padding: 12px 24px; /* was 20px 40px */
+}
+header .container {
+  padding: 0 24px;
+}
+.logo {
+  font-size: 0.95rem;
+}
+.nav-links {
+  gap: 2.5rem;
+}
+.nav-links a {
+  font-size: 0.85rem;
+}
+
+/* Slightly smaller login button */
+.login-btn {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  border-radius: 16px;
+}
+
+/* Make the pricing cards slightly larger but still all 5 fit */
+.pricing-grid {
+  grid-template-columns: repeat(5, minmax(200px, 1fr)); /* wider than before */
+  gap: 1.8rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 100%;
+}
+
+.pricing-tier {
+  padding: 2rem 1.6rem;   /* a bit more padding */
+  min-width: 200px;
+  max-width: 240px;
+  transform: scale(0.98); /* nearly full size */
+}
+
+.tier-price {
+  font-size: 1.5rem !important;
+}
+.tier-features li {
+  font-size: 0.85rem;
+}
+.buy-btn {
+  font-size: 0.9rem;
+  padding: 9px 18px;
+  border-radius: 8px;
+}
+
+/* Ensure spacing feels balanced */
+.pricing {
+  padding: 5.5rem 0;
+}
+/* ==== PAYMENT SECTION TWEAKS ==== */
+
+/* Make "Accepted Payment Methods" title match other headers */
+.payment-title {
+  font-size: 1.8rem; /* same as section titles */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(270deg, #00ffcc, #0077ff, #00ffcc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 5s ease infinite;
+}
+
+/* Make the payment logos smaller */
+.payment-icons {
+  gap: 2rem;
+}
+
+.payment-logo {
+  width: 55px;   /* smaller box */
+  height: 55px;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 6px;
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.3);
+  border: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+/* Make the actual logos inside smaller too */
+.payment-logo img,
+.payment-icon {
+  width: 60% !important;
+  height: auto !important;
+  transform: scale(0.85);
+}
+/* ==== HEADER & NAVIGATION POLISH ==== */
+
+/* Make the header smaller overall */
+header {
+  padding: 8px 20px; /* reduced from 12–20px */
+}
+header .container {
+  padding: 0 20px;
+}
+.logo {
+  font-size: 0.9rem; /* smaller logo text */
+}
+.logo-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Make nav links bigger and more visible */
+.nav-links a {
+  font-size: 1.05rem;      /* increased from ~0.85rem */
+  font-weight: 500;        /* slightly bolder */
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Maintain good spacing between them */
+.nav-links {
+  gap: 3rem;
+}
+
+/* Slightly smaller login button so it fits with new header size */
+.login-btn {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border-radius: 16px;
+}
+
+/* Adjust logo alignment for new proportions */
+header .container {
+  align-items: center;
+}
+/* ==== HALLOWEEN SALE + NAV LINKS FINAL ADJUSTMENT ==== */
+
+/* 🎃 Make Halloween sale element smaller */
+.halloween-sale,
+.halloween-banner,
+.sale-banner,
+.sale-text {
+  font-size: 0.9rem !important;      /* slightly smaller text */
+  padding: 4px 10px !important;      /* smaller pill/badge size */
+  border-radius: 6px !important;
+  transform: scale(0.9);             /* overall shrink */
+}
+
+/* Optional: reduce glow or shadow if it has one */
+.halloween-sale,
+.halloween-banner {
+  box-shadow: 0 0 6px rgba(255, 140, 0, 0.4) !important;
+  text-shadow: 0 0 6px rgba(255, 120, 0, 0.6) !important;
+}
+
+/* 🧭 Make nav links (Services, Pricing, Contact) larger & bolder */
+.nav-links a {
+  font-size: 1.15rem !important;   /* bigger than before */
+  font-weight: 600 !important;     /* bolder text */
+  letter-spacing: 0.6px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Adjust spacing to keep balance */
+.nav-links {
+  gap: 3.2rem;
+}
+
+/* Header stays small */
+header {
+  padding: 8px 20px;
+}
+header .container {
+  padding: 0 20px;
+  align-items: center;
+}
+.logo {
+  font-size: 0.9rem;
+}
 
     </style>
 </head>
