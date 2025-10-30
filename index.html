@@ -4696,6 +4696,71 @@ footer.site-footer .footer-bottom p {
         font-weight: 700;
     }
 }
+      .magic-btn {
+  --btn-main-size: 1.4em;
+  --btn-text: #ffffff;
+  --btn-bg: #07c1ff;
+  --btn-bg-hover: #0092ff;
+  --btn-outline: #07c1ff40;
+  --btn-shadow: #00000040;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.5em 1.4em;
+  border-radius: 999px;
+  font-size: var(--btn-main-size);
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: var(--btn-text);
+  background: var(--btn-bg);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 0.3em var(--btn-bg);
+  transition: 0.5s;
+}
+
+.magic-btn:hover {
+  box-shadow: 0 0 1em var(--btn-bg);
+  background: var(--btn-bg-hover);
+  animation: ripple 1s infinite linear;
+}
+
+.magic-btn i {
+  transition: 0.5s;
+}
+
+.magic-btn:hover i {
+  transform: translateX(4px);
+  filter: drop-shadow(5px 5px 2.5px var(--btn-shadow));
+}
+
+.magic-btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes ripple {
+  0% {
+    outline: 0em solid transparent;
+    outline-offset: -0.1em;
+  }
+  50% {
+    outline: 0.2em solid var(--btn-outline);
+    outline-offset: 0.2em;
+  }
+  100% {
+    outline: 0.4em solid transparent;
+    outline-offset: 0.4em;
+  }
+}
+.magic-btn {
+  gap: 0.6em;
+}
+
+.magic-btn i {
+  font-size: 0.9em;
+}
     </style>
 </head>
 <body>
@@ -4761,9 +4826,9 @@ footer.site-footer .footer-bottom p {
         in The Finals with our elite team of top tier players. 
         Safe, fast, and <span class="highlight">guaranteed results</span>.
       </p>
-                                <a href="#pricing" class="btn">
-                        <i class="fas fa-rocket"></i> Get Started Now
-                    </a>
+<a href="#pricing" class="btn magic-btn">
+    <i class="fas fa-rocket"></i> Get Started Now
+</a>
     </div>
   </div>
 </section>
@@ -5883,6 +5948,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </body>
 </html>
+
 
 
 
