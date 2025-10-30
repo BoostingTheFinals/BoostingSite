@@ -5181,6 +5181,136 @@ header .container {
 .logo {
   font-size: 0.9rem;
 }
+.nav-links a i {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover i {
+  color: #00ffcc;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.nav-links a i {
+  font-size: 1.4rem;
+  color: #ffffff;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover i {
+  transform: translateY(-3px) scale(1.15);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.login-btn {
+  margin-left: 1rem;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  color: #fff !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.6);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.nav-links a:hover i {
+  transform: scale(1.2) rotate(-5deg);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.login-btn {
+  margin-left: 1rem;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #00ffcc, #0077ff);
+  color: #fff !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.6);
+}
+header {
+  width: 100%;
+  background: inherit;
+  padding: 6px 32px; /* smaller height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.toggle-option {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  padding: 8px 24px; /* smaller height */
+  border-radius: 20px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  min-width: 160px; /* narrower width */
+  max-width: 160px;
+  text-align: center;
+  flex: 0 0 160px;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
     </style>
 </head>
@@ -5216,12 +5346,14 @@ header .container {
 
 
 
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="login.html" class="login-btn">Login</a></li>
-            </ul>
+<ul class="nav-links">
+  <li><a href="#services" title="Services"><i class="fa-solid fa-bolt"></i><span>Services</span></a></li>
+  <li><a href="#pricing" title="Pricing"><i class="fa-solid fa-tags"></i><span>Pricing</span></a></li>
+  <li><a href="#contact" title="Contact"><i class="fa-solid fa-envelope"></i><span>Contact us</span></a></li>
+  <li><a href="login.html" class="login-btn">Login</a></li>
+</ul>
+
+
         </nav>
     </header>
 
