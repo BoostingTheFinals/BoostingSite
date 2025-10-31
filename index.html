@@ -1769,7 +1769,320 @@ html {
   border: 2px solid transparent;
   border-radius: 12px;
 }
+/* Testimonials Section */
+.testimonials {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.testimonial-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-slider {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1);
+  overflow: visible;
+  width: 100%;
+}
+
+.testimonial-card {
+  flex: 0 0 calc((100% - 32px) / 3);
+  box-sizing: border-box;
+  background: var(--bg-primary);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.testimonial-info h4 {
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.testimonial-rank {
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.testimonial-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 1.1rem;
+}
+
+/* Navigation Arrows */
+.testimonial-nav {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: opacity 0.3s;
+  z-index: 2;
+  padding: 0.5rem;
+}
+
+.testimonial-nav:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.testimonial-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Dots */
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.testimonial-dots .dot {
+  width: 10px;
+  height: 10px;
+  background: var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.testimonial-dots .dot.active {
+  background: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .testimonial-card {
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+  
+  .testimonials {
+    padding: 4rem 1rem;
+  }
+}
+.testimonials,
+.testimonial-viewport,
+.testimonial-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/* Make the section full-width like the rest of the site */
+.testimonials {
+  width: 100%;
+  padding: 6rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Keep cards aligned nicely but stop them from touching page edges */
+.testimonial-container,
+.testimonial-viewport {
+  max-width: 1100px;  /* <— lower this number to “stop sooner” */
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* Testimonials Section - Full Width with Padding */
+.testimonials {
+  padding: 6rem 0; /* Remove horizontal padding from main section */
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.testimonial-viewport,
+.testimonial-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem; /* Add padding to header */
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.testimonial-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 4rem; /* Padding for arrows and breathing room */
+  max-width: 1000px; /* Optional: limit extreme width on large screens */
+  margin: 0 auto;
+}
+
+.testimonial-slider {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1);
+  overflow: visible;
+  width: 100%;
+}
+
+.testimonial-card {
+  flex: 0 0 calc((100% - 32px) / 3);
+  box-sizing: border-box;
+  background: var(--bg-primary);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+/* Navigation Arrows - Position outside cards */
+.testimonial-nav {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: opacity 0.3s;
+  z-index: 2;
+  padding: 0.5rem;
+  position: absolute;
+}
+
+.testimonial-nav.prev {
+  left: 1rem;
+}
+
+.testimonial-nav.next {
+  right: 1rem;
+}
+
+.testimonial-nav:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.testimonial-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Dots */
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.testimonial-dots .dot {
+  width: 10px;
+  height: 10px;
+  background: var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.testimonial-dots .dot.active {
+  background: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .testimonial-card {
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+  
+  .testimonial-container {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+  
+  .testimonials {
+    padding: 4rem 0;
+  }
+  
+  .testimonial-container {
+    padding: 0 2.5rem;
+  }
+  
+  .testimonial-nav.prev {
+    left: 0.5rem;
+  }
+  
+  .testimonial-nav.next {
+    right: 0.5rem;
+  }
+}
     </style>
 </head>
 <body>
@@ -2011,46 +2324,111 @@ html {
         </div>
     </div>
 </section>
+
     <section class="testimonials" id="testimonials">
         <div class="section-header">
             <h2>Customer Reviews</h2>
             <p>Trusted by 25+ players</p>
         </div>
-        <div class="testimonial-slider">
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">M</div>
-                    <div class="testimonial-info">
-                        <h4>Mike_TF</h4>
-                        <div class="testimonial-rank">Diamond → Ruby</div>
+        <div class="testimonial-container">
+            <button class="testimonial-nav prev" aria-label="Previous review">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-info">
+                            <h4>Mike_TF</h4>
+                            <div class="testimonial-rank">Diamond → Ruby</div>
+                        </div>
                     </div>
+                    <p class="testimonial-text">"Incredible service. Reached Ruby in 6 days with constant updates. Professional and reliable. Highly recommend!"</p>
+                    <div class="stars">★★★★★</div>
                 </div>
-                <p class="testimonial-text">"Incredible service. Reached Ruby in 6 days with constant updates. Professional and reliable. Highly recommend!"</p>
-                <div class="stars">★★★★★</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">A</div>
-                    <div class="testimonial-info">
-                        <h4>Anonymous</h4>
-                        <div class="testimonial-rank">Gold → Diamond</div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <h4>Anonymous</h4>
+                            <div class="testimonial-rank">Gold → Diamond</div>
+                        </div>
                     </div>
+                    <p class="testimonial-text">"Chose selfplay and played with amazing teammates. Learned so much and got my dream rank. Worth every penny."</p>
+                    <div class="stars">★★★★★</div>
                 </div>
-                <p class="testimonial-text">"Chose selfplay and played with amazing teammates. Learned so much and got my dream rank. Worth every penny."</p>
-                <div class="stars">★★★★★</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">T</div>
-                    <div class="testimonial-info">
-                        <h4>TOTALVISION</h4>
-                        <div class="testimonial-rank">Silver → Diamond</div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">T</div>
+                        <div class="testimonial-info">
+                            <h4>TOTALVISION</h4>
+                            <div class="testimonial-rank">Silver → Diamond</div>
+                        </div>
                     </div>
+                    <p class="testimonial-text">"Stuck in Silver for weeks. Got to Diamond in 3 days. Great communication and smooth service. Will use again!"</p>
+                    <div class="stars">★★★★★</div>
                 </div>
-                <p class="testimonial-text">"Stuck in Silver for weeks. Got to Diamond in 3 days. Great communication and smooth service. Will use again!"</p>
-                <div class="stars">★★★★★</div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">J</div>
+                        <div class="testimonial-info">
+                            <h4>Zashikaru</h4>
+                            <div class="testimonial-rank">Silver → Platinum</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Amazing experience! The booster was super professional and kept me updated every step. Climbed 2 ranks in just 2 days!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">S</div>
+                        <div class="testimonial-info">
+                            <h4>Ch1kita</h4>
+                            <div class="testimonial-rank">Platinum → Diamond</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Fast delivery and great communication. The selfplay option let me learn new strategies while ranking up. 10/10!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">K</div>
+                        <div class="testimonial-info">
+                            <h4>TheVoltz</h4>
+                            <div class="testimonial-rank">Silver → Diamond</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Best boosting service I've used! Affordable prices and lightning-fast completion. Already recommended to my friends."</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">D</div>
+                        <div class="testimonial-info">
+                            <h4>Dank</h4>
+                            <div class="testimonial-rank">Gold → Diamond</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Trustworthy and efficient. Hit Diamond in less than a week. The customer support was always available when I had questions."</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">L</div>
+                        <div class="testimonial-info">
+                            <h4>Pedrox2</h4>
+                            <div class="testimonial-rank">Gold → D</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Quick and painless process. Got exactly what I paid for and more. The booster even gave me tips to maintain my rank!"</p>
+                    <div class="stars">★★★★★</div>
+                </div>
             </div>
+            <button class="testimonial-nav next" aria-label="Next review">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
+        <div class="testimonial-dots"></div>
     </section>
 <section class="faq" id="faq">
     <div class="section-header">
@@ -2577,14 +2955,104 @@ document.querySelectorAll('.faq-question').forEach(question => {
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "Customer Support",
-    "email": "support@thefinalsboosting.com"
+    "email": "boostingthefinals@gmail.com"
   }
 }
 </script>
+<script>
+// Testimonials Carousel
+const slider = document.querySelector('.testimonial-slider');
+const cards = document.querySelectorAll('.testimonial-card');
+const prevBtn = document.querySelector('.testimonial-nav.prev');
+const nextBtn = document.querySelector('.testimonial-nav.next');
+const dotsContainer = document.querySelector('.testimonial-dots');
 
+let currentIndex = 0;
+let cardsPerView = 3;
+
+// Calculate cards per view based on screen size
+function updateCardsPerView() {
+  if (window.innerWidth <= 600) {
+    cardsPerView = 1;
+  } else if (window.innerWidth <= 900) {
+    cardsPerView = 2;
+  } else {
+    cardsPerView = 3;
+  }
+}
+
+// Create dots
+function createDots() {
+  dotsContainer.innerHTML = '';
+  const totalDots = Math.ceil(cards.length / cardsPerView);
+  
+  for (let i = 0; i < totalDots; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+}
+
+// Update carousel position
+function updateCarousel() {
+  const cardWidth = cards[0].offsetWidth;
+  const gap = 16; // gap between cards
+  const offset = currentIndex * (cardWidth + gap);
+  slider.style.transform = `translateX(-${offset}px)`;
+  
+  // Update dots
+  document.querySelectorAll('.dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
+  
+  // Update button states
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex >= cards.length - cardsPerView;
+}
+
+// Go to specific slide
+function goToSlide(index) {
+  currentIndex = index;
+  updateCarousel();
+}
+
+// Next slide
+function nextSlide() {
+  if (currentIndex < cards.length - cardsPerView) {
+    currentIndex++;
+    updateCarousel();
+  }
+}
+
+// Previous slide
+function prevSlide() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+  }
+}
+
+// Event listeners
+prevBtn.addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+
+// Handle resize
+window.addEventListener('resize', () => {
+  updateCardsPerView();
+  currentIndex = 0;
+  createDots();
+  updateCarousel();
+});
+
+// Initialize
+updateCardsPerView();
+createDots();
+updateCarousel();
+</script>
 </body>
 </html>
-
 
 
 
