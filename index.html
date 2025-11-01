@@ -2323,6 +2323,78 @@ html {
         .bar:nth-child(4) .bar-inner { animation-delay: 0.4s; }
         .bar:nth-child(5) .bar-inner { animation-delay: 0.5s; }
 
+/* Range selectors */
+.calc-select {
+  text-align: left;
+}
+.calc-select label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Custom styled range slider */
+.calc-select input[type="range"] {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.calc-select input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calc-select input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.6);
+}
+
+.calc-select input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.05);
+}
+
+/* Firefox */
+.calc-select input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calc-select input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.6);
+}
+
+.calc-select input[type="range"]::-moz-range-thumb:active {
+  transform: scale(1.05);
+}
+
+.calc-select input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+}
     </style>
 </head>
 <body>
