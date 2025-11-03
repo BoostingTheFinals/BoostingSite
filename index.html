@@ -17,7 +17,7 @@
   <meta name="description" content="Climb faster in The Finals with trusted pro boosters. 24/7 support, fast delivery, and safe methods. Reach Diamond or Ruby today — no stress, no grind.">
   <meta name="keywords" content="The Finals boosting, The Finals rank boost, cheap Finals boosting, fast Finals boosting, safe Finals boosting">
 
-<!-- Social sharing (Open Graph) -->
+
 <meta property="og:title" content="The Finals Boosting – Cheap, Fast & Reliable Services">
 <meta property="og:description" content="Boost your rank in The Finals with trusted pros. 24/7 support, fast delivery & 100% safety guaranteed. Start climbing today!">
 <meta property="og:image" content="https://i.imgur.com/opTiowT.png">
@@ -26,7 +26,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="The Finals Boosting">
 
-  <!-- Canonical URL (avoid duplicate content issues) -->
+ 
   <link rel="canonical" href="https://www.thefinalsboosting.com">
     <title>The Finals Boosting | Professional Rank Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -2395,6 +2395,188 @@ html {
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.1);
 }
+/* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 126px;
+                left: -100%;
+                width: 100%;
+                background: var(--bg-secondary);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: left 0.3s ease;
+                z-index: 999;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.75rem;
+                font-size: 1.1rem;
+            }
+
+            nav {
+                position: relative;
+            }
+
+            nav .btn {
+                display: none;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+                min-height: 80vh;
+            }
+
+            .hero-title {
+                font-size: 2rem !important;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem !important;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-ctas .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+                margin: 1rem 1.5rem 2rem;
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .services-grid,
+            .testimonial-slider {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .pricing-card {
+                padding: 1.5rem;
+            }
+
+            .pricing-toggle {
+                max-width: 100%;
+            }
+
+            .calculator-box {
+                padding: 1.5rem 1rem;
+            }
+
+            .announcement-wrapper {
+                padding: 0.5rem 1rem;
+            }
+
+            .announcement-bar {
+                font-size: 0.75rem;
+                padding: 0.4rem 1rem;
+            }
+
+            header {
+                top: 46px;
+            }
+
+            .logo-img {
+                height: 45px !important;
+            }
+
+            .logo-main {
+                font-size: 0.9rem;
+            }
+
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+
+            .bar-chart {
+                gap: 0.5rem;
+                padding: 1rem 0.25rem;
+            }
+
+            .bar-value {
+                font-size: 0.9rem;
+            }
+
+            .bar-label {
+                font-size: 0.6rem;
+            }
+
+            .testimonial-container {
+                padding: 0 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-ctas .btn {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .pricing-card {
+                padding: 1rem;
+            }
+
+            .price {
+                font-size: 1.5rem;
+            }
+
+            .rank-badge {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -3200,7 +3382,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-<!-- Debug + robust click handler (place before </body>) -->
 <script>
 (function () {
   // -- Safety: run after DOM ready
