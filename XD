@@ -4495,21 +4495,28 @@ document.addEventListener('DOMContentLoaded', function() {
             updateWorldTourPrice();
         });
 
-        fromSlider.addEventListener('input', function() {
-            currentRankInput.value = this.value;
-            updateWorldTourPrice();
-        });
+fromSlider.addEventListener('input', function() {
+    if (parseInt(fromSlider.value) > parseInt(toSlider.value)) {
+        fromSlider.value = toSlider.value;
+    }
+    currentRankInput.value = this.value;
+    updateWorldTourPrice();
+});
 
-        toSlider.addEventListener('input', function() {
-            desiredRankInput.value = this.value;
-            updateWorldTourPrice();
-        });
+toSlider.addEventListener('input', function() {
+    if (parseInt(toSlider.value) < parseInt(fromSlider.value)) {
+        toSlider.value = fromSlider.value;
+    }
+    desiredRankInput.value = this.value;
+    updateWorldTourPrice();
+});
+
     }
 
     function updateWorldTourPrice() {
         const current = parseInt(currentRankInput.value) || 0;
         const desired = parseInt(desiredRankInput.value) || 2400;
-        const rankDiff = desired - current;
+        const rankDiff = Math.max(0, desired - current);
         const calculatedBase = Math.round((rankDiff / 2400) * basePrice);
         const total = calculatedBase + methodPrice + speedPrice;
         const cashback = Math.round(total * 0.05);
