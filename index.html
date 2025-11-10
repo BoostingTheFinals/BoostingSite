@@ -2870,13 +2870,47 @@ html {
                 padding: 0.5rem 0.75rem !important;
             }
         }
+.announcement-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary);
+  padding: 0.5rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1101;
+}
+.announcement-bar {
+  background: linear-gradient(90deg, #c41e3a 0%, #d4243e 50%, #c41e3a 100%);
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(196, 30, 58, 0.25);
+  max-width: 1200px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.announcement-bar strong {
+  color: #ffd700;
+  font-weight: 700;
+}
+.announcement-bar span {
+  color: #fff;
+  font-weight: 600;
+}
     </style>
 </head>
 <body>
 <div class="announcement-wrapper">
 <div class="announcement-bar">
-  🎃 Halloween Sale – <strong>10% off</strong> all orders! |
-  Ends in: <span id="countdown" style="display:inline-block; min-width:110px;"></span>
+  🎄 Christmas Sale – <strong>10% off</strong> all orders! |
+  <span id="countdown-label">Starts in:</span> <span id="countdown" style="display:inline-block; min-width:110px;"></span>
 </div>
 </div>
     <header>
@@ -3388,7 +3422,7 @@ html {
   };
 
   let selectedType = "driver";
-  const DISCOUNT = 0.10; // 10% off
+  const DISCOUNT = 0; // 10% off
 
   // ===== Rank helper =====
   function getRank(value) {
@@ -3441,13 +3475,11 @@ html {
 
     const discounted = total * (1 - DISCOUNT);
 
-    resultBox.innerHTML = `
-      Total Price: 
-      <span style="color:#fff; font-weight:700;">€${Math.round(discounted)}</span>
-      <span style="color:#ff3b3b; font-weight:600; font-size:0.9rem;">
-        (10% OFF)
-      </span>
-    `;
+resultBox.innerHTML = `
+  Total Price: 
+  <span style="color:#fff; font-weight:700;">€${Math.round(discounted)}</span>
+`;
+
   }
 
   // ===== Slider fill =====
@@ -3535,47 +3567,47 @@ html {
 })();
 </script>
  <script>
-        const pricing = {
-            driver: [
-                { from: 'Bronze', to: 'Silver', price: 9, original: 10, duration: '1 day' },
-                { from: 'Silver', to: 'Gold', price: 18, original: 20, duration: '1 day' },
-                { from: 'Gold', to: 'Platinum', price: 41, original: 45, duration: '1-2 days' },
-                { from: 'Platinum', to: 'Diamond', price: 68, original: 75, duration: '2-3 days', featured: true },
-                { from: 'Diamond', to: 'Ruby', price: 270, original: 300, duration: '4-8 days' }
-            ],
-            selfplay: [
-                { from: 'Bronze', to: 'Silver', price: 14, original: 15, duration: '1 day' },
-                { from: 'Silver', to: 'Gold', price: 27, original: 30, duration: '1-2 days' },
-                { from: 'Gold', to: 'Platinum', price: 59, original: 65, duration: '3 days' },
-                { from: 'Platinum', to: 'Diamond', price: 108, original: 120, duration: '3-5 days', featured: true },
-                { from: 'Diamond', to: 'Ruby', price: 450, original: 500, duration: '8-14 days' }
-            ]
-        };
+const pricing = {
+    driver: [
+        { from: 'Bronze', to: 'Silver', price: 10, duration: '1 day' },
+        { from: 'Silver', to: 'Gold', price: 20, duration: '1 day' },
+        { from: 'Gold', to: 'Platinum', price: 45, duration: '1-2 days' },
+        { from: 'Platinum', to: 'Diamond', price: 75, duration: '2-3 days', featured: true },
+        { from: 'Diamond', to: 'Ruby', price: 300, duration: '4-8 days' }
+    ],
+    selfplay: [
+        { from: 'Bronze', to: 'Silver', price: 15, duration: '1 day' },
+        { from: 'Silver', to: 'Gold', price: 30, duration: '1-2 days' },
+        { from: 'Gold', to: 'Platinum', price: 65, duration: '3 days' },
+        { from: 'Platinum', to: 'Diamond', price: 120, duration: '3-5 days', featured: true },
+        { from: 'Diamond', to: 'Ruby', price: 500, duration: '8-14 days' }
+    ]
+};
 
-        function showPricing(type) {
-            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            const grid = document.getElementById('pricing-grid');
-            grid.innerHTML = '';
-            
-            pricing[type].forEach(tier => {
-                grid.innerHTML += `
-                    <div class="pricing-card ${tier.featured ? 'featured' : ''}">
-                        <div class="rank-badge">${tier.from} → ${tier.to}</div>
-                        ${tier.original ? `<div style="text-decoration: line-through; color: var(--text-secondary); font-size: 1rem; margin-top: 0.5rem;">${tier.original}€</div>` : ''}
-                        <div class="price">${tier.price}<span class="price-currency">€</span></div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> ${tier.duration} completion</li>
-                            <li><i class="fas fa-check"></i> ${type === 'driver' ? 'AnyDesk security' : 'Full account control'}</li>
-                            <li><i class="fas fa-check"></i> ${type === 'driver' ? 'Professional driver' : 'Elite teammates'}</li>
-                            <li><i class="fas fa-check"></i> Live Discord updates</li>
-                        </ul>
-                        <a href="#contact" class="btn buy-now" style="width: 100%;">Buy Now</a>
-                    </div>
-                `;
-            });
-        }
+function showPricing(type) {
+    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const grid = document.getElementById('pricing-grid');
+    grid.innerHTML = '';
+
+    pricing[type].forEach(tier => {
+        grid.innerHTML += `
+            <div class="pricing-card ${tier.featured ? 'featured' : ''}">
+                <div class="rank-badge">${tier.from} → ${tier.to}</div>
+                <div class="price">${tier.price}<span class="price-currency">€</span></div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> ${tier.duration} completion</li>
+                    <li><i class="fas fa-check"></i> ${type === 'driver' ? 'AnyDesk security' : 'Full account control'}</li>
+                    <li><i class="fas fa-check"></i> ${type === 'driver' ? 'Professional driver' : 'Elite teammates'}</li>
+                    <li><i class="fas fa-check"></i> Live Discord updates</li>
+                </ul>
+                <a href="#contact" class="btn buy-now" style="width: 100%;">Buy Now</a>
+            </div>
+        `;
+    });
+}
+
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -3591,17 +3623,35 @@ html {
     </script>
 <script>
   const countdownEl = document.getElementById("countdown");
+  const labelEl = document.getElementById("countdown-label");
 
   function updateCountdown() {
-    const targetDate = new Date(new Date().getFullYear(), 10, 6, 0, 0, 0); // November 6
-    const now = new Date();
-    const diff = targetDate - now;
+    const startDate = new Date('2025-12-15T00:00:00').getTime();
+    const endDate = new Date('2026-01-01T23:59:59').getTime();
+    const now = new Date().getTime();
 
-    if (diff <= 0) {
-      countdownEl.textContent = "Expired 🎃";
+    let diff;
+    let label;
+
+    // Before sale starts
+    if (now < startDate) {
+      diff = startDate - now;
+      label = "Starts in:";
+    }
+    // Sale is active
+    else if (now >= startDate && now <= endDate) {
+      diff = endDate - now;
+      label = "Expires in:";
+    }
+    // Sale has ended
+    else {
+      countdownEl.textContent = "Sale Ended 🎄";
+      labelEl.textContent = "";
       clearInterval(timer);
       return;
     }
+
+    labelEl.textContent = label;
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
