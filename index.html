@@ -3165,9 +3165,6 @@ html {
 
 <div class="calc-result">
     <div id="calcResult">Total Price: €10</div>
-    <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        +15% for live stream option
-    </div>
 </div>
 
 <!-- ADD DISCOUNT SECTION HERE -->
@@ -3421,7 +3418,7 @@ html {
     </footer>
 
 <script>
-// ======== PRICE CALCULATOR with 10% DISCOUNT (RED TEXT) ========
+// ======== PRICE CALCULATOR ========
 
 (function() {
   // Pricing tiers
@@ -3443,7 +3440,7 @@ html {
   };
 
   let selectedType = "driver";
-  const DISCOUNT = 0; // 10% off
+  const DISCOUNT = 0;
 
   // ===== Rank helper =====
   function getRank(value) {
@@ -3478,7 +3475,7 @@ html {
     updateRankDisplay("endValue", endVal);
 
     if (endVal <= startVal) {
-      resultBox.textContent = "❌ Target rank must be higher than current rank";
+      resultBox.innerHTML = "❌ Target rank must be higher than current rank";
       return;
     }
 
@@ -3494,13 +3491,17 @@ html {
       }
     });
 
-    const discounted = total * (1 - DISCOUNT);
+    const discounted = Math.round(total * (1 - DISCOUNT));
+    const withLivestream = Math.round(discounted * 1.20);
 
 resultBox.innerHTML = `
-  Total Price: 
-  <span style="color:#fff; font-weight:700;">€${Math.round(discounted)}</span>
+  <div style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">
+    Total Price: €${discounted}
+  </div>
+  <div style="font-size: 0.9rem; color: var(--text-secondary);">
+    +20% live stream: <span style="color: var(--accent); font-weight: 600;">€${withLivestream}</span>
+  </div>
 `;
-
   }
 
   // ===== Slider fill =====
@@ -3513,7 +3514,7 @@ resultBox.innerHTML = `
   window.addEventListener("DOMContentLoaded", () => {
     const start = document.getElementById("startRank");
     const end = document.getElementById("endRank");
-    const typeButtons = document.querySelectorAll(".calc-toggle-wrapper .toggle-btn"); // ⬅️ Scoped to calculator only
+    const typeButtons = document.querySelectorAll(".calc-toggle-wrapper .toggle-btn");
 
     if (!start || !end) return;
 
@@ -3531,7 +3532,6 @@ resultBox.innerHTML = `
       calculatePrice();
     });
 
-    // Independent toggle buttons (no effect on pricing section)
     typeButtons.forEach(btn => {
       btn.style.transition = "none";
       btn.addEventListener("click", e => {
@@ -3548,6 +3548,7 @@ resultBox.innerHTML = `
     calculatePrice();
   });
 })();
+</script>
 </script>
 
 
@@ -3995,7 +3996,6 @@ updateCarousel();
 </script>
 </body>
 </html>
-
 
 
 
