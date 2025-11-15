@@ -2258,14 +2258,20 @@ html {
             text-align: center;
         }
 
-        .stat-item-value {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+.stat-item-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-item:first-child .stat-item-value {
+    background: none;
+    -webkit-text-fill-color: #00d0ff;
+    color: #00d0ff;
+}
 
         .stat-item-label {
             font-size: 0.85rem;
@@ -2938,6 +2944,7 @@ html {
 .testimonial-info {
     white-space: nowrap;
 }
+
     </style>
 </head>
 <body>
