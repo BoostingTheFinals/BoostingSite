@@ -3177,29 +3177,29 @@ html {
 <div class="calc-select">
   <label for="startRank">
     Current Rank: 
-    <span id="startValue" class="bronze">
-      <span class="rank-name">Bronze</span>
-      <span class="rank-number">0</span>
+    <span id="startValue" class="platinum">
+      <span class="rank-name">Platinum</span>
+      <span class="rank-number">30000</span>
     </span>
   </label>
-  <input type="range" id="startRank" min="0" max="53000" value="0" step="250">
+  <input type="range" id="startRank" min="0" max="53000" value="30000" step="250">
 </div>
 
 <div class="calc-select">
   <label for="endRank">
     Target Rank: 
-    <span id="endValue" class="silver">
-      <span class="rank-name">Silver</span>
-      <span class="rank-number">10000</span>
+    <span id="endValue" class="diamond">
+      <span class="rank-name">Diamond</span>
+      <span class="rank-number">40000</span>
     </span>
   </label>
-  <input type="range" id="endRank" min="250" max="54000" value="10000" step="250">
+  <input type="range" id="endRank" min="250" max="54000" value="40000" step="250">
 </div>
 
 
 
 <div class="calc-result">
-    <div id="calcResult">Total Price: €10</div>
+    <div id="calcResult">Total Price: €75</div>
 </div>
 
 <!-- ADD DISCOUNT SECTION HERE -->
@@ -3483,7 +3483,7 @@ html {
     if (value < 20000) return "Silver";
     if (value < 30000) return "Gold";
     if (value < 40000) return "Platinum";
-    if (value < 50000) return "Diamond";
+    if (value < 52000) return "Diamond";
     return "Ruby";
   }
 
