@@ -2920,6 +2920,10 @@ html {
 .calc-btn.buy-now i {
   font-size: 1.5rem;
 }
+.announcement-bar {
+  padding: 0.35rem 1.5rem !important;
+  line-height: 1.3 !important;
+}
     </style>
 </head>
 <body>
@@ -2927,8 +2931,13 @@ html {
 <div class="announcement-bar">
   🎄 Christmas Sale – <strong>10% off</strong> all orders! |
   <span id="countdown-label">Starts in:</span> <span id="countdown" style="display:inline-block; min-width:110px;"></span>
+  <br>
+  <span style="font-size: 0.75rem; opacity: 0.85;">
+    (⚠️Ruby +15% price increase in: <span id="priceIncreaseTimer" style="font-weight: 600;"></span>⚠️)
+  </span>
 </div>
 </div>
+
     <header>
         <nav>
             
@@ -3993,6 +4002,59 @@ updateCarousel();
             });
         });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const priceIncreaseTimerEl = document.getElementById("priceIncreaseTimer");
+    
+    function updateTimer() {
+      const priceIncreaseDate = new Date('2025-11-20T00:00:00').getTime();
+      const now = new Date().getTime();
+      const diff = priceIncreaseDate - now;
+      
+      if (diff <= 0) {
+        priceIncreaseTimerEl.textContent = 'ACTIVE NOW!';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      
+      priceIncreaseTimerEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  });
+  </script>
+<script>
+  const priceIncreaseTimerEl = document.getElementById("priceIncreaseTimer");
+
+  function updatePriceIncreaseTimer() {
+    const priceIncreaseDate = new Date('2025-11-20T00:00:00').getTime();
+    const now = new Date().getTime();
+
+    let diff = priceIncreaseDate - now;
+
+    // Price increase is active
+    if (diff <= 0) {
+      priceIncreaseTimerEl.textContent = "ACTIVE NOW! ⚠️";
+      clearInterval(priceTimer);
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    // Use fixed-width formatting for stable width
+    priceIncreaseTimerEl.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+  }
+
+  updatePriceIncreaseTimer();
+  const priceTimer = setInterval(updatePriceIncreaseTimer, 1000);
+</script>
 </script>
 </body>
 </html>
