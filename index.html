@@ -2987,6 +2987,15 @@ html {
     border: 1px solid rgba(255, 145, 0, 0.15);
     background: rgba(10, 10, 10, 0.5);
 }
+.calc-toggle .toggle-btn:hover {
+    background: transparent !important;
+    color: inherit !important;
+}
+
+.calc-toggle .toggle-btn.active:hover {
+    background: linear-gradient(135deg, #ff6b35, #ff8c42) !important;
+    color: #fff !important;
+}
     </style>
 </head>
 <body>
@@ -3480,8 +3489,8 @@ html {
 <script>
 // ======== PRICE CALCULATOR ========
 
+// ======== PRICE CALCULATOR (SINGLE CLEAN VERSION) ========
 (function() {
-  // Pricing tiers
   const rankTiers = {
     driver: {
       'Bronze → Silver': { start: 0, end: 10000, price: 10 },
@@ -3500,9 +3509,7 @@ html {
   };
 
   let selectedType = "driver";
-  const DISCOUNT = 0;
 
-  // ===== Rank helper =====
   function getRank(value) {
     if (value < 10000) return "Bronze";
     if (value < 20000) return "Silver";
@@ -3512,7 +3519,6 @@ html {
     return "Ruby";
   }
 
-  // ===== Update rank display =====
   function updateRankDisplay(id, value) {
     const wrapper = document.getElementById(id);
     if (!wrapper) return;
@@ -3525,7 +3531,6 @@ html {
     rankNum.textContent = value;
   }
 
-  // ===== Calculate price =====
   function calculatePrice() {
     const startVal = parseInt(document.getElementById("startRank").value);
     const endVal = parseInt(document.getElementById("endRank").value);
@@ -3551,26 +3556,24 @@ html {
       }
     });
 
-    const discounted = Math.round(total * (1 - DISCOUNT));
+    const discounted = Math.round(total);
     const withLivestream = Math.round(discounted * 1.20);
 
-resultBox.innerHTML = `
-  <div style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">
-    Total Price: €${discounted}
-  </div>
-  <div style="font-size: 0.9rem; color: var(--text-secondary);">
-    +20% live stream: <span style="color: var(--accent); font-weight: 600;">€${withLivestream}</span>
-  </div>
-`;
+    resultBox.innerHTML = `
+      <div style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">
+        Total Price: €${discounted}
+      </div>
+      <div style="font-size: 0.9rem; color: var(--text-secondary);">
+        +20% live stream: <span style="color: var(--accent); font-weight: 600;">€${withLivestream}</span>
+      </div>
+    `;
   }
 
-  // ===== Slider fill =====
   function updateSliderFill(slider) {
     const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
     slider.style.background = `linear-gradient(to right, #ff6b35 ${value}%, rgba(255,255,255,0.2) ${value}%)`;
   }
 
-  // ===== Init =====
   window.addEventListener("DOMContentLoaded", () => {
     const start = document.getElementById("startRank");
     const end = document.getElementById("endRank");
@@ -3579,27 +3582,26 @@ resultBox.innerHTML = `
     if (!start || !end) return;
 
     start.addEventListener("input", () => {
-      if (+end.value <= +start.value) end.value = +start.value + 1000;
+      if (+end.value <= +start.value) end.value = +start.value + 250;
       updateSliderFill(start);
       updateSliderFill(end);
       calculatePrice();
     });
 
     end.addEventListener("input", () => {
-      if (+end.value <= +start.value) end.value = +start.value + 1000;
+      if (+end.value <= +start.value) end.value = +start.value + 250;
       updateSliderFill(start);
       updateSliderFill(end);
       calculatePrice();
     });
 
     typeButtons.forEach(btn => {
-      btn.style.transition = "none";
       btn.addEventListener("click", e => {
         e.preventDefault();
         typeButtons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         selectedType = btn.dataset.type;
-        requestAnimationFrame(calculatePrice);
+        calculatePrice();
       });
     });
 
@@ -3609,9 +3611,6 @@ resultBox.innerHTML = `
   });
 })();
 </script>
-</script>
-
-
 <script>
 // --- instant toggle optimization ---
 (function() {
@@ -3648,61 +3647,7 @@ resultBox.innerHTML = `
   });
 })();
 </script>
- <script>
-const pricing = {
-    driver: [
-        { from: 'Bronze', to: 'Silver', price: 10, duration: '1 day' },
-        { from: 'Silver', to: 'Gold', price: 20, duration: '1 day' },
-        { from: 'Gold', to: 'Platinum', price: 45, duration: '1-2 days' },
-        { from: 'Platinum', to: 'Diamond', price: 75, duration: '2-3 days', featured: true },
-        { from: 'Diamond', to: 'Ruby', price: 300, duration: '4-8 days' }
-    ],
-    selfplay: [
-        { from: 'Bronze', to: 'Silver', price: 15, duration: '1 day' },
-        { from: 'Silver', to: 'Gold', price: 30, duration: '1-2 days' },
-        { from: 'Gold', to: 'Platinum', price: 65, duration: '3 days' },
-        { from: 'Platinum', to: 'Diamond', price: 120, duration: '3-5 days', featured: true },
-        { from: 'Diamond', to: 'Ruby', price: 500, duration: '8-14 days' }
-    ]
-};
 
-function showPricing(type) {
-    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
-
-    const grid = document.getElementById('pricing-grid');
-    grid.innerHTML = '';
-
-    pricing[type].forEach(tier => {
-        grid.innerHTML += `
-            <div class="pricing-card ${tier.featured ? 'featured' : ''}">
-                <div class="rank-badge">${tier.from} → ${tier.to}</div>
-                <div class="price">${tier.price}<span class="price-currency">€</span></div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check"></i> ${tier.duration} completion</li>
-                    <li><i class="fas fa-check"></i> ${type === 'driver' ? 'AnyDesk security' : 'Full account control'}</li>
-                    <li><i class="fas fa-check"></i> ${type === 'driver' ? 'Professional driver' : 'Elite teammates'}</li>
-                    <li><i class="fas fa-check"></i> Live Discord updates</li>
-                </ul>
-                <a href="#contact" class="btn buy-now" style="width: 100%;">Buy Now</a>
-            </div>
-        `;
-    });
-}
-
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        showPricing('driver');
-    </script>
 <script>
   const countdownEl = document.getElementById("countdown");
   const labelEl = document.getElementById("countdown-label");
