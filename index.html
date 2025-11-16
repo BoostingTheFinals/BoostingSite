@@ -2999,6 +2999,7 @@ html {
 .euro-sign {
   font-weight: normal !important;
 }
+
     </style>
 </head>
 <body>
@@ -3062,7 +3063,7 @@ html {
 </p>
 
     <div class="hero-ctas">
-      <a href="#calculator" class="btn">View Pricing</a>
+      <a href="#calculator" class="btn view-pricing-btn">View Pricing</a>
       <a href="#services" class="btn btn-outline">Learn More</a>
     </div>
   </div>
@@ -3694,160 +3695,6 @@ html {
   const timer = setInterval(updateCountdown, 1000);
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Find all Buy Now / Get Started buttons
-  const buttons = document.querySelectorAll(".buy-now, .get-started, a[href='#contact']");
-
-  // Your "Contact Us" section is the 3rd footer-section inside #contact
-  const contactSection = document.querySelector("#contact .footer-section:nth-of-type(3)");
-
-  if (!contactSection) {
-    console.warn("Contact Us section not found!");
-    return;
-  }
-
-  buttons.forEach(button => {
-    button.addEventListener("click", e => {
-      e.preventDefault();
-
-      // Scroll smoothly to footer
-      document.getElementById("contact").scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-
-      // Trigger highlight animation
-      contactSection.classList.remove("contact-highlight");
-      void contactSection.offsetWidth; // Force reflow to restart animation
-      contactSection.classList.add("contact-highlight");
-
-      // Remove highlight after animation ends
-      setTimeout(() => {
-        contactSection.classList.remove("contact-highlight");
-      }, 1800);
-    });
-  });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const contactSection = document.querySelector("#contact .footer-section:nth-of-type(3)");
-  if (!contactSection) return;
-
-  // Select *all* possible Buy Now / Get Started buttons
-  const buttons = document.querySelectorAll(
-    "a[href='#contact'], button[onclick*='#contact'], a.btn, button.calc-btn"
-  );
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-
-      // Scroll smoothly to the footer
-      document.getElementById("contact").scrollIntoView({ behavior: "smooth", block: "center" });
-
-      // Trigger highlight
-      contactSection.classList.add("contact-highlight");
-      setTimeout(() => contactSection.classList.remove("contact-highlight"), 1500);
-    });
-  });
-});
-</script>
-<script>
-(function () {
-  // -- Safety: run after DOM ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else init();
-
-  function init() {
-    const contactSection = document.querySelector('#contact .footer-section:nth-of-type(3)');
-    if (!contactSection) {
-      console.warn('DEBUG: contactSection not found -> selector #contact .footer-section:nth-of-type(3)');
-      return;
-    }
-
-    // Ensure highlight CSS exists (adds minimal inline style if missing)
-    const styleId = 'contact-highlight-style';
-    if (!document.getElementById(styleId)) {
-      const st = document.createElement('style');
-      st.id = styleId;
-      st.textContent = `
-        .footer-section.contact-highlight {
-          box-shadow: 0 0 24px 6px rgba(255, 107, 53, 0.55) !important;
-          background-color: rgba(255,107,53,0.12) !important;
-          border-radius: 12px !important;
-          transition: box-shadow 0.3s ease;
-        }
-      `;
-      document.head.appendChild(st);
-    }
-
-    // Helper: restart highlight animation
-    function flashContact() {
-      contactSection.classList.remove('contact-highlight');
-      void contactSection.offsetWidth; // reflow to restart
-      contactSection.classList.add('contact-highlight');
-      setTimeout(() => contactSection.classList.remove('contact-highlight'), 1800);
-    }
-
-    // Robust matcher: element or its closest ancestor qualifies as "Buy Now / Get Started"
-    function qualifies(el) {
-      if (!el) return false;
-      const nodeName = el.nodeName.toLowerCase();
-      // only consider actionable elements
-      if (!['a','button','input'].includes(nodeName) && !el.closest) return false;
-
-      const candidate = el.closest('a, button, input, [role="button"]');
-      if (!candidate) return false;
-
-      const txt = (candidate.textContent || '').trim().toLowerCase();
-      const cls = (candidate.className || '').toLowerCase();
-      const href = candidate.getAttribute && candidate.getAttribute('href');
-      const onclick = candidate.getAttribute && candidate.getAttribute('onclick');
-
-      // conditions that indicate it's a Buy/Get button that should go to contact
-      if (cls.includes('buy-now') || cls.includes('get-started')) return {el:candidate, reason:'class'};
-      if (txt.includes('buy') || txt.includes('get started') || txt.includes('get started')) return {el:candidate, reason:'text'};
-      if (href && href.includes('#contact')) return {el:candidate, reason:'href'};
-      if (onclick && onclick.includes('#contact')) return {el:candidate, reason:'onclick'};
-      // also match generic .btn where text contains buy
-      if (cls.includes('btn') && txt.includes('buy')) return {el:candidate, reason:'btn+text'};
-      return false;
-    }
-
-    // Global click listener (capture phase so we can stop default navigation early)
-    document.addEventListener('click', function (ev) {
-      const match = qualifies(ev.target);
-      if (!match) return; // let it go
-
-      // Prevent navigation side effects (anchors, inline onclicks)
-      try { ev.preventDefault(); } catch (e) {}
-      try { ev.stopPropagation(); } catch (e) {}
-
-      // Debug log - remove later if desired
-      console.log('DEBUG: Contact click matched by', match.reason, match.el);
-
-      // perform smooth scroll and highlight
-      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      // If there are any other handlers that also navigate after a tiny delay, try to re-apply highlight on scrollend-ish
-      // Primary highlight now:
-      flashContact();
-
-      // Also try to re-apply after 600ms in case another script changed DOM
-      setTimeout(() => {
-        if (!contactSection.classList.contains('contact-highlight')) {
-          flashContact();
-        }
-      }, 600);
-
-      // If link had an href target (like plain '#contact'), do not let browser handle it automatically.
-      // If you *do* want the URL to change (add #contact to address bar), uncomment the next line:
-      // history.replaceState(null, '', '#contact');
-    }, true); // <-- capture = true
-  }
-})();
       // FAQ Toggle
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
@@ -4025,33 +3872,65 @@ updateCarousel();
   });
   </script>
 <script>
-  const priceIncreaseTimerEl = document.getElementById("priceIncreaseTimer");
+// Simple navigation with clean border pulse
+document.addEventListener('DOMContentLoaded', () => {
+  const contactSection = document.querySelector('#contact .footer-section:nth-of-type(3)');
+  
+  if (!contactSection) return;
 
-  function updatePriceIncreaseTimer() {
-    const priceIncreaseDate = new Date('2025-11-20T00:00:00').getTime();
-    const now = new Date().getTime();
-
-    let diff = priceIncreaseDate - now;
-
-    // Price increase is active
-    if (diff <= 0) {
-      priceIncreaseTimerEl.textContent = "ACTIVE NOW! ⚠️";
-      clearInterval(priceTimer);
-      return;
+  // Add simple border pulse animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes borderPulse {
+      0% {
+        border-color: transparent;
+        box-shadow: 0 0 0 rgba(255, 107, 53, 0);
+      }
+      50% {
+        border-color: #ff6b35;
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+      }
+      100% {
+        border-color: transparent;
+        box-shadow: 0 0 0 rgba(255, 107, 53, 0);
+      }
     }
+    
+    .footer-section.contact-highlight {
+      border: 2px solid transparent;
+      border-radius: 12px;
+      animation: borderPulse 1.5s ease-in-out;
+    }
+  `;
+  document.head.appendChild(style);
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    // Use fixed-width formatting for stable width
-    priceIncreaseTimerEl.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+  // Helper function to scroll and highlight
+  function scrollToContact(e) {
+    e.preventDefault();
+    
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Update URL to show #contact
+    history.pushState(null, '', '#contact');
+    
+    contactSection.classList.remove('contact-highlight');
+    void contactSection.offsetWidth;
+    contactSection.classList.add('contact-highlight');
+    setTimeout(() => contactSection.classList.remove('contact-highlight'), 1500);
   }
 
-  updatePriceIncreaseTimer();
-  const priceTimer = setInterval(updatePriceIncreaseTimer, 1000);
-</script>
+  // Intercept Buy Now button
+  const buyNowBtn = document.querySelector('.calc-btn.buy-now');
+  if (buyNowBtn) {
+    buyNowBtn.addEventListener('click', scrollToContact);
+  }
+
+  // Intercept Contact Us nav link - more specific selector
+  const contactNavLink = document.querySelector('.nav-links a[href="#contact"]');
+  if (contactNavLink) {
+    contactNavLink.addEventListener('click', scrollToContact);
+  }
+});
 </script>
 </body>
 </html>
