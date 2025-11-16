@@ -3846,30 +3846,28 @@ updateCarousel();
             });
         });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const priceIncreaseTimerEl = document.getElementById("priceIncreaseTimer");
-    
-    function updateTimer() {
-      const priceIncreaseDate = new Date('2025-11-20T00:00:00').getTime();
-      const now = new Date().getTime();
-      const diff = priceIncreaseDate - now;
-      
-      if (diff <= 0) {
-        priceIncreaseTimerEl.textContent = 'ACTIVE NOW!';
-        return;
-      }
+  const priceIncreaseTimerEl = document.getElementById("priceIncreaseTimer");
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-      
-      priceIncreaseTimerEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  function updatePriceIncreaseTimer() {
+    const priceIncreaseDate = new Date('2025-11-26T00:00:00').getTime();
+    const now = new Date().getTime();
+    const diff = priceIncreaseDate - now;
+
+    if (diff <= 0) {
+      priceIncreaseTimerEl.textContent = "ACTIVE NOW! ⚠️";
+      return;
     }
 
-    updateTimer();
-    setInterval(updateTimer, 1000);
-  });
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    priceIncreaseTimerEl.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+  }
+
+  updatePriceIncreaseTimer();
+  setInterval(updatePriceIncreaseTimer, 1000);
   </script>
 <script>
 // Smooth scroll for all navigation + contact highlight
@@ -3971,7 +3969,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
-    <script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   console.log("Looking for priceIncreaseTimer element...");
   const priceIncreaseTimerEl = document.getElementById("priceIncreaseTimer");
@@ -4005,9 +4003,9 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(updatePriceIncreaseTimer, 1000);
 });
 </script>
+
 </body>
 </html>
-
 
 
 
