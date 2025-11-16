@@ -3872,13 +3872,11 @@ updateCarousel();
   });
   </script>
 <script>
-// Simple navigation with clean border pulse
+// Smooth scroll for all navigation + contact highlight
 document.addEventListener('DOMContentLoaded', () => {
   const contactSection = document.querySelector('#contact .footer-section:nth-of-type(3)');
   
-  if (!contactSection) return;
-
-  // Add simple border pulse animation
+  // Add border pulse animation
   const style = document.createElement('style');
   style.textContent = `
     @keyframes borderPulse {
@@ -3904,32 +3902,61 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.head.appendChild(style);
 
-  // Helper function to scroll and highlight
-  function scrollToContact(e) {
-    e.preventDefault();
+  // Smooth scroll function
+  function smoothScrollTo(targetElement, targetId) {
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 600; // milliseconds - changed from 800 to 600
+    let start = null;
+
+    function animation(currentTime) {
+      if (start === null) start = currentTime;
+      const timeElapsed = currentTime - start;
+      const run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
     
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Update URL
+    history.pushState(null, '', targetId);
     
-    // Update URL to show #contact
-    history.pushState(null, '', '#contact');
-    
-    contactSection.classList.remove('contact-highlight');
-    void contactSection.offsetWidth;
-    contactSection.classList.add('contact-highlight');
-    setTimeout(() => contactSection.classList.remove('contact-highlight'), 1500);
+    // If it's contact, add highlight after scroll
+    if (targetId === '#contact' && contactSection) {
+      setTimeout(() => {
+        contactSection.classList.remove('contact-highlight');
+        void contactSection.offsetWidth;
+        contactSection.classList.add('contact-highlight');
+        setTimeout(() => contactSection.classList.remove('contact-highlight'), 1500);
+      }, duration);
+    }
   }
 
-  // Intercept Buy Now button
-  const buyNowBtn = document.querySelector('.calc-btn.buy-now');
-  if (buyNowBtn) {
-    buyNowBtn.addEventListener('click', scrollToContact);
-  }
-
-  // Intercept Contact Us nav link - more specific selector
-  const contactNavLink = document.querySelector('.nav-links a[href="#contact"]');
-  if (contactNavLink) {
-    contactNavLink.addEventListener('click', scrollToContact);
-  }
+  // Handle ALL anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      
+      // Skip empty anchors
+      if (targetId === '#' || targetId === '') return;
+      
+      e.preventDefault();
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        smoothScrollTo(targetElement, targetId);
+      }
+    });
+  });
 });
 </script>
 </body>
