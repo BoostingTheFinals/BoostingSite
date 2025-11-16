@@ -3907,7 +3907,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
-    const duration = 600; // milliseconds - changed from 800 to 600
+    const duration = 600;
     let start = null;
 
     function animation(currentTime) {
@@ -3957,6 +3957,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Explicitly handle Buy Now button (in case it doesn't have href)
+  const buyNowBtn = document.querySelector('.calc-btn.buy-now');
+  if (buyNowBtn) {
+    buyNowBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const contactElement = document.querySelector('#contact');
+      if (contactElement) {
+        smoothScrollTo(contactElement, '#contact');
+      }
+    });
+  }
 });
 </script>
 </body>
