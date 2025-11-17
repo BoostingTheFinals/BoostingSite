@@ -3067,6 +3067,17 @@ html {
     line-height: 1.2;
     flex-shrink: 0; /* Prevent text from shrinking */
 }
+.discount-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.514); /* Make base text more grey */
+}
+
+.discount-pill strong {
+    color: #ffffff; /* or rgba(255, 255, 255, 1) for full white */
+}
     </style>
 </head>
 <body>
@@ -3307,7 +3318,7 @@ html {
 
 <!-- ADD DISCOUNT SECTION HERE -->
 <div class="discounts-info">
-  <h3>💰 Available Discounts</h3>
+  <h3>💰 Available Discounts 💰</h3>
   <div class="discount-pills">
     <div class="discount-pill">
       <strong>Referral:</strong> 10% off (stack to 20%)
