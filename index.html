@@ -3078,6 +3078,116 @@ html {
 .discount-pill strong {
     color: #ffffff; /* or rgba(255, 255, 255, 1) for full white */
 }
+.services .service-card h3,
+.services .service-card p {
+    text-align: center;
+}
+
+.services .service-card .service-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.services .service-card .service-features {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.services .service-card {
+    text-align: center;
+}
+
+.services .service-card p {
+    min-height: 3em;
+}
+.discounts-info {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+    /* Keep your existing padding, border-radius, margin */
+}
+
+.discounts-info h3 {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    /* Keep your existing font-size, margin */
+}
+
+.discount-pills {
+    /* Keep your existing display and gap */
+}
+
+.discount-pill {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+    /* Keep your existing padding and font-size */
+}
+
+.discount-pill:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--accent-secondary);
+    transform: translateX(4px);
+}
+
+.discount-pill strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+
+/* ===== TOGGLE BUTTONS WITH ICONS ===== */
+.toggle-btn {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Keep all your existing properties (flex, padding, background, border, etc.) */
+}
+
+.toggle-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 8px;
+}
+
+.toggle-btn.active {
+    color: #000;
+}
+
+.toggle-btn.active::before {
+    opacity: 1;
+}
+
+.toggle-btn span {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Optional: add icon styling if using font-awesome */
+.toggle-btn i {
+    font-size: 1rem;
+}
+@media (max-width: 768px) {
+    /* Only add these if you want hover effects on mobile */
+    .discount-pill:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-left-color: var(--accent-secondary);
+        transform: translateX(4px);
+    }
+}
     </style>
 </head>
 <body>
@@ -3281,10 +3391,14 @@ html {
         <div class="calculator-box fade-in">
 <!-- Price calculator toggle - use same structure as Simple Pricing -->
 <div class="calc-toggle-wrapper">
-  <div class="pricing-toggle calc-toggle"> 
-    <button class="toggle-btn active" data-type="driver">Account Driver</button>
-    <button class="toggle-btn" data-type="selfplay">Selfplay</button>
-  </div>
+    <div class="pricing-toggle calc-toggle">
+        <button class="toggle-btn active" data-type="driver">
+            <span>🎮 Account Driver</span>
+        </button>
+        <button class="toggle-btn" data-type="selfplay">
+            <span>👥 Selfplay</span>
+        </button>
+    </div>
 </div>
 
 
