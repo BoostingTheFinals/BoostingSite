@@ -4190,7 +4190,6 @@ const cards = document.querySelectorAll('.testimonial-card');
 const prevBtn = document.querySelector('.testimonial-nav.prev');
 const nextBtn = document.querySelector('.testimonial-nav.next');
 const dotsContainer = document.querySelector('.testimonial-dots');
-
 let currentIndex = 0;
 let cardsPerView = 3;
 
@@ -4205,12 +4204,12 @@ function updateCardsPerView() {
   }
 }
 
-// Create 6 dots (fixed)
+// Create 7 dots (fixed)
 function createDots() {
   if (!dotsContainer) return;
   dotsContainer.innerHTML = '';
   
-  // Always create exactly 6 dots
+  // Always create exactly 7 dots
   for (let i = 0; i < 7; i++) {
     const dot = document.createElement('span');
     dot.classList.add('dot');
@@ -4231,6 +4230,7 @@ function updateCarousel() {
   document.querySelectorAll('.dot').forEach((dot, index) => {
     dot.classList.toggle('active', index === currentIndex);
   });
+}
   
   // Update button states
   prevBtn.disabled = currentIndex === 0;
@@ -4446,6 +4446,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
 
 
 
