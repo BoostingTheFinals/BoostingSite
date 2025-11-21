@@ -3731,6 +3731,17 @@ html {
                     <div class="stars">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
+    <div class="testimonial-header">
+        <div class="testimonial-avatar">T</div>
+        <div class="testimonial-info">
+            <h4>Turtle</h4>
+            <span class="rank-gold">Gold</span> → <span class="rank-diamond">Diamond</span>
+        </div>
+    </div>
+    <p class="testimonial-text">"Does not give you head but is very fast and epic 11/10 (2 days!)"</p>
+    <div class="stars">★★★★★</div>
+</div>
+                <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">I</div>
                         <div class="testimonial-info">
@@ -4200,7 +4211,7 @@ function createDots() {
   dotsContainer.innerHTML = '';
   
   // Always create exactly 6 dots
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
     const dot = document.createElement('span');
     dot.classList.add('dot');
     if (i === 0) dot.classList.add('active');
@@ -4435,6 +4446,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
+
 
 
 
