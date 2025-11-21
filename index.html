@@ -3731,17 +3731,6 @@ html {
                     <div class="stars">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
-    <div class="testimonial-header">
-        <div class="testimonial-avatar">T</div>
-        <div class="testimonial-info">
-            <h4>Turtle</h4>
-            <span class="rank-gold">Gold</span> → <span class="rank-diamond">Diamond</span>
-        </div>
-    </div>
-    <p class="testimonial-text">"Does not give you head but is very fast and epic 11/10 (2 days!)"</p>
-    <div class="stars">★★★★★</div>
-</div>
-                <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">I</div>
                         <div class="testimonial-info">
@@ -4190,6 +4179,7 @@ const cards = document.querySelectorAll('.testimonial-card');
 const prevBtn = document.querySelector('.testimonial-nav.prev');
 const nextBtn = document.querySelector('.testimonial-nav.next');
 const dotsContainer = document.querySelector('.testimonial-dots');
+
 let currentIndex = 0;
 let cardsPerView = 3;
 
@@ -4204,13 +4194,13 @@ function updateCardsPerView() {
   }
 }
 
-// Create 7 dots (fixed)
+// Create 6 dots (fixed)
 function createDots() {
   if (!dotsContainer) return;
   dotsContainer.innerHTML = '';
   
-  // Always create exactly 7 dots
-  for (let i = 0; i < 7; i++) {
+  // Always create exactly 6 dots
+  for (let i = 0; i < 6; i++) {
     const dot = document.createElement('span');
     dot.classList.add('dot');
     if (i === 0) dot.classList.add('active');
@@ -4230,7 +4220,6 @@ function updateCarousel() {
   document.querySelectorAll('.dot').forEach((dot, index) => {
     dot.classList.toggle('active', index === currentIndex);
   });
-}
   
   // Update button states
   prevBtn.disabled = currentIndex === 0;
@@ -4446,9 +4435,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-
-
-
 
 
 
