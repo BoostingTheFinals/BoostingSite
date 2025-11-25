@@ -3427,11 +3427,11 @@ html {
     }
 }
 .payment-icon {
-    transition: all 0.3s ease;
+    /* Remove transition from the base state */
 }
-
 .payment-card:hover .payment-icon {
     transform: rotateY(360deg) scale(1.1);
+    transition: all 0.3s ease; /* Only apply transition when hovering */
 }
 .faq-answer {
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
@@ -4499,6 +4499,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+
 
 
 
