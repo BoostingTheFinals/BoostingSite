@@ -4496,9 +4496,82 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(updatePriceIncreaseTimer, 1000);
 });
 </script>
+/* Add this script before the closing </body> tag: */
 
+<script>
+// Animated Counter for Stats
+function animateCounter(element, target, duration = 2000) {
+  const start = 0;
+  const increment = target / (duration / 16); // 60fps
+  let current = start;
+  
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = target + (element.dataset.suffix || '');
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(current) + (element.dataset.suffix || '');
+    }
+  }, 16);
+}
+
+// Intersection Observer to trigger animation when stats are visible
+const observerOptions = {
+  threshold: 0.5,
+  rootMargin: '0px'
+};
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+      entry.target.classList.add('animated');
+      
+      const statNumbers = entry.target.querySelectorAll('.stat-number');
+      statNumbers.forEach(num => {
+        const text = num.textContent.trim();
+        let target;
+        let suffix = '';
+        
+        // Parse different formats
+        if (text.includes('+')) {
+          target = parseInt(text);
+          suffix = '+';
+        } else if (text.includes('%')) {
+          target = parseInt(text);
+          suffix = '%';
+        } else if (text.includes('h')) {
+          target = parseInt(text);
+          suffix = 'h';
+        } else if (text.includes('/')) {
+          // For "24/7", don't animate
+          return;
+        } else {
+          target = parseInt(text);
+        }
+        
+        num.dataset.suffix = suffix;
+        num.textContent = '0' + suffix;
+        animateCounter(num, target, 2000);
+      });
+      
+      // Stop observing after animation
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Start observing when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  const statsSection = document.querySelector('.stats');
+  if (statsSection) {
+    statsObserver.observe(statsSection);
+  }
+});
+</script>
 </body>
 </html>
+
 
 
 
