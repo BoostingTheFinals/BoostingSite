@@ -4210,6 +4210,207 @@ header {
     text-align: center;
     margin-bottom: 5rem;
 }
+        /* Testimonials Section - Smaller */
+.testimonials {
+    padding: 4rem 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.testimonial-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.testimonial-slider {
+    display: flex;
+    gap: 12px;
+    transition: transform 0.45s cubic-bezier(0.2, 0.9, 0.3, 1);
+    overflow: visible;
+    width: 100%;
+}
+
+.testimonial-card {
+    flex: 0 0 calc((100% - 24px) / 3);
+    box-sizing: border-box;
+    background: var(--bg-primary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 16px 32px rgba(255, 107, 53, 0.18);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.testimonial-info h4 {
+    margin: 0 0 0.2rem 0;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.testimonial-rank {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.rank-bronze { color: #ff8000; }
+.rank-silver { color: #d4d4d4; }
+.rank-gold { color: #ffd700; }
+.rank-platinum { color: #919090; }
+.rank-diamond { color: #00d0ff; }
+.rank-ruby { color: #ff1900; }
+
+.testimonial-info {
+    white-space: nowrap;
+}
+
+.testimonial-text {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 0.95rem;
+}
+
+/* Navigation Arrows */
+.testimonial-nav {
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: opacity 0.3s;
+    z-index: 2;
+    padding: 0.4rem;
+    position: absolute;
+}
+
+.testimonial-nav.prev {
+    left: 0.75rem;
+}
+
+.testimonial-nav.next {
+    right: 0.75rem;
+}
+
+.testimonial-nav:hover:not(:disabled) {
+    opacity: 0.7;
+}
+
+.testimonial-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Dots */
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+}
+
+.testimonial-dots .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.testimonial-dots .dot.active {
+    background: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .testimonial-card {
+        flex: 0 0 calc((100% - 12px) / 2);
+    }
+    
+    .testimonial-container {
+        padding: 0 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .testimonial-card {
+        flex: 0 0 100%;
+    }
+    
+    .testimonials {
+        padding: 3rem 0;
+    }
+    
+    .testimonial-container {
+        padding: 0 2rem;
+    }
+    
+    .testimonial-nav.prev {
+        left: 0.25rem;
+    }
+    
+    .testimonial-nav.next {
+        right: 0.25rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -5320,6 +5521,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
