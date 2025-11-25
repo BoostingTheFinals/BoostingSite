@@ -4636,6 +4636,47 @@ footer {
     font-size: 0.8rem;
     font-weight: 500;
 }
+        /* Hero Buttons - Smaller */
+.btn {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border: none;
+    border-radius: 6px;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: calc(0.5rem - 2px) calc(1rem - 2px);
+}
+
+.btn-outline:hover {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+}
+
+.hero-ctas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
     </style>
 </head>
 <body>
@@ -5746,6 +5787,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
