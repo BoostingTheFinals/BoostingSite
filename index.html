@@ -3940,16 +3940,15 @@ html {
       'Diamond → Ruby': { start: 40000, end: 54000, price: 300 }
     },
     selfplay: {
-      'Bronze → Silver': { start: 0, end: 10000, price: 15 },
-      'Silver → Gold': { start: 10000, end: 20000, price: 40 },
-      'Gold → Platinum': { start: 20000, end: 30000, price: 70 },
-      'Platinum → Diamond': { start: 30000, end: 40000, price: 130 },
-      'Diamond → Ruby': { start: 40000, end: 54000, price: 520 }
+      'Bronze → Silver': { start: 0, end: 10000, price: 10 },
+      'Silver → Gold': { start: 10000, end: 20000, price: 25 },
+      'Gold → Platinum': { start: 20000, end: 30000, price: 35 },
+      'Platinum → Diamond': { start: 30000, end: 40000, price: 65 },
+      'Diamond → Ruby': { start: 40000, end: 54000, price: 300 }
     }
   };
-
   let selectedType = "driver";
-
+  
   function getRank(value) {
     if (value < 10000) return "Bronze";
     if (value < 20000) return "Silver";
@@ -3958,35 +3957,30 @@ html {
     if (value < 52000) return "Diamond";
     return "Ruby";
   }
-
+  
   function updateRankDisplay(id, value) {
     const wrapper = document.getElementById(id);
     if (!wrapper) return;
     const rankName = wrapper.querySelector(".rank-name");
     const rankNum = wrapper.querySelector(".rank-number");
-
     const rank = getRank(value);
     wrapper.className = rank.toLowerCase();
     rankName.textContent = rank;
     rankNum.textContent = value;
   }
-
+  
   function calculatePrice() {
     const startVal = parseInt(document.getElementById("startRank").value);
     const endVal = parseInt(document.getElementById("endRank").value);
     const resultBox = document.getElementById("calcResult");
-
     updateRankDisplay("startValue", startVal);
     updateRankDisplay("endValue", endVal);
-
     if (endVal <= startVal) {
       resultBox.innerHTML = "❌ Target rank must be higher than current rank";
       return;
     }
-
     let total = 0;
     const tiers = rankTiers[selectedType];
-
     Object.values(tiers).forEach(tier => {
       if (startVal < tier.end && endVal > tier.start) {
         const rangeStart = Math.max(startVal, tier.start);
@@ -3995,10 +3989,12 @@ html {
         total += tier.price * tierFraction;
       }
     });
-
-    const discounted = Math.round(total);
+    
+    // Apply 2x multiplier for selfplay
+    const priceMultiplier = selectedType === "selfplay" ? 2 : 1;
+    const discounted = Math.round(total * priceMultiplier);
     const withLivestream = Math.round(discounted * 1.20);
-
+    
     resultBox.innerHTML = `
       <div style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">
         Total Price: ${discounted} €
@@ -4008,33 +4004,31 @@ html {
       </div>
     `;
   }
-
+  
   function updateSliderFill(slider) {
     const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
     slider.style.background = `linear-gradient(to right, #ff6b35 ${value}%, rgba(255,255,255,0.2) ${value}%)`;
   }
-
+  
   window.addEventListener("DOMContentLoaded", () => {
     const start = document.getElementById("startRank");
     const end = document.getElementById("endRank");
     const typeButtons = document.querySelectorAll(".calc-toggle-wrapper .toggle-btn");
-
     if (!start || !end) return;
-
+    
     start.addEventListener("input", () => {
       if (+end.value <= +start.value) end.value = +start.value + 250;
       updateSliderFill(start);
       updateSliderFill(end);
       calculatePrice();
     });
-
     end.addEventListener("input", () => {
       if (+end.value <= +start.value) end.value = +start.value + 250;
       updateSliderFill(start);
       updateSliderFill(end);
       calculatePrice();
     });
-
+    
     typeButtons.forEach(btn => {
       btn.addEventListener("click", e => {
         e.preventDefault();
@@ -4044,7 +4038,7 @@ html {
         calculatePrice();
       });
     });
-
+    
     updateSliderFill(start);
     updateSliderFill(end);
     calculatePrice();
