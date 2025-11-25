@@ -2896,16 +2896,7 @@ html {
   font-size: 0.85rem;
   text-align: center;
   padding: 0.5rem 1.5rem;
-  border-radius: 8px;
   letter-spacing: 0.3px;
-  box-shadow: 0 2px 8px rgba(196, 30, 58, 0.25);
-  max-width: 1200px;
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.announcement-bar strong {
-  color: #ffd700;
-  font-weight: 700;
 }
 .announcement-bar span {
   color: #fff;
@@ -3457,6 +3448,55 @@ html {
     border: 1px solid rgba(255, 107, 53, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
+.announcement-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #c41e3a 0%, #d4243e 50%, #c41e3a 100%);
+  padding: 0.2rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1101;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.announcement-bar {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  max-width: 1200px;
+  width: 100%;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+.announcement-bar strong {
+  color: #ffd700;
+  font-weight: 700;
+}
+.announcement-bar span {
+  color: #fff;
+  font-weight: 600;
+}
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.9rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header {
+  margin-top: 0;
+  top: 31px;
+  border-top: none;
+}
     </style>
 </head>
 <body>
@@ -3465,9 +3505,6 @@ html {
   🎄 Christmas Sale – <strong>10% off</strong> all orders! |
   <span id="countdown-label">Starts in:</span> <span id="countdown" style="display:inline-block; min-width:110px;"></span>
   <br>
-  <span style="font-size: 0.75rem; opacity: 0.85;">
-    (⚠️Ruby +25% price increase in: <span id="priceIncreaseTimer" style="font-weight: 600;"></span>⚠️)
-  </span>
 </div>
 </div>
 
@@ -4145,45 +4182,45 @@ html {
   const countdownEl = document.getElementById("countdown");
   const labelEl = document.getElementById("countdown-label");
 
-  function updateCountdown() {
-    const startDate = new Date('2025-12-15T00:00:00').getTime();
-    const endDate = new Date('2026-01-01T23:59:59').getTime();
-    const now = new Date().getTime();
+function updateCountdown() {
+  const startDate = new Date('2025-12-12T00:00:00').getTime();
+  const endDate = new Date('2026-01-01T23:59:59').getTime();
+  const now = new Date().getTime();
 
-    let diff;
-    let label;
+  let diff;
+  let label;
 
-    // Before sale starts
-    if (now < startDate) {
-      diff = startDate - now;
-      label = "Starts in:";
-    }
-    // Sale is active
-    else if (now >= startDate && now <= endDate) {
-      diff = endDate - now;
-      label = "Expires in:";
-    }
-    // Sale has ended
-    else {
-      countdownEl.textContent = "Sale Ended 🎄";
-      labelEl.textContent = "";
-      clearInterval(timer);
-      return;
-    }
-
-    labelEl.textContent = label;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    // Use fixed-width formatting for stable width
-    countdownEl.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s 🎄`;
+  // Before sale starts
+  if (now < startDate) {
+    diff = startDate - now;
+    label = "Starts in:";
+  }
+  // Sale is active
+  else if (now >= startDate && now <= endDate) {
+    diff = endDate - now;
+    label = "Expires in:";
+  }
+  // Sale has ended
+  else {
+    countdownEl.textContent = "Sale Ended 🎄";
+    labelEl.textContent = "";
+    clearInterval(timer);
+    return;
   }
 
-  updateCountdown();
-  const timer = setInterval(updateCountdown, 1000);
+  labelEl.textContent = label;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  // Use fixed-width formatting for stable width
+  countdownEl.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s (Season 9) 🎄`;
+}
+
+updateCountdown();
+const timer = setInterval(updateCountdown, 1000);
 </script>
 <script>
       // FAQ Toggle
