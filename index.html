@@ -4714,6 +4714,17 @@ footer {
     border-color: transparent;
     box-shadow: none;
 }
+.logo-left {
+    position: relative;
+    left: -20px; /* Move left by 20px (use positive for right) */
+}
+nav .btn {
+    margin-left: 20px; /* Add space to the left (pushes button right) */
+    /* OR */
+    margin-right: 20px; /* Add space to the right (pulls button left) */
+    /* OR */
+    transform: translateX(25px); /* Move left by 20px (use positive for right) */
+}
     </style>
 </head>
 <body>
@@ -5833,7 +5844,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
 
 
 
