@@ -4791,6 +4791,41 @@ h1, h2, h3, .hero-title, .section-header h2 {
 nav .btn:hover {
     transform: translateX(25px) translateY(-1px);
 }
+        .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+}
     </style>
 </head>
 <body>
@@ -5325,6 +5360,11 @@ nav .btn:hover {
     </div>
 </footer>
 <div class="particles" id="particles"></div>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 <script>
 // ======== PRICE CALCULATOR ========
 
@@ -5918,8 +5958,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+    <script>
+// Mobile menu toggle
+document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+</script>
 </body>
 </html>
+
 
 
 
