@@ -4826,6 +4826,75 @@ nav .btn:hover {
         display: flex;
     }
 }
+        /* Improve readability with better font hierarchy */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: -0.01em; /* Tighter, more professional */
+}
+
+h1, h2, h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em; /* Professional tightness */
+}
+
+/* Better paragraph spacing */
+p {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85); /* Softer than pure secondary */
+}
+:root {
+    --accent: #ff6b35;
+    --accent-secondary: #ff8c5a; /* Slightly lighter for better gradients */
+    --text-primary: #ffffff;
+    --text-secondary: #b4b4b4; /* Warmer gray, less harsh */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --border: #2a2a2a; /* Slightly lighter for better contrast */
+}
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem); /* Slightly larger max */
+    font-weight: 800;
+    line-height: 1.05; /* Tighter line height */
+    letter-spacing: -0.03em; /* Professional tightness */
+    margin-bottom: 1.25rem;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8); /* Deeper shadow */
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem); /* More consistent */
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9); /* Brighter, clearer */
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+    max-width: 680px;
+}
+.btn {
+    padding: 0.7rem 1.5rem; /* Slightly more padding */
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em; /* Subtle spacing */
+    border-radius: 8px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing */
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.15); /* Subtle depth always */
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.35); /* More pronounced */
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.08);
+}
+
+.btn-outline:hover {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.35);
+}
     </style>
 </head>
 <body>
@@ -5976,6 +6045,7 @@ document.querySelector('.mobile-menu-btn').addEventListener('click', function() 
 </script>
 </body>
 </html>
+
 
 
 
