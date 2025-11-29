@@ -4934,6 +4934,29 @@ footer a:hover {
     line-height: 1.5;
     font-size: 0.85rem;
     text-align: left;
+}.service-card {
+    background: var(--bg-primary);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    transition: all 0.3s;
+    position: relative; /* Add this */
+}
+
+.service-card.popular::before {
+    content: 'POPULAR';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: #000;
+    padding: 0.3rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    z-index: 1;
 }
     </style>
 </head>
@@ -5075,19 +5098,19 @@ footer a:hover {
             <p>Choose the method that works best for you</p>
         </div>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                <h3>Account Driver</h3>
-                <p>Professional player securely boosts your account through remote access with full transparency.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Fastest completion time</li>
-                    <li><i class="fas fa-check"></i> Secure remote access</li>
-                    <li><i class="fas fa-check"></i> Live progress updates</li>
-                    <li><i class="fas fa-check"></i> Professional boosters</li>
-                </ul>
-            </div>
+<div class="service-card popular">
+    <div class="service-icon">
+        <i class="fas fa-user-shield"></i>
+    </div>
+    <h3>Account Driver</h3>
+    <p>Professional player securely boosts your account through remote access with full transparency.</p>
+    <ul class="service-features">
+        <li><i class="fas fa-check"></i> Fastest completion time</li>
+        <li><i class="fas fa-check"></i> Secure remote access</li>
+        <li><i class="fas fa-check"></i> Live progress updates</li>
+        <li><i class="fas fa-check"></i> Professional boosters</li>
+    </ul>
+</div>
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-users"></i>
@@ -6097,6 +6120,7 @@ document.querySelector('.mobile-menu-btn').addEventListener('click', function() 
 </script>
 </body>
 </html>
+
 
 
 
