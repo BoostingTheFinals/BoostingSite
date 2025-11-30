@@ -5282,6 +5282,34 @@ footer {
     font-size: 0.8rem;
     width: 100%;
 }
+@media (max-width: 768px) {
+    /* Larger touch targets */
+    .btn,
+    .nav-links a,
+    .faq-question {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Optimize spacing */
+    section {
+        padding: 3rem 1.5rem;
+    }
+    
+    /* Better card sizing */
+    .service-card,
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    /* Simplified animations */
+    .service-card:hover,
+    .testimonial-card:hover {
+        transform: translateY(-4px);
+    }
+}
     </style>
 </head>
 <body>
@@ -6499,6 +6527,7 @@ document.querySelector('.mobile-menu-btn').addEventListener('click', function() 
 </script>
 </body>
 </html>
+
 
 
 
