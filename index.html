@@ -4958,6 +4958,295 @@ footer a:hover {
     letter-spacing: 0.5px;
     z-index: 1;
 }
+        .orders-section {
+            padding: 4rem 0;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+        }
+
+        .orders-container {
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .order-card {
+            flex: 1;
+            background: var(--bg-primary);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .order-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+        }
+
+        .season-badge {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            color: #000;
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            letter-spacing: 0.5px;
+            width: fit-content;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 160px;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+            padding: 0.75rem 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .bar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+            min-height: 40px;
+            border-radius: 8px 8px 0 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .bar:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.2);
+        }
+
+        .bar-inner {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 0.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .bar-value {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 0.2rem;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+        }
+
+        .bar-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 0.4rem;
+            color: var(--text-secondary);
+            line-height: 1.1;
+        }
+
+        /* Rank colors */
+        .bar.silver .bar-inner {
+            background: linear-gradient(180deg, #c0c0c0, #a8a8a8);
+            box-shadow: 0 4px 12px rgba(192, 192, 192, 0.4);
+        }
+
+        .bar.gold .bar-inner {
+            background: linear-gradient(180deg, #ffd700, #daa520);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        }
+
+        .bar.platinum .bar-inner {
+            background: linear-gradient(180deg, #707070, #606060);
+            box-shadow: 0 4px 12px rgba(112, 112, 112, 0.4);
+        }
+
+        .bar.diamond .bar-inner {
+            background: linear-gradient(180deg, #b9f2ff, #4fc3f7);
+            box-shadow: 0 4px 12px rgba(185, 242, 255, 0.4);
+        }
+
+        .bar.ruby .bar-inner {
+            background: linear-gradient(180deg, #e0115f, #c41e3a);
+            box-shadow: 0 4px 12px rgba(224, 17, 95, 0.4);
+        }
+
+        .stats-summary {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item-value {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-item:first-child .stat-item-value {
+            background: none;
+            -webkit-text-fill-color: #00d0ff;
+            color: #00d0ff;
+        }
+
+        .stat-item-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.2rem;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .bar-inner {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .bar:nth-child(1) .bar-inner { animation-delay: 0.1s; }
+        .bar:nth-child(2) .bar-inner { animation-delay: 0.2s; }
+        .bar:nth-child(3) .bar-inner { animation-delay: 0.3s; }
+        .bar:nth-child(4) .bar-inner { animation-delay: 0.4s; }
+        .bar:nth-child(5) .bar-inner { animation-delay: 0.5s; }
+
+        @media (max-width: 900px) {
+            .orders-container {
+                flex-direction: column;
+            }
+
+
+            .card-title {
+                font-size: 1.5rem;
+            }
+
+            .bar-chart {
+                gap: 0.5rem;
+                height: 140px;
+            }
+
+            .bar-value {
+                font-size: 0.95rem;
+            }
+
+            .bar-label {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .orders-container {
+                padding: 0 1rem;
+            }
+
+            .order-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .bar-chart {
+                gap: 0.35rem;
+            }
+
+            .bar-value {
+                font-size: 0.85rem;
+            }
+
+            .bar-label {
+                font-size: 0.55rem;
+            }
+        }
+
+
+        .orders-container {
+    gap: 1.25rem;           /* Space between cards */
+    max-width: 800px;       /* Total width of container */
+}
+.order-card {
+    padding: 1.25rem;       /* Inner spacing - increase for bigger cards */
+    border-radius: 10px;    /* Corner roundness */
+}
+.card-title {
+    font-size: 1.05rem;     /* Title size - increase to make bigger */
+    margin-bottom: 0.85rem; /* Space below title */
+}
+.bar-chart {
+    height: 120px;          /* Height of chart - increase for taller bars */
+    gap: 0.5rem;           /* Space between bars */
+}
+.bar-value {
+    font-size: 0.85rem;     /* Number size on bars */
+}
+
+.bar-label {
+    font-size: 0.55rem;     /* Label text size (Silver→Gold, etc) */
+}
+.stat-item-value {
+    font-size: 1rem;        /* "Diamond", "22" text size */
+}
+
+.stat-item-label {
+    font-size: 0.65rem;     /* "Most Popular", "Total Orders" text */
+}
+.order-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(255, 107, 53, 0.15);
+}
+
+.order-card {
+    background: var(--bg-primary);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    transition: all 0.3s;  /* Make sure this matches the service cards */
+}
     </style>
 </head>
 <body>
@@ -5042,51 +5331,106 @@ footer a:hover {
             <span class="stat-label">Support</span>
         </div>
     </section>
-    <section class="stats-dashboard">
-        <!-- Rank Distribution Bar Chart -->
-        <div class="dashboard-card rank-distribution">
-            <span class="season-badge">SEASON 8</span>
-            <h3>Orders This Season</h3>
-            <div class="bar-chart">
-                <div class="bar bronze" style="height: 15%">
-                    <div class="bar-inner">
-                        <span class="bar-value">0</span>
+    <section class="orders-section">
+        <div class="section-header">
+            <h2>Orders / Season</h2>
+            <p>Our proven track record across seasons</p>
+        </div>
+
+        <div class="orders-container">
+            <!-- Season 7 Card -->
+            <div class="order-card">
+                <span class="season-badge">SEASON 7</span>
+                <h3 class="card-title">Completed Orders</h3>
+                <div class="bar-chart">
+                    <div class="bar silver" style="height: 20%">
+                        <div class="bar-inner">
+                            <span class="bar-value">0</span>
+                        </div>
+                        <div class="bar-label">Silver→<br>Gold</div>
                     </div>
-                    <div class="bar-label">Bronze→<br>Silver</div>
+                    <div class="bar gold" style="height: 30%">
+                        <div class="bar-inner">
+                            <span class="bar-value">0</span>
+                        </div>
+                        <div class="bar-label">Gold→<br>Platinum</div>
+                    </div>
+                    <div class="bar platinum" style="height: 50%">
+                        <div class="bar-inner">
+                            <span class="bar-value">1</span>
+                        </div>
+                        <div class="bar-label">Platinum→<br>Diamond</div>
+                    </div>
+                    <div class="bar diamond" style="height: 90%">
+                        <div class="bar-inner">
+                            <span class="bar-value">8</span>
+                        </div>
+                        <div class="bar-label">Diamond→<br>Safe</div>
+                    </div>
+                    <div class="bar ruby" style="height: 45%">
+                        <div class="bar-inner">
+                            <span class="bar-value">4</span>
+                        </div>
+                        <div class="bar-label">Ruby→<br>Safe</div>
+                    </div>
                 </div>
-                <div class="bar silver" style="height: 20%">
-                    <div class="bar-inner">
-                        <span class="bar-value">1</span>
+                <div class="stats-summary">
+                    <div class="stat-item">
+                        <div class="stat-item-value">Diamond</div>
+                        <div class="stat-item-label">Most Popular</div>
                     </div>
-                    <div class="bar-label">Silver→<br>Gold</div>
-                </div>
-                <div class="bar gold" style="height: 30%">
-                    <div class="bar-inner">
-                        <span class="bar-value">3</span>
+                    <div class="stat-item">
+                        <div class="stat-item-value">12</div>
+                        <div class="stat-item-label">Total Orders</div>
                     </div>
-                    <div class="bar-label">Gold→<br>Platinum</div>
-                </div>
-                <div class="bar diamond" style="height: 90%">
-                    <div class="bar-inner">
-                        <span class="bar-value">13</span>
-                    </div>
-                    <div class="bar-label">Platinum→<br>Diamond</div>
-                </div>
-                <div class="bar ruby" style="height: 55%">
-                    <div class="bar-inner">
-                        <span class="bar-value">5</span>
-                    </div>
-                    <div class="bar-label">Diamond→<br>Ruby</div>
                 </div>
             </div>
-            <div class="stats-summary">
-                <div class="stat-item">
-                    <div class="stat-item-value">Diamond</div>
-                    <div class="stat-item-label">Most Popular</div>
+
+            <!-- Season 8 Card -->
+            <div class="order-card">
+                <span class="season-badge">SEASON 8</span>
+                <h3 class="card-title">Completed Orders</h3>
+                <div class="bar-chart">
+                    <div class="bar silver" style="height: 15%">
+                        <div class="bar-inner">
+                            <span class="bar-value">0</span>
+                        </div>
+                        <div class="bar-label">Silver→<br>Gold</div>
+                    </div>
+                    <div class="bar gold" style="height: 30%">
+                        <div class="bar-inner">
+                            <span class="bar-value">1</span>
+                        </div>
+                        <div class="bar-label">Gold→<br>Platinum</div>
+                    </div>
+                    <div class="bar platinum" style="height: 90%">
+                        <div class="bar-inner">
+                            <span class="bar-value">3</span>
+                        </div>
+                        <div class="bar-label">Platinum→<br>Diamond</div>
+                    </div>
+                    <div class="bar diamond" style="height: 90%">
+                        <div class="bar-inner">
+                            <span class="bar-value">13</span>
+                        </div>
+                        <div class="bar-label">Diamond→<br>Safe</div>
+                    </div>
+                    <div class="bar ruby" style="height: 35%">
+                        <div class="bar-inner">
+                            <span class="bar-value">5</span>
+                        </div>
+                        <div class="bar-label">Ruby→<br>Safe</div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-item-value">22</div>
-                    <div class="stat-item-label">Total Orders</div>
+                <div class="stats-summary">
+                    <div class="stat-item">
+                        <div class="stat-item-value">Diamond</div>
+                        <div class="stat-item-label">Most Popular</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item-value">22</div>
+                        <div class="stat-item-label">Total Orders</div>
+                    </div>
                 </div>
             </div>
         </div>
