@@ -5310,6 +5310,92 @@ footer {
         transform: translateY(-4px);
     }
 }
+/* Christmas Lights */
+.christmas-lights {
+    position: fixed;
+    top: 135px; /* Increased to go below the full header */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 998; /* Below header but above content */
+    pointer-events: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.light {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    animation: glow 1.5s ease-in-out infinite;
+}
+
+.light::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.light:nth-child(4n+1) {
+    background: #ff0000;
+    box-shadow: 0 0 15px #ff0000, 0 0 30px rgba(255, 0, 0, 0.5);
+    animation-delay: 0s;
+}
+
+.light:nth-child(4n+2) {
+    background: #00ff00;
+    box-shadow: 0 0 15px #00ff00, 0 0 30px rgba(0, 255, 0, 0.5);
+    animation-delay: 0.3s;
+}
+
+.light:nth-child(4n+3) {
+    background: #ffff00;
+    box-shadow: 0 0 15px #ffff00, 0 0 30px rgba(255, 255, 0, 0.5);
+    animation-delay: 0.6s;
+}
+
+.light:nth-child(4n+4) {
+    background: #ff00ff;
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px rgba(255, 0, 255, 0.5);
+    animation-delay: 0.9s;
+}
+
+@keyframes glow {
+    0%, 100% { 
+        opacity: 0.6; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.4); 
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .christmas-lights {
+        top: 115px; /* Adjusted for mobile */
+        height: 40px;
+    }
+    
+    .light {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .light::before {
+        height: 15px;
+        top: -15px;
+    }
+}
     </style>
 </head>
 <body>
@@ -6524,6 +6610,31 @@ document.querySelector('.mobile-menu-btn').addEventListener('click', function() 
     this.classList.toggle('active');
     document.querySelector('.nav-links').classList.toggle('active');
 });
+</script>
+<script>
+// Create Christmas lights - run after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    createChristmasLights();
+});
+
+function createChristmasLights() {
+    // Remove existing lights if any
+    const existing = document.querySelector('.christmas-lights');
+    if (existing) existing.remove();
+    
+    const lightsContainer = document.createElement('div');
+    lightsContainer.className = 'christmas-lights';
+    
+    // Create 30 lights for better visibility
+    for (let i = 0; i < 30; i++) {
+        const light = document.createElement('div');
+        light.className = 'light';
+        lightsContainer.appendChild(light);
+    }
+    
+    document.body.appendChild(lightsContainer);
+    console.log('Christmas lights created!'); // Check browser console
+}
 </script>
 </body>
 </html>
