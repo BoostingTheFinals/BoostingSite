@@ -5310,14 +5310,14 @@ footer {
         transform: translateY(-4px);
     }
 }
-/* Christmas Lights */
+/* Premium Christmas Lights */
 .christmas-lights {
     position: fixed;
-    top: 135px; /* Increased to go below the full header */
+    top: 135px;
     left: 0;
     width: 100%;
-    height: 60px;
-    z-index: 998; /* Below header but above content */
+    height: 80px;
+    z-index: 998;
     pointer-events: none;
     display: flex;
     justify-content: space-around;
@@ -5326,74 +5326,146 @@ footer {
 }
 
 .light {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+    width: 12px;
+    height: 16px;
+    border-radius: 40% 40% 50% 50%;
     position: relative;
     animation: glow 1.5s ease-in-out infinite;
+    filter: brightness(1.2);
 }
 
-.light::before {
+/* Bulb socket/base */
+.light::after {
     content: '';
     position: absolute;
-    top: -20px;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 2px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.3);
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 2px;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
-.light:nth-child(4n+1) {
-    background: #ff0000;
-    box-shadow: 0 0 15px #ff0000, 0 0 30px rgba(255, 0, 0, 0.5);
+/* Wire connecting to bulb - REMOVED */
+
+/* Red lights */
+.light:nth-child(5n+1) {
+    background: radial-gradient(circle at 30% 30%, #ff6b6b, #ff0000, #8b0000);
+    box-shadow: 
+        0 0 20px #ff0000,
+        0 0 40px rgba(255, 0, 0, 0.6),
+        0 0 60px rgba(255, 0, 0, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
     animation-delay: 0s;
 }
 
-.light:nth-child(4n+2) {
-    background: #00ff00;
-    box-shadow: 0 0 15px #00ff00, 0 0 30px rgba(0, 255, 0, 0.5);
+/* Green lights */
+.light:nth-child(5n+2) {
+    background: radial-gradient(circle at 30% 30%, #90ff90, #00ff00, #006400);
+    box-shadow: 
+        0 0 20px #00ff00,
+        0 0 40px rgba(0, 255, 0, 0.6),
+        0 0 60px rgba(0, 255, 0, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
     animation-delay: 0.3s;
 }
 
-.light:nth-child(4n+3) {
-    background: #ffff00;
-    box-shadow: 0 0 15px #ffff00, 0 0 30px rgba(255, 255, 0, 0.5);
+/* Blue lights */
+.light:nth-child(5n+3) {
+    background: radial-gradient(circle at 30% 30%, #6bb6ff, #0080ff, #003d80);
+    box-shadow: 
+        0 0 20px #0080ff,
+        0 0 40px rgba(0, 128, 255, 0.6),
+        0 0 60px rgba(0, 128, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
     animation-delay: 0.6s;
 }
 
-.light:nth-child(4n+4) {
-    background: #ff00ff;
-    box-shadow: 0 0 15px #ff00ff, 0 0 30px rgba(255, 0, 255, 0.5);
+/* Yellow/Gold lights */
+.light:nth-child(5n+4) {
+    background: radial-gradient(circle at 30% 30%, #fffacd, #ffd700, #b8860b);
+    box-shadow: 
+        0 0 20px #ffd700,
+        0 0 40px rgba(255, 215, 0, 0.6),
+        0 0 60px rgba(255, 215, 0, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
     animation-delay: 0.9s;
 }
 
+/* Purple/Magenta lights */
+.light:nth-child(5n+5) {
+    background: radial-gradient(circle at 30% 30%, #ff6bff, #ff00ff, #800080);
+    box-shadow: 
+        0 0 20px #ff00ff,
+        0 0 40px rgba(255, 0, 255, 0.6),
+        0 0 60px rgba(255, 0, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    animation-delay: 1.2s;
+}
+
+/* Enhanced glow animation */
 @keyframes glow {
-    0%, 100% { 
-        opacity: 0.6; 
-        transform: scale(1); 
+    0% { 
+        opacity: 0.7;
+        transform: scale(1) translateY(0);
+        filter: brightness(1);
     }
     50% { 
-        opacity: 1; 
-        transform: scale(1.4); 
+        opacity: 1;
+        transform: scale(1.1) translateY(-2px);
+        filter: brightness(1.4);
     }
+    100% { 
+        opacity: 0.7;
+        transform: scale(1) translateY(0);
+        filter: brightness(1);
+    }
+}
+
+/* Subtle sway animation */
+@keyframes sway {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(-2px) rotate(-1deg); }
+    75% { transform: translateX(2px) rotate(1deg); }
+}
+
+.light {
+    animation: glow 1.5s ease-in-out infinite, sway 4s ease-in-out infinite;
+}
+
+/* Add sparkle effect */
+@keyframes sparkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.light:nth-child(3n)::after {
+    animation: sparkle 2s ease-in-out infinite;
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .christmas-lights {
-        top: 115px; /* Adjusted for mobile */
-        height: 40px;
+        top: 115px;
+        height: 60px;
     }
     
     .light {
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 14px;
     }
     
-    .light::before {
-        height: 15px;
-        top: -15px;
+    .light::after {
+        width: 6px;
+        height: 6px;
+        top: -6px;
     }
 }
     </style>
@@ -6612,7 +6684,7 @@ document.querySelector('.mobile-menu-btn').addEventListener('click', function() 
 });
 </script>
 <script>
-// Create Christmas lights - run after DOM is loaded
+// Create Premium Christmas lights
 document.addEventListener('DOMContentLoaded', function() {
     createChristmasLights();
 });
@@ -6625,15 +6697,14 @@ function createChristmasLights() {
     const lightsContainer = document.createElement('div');
     lightsContainer.className = 'christmas-lights';
     
-    // Create 30 lights for better visibility
-    for (let i = 0; i < 30; i++) {
+    // Create 40 lights for full coverage
+    for (let i = 0; i < 40; i++) {
         const light = document.createElement('div');
         light.className = 'light';
         lightsContainer.appendChild(light);
     }
     
     document.body.appendChild(lightsContainer);
-    console.log('Christmas lights created!'); // Check browser console
 }
 </script>
 </body>
