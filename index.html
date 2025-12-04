@@ -5974,6 +5974,11 @@ nav {
     padding: 0.55rem 1.2rem;  /* Reduced from 0.65rem 1.4rem */
     font-size: 0.9rem;        /* Reduced from 0.95rem */
 }
+        .discount-pill i {
+    color: var(--accent);
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
     </style>
 </head>
 <body>
@@ -6275,13 +6280,13 @@ nav {
   <h3>Available Discounts</h3>
   <div class="discount-pills">
     <div class="discount-pill">
-      <strong>🎁 Referral:</strong> 5% off (stack to 15%)
+      <i class="fas fa-gift"></i> <strong>Referral:</strong> 5% off (stack to 15%)
     </div>
     <div class="discount-pill">
-      <strong>⭐ Loyalty:</strong> 5% off after 2 orders (forever)
+      <i class="fas fa-star"></i> <strong>Loyalty:</strong> 5% off after 2 orders (forever)
     </div>
     <div class="discount-pill">
-      <strong>🐦 Early Bird:</strong> 5% off first 2 weeks of season
+      <i class="fas fa-clock"></i> <strong>Early Bird:</strong> 5% off first 2 weeks of season
     </div>
   </div>
 </div>
@@ -7252,6 +7257,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
 
