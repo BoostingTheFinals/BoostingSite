@@ -6092,18 +6092,20 @@ footer {
     driver: {
       'Bronze → Silver': { start: 0, end: 10000, price: 10 },
       'Silver → Gold': { start: 10000, end: 20000, price: 25 },
-      'Gold → Platinum': { start: 20000, end: 30000, price: 35 },
+      'Gold → Platinum': { start: 20000, end: 30000, price: 40 },
       'Platinum → Diamond': { start: 30000, end: 40000, price: 70 },
-      'Diamond → Ruby': { start: 40000, end: 50000, price: 275 },
-      'Ruby → Master': { start: 50000, end: 100000, price: 1400 } // 50k range × 30€ per 1k = 1500€
+      'Diamond → Ruby': { start: 40000, end: 50000, price: 180 },
+      'Ruby → Master I': { start: 50000, end: 52000, price: 60 }, // 2k range × 30€ per 1k = 60€
+      'Master I → Master II': { start: 52000, end: 55000, price: 120 } // 3k range × 40€ per 1k = 120€
     },
     selfplay: {
       'Bronze → Silver': { start: 0, end: 10000, price: 10 },
       'Silver → Gold': { start: 10000, end: 20000, price: 25 },
-      'Gold → Platinum': { start: 20000, end: 30000, price: 35 },
+      'Gold → Platinum': { start: 20000, end: 30000, price: 40 },
       'Platinum → Diamond': { start: 30000, end: 40000, price: 70 },
-      'Diamond → Ruby': { start: 40000, end: 50000, price: 275 },
-      'Ruby → Master': { start: 50000, end: 100000, price: 1400 } // 50k range × 30€ per 1k = 1500€
+      'Diamond → Ruby': { start: 40000, end: 50000, price: 180 },
+      'Ruby → Master I': { start: 50000, end: 52000, price: 60 }, // 2k range × 30€ per 1k = 60€
+      'Master I → Master II': { start: 52000, end: 55000, price: 120 } // 3k range × 40€ per 1k = 120€
     }
   };
   let selectedType = "driver";
@@ -6702,6 +6704,7 @@ function createChristmasLights() {
 </script>
 </body>
 </html>
+
 
 
 
