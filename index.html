@@ -5468,6 +5468,87 @@ footer {
         top: -6px;
     }
 }
+/* Nav padding - slightly more */
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo - slightly bigger */
+.logo-img {
+    height: 55px;
+    width: auto;
+    border-radius: 6px;
+}
+
+/* Button - slightly bigger */
+.btn {
+    padding: 0.55rem 1.15rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+/* Nav links text - slightly bigger */
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+/* Nav links spacing */
+.nav-links {
+    display: flex;
+    gap: 2.25rem;
+    list-style: none;
+}
+
+/* Christmas lights position - adjusted for slightly bigger header */
+.christmas-lights {
+    position: fixed;
+    top: 115px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 998;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+/* Mobile lights adjustment */
+@media (max-width: 768px) {
+    .christmas-lights {
+        top: 95px;
+        height: 55px;
+    }
+    
+    .light {
+        width: 10px;
+        height: 14px;
+    }
+    
+    .light::after {
+        width: 6px;
+        height: 6px;
+        top: -6px;
+    }
+}
     </style>
 </head>
 <body>
@@ -6704,6 +6785,7 @@ function createChristmasLights() {
 </script>
 </body>
 </html>
+
 
 
 
