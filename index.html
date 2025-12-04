@@ -5786,6 +5786,62 @@ nav {
     position: relative;
     z-index: 10;
 }
+/* How It Works Section - Smaller and tighter */
+.process {
+    padding: 2.5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.85rem;
+    margin-top: 1.5rem;
+}
+
+.process-step {
+    background: var(--bg-primary);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.process-step:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(255, 107, 53, 0.15);
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #000;
+    margin: 0 auto 0.65rem;
+}
+
+.process-step h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.process-step p {
+    color: var(--text-secondary);
+    line-height: 1.4;
+    font-size: 0.75rem;
+}
     </style>
 </head>
 <body>
@@ -6017,17 +6073,17 @@ nav {
     <div class="process-steps">
         <div class="process-step">
             <div class="step-number">1</div>
-            <h3>Contact 📧</h3>
+            <h3>Contact</h3>
             <p>Reach out via email or Discord with your current rank and desired target.</p>
         </div>
         <div class="process-step">
             <div class="step-number">2</div>
-            <h3>Payment 💳</h3>
+            <h3>Payment</h3>
             <p>Secure payment through your preferred method before we begin the boost.</p>
         </div>
         <div class="process-step">
             <div class="step-number">3</div>
-            <h3>Boost 🚀</h3>
+            <h3>Boost</h3>
             <p>Our professionals deliver your desired rank with precision and speed.</p>
         </div>
     </div>
@@ -7022,6 +7078,7 @@ function createChristmasLights() {
 </script>
 </body>
 </html>
+
 
 
 
