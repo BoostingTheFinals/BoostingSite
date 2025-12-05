@@ -5985,6 +5985,27 @@ nav {
     -webkit-text-fill-color: transparent;
     font-weight: 900;
 }
+/* Animated underline effect */
+.nav-links a {
+  position: relative;
+  padding-bottom: 0.5rem; /* Add space for underline */
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
     </style>
 </head>
 <body>
@@ -7263,6 +7284,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
 
