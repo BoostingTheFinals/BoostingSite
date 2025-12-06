@@ -1,21 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About Us – The Finals Boosting</title>
-  <link rel="stylesheet" href="styles.css"> <!-- if you have one -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Finals Boosting | Professional Rank Boosting Service</title>
+    <meta name="description" content="Learn about The Finals Boosting - your trusted partner for professional rank boosting services. Safe, fast, and reliable since 2024.">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent: #ff6b35;
+            --accent-secondary: #ffa500;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --border: #252525;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 31px;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            left: -20px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-main {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .logo-tagline {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .btn {
+            padding: 0.55rem 1.2rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            transform: translateX(25px);
+        }
+
+        .btn:hover {
+            transform: translateX(25px) translateY(-1px);
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+        }
+
+        .announcement-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, #c41e3a 0%, #d4243e 50%, #c41e3a 100%);
+            padding: 0.15rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1101;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .announcement-bar {
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.75rem;
+            text-align: center;
+            line-height: 1.15;
+            letter-spacing: 0.2px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .announcement-bar strong {
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .about-hero {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .about-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .about-hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .about-section {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .about-section:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(255, 107, 53, 0.15);
+        }
+
+        .about-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .about-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: var(--bg-primary);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #000;
+            margin: 0 auto 1rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+        }
+
+        .cta-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            transform: translateX(0);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: #000;
+            transform: translateY(-1px);
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-hero {
+                padding: 8rem 1.5rem 3rem;
+            }
+
+            .about-section {
+                padding: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="announcement-wrapper">
+        <div class="announcement-bar">
+            ⚠️ Last Week of Season 8 - <strong>No New Orders</strong> | Christmas Sale – <strong>10% off</strong> all orders! | Season 9 🎄
+        </div>
+    </div>
 
-  <h1>About Our The Finals Boosting Service</h1>
-  <p>The Finals can feel like a grind, especially when you’re stuck with random teammates or facing cheaters. Our boosting service gives you a simple, safe, and fast way to reach the rank you deserve — without wasting hours on stressful matches.
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-left">
+                    <div class="logo-text">
+                        <div class="logo-main">THE FINALS BOOSTING</div>
+                        <div class="logo-tagline">Fast • Secure • Cheap</div>
+                    </div>
+                </div>
+            </div>
 
-All boosting is done by verified top-ranked players with zero cheats and full confidentiality. Whether you want Diamond, Ruby, or just help climbing out of Gold, we offer both Account Driver and Selfplay (DuoQ with 2 pros) options. You keep full control and receive updates throughout the entire process.
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/boosting-services">Services</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
 
-Our boosters focus on fast delivery, smart play, and complete safety. No scripts, no shady methods — just pure skill. Start improving your rank today and enjoy a smooth, secure boosting experience backed by real players and 24/7 support.</p>
+            <a href="/#calculator" class="btn">Get Started</a>
+        </nav>
+    </header>
 
-  <a href="/">← Back to Home</a>
+    <section class="about-hero">
+        <h1>About Us</h1>
+        <p>Professional rank boosting services with guaranteed results and 24/7 support since 2024.</p>
+    </section>
 
+    <div class="about-content">
+        <div class="about-section">
+            <h2>Who We Are</h2>
+            <p>The Finals can feel like a grind, especially when you're stuck with random teammates or facing cheaters. Our boosting service gives you a simple, safe, and fast way to reach the rank you deserve — without wasting hours on stressful matches.</p>
+            <p>All boosting is done by verified top-ranked players with zero cheats and full confidentiality. Whether you want Diamond, Ruby, or just help climbing out of Gold, we offer both Account Driver and Selfplay (DuoQ with 2 pros) options.</p>
+        </div>
+
+        <div class="about-section">
+            <h2>Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Safe</h3>
+                    <p>Manual play only. Zero bans. 30+ orders completed safely.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Most boosts complete within 24-48 hours depending on rank.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Live chat with your booster. Updates after every session.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive rates with loyalty discounts and referral bonuses.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Pro Boosters</h3>
+                    <p>Top 1% players with proven track records and high win rates.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Confidential</h3>
+                    <p>Your privacy is our priority. Secure and discreet service.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>Our boosters focus on fast delivery, smart play, and complete safety. No scripts, no shady methods — just pure skill. Start improving your rank today and enjoy a smooth, secure boosting experience backed by real players and 24/7 support.</p>
+            <p>We believe everyone deserves to experience The Finals at their desired rank without the frustration of solo queue matchmaking. Let us help you get there.</p>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2>Ready to Rank Up?</h2>
+        <div class="cta-buttons">
+            <a href="/#calculator" class="btn">View Pricing</a>
+            <a href="/contact" class="btn btn-outline">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2025 The Finals Boosting. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
-
