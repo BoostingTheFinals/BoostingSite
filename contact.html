@@ -1,21 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us – The Finals Boosting</title>
-  <meta name="description" content="Contact our support team for The Finals boosting services. We reply instantly.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - The Finals Boosting | 24/7 Support</title>
+    <meta name="description" content="Contact our support team for The Finals boosting services. We reply instantly via Discord, Telegram, or Email. Available 24/7.">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent: #ff6b35;
+            --accent-secondary: #ffa500;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --border: #252525;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 31px;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            left: -20px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-main {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .logo-tagline {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .btn {
+            padding: 0.55rem 1.2rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            transform: translateX(25px);
+        }
+
+        .btn:hover {
+            transform: translateX(25px) translateY(-1px);
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+        }
+
+        .announcement-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, #c41e3a 0%, #d4243e 50%, #c41e3a 100%);
+            padding: 0.15rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1101;
+        }
+
+        .announcement-bar {
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.75rem;
+            text-align: center;
+            line-height: 1.15;
+        }
+
+        .announcement-bar strong {
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .contact-hero {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .contact-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(255, 107, 53, 0.15);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #000;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .contact-detail {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .info-section {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-section h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .info-section ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .info-section ul li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-section ul li i {
+            color: var(--accent);
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="announcement-wrapper">
+        <div class="announcement-bar">
+            ⚠️ Last Week of Season 8 - <strong>No New Orders</strong> | Christmas Sale – <strong>10% off</strong> all orders! | Season 9 🎄
+        </div>
+    </div>
 
-  <h1>Contact Us</h1>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-left">
+                    <div class="logo-text">
+                        <div class="logo-main">THE FINALS BOOSTING</div>
+                        <div class="logo-tagline">Fast • Secure • Cheap</div>
+                    </div>
+                </div>
+            </div>
 
-  <p>If you need help, want to place an order, or have questions, reach out anytime.</p>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/boosting-services">Services</a></li>
+                <li><a href="/faq">FAQ</a></li>
+            </ul>
 
-  <p><strong>Email:</strong> boostingthefinals@gmail.com</p>
-  <p><strong>Discord:</strong> rankedclimbertf</p>
+            <a href="/#calculator" class="btn">Get Started</a>
+        </nav>
+    </header>
 
-  <a href="/">← Back to Home</a>
+    <section class="contact-hero">
+        <h1>Contact Us</h1>
+        <p>We're here to help 24/7. Reach out anytime via your preferred method and get instant responses.</p>
+    </section>
 
+    <div class="contact-content">
+        <div class="contact-methods">
+            <a href="https://discord.com/channels/@me" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-discord"></i>
+                </div>
+                <h3>Discord</h3>
+                <p>Fastest response time. Add us for instant chat and live updates.</p>
+                <div class="contact-detail">rankclimbertf</div>
+            </a>
+
+            <a href="https://t.me/TheFinalsBoosting" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <h3>Telegram</h3>
+                <p>Quick and secure messaging for orders and support.</p>
+                <div class="contact-detail">@TheFinalsBoosting</div>
+            </a>
+
+            <a href="mailto:boostingthefinals@gmail.com" class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>Send us detailed inquiries or custom order requests.</p>
+                <div class="contact-detail">boostingthefinals@gmail.com</div>
+            </a>
+        </div>
+
+        <div class="info-section">
+            <h2>What to Include in Your Message</h2>
+            <p>To help us serve you better, please include:</p>
+            <ul>
+                <li><i class="fas fa-check"></i> Your current rank and desired target rank</li>
+                <li><i class="fas fa-check"></i> Preferred service type (Account Driver or Selfplay)</li>
+                <li><i class="fas fa-check"></i> Any special requests or timing preferences</li>
+                <li><i class="fas fa-check"></i> Questions about pricing, timeline, or process</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h2>Response Time</h2>
+            <p>We pride ourselves on fast communication:</p>
+            <ul>
+                <li><i class="fas fa-clock"></i> <strong>Discord:</strong> Usually within 5-30 minutes</li>
+                <li><i class="fas fa-clock"></i> <strong>Telegram:</strong> Within 1 hour</li>
+                <li><i class="fas fa-clock"></i> <strong>Email:</strong> Within 2-4 hours</li>
+            </ul>
+            <p style="margin-top: 1rem;">Our team is available 24/7 to answer your questions and process your orders.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 2025 The Finals Boosting. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
-
