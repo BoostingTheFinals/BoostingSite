@@ -1,1 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/boosting-services", "destination": "/boosting-services.html" },
+    { "source": "/contact", "destination": "/contact.html" }
+  ]
+}
 
