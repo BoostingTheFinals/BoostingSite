@@ -313,12 +313,7 @@
             gap: 0.5rem;
         }
 
-        .logo-img {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-        }
-        .announcement-wrapper {
+.announcement-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -329,6 +324,7 @@
   left: 0;
   right: 0;
   z-index: 1101;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .announcement-bar {
@@ -337,6 +333,14 @@
   font-size: 0.75rem;
   text-align: center;
   line-height: 1.15;
+  letter-spacing: 0.2px;
+  max-width: 1200px;
+  width: 100%;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 .announcement-bar strong {
@@ -354,12 +358,14 @@ header {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
+  margin-top: 0;
+  border-top: none;
 }
 
 nav {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 2rem;
+  padding: 0.9rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -369,6 +375,8 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  position: relative;
+  left: -20px;
 }
 
 .logo-img {
