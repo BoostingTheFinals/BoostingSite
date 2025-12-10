@@ -6027,21 +6027,7 @@ nav {
   padding-bottom: 0.5rem; /* Add space for underline */
 }
 
-.nav-links a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 2px;
-}
 
-.nav-links a:hover::before {
-  width: 100%;
-}
 /* ========== PREMIUM HERO VIDEO ========== */
 .hero {
   position: relative;
@@ -6846,26 +6832,6 @@ nav {
     padding-bottom: 0.25rem;
 }
 
-/* Premium animated underline */
-.nav-links a::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 2px;
-}
-
-.nav-links a:hover {
-    color: var(--text-primary);
-}
-
-.nav-links a:hover::before {
-    width: 100%;
-}
 
 /* 6. CTA Button - Professional and prominent */
 nav .btn {
@@ -7047,6 +7013,28 @@ nav .btn:hover i {
 }
 #countdown {
   font-variant-numeric: tabular-nums;
+}
+.nav-links a {
+  position: relative;
+  overflow: visible;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.18s ease-out;  /* fast + smooth */
+}
+
+.nav-links a:hover::after {
+  transform: scaleY(1);
 }
     </style>
 </head>
@@ -8268,6 +8256,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
 
