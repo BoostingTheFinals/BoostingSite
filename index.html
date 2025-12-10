@@ -6723,7 +6723,328 @@ nav {
   text-align: center;
   color: #fff;
 }
+.announcement-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #c41e3a 0%, #d4243e 50%, #c41e3a 100%);
+  padding: 0.6rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1101;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
 
+.announcement-bar {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  max-width: 1200px;
+  width: 100%;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.announcement-bar strong {
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    font-size: 1.05em;
+}
+
+/* 2. Header - Fixed positioning */
+header {
+    position: fixed;
+    top: 48px;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. Nav Container - Perfect spacing */
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.1rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 4. Logo Section - Balanced size */
+.logo-left {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    position: relative;
+    left: -10px;
+}
+
+.logo-img {
+    height: 52px;
+    width: auto;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.15;
+}
+
+.logo-main {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.3px;
+    color: var(--text-primary);
+}
+
+.logo-tagline {
+    font-size: 0.72rem;
+    opacity: 0.85;
+    margin-top: 0.2rem;
+    color: var(--text-secondary);
+}
+
+/* 5. Nav Links - Clean spacing with premium hover */
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding-bottom: 0.25rem;
+}
+
+/* Premium animated underline */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+/* 6. CTA Button - Professional and prominent */
+nav .btn {
+    padding: 0.65rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+    position: relative;
+    left: 10px;
+}
+
+nav .btn:hover {
+    transform: translateX(25px) translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+}
+
+nav .btn i {
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+nav .btn:hover i {
+    transform: translateX(3px);
+}
+
+/* 7. Christmas Lights - Perfect positioning */
+.christmas-lights {
+    position: fixed;
+    top: 140px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 998;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+/* 8. Mobile Menu Button - Clean design */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .announcement-wrapper {
+        padding: 0.45rem 0.75rem;
+    }
+
+    .announcement-bar {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+
+    header {
+        top: 42px;
+    }
+
+    nav {
+        padding: 0.85rem 1.5rem;
+    }
+
+    .logo-img {
+        height: 42px;
+    }
+
+    .logo-main {
+        font-size: 0.85rem;
+    }
+
+    .logo-tagline {
+        font-size: 0.65rem;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 110px;
+        left: -100%;
+        width: 100%;
+        background: var(--bg-secondary);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+        border-bottom: 1px solid var(--border);
+        transform: none;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.75rem;
+        font-size: 1.05rem;
+    }
+
+    nav .btn {
+        display: none;
+    }
+
+    .christmas-lights {
+        top: 105px;
+        height: 55px;
+    }
+
+    .light {
+        width: 10px;
+        height: 14px;
+    }
+
+    .light::after {
+        width: 6px;
+        height: 6px;
+        top: -6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .announcement-bar {
+        font-size: 0.7rem;
+    }
+
+    .logo-img {
+        height: 38px;
+    }
+
+    nav {
+        padding: 0.75rem 1rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -7944,6 +8265,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
 
