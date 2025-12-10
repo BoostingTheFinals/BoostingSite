@@ -7604,7 +7604,7 @@ function updateCountdown() {
   const seconds = Math.floor((diff / 1000) % 60);
 
   // Use fixed-width formatting for stable width
-  countdownEl.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s (Season 9) 🎄`;
+  countdownEl.textContent = `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s 🎄`;
 }
 
 updateCountdown();
@@ -7966,6 +7966,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
 
