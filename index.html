@@ -6674,12 +6674,94 @@ nav {
   margin: 0;
   font-size: 0.8rem;
 }
+/* ========== PREMIUM HERO VIDEO - FORCE FULL WIDTH ========== */
+.hero {
+  position: relative;
+  width: 100vw !important; /* Force full viewport width */
+  max-width: 100vw !important; /* Override any max-width */
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+}
+
+/* Video container - absolute full width */
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw !important;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-video-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: none;
+}
+
+/* Overlay - force full width */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw !important;
+  height: 100%;
+  background: 
+    linear-gradient(to bottom, 
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  z-index: 1;
+  backdrop-filter: brightness(0.9);
+}
+
+/* Content stays centered */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  max-width: 900px;
+  width: calc(100% - 40px);
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+}
     </style>
 </head>
 <body>
 <div class="announcement-wrapper">
 <div class="announcement-bar">
-   ⚠️ Last Week of Season 8 - <strong>No New Orders</strong> | Christmas Sale – <strong>10% off</strong> all orders! |
+   Christmas Sale – <strong>10% off</strong> all orders! |
   <span id="countdown-label">Starts in:</span> <span id="countdown" style="display:inline-block; min-width:110px;"></span>
   <br>
 </div>
@@ -7884,6 +7966,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
 
