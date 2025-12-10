@@ -6156,39 +6156,6 @@ nav {
   }
 }
 
-/* Scroll indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  animation: bounce 2s infinite;
-  cursor: pointer;
-}
-
-.scroll-indicator::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 40px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  position: relative;
-}
-
-.scroll-indicator::after {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 2px;
-  animation: scrollDown 2s infinite;
-}
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -6824,9 +6791,6 @@ nav {
       <a href="#services" class="btn btn-outline">Learn More</a>
     </div>
   </div>
-
-  <!-- Optional scroll indicator -->
-  <div class="scroll-indicator"></div>
 </section>
 
 <section class="stats">
@@ -7980,6 +7944,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
 
