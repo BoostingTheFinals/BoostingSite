@@ -7040,123 +7040,352 @@ nav .btn:hover i {
   border: 2px solid transparent;
   border-radius: 12px;
 }
-        .order-calculator {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 1.25rem 1rem;
-        }
-
-        .calculators-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 2rem;
-            width: 100%;
-        }
-
-        .calc-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
-        }
-
-        /* Emerald rank color */
-        .calc-select .emerald .rank-name { color: #00ff55; }
-
-        /* Responsive adjustments */
-        @media (max-width: 1000px) {
-            .calculators-wrapper {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .calculator-box {
-                padding: 1.5rem 1.25rem;
-            }
-            
-            .calc-title {
-                font-size: 1.2rem;
-            }
-        }
-/* Add this CSS - SIDE BY SIDE layout */
+/* ========== SINGLE COMBINED CALCULATOR ========== */
 .order-calculator {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1.25rem 1rem;
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-primary);
 }
 
-.calculators-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    width: 100%;
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.calculator-container {
+    display: flex;
+    justify-content: center;
 }
 
 .calculator-box {
-    background: rgba(20, 20, 20, 0.7);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    background: var(--bg-primary);
+    border: 2px solid var(--border);
     border-radius: 12px;
-    padding: 1rem 0.85rem;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 600px;
+}
+
+.calculator-box:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(255, 107, 53, 0.15);
+}
+
+/* Mode Toggle (Ranked/World Tour) */
+.mode-toggle-wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--bg-primary);
+    padding: 0.4rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.mode-toggle-btn {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mode-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+}
+
+.mode-toggle-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: #000;
+}
+
+/* Content sections */
+.calc-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .calc-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
     font-weight: 700;
-    color: var(--accent);
     text-align: center;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.5px;
 }
 
-/* Emerald color */
-.emerald .rank-name { color: #00ff55; }
-
-/* Mobile - stack vertically */
-@media (max-width: 900px) {
-    .calculators-wrapper {
-        grid-template-columns: 1fr;
-    }
+/* Toggle Buttons - Compact */
+.calc-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
 }
+
+.calc-toggle-wrapper .pricing-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    padding: 0.4rem;
+    border-radius: 10px;
+    max-width: 350px;
+    border: 1px solid var(--border);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.calc-toggle-wrapper .toggle-btn {
+    flex: 1;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.calc-toggle-wrapper .toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+}
+
+.calc-toggle-wrapper .toggle-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: #000;
+}
+
+/* Range Selectors - Compact */
+.calc-select {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
 .calc-select label {
     font-weight: 600;
     display: block;
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
 }
 
 .calc-select label > span {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 12px;
+    padding: 5px 12px;
     border-radius: 6px;
     font-weight: 700;
     border: 1px solid rgba(255, 145, 0, 0.15);
     background: rgba(10, 10, 10, 0.5);
-    width: 150px;
-    box-sizing: border-box;
 }
 
 .rank-name {
-    font-size: 0.9rem;
-    display: inline-block;
-    min-width: 80px;
+    font-size: 0.85rem;
 }
 
 .rank-number {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--accent);
-    display: inline-block;
-    min-width: 60px;
+}
+
+/* Rank Colors */
+.calc-select .bronze .rank-name { color: #ff8000; }
+.calc-select .silver .rank-name { color: #d4d4d4; }
+.calc-select .gold .rank-name { color: #ffd700; }
+.calc-select .platinum .rank-name { color: #919090; }
+.calc-select .diamond .rank-name { color: #00d0ff; }
+.calc-select .ruby .rank-name { color: #ff1900; }
+.calc-select .emerald .rank-name { color: #00ff55; }
+
+/* Range Slider */
+.calc-select input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.calc-select input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.calc-select input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+.calc-select input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.calc-select input[type="range"]::-moz-range-track {
+    height: 6px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Result Box - Compact */
+.calc-result {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+/* Discounts Section - Compact */
+.discounts-info {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+}
+
+.discounts-info h3 {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.discount-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.discount-pill {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+}
+
+.discount-pill:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--accent-secondary);
+    transform: translateX(4px);
+}
+
+.discount-pill i {
+    color: var(--accent);
+    margin-right: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.discount-pill strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Buy Now Button - Compact */
+.calc-btn.buy-now {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border: none;
+    color: #000;
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.calc-btn.buy-now:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+}
+
+.calc-btn.buy-now i {
+    font-size: 1.1rem;
+}
+
+.euro-sign {
+    font-weight: normal;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .order-calculator {
+        padding: 3rem 1rem;
+    }
+    
+    .calculator-box {
+        padding: 1.25rem 1rem;
+    }
+    
+    .calc-title {
+        font-size: 1.1rem;
+    }
+    
+    .mode-toggle-btn {
+        font-size: 0.9rem;
+        padding: 0.65rem 1.2rem;
+    }
 }
     </style>
 </head>
@@ -7420,14 +7649,21 @@ nav .btn:hover i {
         </div>
     </div>
 <section class="order-calculator" id="calculator">
-    <div class="container">
-        <div class="calculator-header fade-in">
-           <h2 class="section-title">Price Calculators</h2>
-        </div>
+    <div class="section-header">
+        <h2>Price Calculator</h2>
+        <p>Calculate your boost price</p>
+    </div>
 
-        <div class="calculators-wrapper">
-            <!-- RANKED MODE CALCULATOR -->
-            <div class="calculator-box fade-in">
+    <div class="calculator-container">
+        <div class="calculator-box">
+            <!-- Mode Toggle (Ranked / World Tour) -->
+            <div class="mode-toggle-wrapper">
+                <button class="mode-toggle-btn active" data-mode="ranked">Ranked Mode</button>
+                <button class="mode-toggle-btn" data-mode="worldtour">World Tour</button>
+            </div>
+
+            <!-- Ranked Mode Content -->
+            <div id="ranked-content" class="calc-content">
                 <h3 class="calc-title">Ranked Mode</h3>
                 
                 <!-- Toggle buttons -->
@@ -7470,30 +7706,10 @@ nav .btn:hover i {
                 <div class="calc-result">
                     <div id="calcResult">Total Price: 60 <span class="euro-sign">€</span></div>
                 </div>
-
-                <!-- Discounts -->
-                <div class="discounts-info">
-                    <h3>Available Discounts</h3>
-                    <div class="discount-pills">
-                        <div class="discount-pill">
-                            <i class="fas fa-gift"></i> <strong>Referral:</strong> 5% off (stack to 15%)
-                        </div>
-                        <div class="discount-pill">
-                            <i class="fas fa-star"></i> <strong>Loyalty:</strong> 5% off after 2 orders (forever)
-                        </div>
-                        <div class="discount-pill">
-                            <i class="fas fa-clock"></i> <strong>Early Bird:</strong> 5% off first 2 weeks of season
-                        </div>
-                    </div>
-                </div>
-
-                <button class="calc-btn buy-now">
-                    <i class="fas fa-shopping-cart"></i> Buy now
-                </button>
             </div>
 
-            <!-- WORLD TOUR CALCULATOR -->
-            <div class="calculator-box fade-in">
+            <!-- World Tour Content -->
+            <div id="worldtour-content" class="calc-content" style="display: none;">
                 <h3 class="calc-title">World Tour</h3>
                 
                 <!-- Toggle buttons -->
@@ -7536,27 +7752,27 @@ nav .btn:hover i {
                 <div class="calc-result">
                     <div id="calcResultWT">Total Price: 35 <span class="euro-sign">€</span></div>
                 </div>
+            </div>
 
-                <!-- Discounts -->
-                <div class="discounts-info">
-                    <h3>Available Discounts</h3>
-                    <div class="discount-pills">
-                        <div class="discount-pill">
-                            <i class="fas fa-gift"></i> <strong>Referral:</strong> 5% off (stack to 15%)
-                        </div>
-                        <div class="discount-pill">
-                            <i class="fas fa-star"></i> <strong>Loyalty:</strong> 5% off after 2 orders (forever)
-                        </div>
-                        <div class="discount-pill">
-                            <i class="fas fa-clock"></i> <strong>Early Bird:</strong> 5% off first 2 weeks of season
-                        </div>
+            <!-- Discounts (Shared) -->
+            <div class="discounts-info">
+                <h3>Available Discounts</h3>
+                <div class="discount-pills">
+                    <div class="discount-pill">
+                        <i class="fas fa-gift"></i> <strong>Referral:</strong> 5% off (stack to 15%)
+                    </div>
+                    <div class="discount-pill">
+                        <i class="fas fa-star"></i> <strong>Loyalty:</strong> 5% off after 2 orders (forever)
+                    </div>
+                    <div class="discount-pill">
+                        <i class="fas fa-clock"></i> <strong>Early Bird:</strong> 5% off first 2 weeks of season
                     </div>
                 </div>
-
-                <button class="calc-btn buy-now">
-                    <i class="fas fa-shopping-cart"></i> Buy now
-                </button>
             </div>
+
+            <button class="calc-btn buy-now">
+                <i class="fas fa-shopping-cart"></i> Buy now
+            </button>
         </div>
     </div>
 </section>
@@ -8443,9 +8659,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
-// ======== DUAL PRICE CALCULATOR ========
 (function() {
-  // Ranked Mode tiers (original)
+  // Ranked Mode tiers
   const rankTiers = {
     driver: {
       'Bronze → Silver': { start: 0, end: 10000, price: 12 },
@@ -8467,7 +8682,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // World Tour exact pricing (cumulative from point 1)
+  // World Tour exact pricing
   const worldTourPricing = {
     driver: {
       1: 0, 2: 3, 3: 5, 4: 7, 5: 12, 6: 17, 7: 22, 8: 28,
@@ -8483,6 +8698,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   let selectedType = "driver";
   let selectedTypeWT = "driver-wt";
+  let currentMode = "ranked";
   
   function getRank(value) {
     if (value < 10000) return "Bronze";
@@ -8535,12 +8751,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let total = 0;
     
     if (isWorldTour) {
-      // World Tour: use exact cumulative pricing
       const typeKey = selectedTypeWT.replace('-wt', '');
       const pricing = worldTourPricing[typeKey];
       total = pricing[endVal] - pricing[startVal];
     } else {
-      // Ranked Mode: use tier-based pricing
       const tiers = rankTiers[selectedType];
       Object.values(tiers).forEach(tier => {
         if (startVal < tier.end && endVal > tier.start) {
@@ -8552,7 +8766,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
     
-    // Apply 2x multiplier for selfplay
     const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
     const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
     const discounted = Math.round(total * priceMultiplier);
@@ -8574,10 +8787,36 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   window.addEventListener("DOMContentLoaded", () => {
+    // Mode Toggle (Ranked/World Tour)
+    const modeToggleBtns = document.querySelectorAll('.mode-toggle-btn');
+    modeToggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeToggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const mode = btn.dataset.mode;
+        document.getElementById('ranked-content').style.display = mode === 'ranked' ? 'block' : 'none';
+        document.getElementById('worldtour-content').style.display = mode === 'worldtour' ? 'block' : 'none';
+        currentMode = mode;
+        
+        // Auto-select Account Driver when switching to World Tour
+        if (mode === 'worldtour') {
+          const wtButtons = document.querySelectorAll('#worldtour-content .toggle-btn');
+          wtButtons.forEach(b => b.classList.remove('active'));
+          const driverBtn = document.querySelector('#worldtour-content .toggle-btn[data-type="driver-wt"]');
+          if (driverBtn) {
+            driverBtn.classList.add('active');
+            selectedTypeWT = "driver-wt";
+            calculatePrice(true);
+          }
+        }
+      });
+    });
+    
     // Ranked Mode
     const start = document.getElementById("startRank");
     const end = document.getElementById("endRank");
-    const typeButtons = document.querySelectorAll('.calculator-box:first-child .toggle-btn');
+    const typeButtons = document.querySelectorAll('#ranked-content .toggle-btn');
     
     if (start && end) {
       start.addEventListener("input", () => {
@@ -8611,7 +8850,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // World Tour
     const startWT = document.getElementById("startRankWT");
     const endWT = document.getElementById("endRankWT");
-    const typeButtonsWT = document.querySelectorAll('.calculator-box:last-child .toggle-btn');
+    const typeButtonsWT = document.querySelectorAll('#worldtour-content .toggle-btn');
     
     if (startWT && endWT) {
       startWT.addEventListener("input", () => {
@@ -8646,6 +8885,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
 
