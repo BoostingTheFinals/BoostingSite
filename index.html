@@ -8797,7 +8797,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('ranked-content').style.display = mode === 'ranked' ? 'block' : 'none';
         document.getElementById('worldtour-content').style.display = mode === 'worldtour' ? 'block' : 'none';
         currentMode = mode;
-        
+        if (mode === 'ranked') {
+  const rankedBtns = document.querySelectorAll('#ranked-content .toggle-btn');
+  rankedBtns.forEach(b => b.classList.remove('active'));
+  const driverBtn = document.querySelector('#ranked-content .toggle-btn[data-type="driver"]');
+  if (driverBtn) {
+    driverBtn.classList.add('active');
+    selectedType = "driver";
+    calculatePrice(false);
+  }
+}
+
         // Auto-select Account Driver when switching to World Tour
         if (mode === 'worldtour') {
           const wtButtons = document.querySelectorAll('#worldtour-content .toggle-btn');
@@ -8884,6 +8894,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
 
 
 
