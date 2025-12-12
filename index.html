@@ -9892,9 +9892,109 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// Smooth scroll for all navigation + contact highlight
+document.addEventListener('DOMContentLoaded', () => {
+  const contactSection = document.querySelector('#contact .footer-section:nth-of-type(3)');
+  
+  // Add border pulse animation
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes borderPulse {
+      0% {
+        border-color: transparent;
+        box-shadow: 0 0 0 rgba(255, 107, 53, 0);
+      }
+      50% {
+        border-color: #ff6b35;
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+      }
+      100% {
+        border-color: transparent;
+        box-shadow: 0 0 0 rgba(255, 107, 53, 0);
+      }
+    }
+    
+    .footer-section.contact-highlight {
+      border: 2px solid transparent;
+      border-radius: 12px;
+      animation: borderPulse 1.5s ease-in-out;
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Smooth scroll function with offset for fixed header
+  function smoothScrollTo(targetElement, targetId) {
+    const headerHeight = 140; // Adjust this value (header + announcement bar height)
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 600;
+    let start = null;
+
+    function animation(currentTime) {
+      if (start === null) start = currentTime;
+      const timeElapsed = currentTime - start;
+      const run = ease(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+    
+    // Update URL
+    history.pushState(null, '', targetId);
+    
+    // If it's contact, add highlight after scroll
+    if (targetId === '#contact' && contactSection) {
+      setTimeout(() => {
+        contactSection.classList.remove('contact-highlight');
+        void contactSection.offsetWidth;
+        contactSection.classList.add('contact-highlight');
+        setTimeout(() => contactSection.classList.remove('contact-highlight'), 1500);
+      }, duration);
+    }
+  }
+
+  // Handle ALL anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      
+      // Skip empty anchors
+      if (targetId === '#' || targetId === '') return;
+      
+      e.preventDefault();
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        smoothScrollTo(targetElement, targetId);
+      }
+    });
+  });
+
+  // Explicitly handle Buy Now button (in case it doesn't have href)
+  const buyNowBtn = document.querySelector('.calc-btn.buy-now');
+  if (buyNowBtn) {
+    buyNowBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const contactElement = document.querySelector('#contact');
+      if (contactElement) {
+        smoothScrollTo(contactElement, '#contact');
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>
+
 
 
 
