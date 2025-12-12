@@ -7380,6 +7380,436 @@ footer {
     position: relative;
     z-index: 2;
 }
+/* ========== SINGLE COMBINED CALCULATOR ========== */
+.order-calculator {
+    padding: 3rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--bg-primary);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.calculator-container {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator-box {
+    background: var(--bg-primary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 550px;
+}
+
+.calculator-box:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(255, 107, 53, 0.15);
+}
+
+/* Mode Toggle (Ranked/World Tour) */
+.mode-toggle-wrapper {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+    background: var(--bg-primary);
+    padding: 0.35rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.mode-toggle-btn {
+    flex: 1;
+    padding: 0.65rem 1.25rem;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mode-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+}
+
+.mode-toggle-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: #000;
+}
+
+/* Content sections */
+.calc-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.calc-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.85rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Toggle Buttons - Compact */
+.calc-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.85rem;
+}
+
+.calc-toggle-wrapper .pricing-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0.35rem;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    padding: 0.35rem;
+    border-radius: 10px;
+    max-width: 320px;
+    border: 1px solid var(--border);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.calc-toggle-wrapper .toggle-btn {
+    flex: 1;
+    padding: 0.55rem 1.1rem;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.calc-toggle-wrapper .toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+}
+
+.calc-toggle-wrapper .toggle-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: #000;
+}
+
+/* Range Selectors - Compact */
+.calc-select {
+    text-align: left;
+    margin-bottom: 0.85rem;
+}
+
+.calc-select label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.55rem;
+    font-size: 0.9rem;
+}
+
+.calc-select label > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 145, 0, 0.15);
+    background: rgba(10, 10, 10, 0.5);
+}
+
+.rank-name {
+    font-size: 0.8rem;
+}
+
+.rank-number {
+    font-size: 0.75rem;
+    color: var(--accent);
+}
+
+/* Rank Colors */
+.calc-select .bronze .rank-name { color: #ff8000; }
+.calc-select .silver .rank-name { color: #d4d4d4; }
+.calc-select .gold .rank-name { color: #ffd700; }
+.calc-select .platinum .rank-name { color: #919090; }
+.calc-select .diamond .rank-name { color: #00d0ff; }
+.calc-select .ruby .rank-name { color: #ff1900; }
+.calc-select .emerald .rank-name { color: #00ff55; }
+
+/* Range Slider */
+.calc-select input[type="range"] {
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.calc-select input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.calc-select input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+.calc-select input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.calc-select input[type="range"]::-moz-range-track {
+    height: 5px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Result Box - Compact */
+.calc-result {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    margin-top: 0.85rem;
+    padding: 0.65rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+/* Discounts Section - Compact */
+.discounts-info {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: left;
+    padding: 0.65rem;
+    border-radius: 8px;
+    margin-top: 0.65rem;
+}
+
+.discounts-info h3 {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    font-size: 0.85rem;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+}
+
+.discount-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.discount-pill {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 0.35rem 0.55rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+}
+
+.discount-pill:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--accent-secondary);
+    transform: translateX(4px);
+}
+
+.discount-pill i {
+    color: var(--accent);
+    margin-right: 0.35rem;
+    font-size: 0.8rem;
+}
+
+.discount-pill strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Buy Now Button - Compact */
+.calc-btn.buy-now {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border: none;
+    color: #000;
+    padding: 0.75rem 1.35rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 0.65rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+}
+
+.calc-btn.buy-now:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+}
+
+.calc-btn.buy-now i {
+    font-size: 1rem;
+}
+
+.euro-sign {
+    font-weight: normal;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .order-calculator {
+        padding: 2.5rem 1rem;
+    }
+    
+    .calculator-box {
+        padding: 1rem 0.85rem;
+    }
+    
+    .calc-title {
+        font-size: 1rem;
+    }
+    
+    .mode-toggle-btn {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.1rem;
+    }
+}
+/* Toggle Buttons - Premium Style */
+.calc-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.calc-toggle-wrapper .pricing-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    background: rgba(20, 20, 20, 0.6);
+    padding: 0.4rem;
+    border-radius: 12px;
+    max-width: 380px;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calc-toggle-wrapper .toggle-btn {
+    flex: 1;
+    padding: 0.7rem 1.2rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.calc-toggle-wrapper .toggle-btn span {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.calc-toggle-wrapper .toggle-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 8px;
+}
+
+.calc-toggle-wrapper .toggle-btn:hover::before {
+    opacity: 1;
+}
+
+.calc-toggle-wrapper .toggle-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: #000;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    transform: translateY(-1px);
+}
+
+.calc-toggle-wrapper .toggle-btn.active::before {
+    opacity: 0;
+}
+
+/* Add icon styling */
+.calc-toggle-wrapper .toggle-btn i {
+    font-size: 0.95rem;
+}
+
+/* Hover effect for non-active buttons */
+.calc-toggle-wrapper .toggle-btn:not(.active):hover {
+    color: var(--text-primary);
+    transform: translateY(-1px);
+}
     </style>
 </head>
 <body>
@@ -8963,6 +9393,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
