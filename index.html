@@ -8019,14 +8019,15 @@ footer {
     <p>Professional rank boosting services with guaranteed results and 24/7 support.</p>
 </div>
         
-        <div class="footer-section">
-            <h3>Services</h3>
-            <ul>
-                <li><a href="#calculator">Pricing</a></li>
-                <li><a href="#services">Selfplay</a></li>
-                <li><a href="#services">Account Driver</a></li>
-            </ul>
-        </div>
+<div class="footer-section">
+    <h3>Services</h3>
+    <ul>
+        <li><a href="#calculator">Ranked</a></li>
+        <li><a href="#calculator">World Tour</a></li>
+        <li><a href="#services">Selfplay</a></li>
+        <li><a href="#services">Account Driver</a></li>
+    </ul>
+</div>
         
 
         <div class="footer-section">
@@ -8884,8 +8885,41 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })();
 </script>
+<script>
+// Footer links switch calculator modes
+document.addEventListener('DOMContentLoaded', () => {
+    const footerLinks = document.querySelectorAll('.footer-section a');
+    
+    footerLinks.forEach(link => {
+        if (link.textContent === 'Ranked') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Scroll to calculator
+                document.querySelector('#calculator').scrollIntoView({ behavior: 'smooth' });
+                // Click Ranked tab
+                setTimeout(() => {
+                    document.querySelector('.mode-toggle-btn[data-mode="ranked"]').click();
+                }, 600);
+            });
+        }
+        
+        if (link.textContent === 'World Tour') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Scroll to calculator
+                document.querySelector('#calculator').scrollIntoView({ behavior: 'smooth' });
+                // Click World Tour tab
+                setTimeout(() => {
+                    document.querySelector('.mode-toggle-btn[data-mode="worldtour"]').click();
+                }, 600);
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
+
 
 
 
