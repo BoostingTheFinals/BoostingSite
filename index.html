@@ -7727,7 +7727,7 @@ footer {
         padding: 0.6rem 1.1rem;
     }
 }
-/* Toggle Buttons - Premium Style */
+/* Toggle Buttons - Force No Hover Effects */
 .calc-toggle-wrapper {
     display: flex;
     justify-content: center;
@@ -7753,17 +7753,23 @@ footer {
 .calc-toggle-wrapper .toggle-btn {
     flex: 1;
     padding: 0.7rem 1.2rem;
-    background: transparent;
+    background: transparent !important;
     border: none;
     border-radius: 8px;
-    color: var(--text-secondary);
+    color: var(--text-secondary) !important;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: none !important;
     position: relative;
-    overflow: hidden;
+    transform: none !important;
+}
+
+.calc-toggle-wrapper .toggle-btn:hover {
+    background: transparent !important;
+    color: var(--text-secondary) !important;
+    transform: none !important;
 }
 
 .calc-toggle-wrapper .toggle-btn span {
@@ -7775,40 +7781,20 @@ footer {
     gap: 0.5rem;
 }
 
-.calc-toggle-wrapper .toggle-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.05);
-    opacity: 0;
-    transition: opacity 0.3s;
-    border-radius: 8px;
-}
-
-.calc-toggle-wrapper .toggle-btn:hover::before {
-    opacity: 1;
-}
-
 .calc-toggle-wrapper .toggle-btn.active {
-    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-    color: #000;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary)) !important;
+    color: #000 !important;
     box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-    transform: translateY(-1px);
 }
 
-.calc-toggle-wrapper .toggle-btn.active::before {
-    opacity: 0;
+.calc-toggle-wrapper .toggle-btn.active:hover {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary)) !important;
+    color: #000 !important;
 }
 
 /* Add icon styling */
 .calc-toggle-wrapper .toggle-btn i {
     font-size: 0.95rem;
-}
-
-/* Hover effect for non-active buttons */
-.calc-toggle-wrapper .toggle-btn:not(.active):hover {
-    color: var(--text-primary);
-    transform: translateY(-1px);
 }
     </style>
 </head>
@@ -9393,6 +9379,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
