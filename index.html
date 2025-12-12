@@ -7796,6 +7796,46 @@ footer {
 .calc-toggle-wrapper .toggle-btn i {
     font-size: 0.95rem;
 }
+/* Mode Toggle (Ranked/World Tour) - No Hover Effects */
+.mode-toggle-wrapper {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+    background: var(--bg-primary);
+    padding: 0.35rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.mode-toggle-btn {
+    flex: 1;
+    padding: 0.65rem 1.25rem;
+    background: transparent !important;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-secondary) !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: none !important;
+    transform: none !important;
+}
+
+.mode-toggle-btn:hover {
+    background: transparent !important;
+    color: var(--text-secondary) !important;
+    transform: none !important;
+}
+
+.mode-toggle-btn.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary)) !important;
+    color: #000 !important;
+}
+
+.mode-toggle-btn.active:hover {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary)) !important;
+    color: #000 !important;
+}
     </style>
 </head>
 <body>
@@ -9379,6 +9419,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
