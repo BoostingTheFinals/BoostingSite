@@ -8463,6 +8463,34 @@ footer {
     gap: 0.75rem;
     flex-wrap: wrap;
 }
+/* Fixed size calculator boxes */
+.calc-select label > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 145, 0, 0.15);
+    background: rgba(10, 10, 10, 0.5);
+    min-width: 140px; /* Fixed minimum width */
+    justify-content: center;
+}
+
+.rank-name {
+    font-size: 0.8rem;
+    display: inline-block;
+    min-width: 70px; /* Fixed width for rank name */
+    text-align: left;
+}
+
+.rank-number {
+    font-size: 0.75rem;
+    color: var(--accent);
+    display: inline-block;
+    min-width: 45px; /* Fixed width for number */
+    text-align: right;
+}
     </style>
 </head>
 <body>
@@ -10429,3 +10457,4 @@ function getWorldTourRank(value) {
 </script>
 </body>
 </html>
+
