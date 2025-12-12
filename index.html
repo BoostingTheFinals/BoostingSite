@@ -10158,8 +10158,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <script>
-// ======== PRICE CALCULATOR (WITH RANK DIVISIONS) ========
 (function() {
+  // Ranked Mode tiers (unchanged)
   const rankTiers = {
     driver: {
       'Bronze → Silver': { start: 0, end: 10000, price: 12 },
@@ -10180,7 +10180,24 @@ document.addEventListener('DOMContentLoaded', () => {
       'Master I → Master II': { start: 52000, end: 55000, price: 120 }
     }
   };
+
+  // World Tour exact pricing
+  const worldTourPricing = {
+    driver: {
+      1: 0, 2: 3, 3: 5, 4: 7, 5: 12, 6: 17, 7: 22, 8: 28,
+      9: 35, 10: 42, 11: 52, 12: 60, 13: 72, 14: 85, 15: 95, 16: 110,
+      17: 130, 18: 150, 19: 175, 20: 200, 21: 230, 22: 270, 23: 310, 24: 340
+    },
+    selfplay: {
+      1: 0, 2: 3, 3: 5, 4: 7, 5: 12, 6: 17, 7: 22, 8: 28,
+      9: 35, 10: 42, 11: 52, 12: 60, 13: 72, 14: 85, 15: 95, 16: 110,
+      17: 130, 18: 150, 19: 175, 20: 200, 21: 230, 22: 270, 23: 310, 24: 340
+    }
+  };
+  
   let selectedType = "driver";
+  let selectedTypeWT = "driver-wt";
+  let currentMode = "ranked";
   
   function getRank(value) {
     if (value < 2500) return "Bronze 4";
@@ -10206,41 +10223,85 @@ document.addEventListener('DOMContentLoaded', () => {
     if (value < 52000) return "Ruby";
     return "Master";
   }
+
+function getWorldTourRank(value) {
+  if (value === 1) return "Bronze 4";
+  if (value === 2) return "Bronze 3";
+  if (value === 3) return "Bronze 2";
+  if (value === 4) return "Bronze 1";
+  if (value === 5) return "Silver 4";
+  if (value === 6) return "Silver 3";
+  if (value === 7) return "Silver 2";
+  if (value === 8) return "Silver 1";
+  if (value === 9) return "Gold 4";
+  if (value === 10) return "Gold 3";
+  if (value === 11) return "Gold 2";
+  if (value === 12) return "Gold 1";
+  if (value === 13) return "Platinum 4";
+  if (value === 14) return "Platinum 3";
+  if (value === 15) return "Platinum 2";
+  if (value === 16) return "Platinum 1";
+  if (value === 17) return "Diamond 4";
+  if (value === 18) return "Diamond 3";
+  if (value === 19) return "Diamond 2";
+  if (value === 20) return "Diamond 1";
+  if (value === 21) return "Emerald 4";
+  if (value === 22) return "Emerald 3";
+  if (value === 23) return "Emerald 2";
+  return "Emerald 1";
+}
   
-  function updateRankDisplay(id, value) {
+  function updateRankDisplay(id, value, isWorldTour = false) {
     const wrapper = document.getElementById(id);
     if (!wrapper) return;
     const rankName = wrapper.querySelector(".rank-name");
     const rankNum = wrapper.querySelector(".rank-number");
-    const rank = getRank(value);
+    const rank = isWorldTour ? getWorldTourRank(value) : getRank(value);
     const baseRank = rank.split(' ')[0].toLowerCase();
     wrapper.className = baseRank;
     rankName.textContent = rank;
     rankNum.textContent = value;
   }
   
-  function calculatePrice() {
-    const startVal = parseInt(document.getElementById("startRank").value);
-    const endVal = parseInt(document.getElementById("endRank").value);
-    const resultBox = document.getElementById("calcResult");
-    updateRankDisplay("startValue", startVal);
-    updateRankDisplay("endValue", endVal);
+  function calculatePrice(isWorldTour = false) {
+    const startId = isWorldTour ? "startRankWT" : "startRank";
+    const endId = isWorldTour ? "endRankWT" : "endRank";
+    const resultId = isWorldTour ? "calcResultWT" : "calcResult";
+    const startValId = isWorldTour ? "startValueWT" : "startValue";
+    const endValId = isWorldTour ? "endValueWT" : "endValue";
+    
+    const startVal = parseInt(document.getElementById(startId).value);
+    const endVal = parseInt(document.getElementById(endId).value);
+    const resultBox = document.getElementById(resultId);
+    
+    updateRankDisplay(startValId, startVal, isWorldTour);
+    updateRankDisplay(endValId, endVal, isWorldTour);
+    
     if (endVal <= startVal) {
-      resultBox.innerHTML = "⚠ Target rank must be higher than current rank";
+      resultBox.innerHTML = "⚠ Target must be higher than current";
       return;
     }
-    let total = 0;
-    const tiers = rankTiers[selectedType];
-    Object.values(tiers).forEach(tier => {
-      if (startVal < tier.end && endVal > tier.start) {
-        const rangeStart = Math.max(startVal, tier.start);
-        const rangeEnd = Math.min(endVal, tier.end);
-        const tierFraction = (rangeEnd - rangeStart) / (tier.end - tier.start);
-        total += tier.price * tierFraction;
-      }
-    });
     
-    const priceMultiplier = selectedType === "selfplay" ? 2 : 1;
+    let total = 0;
+    
+    if (isWorldTour) {
+      const typeKey = selectedTypeWT.replace('-wt', '');
+      const pricing = worldTourPricing[typeKey];
+      total = pricing[endVal] - pricing[startVal];
+    } else {
+      const tiers = rankTiers[selectedType];
+      Object.values(tiers).forEach(tier => {
+        if (startVal < tier.end && endVal > tier.start) {
+          const rangeStart = Math.max(startVal, tier.start);
+          const rangeEnd = Math.min(endVal, tier.end);
+          const tierFraction = (rangeEnd - rangeStart) / (tier.end - tier.start);
+          total += tier.price * tierFraction;
+        }
+      });
+    }
+    
+    const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
+    const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
     const discounted = Math.round(total * priceMultiplier);
     const withLivestream = Math.round(discounted * 1.20);
     
@@ -10260,218 +10321,111 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   window.addEventListener("DOMContentLoaded", () => {
-    const start = document.getElementById("startRank");
-    const end = document.getElementById("endRank");
-    const typeButtons = document.querySelectorAll(".calc-toggle-wrapper .toggle-btn");
-    if (!start || !end) return;
-    
-    start.addEventListener("input", () => {
-      if (+end.value <= +start.value) end.value = +start.value + 250;
-      updateSliderFill(start);
-      updateSliderFill(end);
-      calculatePrice();
-    });
-    end.addEventListener("input", () => {
-      if (+end.value <= +start.value) end.value = +start.value + 250;
-      updateSliderFill(start);
-      updateSliderFill(end);
-      calculatePrice();
-    });
-    
-    typeButtons.forEach(btn => {
-      btn.addEventListener("click", e => {
-        e.preventDefault();
-        typeButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        selectedType = btn.dataset.type;
-        calculatePrice();
+    // Mode Toggle (Ranked/World Tour)
+    const modeToggleBtns = document.querySelectorAll('.mode-toggle-btn');
+    modeToggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeToggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const mode = btn.dataset.mode;
+        document.getElementById('ranked-content').style.display = mode === 'ranked' ? 'block' : 'none';
+        document.getElementById('worldtour-content').style.display = mode === 'worldtour' ? 'block' : 'none';
+        currentMode = mode;
+        
+        if (mode === 'ranked') {
+          const rankedBtns = document.querySelectorAll('#ranked-content .toggle-btn');
+          rankedBtns.forEach(b => b.classList.remove('active'));
+          const driverBtn = document.querySelector('#ranked-content .toggle-btn[data-type="driver"]');
+          if (driverBtn) {
+            driverBtn.classList.add('active');
+            selectedType = "driver";
+            calculatePrice(false);
+          }
+        }
+        
+        if (mode === 'worldtour') {
+          const wtButtons = document.querySelectorAll('#worldtour-content .toggle-btn');
+          wtButtons.forEach(b => b.classList.remove('active'));
+          const driverBtn = document.querySelector('#worldtour-content .toggle-btn[data-type="driver-wt"]');
+          if (driverBtn) {
+            driverBtn.classList.add('active');
+            selectedTypeWT = "driver-wt";
+            calculatePrice(true);
+          }
+        }
       });
     });
     
-    updateSliderFill(start);
-    updateSliderFill(end);
-    calculatePrice();
+    // Ranked Mode
+    const start = document.getElementById("startRank");
+    const end = document.getElementById("endRank");
+    const typeButtons = document.querySelectorAll('#ranked-content .toggle-btn');
+    
+    if (start && end) {
+      start.addEventListener("input", () => {
+        if (+end.value <= +start.value) end.value = +start.value + 250;
+        updateSliderFill(start);
+        updateSliderFill(end);
+        calculatePrice(false);
+      });
+      end.addEventListener("input", () => {
+        if (+end.value <= +start.value) end.value = +start.value + 250;
+        updateSliderFill(start);
+        updateSliderFill(end);
+        calculatePrice(false);
+      });
+      
+      typeButtons.forEach(btn => {
+        btn.addEventListener("click", e => {
+          e.preventDefault();
+          typeButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          selectedType = btn.dataset.type;
+          calculatePrice(false);
+        });
+      });
+      
+      updateSliderFill(start);
+      updateSliderFill(end);
+      calculatePrice(false);
+    }
+    
+    // World Tour
+    const startWT = document.getElementById("startRankWT");
+    const endWT = document.getElementById("endRankWT");
+    const typeButtonsWT = document.querySelectorAll('#worldtour-content .toggle-btn');
+    
+    if (startWT && endWT) {
+      startWT.addEventListener("input", () => {
+        if (+endWT.value <= +startWT.value) endWT.value = +startWT.value + 1;
+        updateSliderFill(startWT);
+        updateSliderFill(endWT);
+        calculatePrice(true);
+      });
+      endWT.addEventListener("input", () => {
+        if (+endWT.value <= +startWT.value) endWT.value = +startWT.value + 1;
+        updateSliderFill(startWT);
+        updateSliderFill(endWT);
+        calculatePrice(true);
+      });
+      
+      typeButtonsWT.forEach(btn => {
+        btn.addEventListener("click", e => {
+          e.preventDefault();
+          typeButtonsWT.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          selectedTypeWT = btn.dataset.type;
+          calculatePrice(true);
+        });
+      });
+      
+      updateSliderFill(startWT);
+      updateSliderFill(endWT);
+      calculatePrice(true);
+    }
   });
 })();
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
