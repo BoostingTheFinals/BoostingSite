@@ -10157,8 +10157,146 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+<script>
+// ======== PRICE CALCULATOR (WITH RANK DIVISIONS) ========
+(function() {
+  const rankTiers = {
+    driver: {
+      'Bronze → Silver': { start: 0, end: 10000, price: 12 },
+      'Silver → Gold': { start: 10000, end: 20000, price: 30 },
+      'Gold → Platinum': { start: 20000, end: 30000, price: 40 },
+      'Platinum → Diamond': { start: 30000, end: 40000, price: 65 },
+      'Diamond → Ruby': { start: 40000, end: 50000, price: 180 },
+      'Ruby → Master I': { start: 50000, end: 52000, price: 60 },
+      'Master I → Master II': { start: 52000, end: 55000, price: 120 }
+    },
+    selfplay: {
+      'Bronze → Silver': { start: 0, end: 10000, price: 12 },
+      'Silver → Gold': { start: 10000, end: 20000, price: 30 },
+      'Gold → Platinum': { start: 20000, end: 30000, price: 40 },
+      'Platinum → Diamond': { start: 30000, end: 40000, price: 70 },
+      'Diamond → Ruby': { start: 40000, end: 50000, price: 180 },
+      'Ruby → Master I': { start: 50000, end: 52000, price: 60 },
+      'Master I → Master II': { start: 52000, end: 55000, price: 120 }
+    }
+  };
+  let selectedType = "driver";
+  
+  function getRank(value) {
+    if (value < 2500) return "Bronze 4";
+    if (value < 5000) return "Bronze 3";
+    if (value < 7500) return "Bronze 2";
+    if (value < 10000) return "Bronze 1";
+    if (value < 12500) return "Silver 4";
+    if (value < 15000) return "Silver 3";
+    if (value < 17500) return "Silver 2";
+    if (value < 20000) return "Silver 1";
+    if (value < 22500) return "Gold 4";
+    if (value < 25000) return "Gold 3";
+    if (value < 27500) return "Gold 2";
+    if (value < 30000) return "Gold 1";
+    if (value < 32500) return "Platinum 4";
+    if (value < 35000) return "Platinum 3";
+    if (value < 37500) return "Platinum 2";
+    if (value < 40000) return "Platinum 1";
+    if (value < 42500) return "Diamond 4";
+    if (value < 45000) return "Diamond 3";
+    if (value < 47500) return "Diamond 2";
+    if (value < 50000) return "Diamond 1";
+    if (value < 52000) return "Ruby";
+    return "Master";
+  }
+  
+  function updateRankDisplay(id, value) {
+    const wrapper = document.getElementById(id);
+    if (!wrapper) return;
+    const rankName = wrapper.querySelector(".rank-name");
+    const rankNum = wrapper.querySelector(".rank-number");
+    const rank = getRank(value);
+    const baseRank = rank.split(' ')[0].toLowerCase();
+    wrapper.className = baseRank;
+    rankName.textContent = rank;
+    rankNum.textContent = value;
+  }
+  
+  function calculatePrice() {
+    const startVal = parseInt(document.getElementById("startRank").value);
+    const endVal = parseInt(document.getElementById("endRank").value);
+    const resultBox = document.getElementById("calcResult");
+    updateRankDisplay("startValue", startVal);
+    updateRankDisplay("endValue", endVal);
+    if (endVal <= startVal) {
+      resultBox.innerHTML = "⚠ Target rank must be higher than current rank";
+      return;
+    }
+    let total = 0;
+    const tiers = rankTiers[selectedType];
+    Object.values(tiers).forEach(tier => {
+      if (startVal < tier.end && endVal > tier.start) {
+        const rangeStart = Math.max(startVal, tier.start);
+        const rangeEnd = Math.min(endVal, tier.end);
+        const tierFraction = (rangeEnd - rangeStart) / (tier.end - tier.start);
+        total += tier.price * tierFraction;
+      }
+    });
+    
+    const priceMultiplier = selectedType === "selfplay" ? 2 : 1;
+    const discounted = Math.round(total * priceMultiplier);
+    const withLivestream = Math.round(discounted * 1.20);
+    
+    resultBox.innerHTML = `
+      <div style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">
+        Total Price: ${discounted} €
+      </div>
+      <div style="font-size: 0.9rem; color: var(--text-secondary);">
+        +20% live stream: <span style="color: var(--accent); font-weight: 600;">${withLivestream} €</span>
+      </div>
+    `;
+  }
+  
+  function updateSliderFill(slider) {
+    const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+    slider.style.background = `linear-gradient(to right, #ff6b35 ${value}%, rgba(255,255,255,0.2) ${value}%)`;
+  }
+  
+  window.addEventListener("DOMContentLoaded", () => {
+    const start = document.getElementById("startRank");
+    const end = document.getElementById("endRank");
+    const typeButtons = document.querySelectorAll(".calc-toggle-wrapper .toggle-btn");
+    if (!start || !end) return;
+    
+    start.addEventListener("input", () => {
+      if (+end.value <= +start.value) end.value = +start.value + 250;
+      updateSliderFill(start);
+      updateSliderFill(end);
+      calculatePrice();
+    });
+    end.addEventListener("input", () => {
+      if (+end.value <= +start.value) end.value = +start.value + 250;
+      updateSliderFill(start);
+      updateSliderFill(end);
+      calculatePrice();
+    });
+    
+    typeButtons.forEach(btn => {
+      btn.addEventListener("click", e => {
+        e.preventDefault();
+        typeButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedType = btn.dataset.type;
+        calculatePrice();
+      });
+    });
+    
+    updateSliderFill(start);
+    updateSliderFill(end);
+    calculatePrice();
+  });
+})();
+</script>
 </body>
 </html>
+
 
 
 
