@@ -7836,6 +7836,21 @@ footer {
     background: linear-gradient(135deg, var(--accent), var(--accent-secondary)) !important;
     color: #000 !important;
 }
+.calc-toggle-wrapper .toggle-btn {
+    flex: 1 1 0;  /* Change from flex: 1 */
+    min-width: 0;  /* Add this */
+    padding: 0.7rem 1.2rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s ease, color 0.2s ease;
+    position: relative;
+}
     </style>
 </head>
 <body>
@@ -9419,6 +9434,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
