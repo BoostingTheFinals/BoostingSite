@@ -9934,22 +9934,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }
-    
-    const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
+  const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
     const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
-    const discounted = Math.round(total * priceMultiplier);
-    const withLivestream = Math.round(discounted * 1.20);
+    const originalPrice = Math.round(total * priceMultiplier);
+    const discounted = Math.round(originalPrice * 0.95); // 5% off
+    const withLivestream = Math.round(discounted * 1.10); // +10% for livestream
     
     resultBox.innerHTML = `
       <div style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">
-        Total Price: ${discounted} €
+        <div style="text-decoration: line-through; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.25rem;">
+          ${originalPrice} €
+        </div>
+        <div style="color: var(--accent);">
+          Total Price: ${discounted} €
+        </div>
       </div>
       <div style="font-size: 0.9rem; color: var(--text-secondary);">
         +10% live stream: <span style="color: var(--accent); font-weight: 600;">${withLivestream} €</span>
       </div>
     `;
-  }
-  
   function updateSliderFill(slider) {
     const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
     slider.style.background = `linear-gradient(to right, #ff6b35 ${value}%, rgba(255,255,255,0.2) ${value}%)`;
@@ -10484,6 +10487,7 @@ function getWorldTourRank(value) {
 </script>
 </body>
 </html>
+
 
 
 
