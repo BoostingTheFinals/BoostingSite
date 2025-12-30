@@ -9380,7 +9380,6 @@ footer {
     updateSliderFill(end);
     calculatePrice();
   });
-})();
     const particlesContainer = document.getElementById('particles');
 for (let i = 0; i < 30; i++) {
     const particle = document.createElement('div');
@@ -10335,14 +10334,20 @@ function getWorldTourRank(value) {
       });
     }
     
-    const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
+const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
     const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
-    const discounted = Math.round(total * priceMultiplier);
-    const withLivestream = Math.round(discounted * 1.20);
+    const originalPrice = Math.round(total * priceMultiplier);
+    const discounted = Math.round(originalPrice * 0.95); // 5% off
+    const withLivestream = Math.round(discounted * 1.10); // +10% for livestream
     
     resultBox.innerHTML = `
       <div style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem;">
-        Total Price: ${discounted} €
+        <div style="text-decoration: line-through; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.25rem;">
+          ${originalPrice} €
+        </div>
+        <div style="color: var(--accent);">
+          Total Price: ${discounted} €
+        </div>
       </div>
       <div style="font-size: 0.9rem; color: var(--text-secondary);">
         +10% live stream: <span style="color: var(--accent); font-weight: 600;">${withLivestream} €</span>
