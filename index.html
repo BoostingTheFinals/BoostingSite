@@ -9183,7 +9183,22 @@ footer {
     padding: 0;
     line-height: 1.2;
 }
-
+/* Current Season Badge - Centered */
+.order-card .current-season-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: #000;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+}
     </style>
 </head>
 <body>
@@ -9384,10 +9399,9 @@ footer {
                 </div>
             </div>
 <div class="order-card">
-    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #ffd700
-; color: #000; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 800; font-size: 0.75rem; white-space: nowrap;">CURRENT SEASON</div>
-        <span class="season-badge">SEASON 9</span>
-        <h3 class="card-title">Completed Orders</h3>
+    <span class="current-season-badge">CURRENT SEASON</span>
+    <span class="season-badge">SEASON 9</span>
+    <h3 class="card-title">Completed Orders</h3>
         <div class="bar-chart">
             <div class="bar silver" style="height: 15%">
                 <div class="bar-inner">
