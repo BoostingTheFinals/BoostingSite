@@ -9139,6 +9139,51 @@ footer {
     gap: 1rem;
     margin-top: 2.5rem; /* Increased from 1.5rem to give space for floating badge */
 }
+/* Stats Summary - ONLY FOR ORDERS SECTION */
+.order-card .stats-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #2a2a2a;
+    gap: 2rem;
+}
+
+.order-card .stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.order-card .stat-item-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.order-card .stat-item:first-child .stat-item-value {
+    background: linear-gradient(135deg, #4fc3f7, #00bfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.order-card .stat-item:last-child .stat-item-value {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.order-card .stat-item-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
     </style>
 </head>
 <body>
