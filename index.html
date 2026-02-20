@@ -9565,7 +9565,7 @@ footer {
                             <span class="rank-number">30000</span>
                         </span>
                     </label>
-                    <input type="range" id="startRank" min="0" max="53750" value="30000" step="250">
+                    <input type="range" id="startRank" min="0" max="54750" value="30000" step="250">
                 </div>
 
                 <!-- Target Rank -->
@@ -9577,7 +9577,7 @@ footer {
                             <span class="rank-number">40000</span>
                         </span>
                     </label>
-                    <input type="range" id="endRank" min="250" max="54000" value="40000" step="250">
+                    <input type="range" id="endRank" min="250" max="55000" value="40000" step="250">
                 </div>
 
                 <!-- Price Result -->
@@ -10719,16 +10719,17 @@ document.addEventListener('DOMContentLoaded', function() {
       'Platinum → Diamond': { start: 30000, end: 40000, price: 72 },
       'Diamond → Ruby': { start: 40000, end: 50000, price: 190 },
       'Ruby → Master I': { start: 50000, end: 52000, price: 70 },
-      'Master I → Master II': { start: 52000, end: 55000, price: 125 }
+      'Master I → Master II': { start: 52000, end: 55000, price: 130 }
     },
-    selfplay: {
+ selfplay: {
       'Bronze → Silver': { start: 0, end: 10000, price: 12 },
       'Silver → Gold': { start: 10000, end: 20000, price: 30 },
       'Gold → Platinum': { start: 20000, end: 30000, price: 40 },
       'Platinum → Diamond': { start: 30000, end: 40000, price: 72 },
       'Diamond → Ruby': { start: 40000, end: 50000, price: 190 },
       'Ruby → Master I': { start: 50000, end: 52000, price: 70 },
-      'Master I → Master II': { start: 52000, end: 55000, price: 125 }
+      'Ruby 52k → 54k': { start: 52000, end: 54000, price: 130 },
+      'Ruby 54k → 55k': { start: 54000, end: 55000, price: 100 }
     }
   };
 
@@ -11351,6 +11352,7 @@ const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
 </script>
 </body>
 </html>
+
 
 
 
