@@ -10280,6 +10280,92 @@ footer .footer-section img[alt="The Finals Boost Logo"]:hover {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
 }
+/* Buy Button */
+.buy-btn {
+    padding: 0.4rem 0.8rem;
+    background: linear-gradient(135deg, rgba(255,90,26,0.15), rgba(255,148,0,0.1));
+    border: 1px solid rgba(255,90,26,0.2);
+    border-radius: 6px;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.buy-btn:hover {
+    background: linear-gradient(135deg, rgba(255,90,26,0.25), rgba(255,148,0,0.18));
+    border-color: rgba(255,90,26,0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.2);
+}
+
+/* Buy Now Button */
+.calc-btn.buy-now {
+    background: linear-gradient(135deg, rgba(255,90,26,0.15), rgba(255,148,0,0.1));
+    border: 1px solid rgba(255,90,26,0.2);
+    color: var(--accent);
+    padding: 0.85rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+.calc-btn.buy-now:hover {
+    background: linear-gradient(135deg, rgba(255,90,26,0.25), rgba(255,148,0,0.18));
+    border-color: rgba(255,90,26,0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.2);
+}
+
+/* Season Badge */
+.season-badge {
+    background: linear-gradient(135deg, rgba(255,90,26,0.15), rgba(255,148,0,0.1)) !important;
+    border: 1px solid rgba(255,90,26,0.2) !important;
+    color: var(--accent) !important;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: 2px !important;
+}
+
+.calc-btn,
+.calc-btn.buy-now {
+  background: linear-gradient(135deg, rgba(255,90,26,0.15), rgba(255,148,0,0.1)) !important;
+  border: 1px solid rgba(255,90,26,0.2) !important;
+  color: var(--accent) !important;
+}
+.calc-btn:hover,
+.calc-btn.buy-now:hover {
+  background: linear-gradient(135deg, rgba(255,90,26,0.25), rgba(255,148,0,0.18)) !important;
+  border-color: rgba(255,90,26,0.5) !important;
+  box-shadow: 0 8px 24px rgba(255,107,53,0.2) !important;
+}
+.calc-toggle-wrapper .toggle-btn.active,
+.calc-toggle-wrapper .toggle-btn.active:hover,
+.mode-toggle-btn.active,
+.mode-toggle-btn.active:hover {
+  background: linear-gradient(135deg, rgba(255,90,26,0.2), rgba(255,148,0,0.12)) !important;
+  border: 1px solid rgba(255,90,26,0.35) !important;
+  color: var(--accent) !important;
+}
+.toggle-btn::before {
+  display: none !important;
+}
+.toggle-btn.active {
+  background: linear-gradient(135deg, rgba(255,90,26,0.2), rgba(255,148,0,0.12)) !important;
+  border: 1px solid rgba(255,90,26,0.35) !important;
+  color: var(--accent) !important;
+}
 </style>
 </head>
 <body>
@@ -12518,6 +12604,7 @@ const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
 </script>
 </body>
 </html>
+
 
 
 
