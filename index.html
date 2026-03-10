@@ -12446,8 +12446,8 @@ function getWorldTourRank(value) {
     }
     
 const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
-    const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
-    const originalPrice = Math.round(total * priceMultiplier);
+const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
+const wtDiscount = isWorldTour ? 0.8 : 1;
     const discounted = Math.round(originalPrice * 0.95); // 5% off
     const withLivestream = Math.round(discounted * 1.15); // +15% for livestream
     
@@ -12655,6 +12655,7 @@ const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
 </script>
 </body>
 </html>
+
 
 
 
