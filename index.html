@@ -874,7 +874,8 @@ header {
     border-radius: 16px;
     padding: 2rem;
     text-align: center;
-    transition: all 0.3s;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    will-change: transform;
 }
 
 .process-step:hover {
@@ -5979,11 +5980,12 @@ nav {
     transform: translateX(-50%);
     background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
     color: #000;
-    padding: 0.35rem 0.85rem;
+    padding: 0.25rem 0.75rem;
     border-radius: 12px;
-    font-size: 0.7rem;
+    font-size: 0.62rem;
     font-weight: 700;
     letter-spacing: 0.5px;
+    white-space: nowrap;
     z-index: 1;
     box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
 }
@@ -6366,6 +6368,7 @@ nav {
   gap: 1rem;
   max-width: 700px;
   margin: 0 auto;
+  padding-top: 1rem;
 }
 
 .service-card {
@@ -6546,7 +6549,8 @@ nav {
   border: 2px solid var(--border);
   border-radius: 10px;
   padding: 1.25rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
 .testimonial-avatar {
@@ -6935,12 +6939,10 @@ nav .btn {
     position: relative;
     left: 10px;
 }
-
 nav .btn:hover {
     transform: translateX(25px) translateY(-2px);
     box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
 }
-
 nav .btn i {
     font-size: 0.85rem;
     transition: transform 0.3s ease;
@@ -9183,22 +9185,7 @@ footer {
     padding: 0;
     line-height: 1.2;
 }
-/* Current Season Badge - Centered */
-.order-card .current-season-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-    color: #000;
-    padding: 0.35rem 0.85rem;
-    border-radius: 20px;
-    font-weight: 800;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    z-index: 2;
-}
+/* Current Season Badge */
 .account-card {
     background: var(--bg-primary);
     border: 2px solid var(--border);
@@ -9212,7 +9199,1004 @@ footer {
     right: auto;
     transform: translateX(-50%);
 }
-    </style>
+
+/* ============================================================
+   PREMIUM UPGRADE CSS - Overrides all previous styles
+   Clean, high-impact gaming aesthetic
+   ============================================================ */
+
+/* Import premium fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --accent: #ff5a1a;
+  --accent-secondary: #ff9500;
+  --accent-tertiary: #ffcc00;
+  --text-primary: #ffffff;
+  --text-secondary: #8a8a8a;
+  --bg-primary: #080808;
+  --bg-secondary: #0f0f0f;
+  --border: #1e1e1e;
+  --glow: 0 0 30px rgba(255, 90, 26, 0.3);
+  --glow-strong: 0 0 60px rgba(255, 90, 26, 0.5);
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255, 90, 26, 0.06) 0%, transparent 70%);
+}
+
+/* ---- SCROLL REVEAL ANIMATIONS ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible { opacity: 1; transform: none; }
+
+/* ---- ANNOUNCEMENT BAR ---- */
+.announcement-wrapper {
+  background: #000;
+  border-bottom: 1px solid rgba(255, 90, 26, 0.2);
+}
+.announcement-bar {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.announcement-bar strong {
+  background: linear-gradient(90deg, #ff5a1a, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+/* ---- HEADER / NAV ---- */
+header {
+  background: rgba(8, 8, 8, 0.92) !important;
+  backdrop-filter: blur(20px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 90, 26, 0.1) !important;
+  box-shadow: 0 1px 0 rgba(255, 90, 26, 0.05);
+}
+
+.logo-main {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 0.80rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.logo-tagline {
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.logo-tagline span { color: #fff; }
+
+.nav-links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+}
+.nav-links a:hover { color: #fff; }
+
+.btn {
+  background: var(--accent) !important;
+  background: linear-gradient(135deg, #ff5a1a 0%, #ff8c00 100%) !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #000 !important;
+  padding: 0.6rem 1.3rem !important;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.4), 0 0 20px rgba(255, 90, 26, 0.2);
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 90, 26, 0.5) !important;
+}
+.btn-outline {
+  background: transparent !important;
+  border: 1.5px solid rgba(255, 90, 26, 0.6) !important;
+  color: var(--accent) !important;
+  box-shadow: none !important;
+}
+.btn-outline:hover {
+  background: rgba(255, 90, 26, 0.1) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 20px rgba(255, 90, 26, 0.2) !important;
+  color: #fff !important;
+}
+
+/* ---- HERO ---- */
+.hero-title {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: clamp(3rem, 8vw, 6rem) !important;
+  letter-spacing: -1px !important;
+  text-transform: uppercase !important;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.8) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: none !important;
+  line-height: 0.95 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.05rem) !important;
+  color: rgba(255,255,255,0.65) !important;
+  text-shadow: none !important;
+  letter-spacing: 0.2px;
+  font-weight: 400 !important;
+}
+
+/* Scan line overlay for hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.03) 0px,
+    rgba(0,0,0,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
+
+/* Accent underline for hero title */
+.hero-content::before {
+  display: none;
+}
+
+/* ---- STATS ---- */
+.stat-card {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1e1e1e !important;
+  border-top: 1px solid rgba(255,90,26,0.35) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+.stat-card:hover {
+  border-color: rgba(255,90,26,0.6) !important;
+  box-shadow: 0 8px 30px rgba(255,90,26,0.12), 0 0 0 1px rgba(255,90,26,0.15) !important;
+  transform: translateY(-3px) !important;
+}
+.stat-card i {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.stat-number {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 2.2rem !important;
+  background: linear-gradient(135deg, #ff5a1a, #ffcc00) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.stat-label {
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ---- SECTION HEADERS ---- */
+.section-header h2 {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem) !important;
+}
+.section-header p {
+  font-size: 0.85rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Orange accent line for section headers */
+.section-header {
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+/* ---- SERVICE CARDS ---- */
+.service-card {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1e1e1e !important;
+  border-radius: 10px !important;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.service-card:hover {
+  border-color: rgba(255,90,26,0.4) !important;
+  box-shadow: 0 12px 40px rgba(255,90,26,0.1), inset 0 0 0 1px rgba(255,90,26,0.05) !important;
+  transform: translateY(-4px) !important;
+}
+.service-card:hover::before { opacity: 1; }
+
+.service-icon {
+  background: linear-gradient(135deg, rgba(255,90,26,0.15), rgba(255,148,0,0.1)) !important;
+  border: 1px solid rgba(255,90,26,0.2) !important;
+  border-radius: 8px !important;
+  color: var(--accent) !important;
+}
+
+.service-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ---- PRICING CARDS ---- */
+.pricing-card {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1e1e1e !important;
+  border-radius: 12px !important;
+}
+.pricing-card.featured {
+  border-color: rgba(255,90,26,0.5) !important;
+  box-shadow: 0 0 40px rgba(255,90,26,0.15), inset 0 0 0 1px rgba(255,90,26,0.1) !important;
+}
+.pricing-card:hover {
+  border-color: rgba(255,90,26,0.35) !important;
+  box-shadow: 0 16px 50px rgba(255,90,26,0.12) !important;
+}
+
+/* ---- CALCULATOR ---- */
+.calculator-box {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1e1e1e !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 0 1px rgba(255,90,26,0.05);
+}
+.calculator-box:hover {
+  border-color: rgba(255,90,26,0.35) !important;
+  box-shadow: 0 12px 40px rgba(255,90,26,0.1) !important;
+  transform: none !important;
+}
+.mode-toggle-btn.active, .calc-toggle-wrapper .toggle-btn.active, .toggle-btn.active {
+  background: linear-gradient(135deg, #ff5a1a, #ff9500) !important;
+  color: #000 !important;
+  font-weight: 800 !important;
+}
+
+/* ---- TESTIMONIALS ---- */
+.testimonial-card {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1e1e1e !important;
+  border-radius: 12px !important;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.testimonial-card:hover {
+  border-color: rgba(255,90,26,0.3) !important;
+  box-shadow: 0 8px 30px rgba(255,90,26,0.08) !important;
+}
+
+.testimonial-avatar {
+  background: linear-gradient(135deg, rgba(255,90,26,0.2), rgba(255,148,0,0.1)) !important;
+  border: 1px solid rgba(255,90,26,0.3) !important;
+  color: var(--accent) !important;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+.testimonial-info h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.stars { color: #ff9500 !important; letter-spacing: 2px; }
+
+/* ---- FAQ ---- */
+.faq-item {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1a1a1a !important;
+  border-radius: 8px !important;
+  margin-bottom: 0.5rem !important;
+  overflow: hidden;
+}
+.faq-item.active { border-color: rgba(255,90,26,0.3) !important; }
+.faq-question h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 1rem;
+}
+.faq-question i { color: var(--accent); }
+
+/* ---- PROCESS STEPS ---- */
+.process-step {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1a1a1a !important;
+  border-radius: 8px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+  will-change: transform;
+}
+.process-step:hover {
+  border-color: rgba(255,90,26,0.4) !important;
+  box-shadow: 0 8px 24px rgba(255,90,26,0.1) !important;
+  transform: translateY(-3px) !important;
+}
+.step-number {
+  background: linear-gradient(135deg, #ff5a1a, #ff9500) !important;
+  border-radius: 6px !important;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+}
+.process-step h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ---- PAYMENT CARDS ---- */
+.payment-card {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1a1a1a !important;
+  border-radius: 10px !important;
+  transition: all 0.3s !important;
+}
+.payment-card:hover {
+  border-color: rgba(255,90,26,0.5) !important;
+  box-shadow: 0 8px 30px rgba(255,90,26,0.12) !important;
+  transform: translateY(-4px) !important;
+}
+.payment-card.popular {
+  border-color: rgba(255,90,26,0.3) !important;
+}
+.payment-icon {
+  background: linear-gradient(135deg, rgba(255,90,26,0.15), rgba(255,148,0,0.08)) !important;
+  border: 1px solid rgba(255,90,26,0.2) !important;
+  border-radius: 8px !important;
+  color: var(--accent) !important;
+}
+.payment-card h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---- ORDER CARDS ---- */
+.order-card {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1a1a1a !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  padding-top: 1.75rem !important;
+}
+
+/* ---- ACCOUNT CARDS ---- */
+.account-card {
+  background: linear-gradient(145deg, #0d0d0d, #111) !important;
+  border: 1px solid #1a1a1a !important;
+  border-radius: 10px !important;
+}
+.account-card:hover {
+  border-color: rgba(255,90,26,0.5) !important;
+  box-shadow: 0 8px 30px rgba(255,90,26,0.12) !important;
+}
+.account-image {
+  background: linear-gradient(135deg, #111 0%, #0a0a0a 100%) !important;
+}
+.account-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.price-tag {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 1.4rem !important;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background: #060606 !important;
+  border-top: 1px solid rgba(255,90,26,0.1) !important;
+}
+.footer-section h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+.footer-bottom {
+  font-size: 0.75rem !important;
+  letter-spacing: 0.5px;
+  color: #444 !important;
+}
+
+/* ---- TESTIMONIAL NAV BUTTONS ---- */
+.testimonial-nav {
+  background: linear-gradient(145deg, #111, #0d0d0d) !important;
+  border: 1px solid #1e1e1e !important;
+  color: rgba(255,255,255,0.6) !important;
+  transition: all 0.2s !important;
+}
+.testimonial-nav:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  box-shadow: 0 4px 16px rgba(255,90,26,0.2) !important;
+}
+
+/* ---- DISCOUNT PILLS ---- */
+.discount-pill {
+  background: rgba(255,90,26,0.05) !important;
+  border-left-color: var(--accent) !important;
+}
+
+/* ---- RANK COLORS in calc ---- */
+.calc-select .bronze .rank-name { color: #e07a30; }
+.calc-select .silver .rank-name { color: #c8c8c8; }
+.calc-select .gold .rank-name { color: #ffd700; }
+.calc-select .platinum .rank-name { color: #a0a8b0; }
+.calc-select .diamond .rank-name { color: #38b8e8; }
+.calc-select .ruby .rank-name { color: #ff2a2a; }
+.calc-select .emerald .rank-name { color: #2ecc71; }
+
+/* ---- RANK SPAN COLORS in testimonials ---- */
+.rank-bronze { color: #e07a30; font-weight: 700; }
+.rank-silver { color: #c8c8c8; font-weight: 700; }
+.rank-gold { color: #ffd700; font-weight: 700; }
+.rank-platinum { color: #a0a8b0; font-weight: 700; }
+.rank-diamond { color: #38b8e8; font-weight: 700; }
+.rank-ruby { color: #ff4040; font-weight: 700; }
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ---- MOBILE MENU BUTTON ---- */
+.mobile-menu-btn span {
+  background: rgba(255,255,255,0.7);
+  height: 1.5px;
+  border-radius: 2px;
+}
+.mobile-menu-btn.active span:nth-child(1) { background: var(--accent); }
+.mobile-menu-btn.active span:nth-child(3) { background: var(--accent); }
+
+/* ---- GLOW PULSE on CURRENT SEASON badge ---- */
+.current-season-badge {
+  animation: accentPulse 2.5s ease-in-out infinite !important;
+}
+@keyframes accentPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255,90,26,0.4); }
+  50% { box-shadow: 0 0 20px rgba(255,90,26,0.8), 0 0 40px rgba(255,90,26,0.3); }
+}
+
+/* ---- HERO CTA AREA ---- */
+.hero-ctas { gap: 0.75rem; }
+
+/* ---- TESTIMONIAL DOTS ---- */
+.dot {
+  background: #2a2a2a !important;
+  transition: all 0.3s !important;
+}
+.dot.active {
+  background: var(--accent) !important;
+  box-shadow: 0 0 8px rgba(255,90,26,0.5) !important;
+}
+
+/* ---- PRICING SECTION BG ---- */
+.pricing {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, #0a0a0a 100%) !important;
+}
+
+/* ---- PROCESS SECTION ---- */
+.process { background: var(--bg-primary) !important; }
+
+/* ===========================================================
+   PREMIUM HERO v2 - Cinematic, high-end feel
+   =========================================================== */
+
+/* Richer overlay stack */
+.video-overlay {
+  background:
+    linear-gradient(to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.25) 35%,
+      rgba(0,0,0,0.45) 65%,
+      rgba(0,0,0,0.85) 100%
+    ),
+    radial-gradient(ellipse 70% 60% at 50% 50%, transparent 40%, rgba(0,0,0,0.5) 100%) !important;
+}
+
+/* Left-side orange bleed */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 50% 80% at -5% 50%, rgba(255,80,20,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 50% at 105% 60%, rgba(255,148,0,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Smooth fade into site below */
+.hero-bottom-fade {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 200px;
+  z-index: 2;
+  background: linear-gradient(to bottom, transparent 0%, var(--bg-primary) 100%);
+  pointer-events: none;
+}
+
+/* Ambient floating orbs */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  pointer-events: none;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.hero-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,80,20,0.12) 0%, transparent 70%);
+  top: -100px; left: -80px;
+  animation-delay: 0s;
+}
+.hero-orb-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,148,0,0.07) 0%, transparent 70%);
+  bottom: 60px; right: -60px;
+  animation-delay: -4s;
+}
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+/* Hero content layout */
+.hero-content {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 3 !important;
+  max-width: 780px !important;
+  width: calc(100% - 48px) !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+/* Trust badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 100px;
+  padding: 0.35rem 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1.5rem;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.1s both;
+}
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2ecc71;
+  box-shadow: 0 0 8px rgba(46,204,113,0.8);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.4); }
+}
+
+/* Hero title - split line approach */
+.hero-title {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 0.9 !important;
+  text-shadow: none !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+.hero-title-line1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #fff;
+  display: block;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.25s both;
+}
+.hero-title-line2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  display: block;
+  /* Hollow stroke text */
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.85);
+  animation: heroFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.35s both;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: clamp(0.9rem, 1.8vw, 1rem) !important;
+  color: rgba(255,255,255,0.55) !important;
+  letter-spacing: 0.3px !important;
+  font-weight: 400 !important;
+  text-shadow: none !important;
+  max-width: 520px;
+  margin: 0 auto 2rem !important;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.45s both;
+}
+
+/* Proof row */
+.hero-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s both;
+}
+.hero-proof-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.hero-proof-value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: 1;
+}
+.hero-proof-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.hero-proof-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.12);
+}
+
+/* CTA buttons */
+.hero-ctas {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.6s both;
+}
+.hero-btn-primary {
+  padding: 0.85rem 2rem !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  background: linear-gradient(135deg, #ff5a1a, #ff9500) !important;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.5), 0 0 40px rgba(255,90,26,0.35) !important;
+}
+.hero-btn-primary:hover {
+  box-shadow: 0 8px 30px rgba(255,90,26,0.6) !important;
+  transform: translateY(-3px) !important;
+}
+.hero-btn-secondary {
+  padding: 0.83rem 1.8rem !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: rgba(255,255,255,0.75) !important;
+  backdrop-filter: blur(10px);
+}
+.hero-btn-secondary:hover {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.35) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* Scroll cue */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.9s both;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255,90,26,0.7), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+}
+
+/* Staggered entrance animation */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-title-line1,
+  .hero-title-line2 {
+    font-size: 3rem !important;
+  }
+  .hero-proof { gap: 1rem; }
+  .hero-proof-value { font-size: 1.2rem; }
+  .hero-badge { font-size: 0.65rem; }
+  .hero-scroll-cue { display: none; }
+}
+
+/* ===========================================================
+   GLOBAL POLISH UPGRADES
+   =========================================================== */
+
+/* Subtle noise texture on whole page */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Section dividers — ultra-thin orange line */
+.services, .process, .faq, .payment-methods, .order-calculator {
+  border-top: 1px solid rgba(255,90,26,0.06);
+}
+
+/* Hover on nav links — brighter */
+.nav-links a:hover {
+  color: #fff !important;
+  text-shadow: 0 0 12px rgba(255,90,26,0.4);
+}
+
+/* Active nav item glow on Get Started button */
+nav .btn {
+  box-shadow: 0 0 20px rgba(255,90,26,0.25) !important;
+}
+
+/* Stats section — frameless, sits flush below hero */
+.stats {
+  padding-top: 2.5rem !important;
+}
+.stat-card i {
+  font-size: 1.3rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.6rem;
+  filter: drop-shadow(0 0 8px rgba(255,90,26,0.4));
+}
+
+/* Testimonials — make slider cards taller with better spacing */
+.testimonial-text {
+  font-size: 0.9rem !important;
+  line-height: 1.75 !important;
+  color: rgba(255,255,255,0.6) !important;
+  font-style: italic;
+}
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 4rem;
+  line-height: 1;
+  color: rgba(255,90,26,0.08);
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
+.testimonial-card { position: relative; overflow: hidden; }
+
+/* FAQ — chevron transition */
+.faq-item .faq-question i {
+  transition: transform 0.3s ease;
+}
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+/* Bar chart bars — brighter rank colors */
+.bar.silver { background: linear-gradient(180deg, #c0c0c0, #888) !important; }
+.bar.gold { background: linear-gradient(180deg, #ffd700, #b8860b) !important; }
+.bar.platinum { background: linear-gradient(180deg, #a0a8b0, #606870) !important; }
+.bar.diamond { background: linear-gradient(180deg, #38b8e8, #1a6080) !important; }
+.bar.ruby { background: linear-gradient(180deg, #ff4040, #880000) !important; }
+
+/* Section background alternation */
+.pricing { background: rgba(255,90,26,0.02) !important; }
+.accounts-shop { background: rgba(0,0,0,0.3) !important; }
+
+/* Order cards — season badge refined */
+.season-badge {
+  background: linear-gradient(135deg, #ff5a1a, #ff9500) !important;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+}
+.current-season-badge {
+  display: block !important;
+  position: static !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  background: linear-gradient(135deg, #ff5a1a, #ff9500) !important;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  text-align: center !important;
+  color: #000 !important;
+  padding: 0.2rem 0.6rem !important;
+  border-radius: 16px !important;
+  font-size: 0.7rem !important;
+  margin: 0 auto 1.25rem !important;
+  width: fit-content !important;
+  white-space: nowrap !important;
+}
+
+/* Smooth page-load entrance for above-fold content */
+.announcement-wrapper { animation: pageFadeIn 0.4s ease both; }
+header { animation: pageFadeIn 0.5s ease 0.05s both; }
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+nav .btn {
+    padding: 0.65rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+    position: relative;
+    left: 10px;
+    will-change: transform;
+}
+
+nav .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.5);
+}
+
+nav .btn i {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+nav .btn:hover i {
+    transform: translateX(3px);
+}
+nav .btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+nav .btn:hover {
+    transform: translateX(25px) translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4) !important;
+}
+
+nav .btn:hover i {
+    transform: translateX(3px) !important;
+}
+
+.testimonial-card {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+    will-change: transform;
+}
+
+.testimonial-card:hover {
+    border-color: var(--accent) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 24px rgba(255, 107, 53, 0.15) !important;
+}
+.bar-label {
+    color: #ffffff !important;
+    font-size: 0.6rem !important;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000 !important;
+}
+.account-badge {
+    background: linear-gradient(135deg, #cc0000, #ff2222) !important;
+    color: #fff !important;
+}
+.hero-scroll-line {
+    display: none !important;
+}
+</style>
 </head>
 <body>
 <div class="announcement-wrapper">
@@ -9232,16 +10216,13 @@ footer {
     >
     <div class="logo-text">
       <div class="logo-main">THE FINALS BOOSTING</div>
-      <div class="logo-tagline">Fast • Secure • <span>Cheap</span></div>
+      <div class="logo-tagline">Fast • Secure • Cheap</div>
     </div>
   </div>
 </div>
 
 <ul class="nav-links">
-  <li><a href="#services" title="The Finals Boosting Services">Services</a></li>
-<!-- Replace the Accounts nav link with this -->
-<!-- Replace the Accounts nav link with this -->
-<li>
+
     <a href="#accounts" title="The Finals Accounts For Sale" style="position: relative; display: inline-block;">
         <span style="position: absolute; top: -10px; right: -12px; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); color: #000; padding: 0.1rem 0.35rem; border-radius: 6px; font-size: 0.55rem; font-weight: 700; text-transform: uppercase;">NEW</span>
         Accounts
@@ -9254,7 +10235,7 @@ footer {
 </ul>          
 
 <a href="#process" class="btn">
-    Get Started <i class="fas fa-angle-double-right"></i>
+    How it Works <i class="fas fa-angle-double-right"></i>
 </a>
         </nav>
     </header>
@@ -9271,19 +10252,64 @@ footer {
     ></iframe>
   </div>
 
+  <!-- Multi-layer cinematic overlay -->
   <div class="video-overlay"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-bottom-fade"></div>
+
+  <!-- Floating ambient particles -->
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
 
   <div class="hero-content">
-    <h1 class="hero-title">The Finals Boosting</h1>
+
+    <!-- Trust badge above title -->
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>60+ Orders Completed · Season 9 Active</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="hero-title-line1">Rank Up.</span>
+      <span class="hero-title-line2">Right Now.</span>
+    </h1>
+
     <p class="hero-subtitle">
-      Reach your dream rank in The Finals with our elite team of professional players.<br>
-      Fast delivery, guaranteed results, cheap prices and 24/7 support.
+      Elite boosters. Guaranteed results. From Bronze to Ruby — we handle it.
     </p>
 
-    <div class="hero-ctas">
-      <a href="#calculator" class="btn"><i class="fas fa-calculator"></i> View Pricing</a>
-      <a href="#contact" class="btn btn-outline"><i class="fas fa-info-circle"></i> Learn More</a>
+    <!-- Inline proof row -->
+    <div class="hero-proof">
+      <div class="hero-proof-item">
+        <span class="hero-proof-value">100%</span>
+        <span class="hero-proof-label">Success Rate</span>
+      </div>
+      <div class="hero-proof-divider"></div>
+      <div class="hero-proof-item">
+        <span class="hero-proof-value">24h</span>
+        <span class="hero-proof-label">Avg Delivery</span>
+      </div>
+      <div class="hero-proof-divider"></div>
+      <div class="hero-proof-item">
+        <span class="hero-proof-value">5★</span>
+        <span class="hero-proof-label">Rating</span>
+      </div>
     </div>
+
+    <div class="hero-ctas">
+      <a href="#calculator" class="btn hero-btn-primary">
+        <i class="fas fa-bolt"></i> Get Started
+      </a>
+      <a href="#services" class="btn btn-outline hero-btn-secondary">
+        View Services
+      </a>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+    </div>
+
   </div>
 </section>
 
@@ -9305,7 +10331,7 @@ footer {
     </div>
     <div class="stat-card">
         <i class="fas fa-headset"></i>
-        <span class="stat-number">24/7</span>
+        <span class="stat-number">24h</span>
         <span class="stat-label">Support</span>
     </div>
 </section>
@@ -9375,13 +10401,13 @@ footer {
                         </div>
                         <div class="bar-label">Bronze→<br>Silver</div>
                     </div>
-                    <div class="bar gold" style="height: 30%">
+                    <div class="bar gold" style="height: 15%">
                         <div class="bar-inner">
                             <span class="bar-value">1</span>
                         </div>
                         <div class="bar-label">Silver→<br>Gold</div>
                     </div>
-                    <div class="bar platinum" style="height: 90%">
+                    <div class="bar platinum" style="height: 25%">
                         <div class="bar-inner">
                             <span class="bar-value">3</span>
                         </div>
@@ -9393,7 +10419,7 @@ footer {
                         </div>
                         <div class="bar-label">Platinum→<br>Diamond</div>
                     </div>
-                    <div class="bar ruby" style="height: 35%">
+                    <div class="bar ruby" style="height: 40%">
                         <div class="bar-inner">
                             <span class="bar-value">5</span>
                         </div>
@@ -9411,54 +10437,53 @@ footer {
                     </div>
                 </div>
             </div>
-<div class="order-card">
-    <span class="current-season-badge">CURRENT SEASON</span>
-    <span class="season-badge">SEASON 9</span>
-    <h3 class="card-title">Completed Orders</h3>
-        <div class="bar-chart">
-            <div class="bar silver" style="height: 15%">
-                <div class="bar-inner">
-                    <span class="bar-value">0</span>
+            <div class="order-card">
+                <span class="season-badge">SEASON 9</span>
+                <h3 class="card-title">Completed Orders</h3>
+                <div class="bar-chart">
+                    <div class="bar silver" style="height: 15%">
+                        <div class="bar-inner">
+                            <span class="bar-value">0</span>
+                        </div>
+                        <div class="bar-label">Bronze→<br>Silver</div>
+                    </div>
+                    <div class="bar gold" style="height: 20%">
+                        <div class="bar-inner">
+                            <span class="bar-value">2</span>
+                        </div>
+                        <div class="bar-label">Silver→<br>Gold</div>
+                    </div>
+                    <div class="bar platinum" style="height: 30%">
+                        <div class="bar-inner">
+                            <span class="bar-value">4</span>
+                        </div>
+                        <div class="bar-label">Gold→<br>Platinum</div>
+                    </div>
+                    <div class="bar diamond" style="height: 90%">
+                        <div class="bar-inner">
+                            <span class="bar-value">12</span>
+                        </div>
+                        <div class="bar-label">Platinum→<br>Diamond</div>
+                    </div>
+                    <div class="bar ruby" style="height: 25%">
+                        <div class="bar-inner">
+                            <span class="bar-value">7</span>
+                        </div>
+                        <div class="bar-label">Diamond→<br>Ruby</div>
+                    </div>
                 </div>
-                <div class="bar-label">Bronze→<br>Silver</div>
-            </div>
-            <div class="bar gold" style="height: 20%">
-                <div class="bar-inner">
-                    <span class="bar-value">2</span>
+                <div class="stats-summary">
+                    <div class="stat-item">
+                        <div class="stat-item-value">Diamond</div>
+                        <div class="stat-item-label">Most Popular</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item-value">25</div>
+                        <div class="stat-item-label">Total Orders</div>
+                    </div>
                 </div>
-                <div class="bar-label">Silver→<br>Gold</div>
-            </div>
-            <div class="bar platinum" style="height: 30%">
-                <div class="bar-inner">
-                    <span class="bar-value">4</span>
-                </div>
-                <div class="bar-label">Gold→<br>Platinum</div>
-            </div>
-            <div class="bar diamond" style="height: 90%">
-                <div class="bar-inner">
-                    <span class="bar-value">12</span>
-                </div>
-                <div class="bar-label">Platinum→<br>Diamond</div>
-            </div>
-            <div class="bar ruby" style="height: 25%">
-                <div class="bar-inner">
-                    <span class="bar-value">7</span>
-                </div>
-                <div class="bar-label">Diamond→<br>Ruby</div>
             </div>
         </div>
-        <div class="stats-summary">
-            <div class="stat-item">
-                <div class="stat-item-value">Diamond</div>
-                <div class="stat-item-label">Most Popular</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-item-value">25</div>
-                <div class="stat-item-label">Total Orders</div>
-            </div>
-        </div>
-    </div>
-</div>
     </section>
 
 <section class="services" id="services">
@@ -9705,7 +10730,7 @@ footer {
             </div>
         </div>
                 <div class="account-card">
-                    <span class="account-badge">Best Deal</span>
+                    <span class="account-badge">Sold</span>
 <div class="account-image">
     <div class="rank-display">
         <i class="fas fa-medal" style="color: #B0C4DE;"></i>
@@ -10189,7 +11214,7 @@ footer {
     <span></span>
     <span></span>
 </button>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
   let selectedType = "driver";
   
@@ -11324,72 +12349,87 @@ const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
         });
       });
       
-      updateSliderFill(startWT);
-      updateSliderFill(endWT);
-      calculatePrice(true);
+          }
+  });
+
+</script>
+
+<!-- SCROLL REVEAL + PREMIUM POLISH -->
+<script>
+(function() {
+  // Add reveal classes to sections
+  const targets = [
+    '.stat-card', '.service-card', '.process-step', '.payment-card',
+    '.testimonial-card', '.faq-item', '.account-card', '.order-card',
+    '.pricing-card', '.section-header'
+  ];
+
+  targets.forEach((selector, si) => {
+    document.querySelectorAll(selector).forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i * 0.07) + 's';
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Add number counter animation to stat numbers
+  function animateCount(el, target, isText) {
+    if (isText) { el.textContent = target; return; }
+    const num = parseFloat(target);
+    if (isNaN(num)) { el.textContent = target; return; }
+    const suffix = target.replace(/[\d.]/g, '');
+    let start = 0;
+    const dur = 1200;
+    const startTime = performance.now();
+    function update(now) {
+      const p = Math.min((now - startTime) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(num * ease);
+      el.textContent = val + suffix;
+      if (p < 1) requestAnimationFrame(update);
     }
+    requestAnimationFrame(update);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const raw = el.dataset.target || el.textContent.trim();
+        el.dataset.target = raw;
+        const numeric = raw.replace(/[^0-9.]/g, '');
+        animateCount(el, raw, !numeric);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+
+  // Add subtle cursor glow effect on hover for cards
+  const glowCards = document.querySelectorAll('.service-card, .stat-card, .payment-card, .account-card');
+  glowCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255,90,26,0.06) 0%, rgba(13,13,13,1) 60%)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.background = '';
+    });
   });
 })();
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
