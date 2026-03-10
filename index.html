@@ -12047,7 +12047,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
 const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
-const wtDiscount = isWorldTour ? 0.81 : 1;
+const wtDiscount = isWorldTour ? 0.7 : 1;
 const originalPrice = Math.round(total * priceMultiplier * wtDiscount);
 const discounted = Math.round(originalPrice * 0.95);
     const withLivestream = Math.round(discounted * 1.20);
@@ -12449,7 +12449,7 @@ function getWorldTourRank(value) {
     
 const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
 const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
-const wtDiscount = isWorldTour ? 0.81 : 1;
+const wtDiscount = isWorldTour ? 0.7 : 1;
 const originalPrice = Math.round(total * priceMultiplier * wtDiscount);
 const discounted = Math.round(originalPrice * 0.95); // 5% off
 const withLivestream = Math.round(discounted * 1.15); // +15% for livestream
@@ -12658,6 +12658,7 @@ const withLivestream = Math.round(discounted * 1.15); // +15% for livestream
 </script>
 </body>
 </html>
+
 
 
 
