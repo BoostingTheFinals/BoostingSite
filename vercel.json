@@ -8,6 +8,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/selfplay-boosting", "destination": "/selfplay-boosting.html" },
     { "source": "/about", "destination": "/about.html" },
     { "source": "/faq", "destination": "/faq.html" },
     { "source": "/boosting-services", "destination": "/boosting-services.html" },
@@ -15,7 +16,6 @@
     { "source": "/reviews", "destination": "/reviews.html" },
     { "source": "/how-to-rank-up-in-the-finals", "destination": "/how-to-rank-up-in-the-finals.html" },
     { "source": "/account-driver-boosting", "destination": "/account-driver-boosting.html" },
-    { "source": "/selfplay-boosting", "destination": "/selfplay-boost.html" }
     { "source": "/the-finals-ranking-system-explained", "destination": "/the-finals-ranking-system-explained.html" },
     { "source": "/account-driver-vs-selfplay-boosting", "destination": "/account-driver-vs-selfplay-boosting.html" },
     { "source": "/the-finals-best-loadouts-season-9", "destination": "/the-finals-best-loadouts-season-9.html" },
