@@ -10472,6 +10472,126 @@ footer .footer-section img[alt="The Finals Boost Logo"]:hover {
 .calc-toggle-wrapper .toggle-btn span {
   line-height: 1 !important;
 }
+.blog-guides {
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,90,26,0.06);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.blog-card {
+    background: linear-gradient(145deg, #0d0d0d, #111);
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.blog-card:hover {
+    border-color: rgba(255,90,26,0.4);
+    box-shadow: 0 8px 24px rgba(255,90,26,0.1);
+    transform: translateY(-4px);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.blog-card:hover::before { opacity: 1; }
+
+.blog-card-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.blog-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.blog-tag {
+    display: inline-block;
+    background: rgba(255,90,26,0.12);
+    border: 1px solid rgba(255,90,26,0.2);
+    color: var(--accent);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.blog-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.blog-card p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+}
+
+.blog-read-more {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.3px;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.blog-read-more i {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+}
+
+.blog-card:hover .blog-read-more i {
+    transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-guides { padding: 2.5rem 1rem; }
+}
 </style>
 </head>
 <body>
@@ -11389,6 +11509,68 @@ footer .footer-section img[alt="The Finals Boost Logo"]:hover {
                 <p>We stream the boost through a fully anonymous Twitch account. Our booster also uses anonymous in-game settings, including the option that displays their in-game name as “Me.” Additionally, the screen is hidden after every match so the lobby, player names, and teammates are not visible.</p>
             </div>
         </div>
+    </div>
+</section>
+<section class="blog-guides" id="guides">
+    <div class="section-header">
+        <h2>Guides & Resources</h2>
+        <p>Everything you need to know about ranking up in The Finals</p>
+    </div>
+    <div class="blog-grid">
+        <a href="/the-finals-ranking-system-explained" class="blog-card">
+            <div class="blog-card-icon">📊</div>
+            <div class="blog-card-body">
+                <span class="blog-tag">Guide</span>
+                <h3>The Finals Ranking System Explained</h3>
+                <p>A complete breakdown of every rank, how RP is awarded, and what percentage of players reach each tier.</p>
+                <span class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
+        <a href="/how-to-rank-up-in-the-finals" class="blog-card">
+            <div class="blog-card-icon">🚀</div>
+            <div class="blog-card-body">
+                <span class="blog-tag">Tips</span>
+                <h3>How to Rank Up in The Finals</h3>
+                <p>Practical strategies to climb faster — from team compositions to cashout timing and mental game.</p>
+                <span class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
+        <a href="/the-finals-best-loadouts-season-9" class="blog-card">
+            <div class="blog-card-icon">🔫</div>
+            <div class="blog-card-body">
+                <span class="blog-tag">Season 9</span>
+                <h3>Best Loadouts Season 9</h3>
+                <p>The strongest weapons, gadgets and specialisations for Light, Medium and Heavy in the current meta.</p>
+                <span class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
+        <a href="/account-driver-vs-selfplay-boosting" class="blog-card">
+            <div class="blog-card-icon">⚖️</div>
+            <div class="blog-card-body">
+                <span class="blog-tag">Boosting</span>
+                <h3>Account Driver vs Selfplay Boosting</h3>
+                <p>Not sure which service to pick? We break down the pros, cons and best use case for each option.</p>
+                <span class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
+        <a href="/is-the-finals-boosting-safe" class="blog-card">
+            <div class="blog-card-icon">🛡️</div>
+            <div class="blog-card-body">
+                <span class="blog-tag">Safety</span>
+                <h3>Is The Finals Boosting Safe?</h3>
+                <p>Honest answer to the most common question — what the actual risks are and how we minimise them.</p>
+                <span class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
+        <a href="/the-finals-ranking-system-explained#tips" class="blog-card">
+            <div class="blog-card-icon">🏆</div>
+            <div class="blog-card-body">
+                <span class="blog-tag">Meta</span>
+                <h3>Best Team Compositions Season 9</h3>
+                <p>HHL, HLL or HML? Which team comp gives you the best chance of winning in Season 9 ranked.</p>
+                <span class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></span>
+            </div>
+        </a>
     </div>
 </section>
 <footer>
@@ -12723,6 +12905,7 @@ const withLivestream = Math.round(discounted * 1.2); // +20% for livestream
 </script>
 </body>
 </html>
+
 
 
 
