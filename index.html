@@ -9681,6 +9681,8 @@ header {
   background: linear-gradient(145deg, #0d0d0d, #111) !important;
   border: 1px solid #1a1a1a !important;
   border-radius: 10px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+  will-change: transform;
 }
 .account-card:hover {
   border-color: rgba(255,90,26,0.5) !important;
@@ -12916,6 +12918,7 @@ const withLivestream = Math.round(discounted * 1.2); // +20% for livestream
 </script>
 </body>
 </html>
+
 
 
 
