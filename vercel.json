@@ -3,7 +3,8 @@
     { "source": "/about", "destination": "/about.html" },
     { "source": "/faq", "destination": "/faq.html" },
     { "source": "/boosting-services", "destination": "/boosting-services.html" },
-    { "source": "/contact", "destination": "/contact.html" }
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/reviews", "destination": "/reviews.html" },
+    { "source": "/how-to-rank-up-in-the-finals", "destination": "/how-to-rank-up-in-the-finals.html" }
   ]
 }
-
