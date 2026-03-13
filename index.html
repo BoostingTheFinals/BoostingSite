@@ -10624,7 +10624,7 @@ footer .footer-section img[alt="The Finals Boost Logo"]:hover {
 <body>
 <div class="announcement-wrapper">
 <div class="announcement-bar">
-⚡ Only ‎ <strong>+20%</strong> ‎ for ‎ <a href="#faq-livestream" id="livestream-link" onclick="(function(e){e.preventDefault();var el=document.getElementById('faq-livestream');if(!el)return;var y=el.getBoundingClientRect().top+window.scrollY-100;var start=window.scrollY;var dur=1200;var startTime=null;function step(ts){if(!startTime)startTime=ts;var p=Math.min((ts-startTime)/dur,1);var ease=p<0.5?4*p*p*p:(p-1)*(2*p-2)*(2*p-2)+1;window.scrollTo(0,start+(y-start)*ease);if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);el.classList.add('active');el.style.transition='box-shadow 0.3s';el.style.boxShadow='0 0 0 3px var(--accent)';setTimeout(function(){el.style.boxShadow='';},2000);})(event)" style="color:inherit;text-decoration:underline;text-decoration-style:dotted;cursor:pointer;">live stream</a>! ⚡
+⚡ Only ‎ <strong>+20%</strong> ‎ for ‎ <a href="#faq-livestream" id="livestream-link" onclick="(function(e){e.preventDefault();var el=document.getElementById('faq-livestream');if(!el)return;smoothScrollTo(el,'#faq-livestream');setTimeout(function(){el.classList.add('active');el.style.transition='box-shadow 0.3s';el.style.boxShadow='0 0 0 3px var(--accent)';setTimeout(function(){el.style.boxShadow='';},1500);},1000);})(event)" style="color:inherit;text-decoration:underline;text-decoration-style:dotted;cursor:pointer;">live stream</a>! ⚡
 </div>
 </div>
 
