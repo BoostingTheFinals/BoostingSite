@@ -11876,7 +11876,7 @@ footer .footer-section img[alt="The Finals Boost Logo"]:hover {
     });
     
 const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
-const wtDiscount = isWorldTour ? 0.65 : 1;
+const wtDiscount = isWorldTour ? 0.6 : 1;
 const originalPrice = Math.round(total * priceMultiplier * wtDiscount);
 const discounted = Math.round(originalPrice * 0.95);
     const withLivestream = Math.round(discounted * 1.20);
@@ -12444,7 +12444,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
 const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
-const wtDiscount = isWorldTour ? 0.65 : 1;
+const wtDiscount = isWorldTour ? 0.6 : 1;
 const originalPrice = Math.round(total * priceMultiplier * wtDiscount);
 const discounted = Math.round(originalPrice * 0.95);
     const withLivestream = Math.round(discounted * 1.20);
@@ -12848,7 +12848,7 @@ function getWorldTourRank(value) {
     
 const typeKey = isWorldTour ? selectedTypeWT.replace('-wt', '') : selectedType;
 const priceMultiplier = typeKey === "selfplay" ? 2 : 1;
-const wtDiscount = isWorldTour ? 0.65 : 1;
+const wtDiscount = isWorldTour ? 0.6 : 1;
 const originalPrice = Math.round(total * priceMultiplier * wtDiscount);
 const discounted = Math.round(originalPrice * 0.95); // 5% off
 const withLivestream = Math.round(discounted * 1.2); // +20% for livestream
