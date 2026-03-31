@@ -1198,7 +1198,111 @@
   width: auto;
   display: block;
 }
+/* Toggle groups */
+.calc-toggle-group {
+  display: inline-flex;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3px;
+  margin-bottom: 1.25rem;
+}
 
+.calc-toggle-btn {
+  padding: 0.4rem 1.1rem;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: none;
+  color: var(--text-2);
+  transition: all 0.15s ease;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.calc-toggle-btn:hover {
+  color: var(--text);
+}
+
+.calc-toggle-btn.active {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--border-hover);
+}
+
+/* Slider track wrapper for fill effect */
+.slider-track-wrap {
+  position: relative;
+  width: 100%;
+  height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+/* Reset range input */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  z-index: 1;
+}
+
+/* Firefox track */
+input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--bg-4);
+}
+
+/* Firefox fill */
+input[type="range"]::-moz-range-progress {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+/* Webkit thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  position: relative;
+  z-index: 2;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+
+/* Moz thumb */
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+input[type="range"]:active::-moz-range-thumb {
+  transform: scale(1.2);
+}
   </style>
 </head>
 <body>
@@ -1439,102 +1543,116 @@
       </div>
     </section>
 
-    <!-- ==========================================
-         SECTION 3: CALCULATOR
-    ========================================== -->
-    <section class="calculator" id="calculator" aria-labelledby="calc-heading">
-      <div class="container">
-        <div class="calc-inner">
+<!-- ==========================================
+     SECTION 3: CALCULATOR
+========================================== -->
+<section class="calculator" id="calculator" aria-labelledby="calc-heading">
+  <div class="container">
+    <div class="calc-inner">
 
-          <div class="calc-left">
-            <p class="section-label">Pricing</p>
-            <h2 class="section-title" id="calc-heading">How much does your boost cost?</h2>
-            <p class="section-sub" style="margin-bottom:2rem">Drag the sliders to your current and target rank. Price updates instantly.</p>
+      <div class="calc-left">
+        <p class="section-label">Pricing</p>
+        <h2 class="section-title" id="calc-heading">How much does your boost cost?</h2>
+        <p class="section-sub" style="margin-bottom:2rem">Drag the sliders to your current and target rank. Price updates instantly.</p>
 
-            <!-- Mode Toggle -->
-            <div class="calc-mode-toggle" role="group" aria-label="Game mode">
-              <button class="calc-mode-btn active" id="btn-ranked" onclick="setMode('ranked')">Ranked</button>
-              <button class="calc-mode-btn" id="btn-worldtour" onclick="setMode('worldtour')">World Tour</button>
+        <!-- Game Mode Toggle -->
+        <div class="calc-toggle-group" role="group" aria-label="Game mode">
+          <button class="calc-toggle-btn active" id="btn-ranked" onclick="setMode('ranked')">Ranked</button>
+          <button class="calc-toggle-btn" id="btn-worldtour" onclick="setMode('worldtour')">World Tour</button>
+        </div>
+
+        <!-- Service Type Toggle -->
+        <div class="calc-toggle-group" role="group" aria-label="Service type" style="margin-bottom:2rem;">
+          <button class="calc-toggle-btn active" id="btn-driver" onclick="setService('driver')">Account Driver</button>
+          <button class="calc-toggle-btn" id="btn-selfplay" onclick="setService('selfplay')">Selfplay</button>
+        </div>
+
+        <!-- Ranked Sliders -->
+        <div id="ranked-sliders">
+          <div class="calc-slider-group">
+            <div class="calc-slider-label">
+              <span class="calc-slider-name">Current rank</span>
+              <span class="calc-rank-display" id="start-display">Platinum 4</span>
             </div>
-
-            <!-- Ranked Sliders -->
-            <div id="ranked-sliders">
-              <div class="calc-slider-group">
-                <div class="calc-slider-label">
-                  <span class="calc-slider-name">Current rank</span>
-                  <span class="calc-rank-display" id="start-display">Gold 1</span>
-                </div>
-                <input type="range" id="start-rank" min="0" max="54750" value="30000" step="250"
-                       aria-label="Current rank" oninput="updateCalc()">
-              </div>
-              <div class="calc-slider-group">
-                <div class="calc-slider-label">
-                  <span class="calc-slider-name">Target rank</span>
-                  <span class="calc-rank-display" id="end-display">Diamond 4</span>
-                </div>
-                <input type="range" id="end-rank" min="250" max="55000" value="40000" step="250"
-                       aria-label="Target rank" oninput="updateCalc()">
-              </div>
-            </div>
-
-            <!-- World Tour Sliders -->
-            <div id="worldtour-sliders" style="display:none">
-              <div class="calc-slider-group">
-                <div class="calc-slider-label">
-                  <span class="calc-slider-name">Current stage</span>
-                  <span class="calc-rank-display" id="start-wt-display">Gold 3</span>
-                </div>
-                <input type="range" id="start-wt" min="1" max="23" value="10" step="1"
-                       aria-label="Current World Tour stage" oninput="updateCalcWT()">
-              </div>
-              <div class="calc-slider-group">
-                <div class="calc-slider-label">
-                  <span class="calc-slider-name">Target stage</span>
-                  <span class="calc-rank-display" id="end-wt-display">Platinum 1</span>
-                </div>
-                <input type="range" id="end-wt" min="2" max="24" value="16" step="1"
-                       aria-label="Target World Tour stage" oninput="updateCalcWT()">
-              </div>
+            <div class="slider-track-wrap">
+              <input type="range" id="start-rank" min="0" max="54750" value="30000" step="250"
+                     aria-label="Current rank" oninput="updateCalc()">
             </div>
           </div>
-
-          <!-- Result box -->
-          <div class="calc-result-box">
-            <p class="calc-result-header">Your boost price</p>
-            <p class="calc-price" id="calc-price" aria-live="polite"><span>€</span><span id="price-val">70</span></p>
-            <p class="calc-route" id="calc-route">Platinum 4 → Diamond 4</p>
-
-            <div class="calc-ctas">
-              <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" rel="noopener">
-                Order on Discord
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 7h10M8 3l4 4-4 4"/>
-                </svg>
-              </a>
-              <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener">
-                Order on Telegram
-              </a>
+          <div class="calc-slider-group">
+            <div class="calc-slider-label">
+              <span class="calc-slider-name">Target rank</span>
+              <span class="calc-rank-display" id="end-display">Platinum 1</span>
             </div>
-
-            <div class="calc-addons">
-              <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M6 2v8"/></svg>
-                20% for optional live stream
-              </span>
-              <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-                Payment: Wise, Crypto, Bank Transfer
-              </span>
-              <span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-                All platforms for Selfplay option
-              </span>
+            <div class="slider-track-wrap">
+              <input type="range" id="end-rank" min="250" max="55000" value="40000" step="250"
+                     aria-label="Target rank" oninput="updateCalc()">
             </div>
           </div>
+        </div>
 
+        <!-- World Tour Sliders -->
+        <div id="worldtour-sliders" style="display:none">
+          <div class="calc-slider-group">
+            <div class="calc-slider-label">
+              <span class="calc-slider-name">Current stage</span>
+              <span class="calc-rank-display" id="start-wt-display">Gold 3</span>
+            </div>
+            <div class="slider-track-wrap">
+              <input type="range" id="start-wt" min="1" max="23" value="10" step="1"
+                     aria-label="Current World Tour stage" oninput="updateCalcWT()">
+            </div>
+          </div>
+          <div class="calc-slider-group">
+            <div class="calc-slider-label">
+              <span class="calc-slider-name">Target stage</span>
+              <span class="calc-rank-display" id="end-wt-display">Platinum 1</span>
+            </div>
+            <div class="slider-track-wrap">
+              <input type="range" id="end-wt" min="2" max="24" value="16" step="1"
+                     aria-label="Target World Tour stage" oninput="updateCalcWT()">
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+
+      <!-- Result box -->
+      <div class="calc-result-box">
+        <p class="calc-result-header">Your boost price</p>
+        <p class="calc-price" id="calc-price" aria-live="polite"><span>€</span><span id="price-val">70</span></p>
+        <p class="calc-route" id="calc-route">Platinum 4 → Platinum 1</p>
+
+        <div class="calc-ctas">
+          <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" rel="noopener">
+            Order on Discord
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 7h10M8 3l4 4-4 4"/>
+            </svg>
+          </a>
+          <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener">
+            Order on Telegram
+          </a>
+        </div>
+
+        <div class="calc-addons">
+          <span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M6 2v8"/></svg>
+            20% for optional live stream
+          </span>
+          <span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
+            Payment: Wise, Crypto, Bank Transfer
+          </span>
+          <span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
+            All platforms for Selfplay option
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- ==========================================
          SECTION 4: SOCIAL PROOF
@@ -1863,84 +1981,91 @@
       });
     });
 
-    /* ---- Calculator ---- */
-    const rankTiers = {
-      'Bronze → Silver':     { start: 0,     end: 10000, price: 12  },
-      'Silver → Gold':       { start: 10000, end: 20000, price: 30  },
-      'Gold → Platinum':     { start: 20000, end: 30000, price: 40  },
-      'Platinum → Diamond':  { start: 30000, end: 40000, price: 70  },
-      'Diamond 40k→45k':     { start: 40000, end: 45000, price: 80  },
-      'Diamond 45k→Ruby':    { start: 45000, end: 50000, price: 90  },
-      'Ruby (50k→53k)':      { start: 50000, end: 53000, price: 100 },
-      'Ruby (53k→55k)':      { start: 53000, end: 55000, price: 100 }
-    };
-
-const worldTourPricing = {
-  1:0,2:2,3:3,4:4,5:7,6:10,7:13,8:17,
-  9:21,10:25,11:31,12:36,13:43,14:51,15:57,16:66,
-  17:78,18:90,19:105,20:120,21:124,22:146,23:167,24:184
+/* ---- Calculator ---- */
+const rankTiers = {
+  driver: {
+    'Bronze → Silver':    { start: 0,     end: 10000, price: 12  },
+    'Silver → Gold':      { start: 10000, end: 20000, price: 30  },
+    'Gold → Platinum':    { start: 20000, end: 30000, price: 40  },
+    'Platinum → Diamond': { start: 30000, end: 40000, price: 70  },
+    'Diamond 40k→45k':    { start: 40000, end: 45000, price: 80  },
+    'Diamond 45k→Ruby':   { start: 45000, end: 50000, price: 90  },
+    'Ruby (50k→53k)':     { start: 50000, end: 53000, price: 100 },
+    'Ruby (53k→55k)':     { start: 53000, end: 55000, price: 100 }
+  },
+  selfplay: {
+    'Bronze → Silver':    { start: 0,     end: 10000, price: 24  },
+    'Silver → Gold':      { start: 10000, end: 20000, price: 60  },
+    'Gold → Platinum':    { start: 20000, end: 30000, price: 80  },
+    'Platinum → Diamond': { start: 30000, end: 40000, price: 140 },
+    'Diamond 40k→45k':    { start: 40000, end: 45000, price: 160 },
+    'Diamond 45k→Ruby':   { start: 45000, end: 50000, price: 180 },
+    'Ruby (50k→53k)':     { start: 50000, end: 53000, price: 200 },
+    'Ruby (53k→55k)':     { start: 53000, end: 55000, price: 200 }
+  }
 };
 
-    function getRankName(val) {
-      const v = parseInt(val);
-      if (v < 2500)  return 'Bronze 4';
-      if (v < 5000)  return 'Bronze 3';
-      if (v < 7500)  return 'Bronze 2';
-      if (v < 10000) return 'Bronze 1';
-      if (v < 12500) return 'Silver 4';
-      if (v < 15000) return 'Silver 3';
-      if (v < 17500) return 'Silver 2';
-      if (v < 20000) return 'Silver 1';
-      if (v < 22500) return 'Gold 4';
-      if (v < 25000) return 'Gold 3';
-      if (v < 27500) return 'Gold 2';
-      if (v < 30000) return 'Gold 1';
-      if (v < 32500) return 'Platinum 4';
-      if (v < 35000) return 'Platinum 3';
-      if (v < 37500) return 'Platinum 2';
-      if (v < 40000) return 'Platinum 1';
-      if (v < 42500) return 'Diamond 4';
-      if (v < 45000) return 'Diamond 3';
-      if (v < 47500) return 'Diamond 2';
-      if (v < 50000) return 'Diamond 1';
-      return 'Ruby';
-    }
+const worldTourPricing = {
+  driver:  { 1:0,2:2,3:3,4:4,5:7,6:10,7:13,8:17,9:21,10:25,11:31,12:36,13:43,14:51,15:57,16:66,17:78,18:90,19:105,20:120,21:124,22:146,23:167,24:184 },
+  selfplay:{ 1:0,2:4,3:6,4:8,5:14,6:20,7:26,8:34,9:42,10:50,11:62,12:72,13:86,14:102,15:114,16:132,17:156,18:180,19:210,20:240,21:248,22:292,23:334,24:368 }
+};
 
-    function getRankClass(name) {
-      const tier = name.split(' ')[0].toLowerCase();
-      return `rank-${tier}`;
-    }
+let currentMode    = 'ranked';
+let selectedService = 'driver';
 
-    function getWTRankName(v) {
-      const names = [
-        'Bronze 4','Bronze 3','Bronze 2','Bronze 1',
-        'Silver 4','Silver 3','Silver 2','Silver 1',
-        'Gold 4','Gold 3','Gold 2','Gold 1',
-        'Platinum 4','Platinum 3','Platinum 2','Platinum 1',
-        'Diamond 4','Diamond 3','Diamond 2','Diamond 1',
-        'Emerald 4','Emerald 3','Emerald 2','Emerald 1'
-      ];
-      return names[Math.max(0, Math.min(parseInt(v) - 1, names.length - 1))];
-    }
+function getRankName(v) {
+  v = parseInt(v);
+  if (v < 2500)  return 'Bronze 4';  if (v < 5000)  return 'Bronze 3';
+  if (v < 7500)  return 'Bronze 2';  if (v < 10000) return 'Bronze 1';
+  if (v < 12500) return 'Silver 4';  if (v < 15000) return 'Silver 3';
+  if (v < 17500) return 'Silver 2';  if (v < 20000) return 'Silver 1';
+  if (v < 22500) return 'Gold 4';    if (v < 25000) return 'Gold 3';
+  if (v < 27500) return 'Gold 2';    if (v < 30000) return 'Gold 1';
+  if (v < 32500) return 'Platinum 4';if (v < 35000) return 'Platinum 3';
+  if (v < 37500) return 'Platinum 2';if (v < 40000) return 'Platinum 1';
+  if (v < 42500) return 'Diamond 4'; if (v < 45000) return 'Diamond 3';
+  if (v < 47500) return 'Diamond 2'; if (v < 50000) return 'Diamond 1';
+  return 'Ruby';
+}
 
-    function calcRankedPrice(from, to) {
-      let total = 0;
-      const tiers = Object.values(rankTiers);
-      for (const tier of tiers) {
-        const overlapStart = Math.max(from, tier.start);
-        const overlapEnd   = Math.min(to, tier.end);
-        if (overlapEnd > overlapStart) {
-          const frac = (overlapEnd - overlapStart) / (tier.end - tier.start);
-          total += Math.round(tier.price * frac);
-        }
-      }
-      return Math.max(0, Math.round(total));
-    }
+function getWTRankName(v) {
+  const names = [
+    'Bronze 4','Bronze 3','Bronze 2','Bronze 1',
+    'Silver 4','Silver 3','Silver 2','Silver 1',
+    'Gold 4','Gold 3','Gold 2','Gold 1',
+    'Platinum 4','Platinum 3','Platinum 2','Platinum 1',
+    'Diamond 4','Diamond 3','Diamond 2','Diamond 1',
+    'Emerald 4','Emerald 3','Emerald 2','Emerald 1'
+  ];
+  return names[Math.max(0, Math.min(parseInt(v) - 1, names.length - 1))];
+}
+
+function getRankClass(name) {
+  return 'rank-' + name.split(' ')[0].toLowerCase();
+}
 
 function setRankDisplay(elId, name, points) {
   const el = document.getElementById(elId);
-  const cls = getRankClass(name);
-  el.innerHTML = `<span class="${cls}">${name}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${points.toLocaleString()} RS</span>`;
+  el.innerHTML = `<span class="${getRankClass(name)}">${name}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${points.toLocaleString()} RS</span>`;
+}
+
+function updateSliderFill(slider) {
+  const min = parseFloat(slider.min);
+  const max = parseFloat(slider.max);
+  const val = parseFloat(slider.value);
+  const pct = ((val - min) / (max - min)) * 100;
+  slider.style.background = `linear-gradient(to right, var(--accent) ${pct}%, var(--bg-4) ${pct}%)`;
+}
+
+function calcRankedPrice(from, to) {
+  let total = 0;
+  const tiers = Object.values(rankTiers[selectedService]);
+  for (const tier of tiers) {
+    const s = Math.max(from, tier.start);
+    const e = Math.min(to, tier.end);
+    if (e > s) total += Math.round(tier.price * (e - s) / (tier.end - tier.start));
+  }
+  return Math.max(0, Math.round(total));
 }
 
 function updateCalc() {
@@ -1948,52 +2073,63 @@ function updateCalc() {
   const endSlider   = document.getElementById('end-rank');
   let sv = parseInt(startSlider.value);
   let ev = parseInt(endSlider.value);
-  if (ev <= sv) {
-    ev = sv + 250;
-    endSlider.value = ev;
-  }
+  if (ev <= sv) { ev = sv + 250; endSlider.value = ev; }
+
+  updateSliderFill(startSlider);
+  updateSliderFill(endSlider);
+
   const startName = getRankName(sv);
   const endName   = getRankName(ev);
   setRankDisplay('start-display', startName, sv);
   setRankDisplay('end-display',   endName,   ev);
-  const price = calcRankedPrice(sv, ev);
-  document.getElementById('price-val').textContent = price;
+
+  document.getElementById('price-val').textContent = calcRankedPrice(sv, ev);
   document.getElementById('calc-route').innerHTML =
-    `<span class="${getRankClass(startName)}">${startName}</span>` +
-    ` → <span class="${getRankClass(endName)}">${endName}</span>`;
+    `<span class="${getRankClass(startName)}">${startName}</span> → <span class="${getRankClass(endName)}">${endName}</span>`;
 }
 
 function updateCalcWT() {
-  const sv = parseInt(document.getElementById('start-wt').value);
-  let ev   = parseInt(document.getElementById('end-wt').value);
-  if (ev <= sv) {
-    ev = sv + 1;
-    document.getElementById('end-wt').value = ev;
-  }
+  const startSlider = document.getElementById('start-wt');
+  const endSlider   = document.getElementById('end-wt');
+  let sv = parseInt(startSlider.value);
+  let ev = parseInt(endSlider.value);
+  if (ev <= sv) { ev = sv + 1; endSlider.value = ev; }
+
+  updateSliderFill(startSlider);
+  updateSliderFill(endSlider);
+
   const startName = getWTRankName(sv);
   const endName   = getWTRankName(ev);
   const startEl = document.getElementById('start-wt-display');
   const endEl   = document.getElementById('end-wt-display');
   startEl.innerHTML = `<span class="${getRankClass(startName)}">${startName}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${sv}</span>`;
   endEl.innerHTML   = `<span class="${getRankClass(endName)}">${endName}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${ev}</span>`;
-  const price = (worldTourPricing[ev] || 0) - (worldTourPricing[sv] || 0);
+
+  const price = (worldTourPricing[selectedService][ev] || 0) - (worldTourPricing[selectedService][sv] || 0);
   document.getElementById('price-val').textContent = Math.max(0, price);
   document.getElementById('calc-route').innerHTML =
-    `<span class="${getRankClass(startName)}">${startName}</span>` +
-    ` → <span class="${getRankClass(endName)}">${endName}</span>`;
+    `<span class="${getRankClass(startName)}">${startName}</span> → <span class="${getRankClass(endName)}">${endName}</span>`;
 }
 
-    function setMode(mode) {
-      const isRanked = mode === 'ranked';
-      document.getElementById('btn-ranked').classList.toggle('active', isRanked);
-      document.getElementById('btn-worldtour').classList.toggle('active', !isRanked);
-      document.getElementById('ranked-sliders').style.display     = isRanked ? '' : 'none';
-      document.getElementById('worldtour-sliders').style.display  = isRanked ? 'none' : '';
-      if (isRanked) updateCalc(); else updateCalcWT();
-    }
+function setMode(mode) {
+  currentMode = mode;
+  document.getElementById('btn-ranked').classList.toggle('active', mode === 'ranked');
+  document.getElementById('btn-worldtour').classList.toggle('active', mode === 'worldtour');
+  document.getElementById('ranked-sliders').style.display    = mode === 'ranked' ? '' : 'none';
+  document.getElementById('worldtour-sliders').style.display = mode === 'ranked' ? 'none' : '';
+  if (mode === 'ranked') updateCalc(); else updateCalcWT();
+}
 
-    /* Init calculator on load */
-    updateCalc();
+function setService(service) {
+  selectedService = service;
+  document.getElementById('btn-driver').classList.toggle('active', service === 'driver');
+  document.getElementById('btn-selfplay').classList.toggle('active', service === 'selfplay');
+  if (currentMode === 'ranked') updateCalc(); else updateCalcWT();
+}
+
+/* Init */
+updateCalc();
+document.querySelectorAll('input[type="range"]').forEach(updateSliderFill);
   </script>
 
 </body>
