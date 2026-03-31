@@ -1303,17 +1303,6 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]:active::-moz-range-thumb {
   transform: scale(1.2);
 }
-
-    .calc-livestream {
-      font-size: 0.8125rem;
-      color: var(--text-3);
-      margin-bottom: 1.5rem;
-      margin-top: -0.75rem;
-    }
-    .calc-livestream span {
-      color: var(--text-2);
-      font-weight: 600;
-    }
   </style>
 </head>
 <body>
@@ -1632,7 +1621,6 @@ input[type="range"]:active::-moz-range-thumb {
         <p class="calc-result-header">Your boost price</p>
         <p class="calc-price" id="calc-price" aria-live="polite"><span>€</span><span id="price-val">70</span></p>
         <p class="calc-route" id="calc-route">Platinum 4 → Platinum 1</p>
-            <p class="calc-livestream" id="calc-livestream" aria-live="polite">With live stream: <span id="livestream-val">84</span>€</p>
 
         <div class="calc-ctas">
           <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" rel="noopener">
@@ -1647,6 +1635,10 @@ input[type="range"]:active::-moz-range-thumb {
         </div>
 
         <div class="calc-addons">
+          <span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M6 2v8"/></svg>
+            20% for optional live stream
+          </span>
           <span>
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
             Payment: Wise, Crypto, Bank Transfer
@@ -2091,9 +2083,7 @@ function updateCalc() {
   setRankDisplay('start-display', startName, sv);
   setRankDisplay('end-display',   endName,   ev);
 
-  const price = calcRankedPrice(sv, ev);
-  document.getElementById('price-val').textContent = price;
-  document.getElementById('livestream-val').textContent = Math.round(price * 1.2);
+  document.getElementById('price-val').textContent = calcRankedPrice(sv, ev);
   document.getElementById('calc-route').innerHTML =
     `<span class="${getRankClass(startName)}">${startName}</span> → <span class="${getRankClass(endName)}">${endName}</span>`;
 }
@@ -2117,7 +2107,6 @@ function updateCalcWT() {
 
   const price = (worldTourPricing[selectedService][ev] || 0) - (worldTourPricing[selectedService][sv] || 0);
   document.getElementById('price-val').textContent = Math.max(0, price);
-  document.getElementById('livestream-val').textContent = Math.round(Math.max(0, price) * 1.2);
   document.getElementById('calc-route').innerHTML =
     `<span class="${getRankClass(startName)}">${startName}</span> → <span class="${getRankClass(endName)}">${endName}</span>`;
 }
