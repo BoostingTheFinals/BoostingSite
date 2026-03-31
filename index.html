@@ -1457,6 +1457,12 @@
               <button class="calc-mode-btn" id="btn-worldtour" onclick="setMode('worldtour')">World Tour</button>
             </div>
 
+            <!-- Service Toggle -->
+            <div class="calc-mode-toggle" role="group" aria-label="Service type" style="margin-bottom:2rem;">
+              <button class="calc-mode-btn active" id="btn-driver" onclick="setService('driver')">Account Driver</button>
+              <button class="calc-mode-btn" id="btn-selfplay" onclick="setService('selfplay')">Selfplay</button>
+            </div>
+
             <!-- Ranked Sliders -->
             <div id="ranked-sliders">
               <div class="calc-slider-group">
@@ -1991,6 +1997,17 @@ function updateCalcWT() {
       document.getElementById('worldtour-sliders').style.display  = isRanked ? 'none' :
       document.getElementById('worldtour-sliders').style.display = isRanked ? 'none' : '';
       if (isRanked) updateCalc(); else updateCalcWT();
+    }
+
+
+    let selectedService = 'driver';
+
+    function setService(service) {
+      selectedService = service;
+      document.getElementById('btn-driver').classList.toggle('active', service === 'driver');
+      document.getElementById('btn-selfplay').classList.toggle('active', service === 'selfplay');
+      updateCalc();
+      updateCalcWT();
     }
 
     updateCalc();
