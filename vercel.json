@@ -23,6 +23,7 @@
     { "source": "/the-finals-tips-for-beginners", "destination": "/the-finals-tips-for-beginners.html" },
     { "source": "/coaching", "destination": "/coaching.html" },
     { "source": "/guides", "destination": "/guides.html" },
-    { "source": "/the-finals-season-10-patch-notes", "destination": "/the-finals-season-10-patch-notes.html" }
+    { "source": "/the-finals-season-10-patch-notes", "destination": "/the-finals-season-10-patch-notes.html" },
+    { "source": "/orders-per-season", "destination": "/orders-per-season.html" }
   ]
 }
