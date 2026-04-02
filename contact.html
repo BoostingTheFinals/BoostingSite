@@ -43,10 +43,10 @@
 
     /* NAV */
     .nav-wrap { position: sticky; top: 0; z-index: 100; background: rgba(8,8,8,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
-    nav { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); gap: 2rem; }
+    nav { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); position: relative; }
     .logo-img { height: 38px !important; width: auto !important; display: block; }
     .logo, .logo-left { display: flex; align-items: center; }
-    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; position: absolute; left: 0; right: 0; justify-content: center; pointer-events: none; } .nav-links > * { pointer-events: auto; }
     .nav-links a, .nav-dropdown > button { font-size: 0.875rem; font-weight: 500; color: var(--text-2); padding: 0.4rem 0.75rem; border-radius: 8px; transition: color 0.15s, background 0.15s; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; font-family: var(--font-body); }
     .nav-links a:hover, .nav-dropdown > button:hover { color: var(--text); background: var(--bg-3); }
     .nav-dropdown { position: relative; }
@@ -374,7 +374,7 @@
             <h4>Contact details</h4>
             <div class="sidebar-stat"><span class="sidebar-stat-label">Discord</span><span class="sidebar-stat-value" style="color:var(--accent);">@rankclimbertf</span></div>
             <div class="sidebar-stat"><span class="sidebar-stat-label">Telegram</span><span class="sidebar-stat-value" style="color:var(--accent);">@TheFinalsBoosting</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Email</span><span class="sidebar-stat-value" style="font-size:0.75rem;"><a href="https://mail.google.com/mail/?view=cm&to=boostingthefinals@gmail.com&su=Boost Order" target="_blank" rel="noopener">boostingthefinals@gmail.com</a></span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Email</span><span class="sidebar-stat-value" style="font-size:0.75rem;"><a href="https://mail.google.com/mail/?view=cm&to=boostingthefinals@gmail.com&su=Boost Order" target="_blank" rel="noopener"><span class="__cf_email__" data-cfemail="fe9c91918d8a9790998a969b9897909f928dbe99939f9792d09d9193">[email&#160;protected]</span></a></span></div>
             <div class="sidebar-stat"><span class="sidebar-stat-label">Response time</span><span class="sidebar-stat-value">&lt; 10 min</span></div>
             <div class="sidebar-stat"><span class="sidebar-stat-label">Support hours</span><span class="sidebar-stat-value">24/7</span></div>
           </div>
@@ -463,7 +463,7 @@
   <div class="mobile-sticky-cta" aria-hidden="true">
     <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" rel="noopener">Discord: rankclimbertf</a>
   </div>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => {
@@ -486,10 +486,4 @@
         const item = q.parentElement;
         const isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-    // FAQ filter
-    window.filterFaq = function(cat, btn) {
-      document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('ac
+        if (!isOpen) item.classList.add(
