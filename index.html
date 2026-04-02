@@ -1586,7 +1586,7 @@ input[type="range"]:active::-moz-range-thumb {
               <span class="calc-rank-display" id="start-display">Platinum 4</span>
             </div>
             <div class="slider-track-wrap">
-              <input type="range" id="start-rank" min="0" max="59900" value="30000" step="250"
+              <input type="range" id="start-rank" min="0" max="54750" value="30000" step="250"
                      aria-label="Current rank" oninput="updateCalc()">
             </div>
           </div>
@@ -1596,7 +1596,7 @@ input[type="range"]:active::-moz-range-thumb {
               <span class="calc-rank-display" id="end-display">Platinum 1</span>
             </div>
             <div class="slider-track-wrap">
-              <input type="range" id="end-rank" min="250" max="60000" value="40000" step="250"
+              <input type="range" id="end-rank" min="250" max="55000" value="40000" step="250"
                      aria-label="Target rank" oninput="updateCalc()">
             </div>
           </div>
@@ -2000,37 +2000,22 @@ const rankTiers = {
     'Silver → Gold':      { start: 10000, end: 20000, price: 30  },
     'Gold → Platinum':    { start: 20000, end: 30000, price: 40  },
     'Platinum → Diamond': { start: 30000, end: 40000, price: 70  },
-    'Diamond 40k→45k':    { start: 40000, end: 45000, price: 75  },
-    'Diamond 45k→Ruby':   { start: 45000, end: 50000, price: 80  },
-    'Ruby (50k→51k)':     { start: 50000, end: 51000, price: 20  },
-    'Ruby (51k→52k)':     { start: 51000, end: 52000, price: 25  },
-    'Ruby (52k→53k)':     { start: 52000, end: 53000, price: 30  },
-    'Ruby (53k→54k)':     { start: 53000, end: 54000, price: 35  },
-    'Ruby (54k→55k)':     { start: 54000, end: 55000, price: 40  },
-    'Ruby (55k→56k)':     { start: 55000, end: 56000, price: 45  },
-    'Ruby (56k→57k)':     { start: 56000, end: 57000, price: 50  },
-    'Ruby (57k→58k)':     { start: 57000, end: 58000, price: 55  },
-    'Ruby (58k→59k)':     { start: 58000, end: 59000, price: 60  },
-    'Ruby (59k→60k)':     { start: 59000, end: 60000, price: 65  }
+    'Diamond 40k→45k':    { start: 40000, end: 45000, price: 80  },
+    'Diamond 45k→Ruby':   { start: 45000, end: 50000, price: 90  },
+    'Ruby (50k→53k)':     { start: 50000, end: 53000, price: 100 },
+    'Ruby (53k→55k)':     { start: 53000, end: 55000, price: 100 }
   },
-selfplay: {
+  selfplay: {
     'Bronze → Silver':    { start: 0,     end: 10000, price: 24  },
     'Silver → Gold':      { start: 10000, end: 20000, price: 60  },
     'Gold → Platinum':    { start: 20000, end: 30000, price: 80  },
     'Platinum → Diamond': { start: 30000, end: 40000, price: 140 },
-    'Diamond 40k→45k':    { start: 40000, end: 45000, price: 150 },
-    'Diamond 45k→Ruby':   { start: 45000, end: 50000, price: 160 },
-    'Ruby (50k→51k)':     { start: 50000, end: 51000, price: 40  },
-    'Ruby (51k→52k)':     { start: 51000, end: 52000, price: 50  },
-    'Ruby (52k→53k)':     { start: 52000, end: 53000, price: 60  },
-    'Ruby (53k→54k)':     { start: 53000, end: 54000, price: 70  },
-    'Ruby (54k→55k)':     { start: 54000, end: 55000, price: 80  },
-    'Ruby (55k→56k)':     { start: 55000, end: 56000, price: 90  },
-    'Ruby (56k→57k)':     { start: 56000, end: 57000, price: 100  },
-    'Ruby (57k→58k)':     { start: 57000, end: 58000, price: 110 },
-    'Ruby (58k→59k)':     { start: 58000, end: 59000, price: 120 },
-    'Ruby (59k→60k)':     { start: 59000, end: 60000, price: 130 }
+    'Diamond 40k→45k':    { start: 40000, end: 45000, price: 160 },
+    'Diamond 45k→Ruby':   { start: 45000, end: 50000, price: 180 },
+    'Ruby (50k→53k)':     { start: 50000, end: 53000, price: 200 },
+    'Ruby (53k→55k)':     { start: 53000, end: 55000, price: 200 }
   }
+};
 
 const worldTourPricing = {
   driver:  { 1:0,2:2,3:3,4:4,5:6,6:9,7:12,8:15,9:19,10:23,11:28,12:32,13:39,14:46,15:51,16:59,17:70,18:81,19:95,20:108,21:112,22:131,23:150,24:166 },
