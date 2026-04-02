@@ -106,8 +106,8 @@
     .page-body ol li { list-style: decimal; }
     .page-body strong { color: var(--text); font-weight: 600; }
     .page-body em { color: var(--text-2); font-style: italic; }
-    .page-body a { color: var(--accent); border-bottom: 1px solid var(--accent-glow); transition: border-color 0.15s; }
-    .page-body a:hover { border-color: var(--accent); }
+    .page-body a:not(.btn) { color: var(--accent); border-bottom: 1px solid var(--accent-glow); transition: border-color 0.15s; }
+    .page-body a:not(.btn):hover { border-color: var(--accent); }
 
     /* INFO GRID */
     .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
@@ -259,7 +259,7 @@
         <li><a href="/about">About</a></li>
       </ul>
       <a href="/contact" class="btn btn-primary nav-cta">
-        Get Boosted
+        Get boosted
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
       </a>
       <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -273,14 +273,16 @@
     <a href="/selfplay-boosting">Selfplay boosting</a>
     <a href="/boosting-services">All services</a>
     <a href="/coaching">Coaching</a>
+    <a href="/accounts">Accounts for sale</a>
     <p class="mobile-section-label">Info</p>
     <a href="/reviews">Reviews</a>
     <a href="/guides">Guides</a>
+    <a href="/orders-per-season">Orders per season</a>
     <a href="/faq">FAQ</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
-    <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" rel="noopener">Discord: rankclimbertf</a>
-    <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener" style="margin-top:0.5rem">Open Telegram →</a>
+    <a href="/contact" class="btn btn-primary">Get boosted →</a>
+    <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener" style="margin-top:0.5rem">Telegram →</a>
   </div>
 <main>
   <section class="page-hero">
@@ -335,7 +337,7 @@
             <h3>Ready to Place Your Order?</h3>
             <p>Message us on Discord or Telegram. We respond within minutes and can answer any safety questions before you commit.</p>
             <div class="blog-cta-actions">
-              <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" rel="noopener">Discord: rankclimbertf</a>
+              <a href="/contact" class="btn btn-primary" rel="noopener">Get boosted</a>
               <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener">Telegram</a>
             </div>
           </div>
@@ -425,7 +427,7 @@
     </div>
   </footer>
   <div class="mobile-sticky-cta" aria-hidden="true">
-    <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" rel="noopener">Discord: rankclimbertf</a>
+    <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" rel="noopener">Get boosted</a>
   </div>
   <script>
     const hamburger = document.getElementById('hamburger');
