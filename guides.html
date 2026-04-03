@@ -523,3 +523,11 @@
       btn.classList.add('active');
       document.querySelectorAll('.faq-item').forEach(item => {
         i
+
+      if (cat === 'all' || item.dataset.cat === cat) item.style.display = '';
+        else item.style.display = 'none';
+      });
+    };
+  </script>
+</body>
+</html>
