@@ -1631,7 +1631,7 @@ input[type="range"]:active::-moz-range-thumb {
           <div class="calc-slider-group">
             <div class="calc-slider-label">
               <span class="calc-slider-name">Current rank</span>
-              <span class="calc-rank-display" id="start-display">Platinum 4</span>
+              <span class="calc-rank-display" id="start-display"></span>
             </div>
             <div class="slider-track-wrap">
               <input type="range" id="start-rank" min="0" max="59900" value="30000" step="250"
@@ -1641,7 +1641,7 @@ input[type="range"]:active::-moz-range-thumb {
           <div class="calc-slider-group">
             <div class="calc-slider-label">
               <span class="calc-slider-name">Target rank</span>
-              <span class="calc-rank-display" id="end-display">Platinum 1</span>
+              <span class="calc-rank-display" id="end-display"></span>
             </div>
             <div class="slider-track-wrap">
               <input type="range" id="end-rank" min="250" max="60000" value="40000" step="250"
@@ -2149,7 +2149,8 @@ function getRankClass(name) {
 
 function setRankDisplay(elId, name, points) {
   const el = document.getElementById(elId);
-  el.innerHTML = `<span class="${getRankClass(name)}">${name}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${points.toLocaleString()} RS</span>`;
+  const which = elId === 'start-display' ? 'start' : 'end';
+  el.innerHTML = `<span class="${getRankClass(name)}">${name}</span><span onclick="startEditing('${which}')" title="Click to edit" style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;cursor:pointer;border-bottom:1px dashed var(--border-hover);">${points.toLocaleString()} RS</span>`;
 }
 
 function updateSliderFill(slider) {
@@ -2230,7 +2231,39 @@ function setService(service) {
   document.getElementById('btn-selfplay').classList.toggle('active', service === 'selfplay');
   if (currentMode === 'ranked') updateCalc(); else updateCalcWT();
 }
+function startEditing(which) {
+  var displayEl = document.getElementById(which + '-display');
+  var slider = document.getElementById(which + '-rank');
+  var current = parseInt(slider.value);
 
+  var input = document.createElement('input');
+  input.type = 'number';
+  input.min = 0;
+  input.max = 60000;
+  input.step = 250;
+  input.value = current;
+  input.style.cssText = 'background:var(--bg-4);border:1px solid var(--accent);border-radius:6px;color:var(--text);font-family:var(--font-display);font-size:1rem;font-weight:700;padding:0.2rem 0.5rem;width:110px;outline:none;margin-left:0.4rem;';
+
+  var rsSpan = displayEl.querySelector('span:last-child');
+  rsSpan.replaceWith(input);
+  setTimeout(function() { input.focus(); input.select(); }, 10);
+
+  var done = false;
+  function commit() {
+    if (done) return;
+    done = true;
+    var val = Math.round(Math.max(0, Math.min(60000, parseInt(input.value) || 0)) / 100) * 100;
+    slider.value = val;
+    updateSliderFill(slider);
+    var otherId = which === 'start' ? 'end-rank' : 'start-rank';
+    var other = document.getElementById(otherId);
+    if (which === 'start' && parseInt(other.value) <= val) { other.value = Math.min(val + 100, 60000); updateSliderFill(other); }
+    if (which === 'end' && parseInt(other.value) >= val) { other.value = Math.max(val - 100, 0); updateSliderFill(other); }
+    updateCalc();
+  }
+  input.addEventListener('keydown', function(e) { if (e.key === 'Enter') commit(); if (e.key === 'Escape') { done = true; updateCalc(); } });
+  input.addEventListener('blur', function() { setTimeout(commit, 100); });
+}
 /* Init */
 updateCalc();
 document.querySelectorAll('input[type="range"]').forEach(updateSliderFill);
