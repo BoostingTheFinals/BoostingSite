@@ -2150,7 +2150,7 @@ function getRankClass(name) {
 function setRankDisplay(elId, name, points) {
   const el = document.getElementById(elId);
   const which = elId === 'start-display' ? 'start' : 'end';
-  el.innerHTML = `<span class="${getRankClass(name)}">${name}</span><span onclick="startEditing('${which}')" title="Click to edit" style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;cursor:pointer;border-bottom:1px dashed var(--border-hover);">${points.toLocaleString()} RS</span>`;
+  el.innerHTML = `<span class="${getRankClass(name)}">${name}</span><span onclick="startEditing('${which}')" title="Click to edit" style="color:#b8b4af;font-size:0.75rem;margin-left:0.4rem;cursor:pointer;border-bottom:1px dashed var(--border-hover);">${points.toLocaleString()} RS</span>`;
 }
 
 function updateSliderFill(slider) {
