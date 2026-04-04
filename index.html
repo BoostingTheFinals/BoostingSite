@@ -748,6 +748,23 @@
     }
     .calc-ctas .btn { justify-content: center; width: 100%; }
 
+    .calc-livestream-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.75rem 0;
+      cursor: pointer;
+      user-select: none;
+      font-size: 0.875rem;
+      color: var(--text-2);
+    }
+    .calc-livestream-toggle input[type="checkbox"] {
+      width: 14px; height: 14px;
+      accent-color: var(--accent);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
     .calc-addons {
       margin-top: 1.25rem;
       padding-top: 1.25rem;
@@ -1681,6 +1698,11 @@ input[type="range"]:active::-moz-range-thumb {
         <p class="calc-price" id="calc-price" aria-live="polite"><span>€</span><span id="price-val">70</span></p>
         <p class="calc-route" id="calc-route">Platinum 4 → Platinum 1</p>
 
+        <label class="calc-livestream-toggle">
+          <input type="checkbox" id="ls-toggle" onchange="currentMode === 'ranked' ? updateCalc() : updateCalcWT()">
+          Add live stream <span style="color:var(--text-3);">(+20%)</span>
+        </label>
+
         <!-- Safe Ruby estimate -->
 <div style="margin-bottom:0.75rem;padding:0.5rem 0.75rem;background:var(--bg-3);border-radius:var(--radius);border-left:3px solid var(--ruby);">
   <p style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ruby);margin-bottom:0.2rem;">Safe Ruby (Top 500 estimate)</p>
@@ -1701,10 +1723,6 @@ input[type="range"]:active::-moz-range-thumb {
         </div>
 
         <div class="calc-addons">
-          <span>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6h8M6 2v8"/></svg>
-            20% for optional live stream
-          </span>
           <span>
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
             Payment: Wise, Crypto, Bank Transfer
@@ -2188,7 +2206,9 @@ function updateCalc() {
   setRankDisplay('start-display', startName, sv);
   setRankDisplay('end-display',   endName,   ev);
 
-  document.getElementById('price-val').textContent = calcRankedPrice(sv, ev);
+  const base = calcRankedPrice(sv, ev);
+  const ls   = document.getElementById('ls-toggle').checked;
+  document.getElementById('price-val').textContent = ls ? Math.ceil(base * 1.2) : base;
   document.getElementById('calc-route').innerHTML =
     `<span class="${getRankClass(startName)}">${startName}</span> → <span class="${getRankClass(endName)}">${endName}</span>`;
 }
@@ -2205,13 +2225,12 @@ function updateCalcWT() {
 
   const startName = getWTRankName(sv);
   const endName   = getWTRankName(ev);
-  const startEl = document.getElementById('start-wt-display');
-  const endEl   = document.getElementById('end-wt-display');
-  startEl.innerHTML = `<span class="${getRankClass(startName)}">${startName}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${sv}</span>`;
-  endEl.innerHTML   = `<span class="${getRankClass(endName)}">${endName}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${ev}</span>`;
+  document.getElementById('start-wt-display').innerHTML = `<span class="${getRankClass(startName)}">${startName}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${sv}</span>`;
+  document.getElementById('end-wt-display').innerHTML   = `<span class="${getRankClass(endName)}">${endName}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${ev}</span>`;
 
-  const price = (worldTourPricing[selectedService][ev] || 0) - (worldTourPricing[selectedService][sv] || 0);
-  document.getElementById('price-val').textContent = Math.max(0, price);
+  const base = Math.max(0, (worldTourPricing[selectedService][ev] || 0) - (worldTourPricing[selectedService][sv] || 0));
+  const ls   = document.getElementById('ls-toggle').checked;
+  document.getElementById('price-val').textContent = ls ? Math.ceil(base * 1.2) : base;
   document.getElementById('calc-route').innerHTML =
     `<span class="${getRankClass(startName)}">${startName}</span> → <span class="${getRankClass(endName)}">${endName}</span>`;
 }
