@@ -1205,6 +1205,34 @@
   display: block;
 }
 /* Toggle groups */
+.calc-seg-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  color: var(--text-3);
+  transition: all 0.15s ease;
+  font-family: var(--font-body);
+  white-space: nowrap;
+  width: 100%;
+}
+.calc-seg-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-2);
+}
+.calc-seg-btn.active {
+  background: var(--bg);
+  border-color: var(--border-hover);
+  color: var(--text);
+}
+
 .calc-toggle-group {
   display: inline-flex;
   background: var(--bg-3);
@@ -1568,16 +1596,34 @@ input[type="range"]:active::-moz-range-thumb {
         <h2 class="section-title" id="calc-heading">How much does your boost cost?</h2>
         <p class="section-sub" style="margin-bottom:2rem">Drag the sliders to your current and target rank. Price updates instantly.</p>
 
-        <!-- Game Mode Toggle -->
-        <div class="calc-toggle-group" role="group" aria-label="Game mode">
-          <button class="calc-toggle-btn active" id="btn-ranked" onclick="setMode('ranked')">Ranked</button>
-          <button class="calc-toggle-btn" id="btn-worldtour" onclick="setMode('worldtour')">World Tour</button>
-        </div>
-
-        <!-- Service Type Toggle -->
-        <div class="calc-toggle-group" role="group" aria-label="Service type" style="margin-bottom:2rem;">
-          <button class="calc-toggle-btn active" id="btn-driver" onclick="setService('driver')">Account Driver</button>
-          <button class="calc-toggle-btn" id="btn-selfplay" onclick="setService('selfplay')">Selfplay</button>
+        <!-- Toggles -->
+        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
+          <div style="display:flex;flex-direction:column;gap:0.35rem;">
+            <span style="font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);">Game Mode</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+              <button class="calc-seg-btn active" id="btn-ranked" onclick="setMode('ranked')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                Ranked
+              </button>
+              <button class="calc-seg-btn" id="btn-worldtour" onclick="setMode('worldtour')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                World Tour
+              </button>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.35rem;">
+            <span style="font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);">Service Type</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+              <button class="calc-seg-btn active" id="btn-driver" onclick="setService('driver')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Account Driver
+              </button>
+              <button class="calc-seg-btn" id="btn-selfplay" onclick="setService('selfplay')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Selfplay
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Ranked Sliders -->
