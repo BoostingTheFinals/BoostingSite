@@ -3,51 +3,177 @@
     {
       "source": "/(.*).html",
       "headers": [
-        { "key": "Content-Type", "value": "text/html; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/selfplay-boosting", "destination": "/selfplay-boosting.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/faq", "destination": "/faq.html" },
-    { "source": "/boosting-services", "destination": "/boosting-services.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/reviews", "destination": "/reviews.html" },
-    { "source": "/how-to-rank-up-in-the-finals", "destination": "/how-to-rank-up-in-the-finals.html" },
-    { "source": "/account-driver-boosting", "destination": "/account-driver-boosting.html" },
-    { "source": "/the-finals-ranking-system-explained", "destination": "/the-finals-ranking-system-explained.html" },
-    { "source": "/account-driver-vs-selfplay-boosting", "destination": "/account-driver-vs-selfplay-boosting.html" },
-    { "source": "/the-finals-best-loadouts-season-9", "destination": "/the-finals-best-loadouts-season-9.html" },
-    { "source": "/is-the-finals-boosting-safe", "destination": "/is-the-finals-boosting-safe.html" },
-    { "source": "/the-finals-tips-for-beginners", "destination": "/the-finals-tips-for-beginners.html" },
-    { "source": "/coaching", "destination": "/coaching.html" },
-    { "source": "/guides", "destination": "/guides.html" },
-    { "source": "/the-finals-season-10-patch-notes", "destination": "/the-finals-season-10-patch-notes.html" },
-    { "source": "/orders-per-season", "destination": "/orders-per-season.html" },
-    { "source": "/accounts", "destination": "/accounts.html" },
-    { "source": "/ruby-boosting", "destination": "/ruby-boosting.html" },
-    { "source": "/world-tour-boosting", "destination": "/world-tour-boosting.html" },
-    { "source": "/the-finals-boosting-vs-competitors", "destination": "/the-finals-boosting-vs-competitors.html" },
-    { "source": "/the-finals-season-10-tier-list", "destination": "/the-finals-season-10-tier-list.html" },
-    { "source": "/the-finals-season-10-ranked-guide", "destination": "/the-finals-season-10-ranked-guide.html" },
-    { "source": "/the-finals-beginner-to-diamond-roadmap", "destination": "/the-finals-beginner-to-diamond-roadmap.html" },
-    { "source": "/the-finals-best-settings", "destination": "/the-finals-best-settings.html" },
-    { "source": "/how-to-improve-kd-in-the-finals", "destination": "/how-to-improve-kd-in-the-finals.html" },
-    { "source": "/placement-boosting", "destination": "/placement-boosting.html" },
-    { "source": "/account-leveling", "destination": "/account-leveling.html" },
-    { "source": "/the-finals-world-tour-guide", "destination": "/the-finals-world-tour-guide.html" },
-    { "source": "/the-finals-light-build-guide", "destination": "/the-finals-light-build-guide.html" },
-    { "source": "/the-finals-medium-build-guide", "destination": "/the-finals-medium-build-guide.html" },
-    { "source": "/the-finals-heavy-build-guide", "destination": "/the-finals-heavy-build-guide.html" },
-    { "source": "/the-finals-aim-training-guide", "destination": "/the-finals-aim-training-guide.html" },
-    { "source": "/the-finals-team-comp-guide", "destination": "/the-finals-team-comp-guide.html" },
-    { "source": "/the-finals-cashout-guide", "destination": "/the-finals-cashout-guide.html" },
-    { "source": "/the-finals-ruby-guide", "destination": "/the-finals-ruby-guide.html" },
-    { "source": "/the-finals-boosting-worth-it", "destination": "/the-finals-boosting-worth-it.html" },
-    { "source": "/the-finals-ranked-tips", "destination": "/the-finals-ranked-tips.html" },
-    { "source": "/the-finals-worth-playing-in-2026", "destination": "/the-finals-worth-playing-in-2026.html" },
-    { "source": "/the-finals-how-does-matchmaking-work", "destination": "/the-finals-how-does-matchmaking-work.html" },
-   { "source": "/the-finals-beginner-guide", "destination": "/the-finals-beginner-guide.html" },
+    {
+      "source": "/selfplay-boosting",
+      "destination": "/selfplay-boosting.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
+      "source": "/boosting-services",
+      "destination": "/boosting-services.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/reviews",
+      "destination": "/reviews.html"
+    },
+    {
+      "source": "/how-to-rank-up-in-the-finals",
+      "destination": "/how-to-rank-up-in-the-finals.html"
+    },
+    {
+      "source": "/account-driver-boosting",
+      "destination": "/account-driver-boosting.html"
+    },
+    {
+      "source": "/the-finals-ranking-system-explained",
+      "destination": "/the-finals-ranking-system-explained.html"
+    },
+    {
+      "source": "/account-driver-vs-selfplay-boosting",
+      "destination": "/account-driver-vs-selfplay-boosting.html"
+    },
+    {
+      "source": "/the-finals-best-loadouts-season-9",
+      "destination": "/the-finals-best-loadouts-season-9.html"
+    },
+    {
+      "source": "/is-the-finals-boosting-safe",
+      "destination": "/is-the-finals-boosting-safe.html"
+    },
+    {
+      "source": "/the-finals-tips-for-beginners",
+      "destination": "/the-finals-tips-for-beginners.html"
+    },
+    {
+      "source": "/coaching",
+      "destination": "/coaching.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides.html"
+    },
+    {
+      "source": "/the-finals-season-10-patch-notes",
+      "destination": "/the-finals-season-10-patch-notes.html"
+    },
+    {
+      "source": "/orders-per-season",
+      "destination": "/orders-per-season.html"
+    },
+    {
+      "source": "/accounts",
+      "destination": "/accounts.html"
+    },
+    {
+      "source": "/ruby-boosting",
+      "destination": "/ruby-boosting.html"
+    },
+    {
+      "source": "/world-tour-boosting",
+      "destination": "/world-tour-boosting.html"
+    },
+    {
+      "source": "/the-finals-boosting-vs-competitors",
+      "destination": "/the-finals-boosting-vs-competitors.html"
+    },
+    {
+      "source": "/the-finals-season-10-tier-list",
+      "destination": "/the-finals-season-10-tier-list.html"
+    },
+    {
+      "source": "/the-finals-season-10-ranked-guide",
+      "destination": "/the-finals-season-10-ranked-guide.html"
+    },
+    {
+      "source": "/the-finals-beginner-to-diamond-roadmap",
+      "destination": "/the-finals-beginner-to-diamond-roadmap.html"
+    },
+    {
+      "source": "/the-finals-best-settings",
+      "destination": "/the-finals-best-settings.html"
+    },
+    {
+      "source": "/how-to-improve-kd-in-the-finals",
+      "destination": "/how-to-improve-kd-in-the-finals.html"
+    },
+    {
+      "source": "/placement-boosting",
+      "destination": "/placement-boosting.html"
+    },
+    {
+      "source": "/account-leveling",
+      "destination": "/account-leveling.html"
+    },
+    {
+      "source": "/the-finals-world-tour-guide",
+      "destination": "/the-finals-world-tour-guide.html"
+    },
+    {
+      "source": "/the-finals-light-build-guide",
+      "destination": "/the-finals-light-build-guide.html"
+    },
+    {
+      "source": "/the-finals-medium-build-guide",
+      "destination": "/the-finals-medium-build-guide.html"
+    },
+    {
+      "source": "/the-finals-heavy-build-guide",
+      "destination": "/the-finals-heavy-build-guide.html"
+    },
+    {
+      "source": "/the-finals-aim-training-guide",
+      "destination": "/the-finals-aim-training-guide.html"
+    },
+    {
+      "source": "/the-finals-team-comp-guide",
+      "destination": "/the-finals-team-comp-guide.html"
+    },
+    {
+      "source": "/the-finals-cashout-guide",
+      "destination": "/the-finals-cashout-guide.html"
+    },
+    {
+      "source": "/the-finals-ruby-guide",
+      "destination": "/the-finals-ruby-guide.html"
+    },
+    {
+      "source": "/the-finals-boosting-worth-it",
+      "destination": "/the-finals-boosting-worth-it.html"
+    },
+    {
+      "source": "/the-finals-ranked-tips",
+      "destination": "/the-finals-ranked-tips.html"
+    },
+    {
+      "source": "/the-finals-worth-playing-in-2026",
+      "destination": "/the-finals-worth-playing-in-2026.html"
+    },
+    {
+      "source": "/the-finals-how-does-matchmaking-work",
+      "destination": "/the-finals-how-does-matchmaking-work.html"
+    },
+    {
+      "source": "/the-finals-beginner-guide",
+      "destination": "/the-finals-beginner-guide.html"
+    }
   ]
 }
