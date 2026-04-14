@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Finals Solo Queue Guide — How to Climb Without a Squad</title>
+  <meta name="description" content="How to climb ranked in The Finals without a premade squad. Best classes, strategies, mindset tips, and how to carry even with uncoordinated teammates.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.thefinalsboosting.com/the-finals-solo-queue-guide">
+  <meta property="og:title" content="The Finals Solo Queue Guide — How to Climb Without a Squad">
+  <meta property="og:description" content="How to climb ranked in The Finals without a premade squad. Best classes, strategies, mindset tips, and how to carry even with uncoordinated teammates.">
+  <meta property="og:url" content="https://www.thefinalsboosting.com/the-finals-solo-queue-guide">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.imgur.com/6U3J2pY.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://i.imgur.com/6U3J2pY.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #ff4d1c; --accent-dim: rgba(255,77,28,0.12); --accent-glow: rgba(255,77,28,0.25);
+      --bg: #080808; --bg-2: #0f0f0f; --bg-3: #161616; --bg-4: #1e1e1e;
+      --border: rgba(255,255,255,0.07); --border-hover: rgba(255,255,255,0.14);
+      --text: #f0ede8; --text-2: #9a9690; --text-3: #5a5754;
+      --ruby: #ff2c12; --diamond: #38c5ff; --platinum: #b8bcc4; --gold: #f5c842; --silver: #c8ccd4; --bronze: #d4834a;
+      --radius: 10px; --radius-lg: 16px; --radius-xl: 24px;
+      --max-w: 1120px; --section-py: 5rem; --nav-h: 68px;
+      --font-display: 'Barlow Condensed', sans-serif; --font-body: 'Barlow', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ANNOUNCE */
+    .announce-bar { background: var(--accent-dim); border-bottom: 1px solid var(--accent-glow); text-align: center; padding: 0.5rem 1rem; font-size: 0.8125rem; font-weight: 500; color: var(--text-2); }
+    .announce-bar a { color: var(--accent); font-weight: 600; }
+    .announce-bar a:hover { text-decoration: underline; }
+
+    /* NAV */
+    .nav-wrap { position: sticky; top: 0; z-index: 100; background: rgba(8,8,8,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    nav { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); gap: 2rem; }
+    .logo-img { height: 38px !important; width: auto !important; display: block; }
+    .logo, .logo-left { display: flex; align-items: center; }
+    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-links a, .nav-dropdown > button { font-size: 0.875rem; font-weight: 500; color: var(--text-2); padding: 0.4rem 0.75rem; border-radius: 8px; transition: color 0.15s, background 0.15s; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; font-family: var(--font-body); }
+    .nav-links a:hover, .nav-dropdown > button:hover { color: var(--text); background: var(--bg-3); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-chevron { width: 12px; height: 12px; opacity: 0.5; transition: transform 0.2s; }
+    .nav-dropdown:hover .nav-dropdown-chevron { transform: rotate(180deg); }
+    .nav-dropdown:hover .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-panel { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-6px); min-width: 220px; background: var(--bg-2); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); padding: 0.5rem; opacity: 0; visibility: hidden; transition: all 0.18s ease; }
+    .nav-dropdown-panel a { display: block; padding: 0.55rem 0.85rem; border-radius: 8px; font-size: 0.875rem; color: var(--text-2); transition: all 0.15s; }
+    .nav-dropdown-panel a:hover { color: var(--text); background: var(--bg-3); }
+    .nav-dropdown-panel .panel-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 0.5rem 0.85rem 0.25rem; }
+    .nav-cta { margin-left: 0.5rem; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-2); border-radius: 2px; transition: all 0.25s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: var(--nav-h); background: var(--bg); z-index: 99; padding: 1.5rem; overflow-y: auto; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 0.85rem 0; font-size: 1.0625rem; font-weight: 500; color: var(--text-2); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:hover { color: var(--text); }
+    .mobile-menu .mobile-section-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-3); margin: 1.25rem 0 0.25rem; }
+    .mobile-menu .btn { width: 100%; justify-content: center; margin-top: 1.5rem; }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: var(--radius); font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: all 0.18s ease; border: 1px solid transparent; white-space: nowrap; }
+    .btn-primary { background: var(--accent); color: #fff !important; }
+    .btn-primary:hover { background: #ff6038; transform: translateY(-1px); color: #fff !important; }
+    .btn-ghost { background: transparent; border-color: var(--border-hover); color: var(--text-2); }
+    .btn-ghost:hover { color: var(--text); background: var(--bg-3); }
+
+    /* PAGE HERO */
+    .page-hero { padding: 5rem 0 3.5rem; border-bottom: 1px solid var(--border); }
+    .page-hero-label { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1rem; }
+    .page-hero p { font-size: 1.0625rem; color: var(--text-2); max-width: 600px; line-height: 1.7; }
+    .page-meta { display: flex; align-items: center; gap: 1.25rem; margin-top: 1rem; font-size: 0.8125rem; color: var(--text-3); flex-wrap: wrap; }
+    .page-meta span { display: flex; align-items: center; gap: 0.35rem; }
+    .page-meta svg { width: 13px; height: 13px; color: var(--accent); }
+    .hero-badges { display: flex; gap: 0.625rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .hero-badge-pill { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--bg-3); border: 1px solid var(--border-hover); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.8125rem; font-weight: 500; color: var(--text-2); }
+
+    /* CONTENT */
+    .page-content { padding: var(--section-py) 0; }
+    .page-layout { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; align-items: start; }
+    .page-body { min-width: 0; }
+    .page-sidebar { position: sticky; top: calc(var(--nav-h) + 2rem); display: flex; flex-direction: column; gap: 1.25rem; }
+
+    /* TYPOGRAPHY */
+    .page-body h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--text); margin: 2.5rem 0 1rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .page-body h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .page-body h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin: 1.75rem 0 0.75rem; }
+    .page-body p { font-size: 0.9375rem; color: var(--text-2); line-height: 1.75; margin-bottom: 1rem; }
+    .page-body p:last-child { margin-bottom: 0; }
+    .page-body ul, .page-body ol { margin: 0.75rem 0 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .page-body li { font-size: 0.9375rem; color: var(--text-2); line-height: 1.7; }
+    .page-body ul li { list-style: disc; }
+    .page-body ol li { list-style: decimal; }
+    .page-body strong { color: var(--text); font-weight: 600; }
+    .page-body em { color: var(--text-2); font-style: italic; }
+    .page-body a:not(.btn) { color: var(--accent); border-bottom: 1px solid var(--accent-glow); transition: border-color 0.15s; }
+    .page-body a:not(.btn):hover { border-color: var(--accent); }
+
+    /* INFO GRID */
+    .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .info-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: border-color 0.2s; }
+    .info-card:hover { border-color: var(--border-hover); }
+    .info-card-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .info-card h3 { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .info-card p { font-size: 0.875rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+
+    /* TABLE */
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.875rem; }
+    .comparison-table th { font-family: var(--font-display); font-weight: 700; color: var(--text); text-align: left; padding: 0.75rem 1rem; background: var(--bg-3); border-bottom: 1px solid var(--border); }
+    .comparison-table td { padding: 0.7rem 1rem; color: var(--text-2); border-bottom: 1px solid var(--border); }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:nth-child(even) td { background: var(--bg-2); }
+
+    /* STEPS LIST */
+    .steps-list { display: flex; flex-direction: column; gap: 0; margin: 1rem 0 1.5rem; list-style: none; padding: 0; }
+    .steps-list li { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); font-size: 0.9375rem; color: var(--text-2); line-height: 1.65; counter-increment: steps; }
+    .steps-list li:last-child { border-bottom: none; }
+    .steps-list li::before { content: counter(steps); font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg-4); line-height: 1; flex-shrink: 0; min-width: 28px; }
+    .steps-list { counter-reset: steps; }
+
+    /* BLOG CTA */
+    .blog-cta { background: var(--bg-2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius-lg); padding: 1.5rem; margin: 2rem 0; }
+    .blog-cta h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .blog-cta p { font-size: 0.9375rem; color: var(--text-2); margin-bottom: 1rem; }
+    .blog-cta-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+    /* SIDEBAR */
+    .sidebar-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; }
+    .sidebar-card h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .sidebar-stat { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+    .sidebar-stat:last-child { border-bottom: none; }
+    .sidebar-stat-label { color: var(--text-3); }
+    .sidebar-stat-value { font-weight: 600; color: var(--text); }
+    .sidebar-links { display: flex; flex-direction: column; gap: 0.375rem; }
+    .sidebar-links a { font-size: 0.875rem; color: var(--text-2); padding: 0.4rem 0; border-bottom: 1px solid var(--border); transition: color 0.15s; display: flex; align-items: center; justify-content: space-between; }
+    .sidebar-links a:last-child { border-bottom: none; }
+    .sidebar-links a:hover { color: var(--accent); }
+    .sidebar-links a::after { content: "→"; font-size: 0.75rem; opacity: 0.4; }
+
+    /* REVIEWS */
+    .reviews-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
+    .reviews-stat { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center; }
+    .reviews-stat-value { display: block; font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.4rem; }
+    .reviews-stat-label { font-size: 0.8125rem; color: var(--text-3); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
+    .review-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; flex-direction: column; transition: border-color 0.2s; }
+    .review-card:hover { border-color: var(--border-hover); }
+    .review-stars { color: var(--gold); font-size: 0.875rem; margin-bottom: 0.875rem; letter-spacing: 2px; }
+    .review-text { font-size: 0.9375rem; color: var(--text-2); line-height: 1.65; flex: 1; margin-bottom: 1.25rem; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 0.75rem; }
+    .review-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--bg-4); border: 1px solid var(--border-hover); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 0.9375rem; flex-shrink: 0; }
+    .review-name { font-size: 0.875rem; font-weight: 600; color: var(--text); }
+    .review-rank { font-size: 0.75rem; color: var(--text-3); margin-top: 2px; font-family: var(--font-display); }
+
+    /* FAQ */
+    .faq-cats { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .faq-cat-btn { padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.875rem; font-weight: 500; cursor: pointer; border: 1px solid var(--border-hover); background: none; color: var(--text-2); font-family: var(--font-body); transition: all 0.15s; }
+    .faq-cat-btn.active, .faq-cat-btn:hover { background: var(--bg-3); color: var(--text); border-color: var(--border-hover); }
+    .faq-cat-btn.active { border-color: var(--accent); color: var(--accent); }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 0.75rem; transition: border-color 0.2s; }
+    .faq-item:hover, .faq-item.open { border-color: var(--border-hover); }
+    .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 1.125rem 1.25rem; cursor: pointer; gap: 1rem; }
+    .faq-q h3 { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; color: var(--text); }
+    .faq-chevron { width: 18px; height: 18px; flex-shrink: 0; color: var(--text-3); transition: transform 0.2s; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--accent); }
+    .faq-a { display: none; padding: 0 1.25rem 1.25rem; }
+    .faq-a p { font-size: 0.9375rem; color: var(--text-2); line-height: 1.75; margin: 0; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* RANK COLORS */
+    .rank-bronze { color: var(--bronze); } .rank-silver { color: var(--silver); } .rank-gold { color: var(--gold); }
+    .rank-platinum { color: var(--platinum); } .rank-diamond { color: var(--diamond); } .rank-ruby { color: var(--ruby); }
+    .rank-pill { display: inline-block; padding: 0.1rem 0.6rem; border-radius: 999px; font-size: 0.8125rem; font-weight: 700; font-family: var(--font-display); }
+    .pill-bronze { background: rgba(212,131,74,0.15); color: var(--bronze); }
+    .pill-silver { background: rgba(200,204,212,0.12); color: var(--silver); }
+    .pill-gold { background: rgba(245,200,66,0.15); color: var(--gold); }
+    .pill-platinum { background: rgba(184,188,196,0.12); color: var(--platinum); }
+    .pill-diamond { background: rgba(56,197,255,0.12); color: var(--diamond); }
+    .pill-ruby { background: rgba(255,44,18,0.12); color: var(--ruby); }
+
+    /* FOOTER */
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 4rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand p { font-size: 0.875rem; color: var(--text-2); line-height: 1.65; margin-bottom: 1.25rem; }
+    .footer-social { display: flex; gap: 0.5rem; }
+    .footer-social a { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-2); transition: all 0.15s; }
+    .footer-social a:hover { border-color: var(--border-hover); color: var(--text); background: var(--bg-2); }
+    .footer-col h4 { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-bottom: 1rem; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col a { font-size: 0.875rem; color: var(--text-2); transition: color 0.15s; }
+    .footer-col a:hover { color: var(--text); }
+    .footer-bottom { padding-top: 2rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: 0.8125rem; color: var(--text-3); }
+    .footer-bottom-links { display: flex; gap: 1.25rem; }
+    .footer-bottom-links a { font-size: 0.8125rem; color: var(--text-3); transition: color 0.15s; }
+    .footer-bottom-links a:hover { color: var(--text-2); }
+    .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 0.875rem 1.5rem; background: rgba(8,8,8,0.96); border-top: 1px solid var(--border); backdrop-filter: blur(12px); z-index: 98; }
+    .mobile-sticky-cta .btn { width: 100%; justify-content: center; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) { .page-layout { grid-template-columns: 1fr; } .page-sidebar { position: static; } .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) {
+      :root { --section-py: 3.5rem; }
+      .nav-links, .nav-cta { display: none; } .nav-hamburger { display: flex; } .mobile-sticky-cta { display: block; }
+      .info-grid { grid-template-columns: 1fr; } .reviews-stats { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-brand { grid-column: 1 / -1; } .page-hero { padding: 3.5rem 0 2.5rem; }
+    }
+    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } .reviews-stats { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="announce-bar">
+    Season 10 is live — boosts starting from <strong>€12</strong>.
+    <a href="/#calculator">Calculate your price →</a>
+  </div>
+  <div class="nav-wrap">
+    <nav class="container">
+      <a href="/" aria-label="The Finals Boosting home" style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
+        <div class="logo"><div class="logo-left">
+          <img src="/favicon.png" alt="The Finals Boosting" class="logo-img">
+        </div></div>
+        <span style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;letter-spacing:0.04em;color:var(--text);">
+          THE FINALS <span style="color:var(--accent);">BOOSTING</span>
+        </span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li class="nav-dropdown">
+          <button aria-haspopup="true" aria-expanded="false">Services
+            <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+<div class="nav-dropdown-panel">
+  <p class="panel-label">Boosting</p>
+  <a href="/account-driver-boosting">Account Driver</a>
+  <a href="/selfplay-boosting">Selfplay</a>
+  <a href="/placement-boosting">Placement</a>
+  <a href="/boosting-services">All services</a>
+  <p class="panel-label">Other</p>
+  <a href="/coaching">Coaching</a>
+  <a href="/accounts">Accounts for sale</a>
+  <p class="panel-label">Trust</p>
+  <a href="/orders-per-season">Orders per season</a>
+  <a href="/the-finals-boosting-vs-competitors">Why choose us?</a>
+</div>
+
+        </li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <a href="https://discord.com/channels/@me" class="btn btn-primary nav-cta" rel="noopener">
+        Get boosted
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+    <p class="mobile-section-label">Services</p>
+    <a href="/account-driver-boosting">Account Driver boosting</a>
+    <a href="/selfplay-boosting">Selfplay boosting</a>
+    <a href="/boosting-services">All services</a>
+    <a href="/coaching">Coaching</a>
+    <p class="mobile-section-label">Info</p>
+    <a href="/reviews">Reviews</a>
+    <a href="/how-to-rank-up-in-the-finals">Guides</a>
+    <a href="/faq">FAQ</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="https://discord.com/channels/@me" class="btn btn-primary" rel="noopener">Get boosted on Discord →</a>
+    <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener" style="margin-top:0.5rem">Open Telegram →</a>
+  </div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-hero-label">Guide</p>
+      <h1>The Finals Solo Queue Guide</h1>
+      <p>Solo queuing in The Finals is one of the hardest climbing experiences in competitive gaming. You have no control over your teammates' classes, communication, or decision-making. This guide gives you every tool to climb anyway.</p>
+      <div class="page-meta">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated April 2026</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>9 min read</span>
+      </div>
+    </div>
+  </section>
+  <section class="page-content">
+    <div class="container">
+      <div class="page-layout">
+        <div class="page-body">
+          <p>The hard truth about solo queue: you will have bad teammates. Not sometimes — regularly. The question isn't how to avoid bad teammates, it's how to win games despite them. Everything in this guide is built around that reality.</p>
+
+          <h2>Why solo queue is especially hard in The Finals</h2>
+          <p>Most competitive shooters reward individual performance. The Finals doesn't — it rewards <em>team performance on the cashout</em>. A player with a 15-kill game who never touches the cashout contributes almost nothing to a win. This means the gap between a coordinated premade and a random solo queue team is larger here than in most shooters.</p>
+          <p>Add to that the class system — where comp matters — and you regularly find yourself as the only Medium on a team of three Lights, or the only one who understands that standing on the cashout is how you win. This guide gives you the tools to navigate all of it.</p>
+
+          <h2>The best class for solo queue — and why</h2>
+          <p><strong>Medium is the best solo queue class by a significant margin.</strong> Here's why:</p>
+          <ul>
+            <li>The Healing Beam makes you immediately valuable to any teammate — even ones who aren't communicating</li>
+            <li>The Defibrillator gives instant revives, which compensates for teammates who make aggressive mistakes</li>
+            <li>You can keep a bad team alive long enough to win a cashout they wouldn't have survived otherwise</li>
+            <li>Your value is not dependent on your teammates doing anything right — you just beam and revive</li>
+          </ul>
+          <p>Heavy is a solid second choice — high health makes you harder to punish when teammates don't help, and your gadgets (Barricade, Mesh Shield) let you create your own cover without relying on team positioning.</p>
+          <p>Light is the hardest solo queue class. Its value depends heavily on having teammates who can capitalise on the chaos you create. In random lobbies, they often don't.</p>
+
+          <h2>The solo queue mindset — the most important section</h2>
+          <p>Most solo queue losing streaks are caused by mindset, not mechanics. These are the mental shifts that separate players who climb solo from players who stay stuck.</p>
+
+          <h3>Accept what you cannot control</h3>
+          <p>You cannot control which class your teammates pick. You cannot control whether they push the cashout or chase kills across the map. You cannot control whether they use their mic. The moment you waste mental energy on these things, you play worse. Redirect every bit of frustration into asking: <strong>"What can I do differently right now?"</strong></p>
+
+          <h3>You are not owed a win in every game</h3>
+          <p>Even playing perfectly, you will lose solo queue games. Sometimes a teammate disconnects. Sometimes the matchmaking puts you against a three-stack. Accept that some games are unwinnable and your only job is to extract as much RS as possible from every session — not to win every game.</p>
+
+          <h3>The two-loss rule — non-negotiable</h3>
+          <p>Stop after two consecutive losses. Every time. No exceptions. Two losses in a row means you're either tilting, fatigued, or in a bad matchmaking bracket at that moment. Forcing a third game in this state almost always produces a third loss. Take 20 minutes away from the game. Come back fresh.</p>
+
+          <h3>Stop typing in team chat during a match</h3>
+          <p>Typing criticism mid-match — even if you're right — makes things worse. It pulls your attention away from the game, puts teammates on the defensive, and never changes their behaviour in that match. Save all analysis for after the game.</p>
+
+          <h2>Practical strategies for solo queue</h2>
+
+          <h3>Adapt your class to fill the gap</h3>
+          <p>Before locking in your class, look at what your teammates picked. If both went Heavy, play Medium — your team has no healing and no revives. If both went Light, play Heavy or Medium — your team has no anchor and no sustain. Being flexible here wins you games that a rigid one-trick loses.</p>
+
+          <h3>Be the cashout player</h3>
+          <p>In solo queue, nobody wants to stand on the cashout. Everyone wants to shoot. Use this. While your teammates are fighting, position yourself on or near the cashout and be ready to bank the moment it opens. You will die on it sometimes. But you will also single-handedly win rounds your team had no right to win.</p>
+
+          <h3>Communicate with pings, not voice</h3>
+          <p>Most solo queue players don't use voice chat. Don't rely on it. Instead, use the in-game ping system to mark enemies, cashout locations, and where you're moving. One well-timed ping telling a teammate the cashout is open is worth more than ten seconds of voice chat nobody is listening to.</p>
+
+          <h3>Follow the teammate who looks like they know what they're doing</h3>
+          <p>In every random lobby, there's usually one player making better decisions than the others. Identify them early — they're the one moving toward the cashout, not chasing kills — and stick with them. Two players working together are exponentially harder to kill than two players operating solo.</p>
+
+          <h3>Play around the final round</h3>
+          <p>In solo queue, early round results are hard to control. Focus your energy on the final cashout. Bank conservatively early, stay alive, and make sure you're in position when the last cashout opens. More solo queue games are won and lost in the final 60 seconds than at any other point.</p>
+
+          <h2>When to give up on a game</h2>
+          <p>Sometimes a game is effectively over before it ends — a teammate has disconnected, you're down two cashouts with 90 seconds left, or your whole team is pinned with no way out. In these situations, don't take unnecessary risks trying to force a comeback. Play for placement, bank whatever you can, and preserve your RS. A third-place finish with one cashout banked beats a last-place wipe trying to steal.</p>
+
+          <h2>Solo queue rank by rank</h2>
+          <table class="comparison-table">
+            <tr><th>Rank</th><th>Main challenge</th><th>How to handle it</th></tr>
+            <tr><td><span class="rank-bronze">Bronze / Silver</span></td><td>Nobody understands the cashout</td><td>Be the cashout player every game — you'll carry easily</td></tr>
+            <tr><td><span class="rank-gold">Gold</span></td><td>Teammates fight well but ignore objectives</td><td>Use their kills as cover to bank — redirect their energy</td></tr>
+            <tr><td><span class="rank-platinum">Platinum</span></td><td>Hardest solo rank — teammates have ego, no coordination</td><td>Medium only, two-loss rule strictly, pick your moments</td></tr>
+            <tr><td><span class="rank-diamond">Diamond</span></td><td>Players are skilled but still mostly solo queuing</td><td>Communication improves here — pings get responded to</td></tr>
+          </table>
+
+          <h2>The honest ceiling of solo queue</h2>
+          <p>Solo queue has a ceiling. At Diamond and above, the gap between a coordinated three-stack and a random solo lobby is large enough that some players simply cannot climb further without at least one trusted teammate. This isn't a failure — it's the reality of how The Finals is designed.</p>
+          <p>If you've hit that ceiling, consider our <a href="/selfplay-boosting">Selfplay boosting</a> — you play on your own account alongside two Ruby-ranked boosters as your teammates. It's the closest thing to solo queuing with a perfect squad, and many players use it specifically to break through the Diamond wall.</p>
+
+          <div class="blog-cta">
+            <h3>Tired of being at the mercy of random teammates?</h3>
+            <p>Our Selfplay service queues you with Ruby-ranked boosters as your teammates. Play your own account, keep full control, and actually climb.</p>
+            <div class="blog-cta-actions">
+              <a href="/selfplay-boosting" class="btn btn-primary">Try Selfplay →</a>
+              <a href="/#calculator" class="btn btn-ghost">Calculate price</a>
+            </div>
+          </div>
+        </div>
+        <aside class="page-sidebar">
+          <div class="sidebar-card">
+            <h4>Solo queue reality</h4>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Hardest rank solo</span><span class="sidebar-stat-value rank-platinum">Platinum</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Best solo class</span><span class="sidebar-stat-value rank-gold">Medium</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Stop after</span><span class="sidebar-stat-value">2 losses</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Easiest carry role</span><span class="sidebar-stat-value">Cashout focus</span></div>
+          </div>
+          <div class="sidebar-card">
+            <h4>Skip the grind</h4>
+            <p style="font-size:0.875rem;color:var(--text-2);margin-bottom:1rem;line-height:1.6;">Selfplay pairs you with two Ruby-ranked boosters as teammates. No more bad solo queue lobbies.</p>
+            <a href="/selfplay-boosting" class="btn btn-primary" style="width:100%;justify-content:center;">Try Selfplay →</a>
+          </div>
+          <div class="sidebar-card">
+            <h4>Related guides</h4>
+            <div class="sidebar-links">
+              <a href="/the-finals-ranked-tips">15 ranked tips</a>
+              <a href="/the-finals-team-comp-guide">Team comp guide</a>
+              <a href="/how-to-rank-up-in-the-finals">How to rank up</a>
+              <a href="/the-finals-how-does-matchmaking-work">How matchmaking works</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main></main>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" aria-label="The Finals Boosting home" style="display:inline-flex;align-items:center;width:fit-content;gap:0.75rem;margin-bottom:0.75rem;">
+            <img src="/favicon.png" alt="The Finals Boosting" style="height:32px;width:auto;display:block;">
+            <span style="font-family:var(--font-display);font-size:1rem;font-weight:700;letter-spacing:0.04em;color:var(--text);">THE FINALS <span style="color:var(--accent);">BOOSTING</span></span>
+          </a>
+          <p>Professional rank boosting for The Finals. 60+ orders, 4.9★ rating, zero bans. Account Driver, Selfplay, and Coaching available worldwide.</p>
+          <div class="footer-social">
+            <a href="https://discord.com/channels/@me" rel="noopener" aria-label="Discord">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.032.055a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            </a>
+            <a href="https://t.me/TheFinalsBoosting" rel="noopener" aria-label="Telegram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="/cdn-cgi/l/email-protection#c2a0adadb1b6abaca5b6aaa7a4abaca3aeb182a5afa3abaeeca1adaf" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/account-driver-boosting">Account Driver</a></li>
+            <li><a href="/selfplay-boosting">Selfplay</a></li>
+            <li><a href="/coaching">Coaching</a></li>
+            <li><a href="/placement-boosting">Placement</a></li>
+            <li><a href="/boosting-services">All services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="/how-to-rank-up-in-the-finals">How to rank up</a></li>
+            <li><a href="/the-finals-ranking-system-explained">Ranking system</a></li>
+            <li><a href="/the-finals-best-loadouts-season-9">Best loadouts S9</a></li>
+            <li><a href="/the-finals-tips-for-beginners">Tips for beginners</a></li>
+            <li><a href="/the-finals-season-10-patch-notes">Season 10 patch notes</a></li>
+            <li><a href="/the-finals-season-10-tier-list">Season 10 tier list</a></li>
+            <li><a href="/the-finals-beginner-to-diamond-roadmap">Beginner to Diamond</a></li>
+            <li><a href="/the-finals-best-settings">Best settings</a></li>
+            <li><a href="/how-to-improve-kd-in-the-finals">Improve your K/D</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="/is-the-finals-boosting-safe">Is boosting safe?</a></li>
+            <li><a href="/account-driver-vs-selfplay-boosting">Driver vs Selfplay</a></li>
+            <li><a href="/reviews">Reviews</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 The Finals Boosting. Not affiliated with Embark Studios.</p>
+        <div class="footer-bottom-links">
+          <a href="/faq">FAQ</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="mobile-sticky-cta" aria-hidden="true">
+    <a href="https://discord.com/channels/@me" class="btn btn-primary" rel="noopener">Get boosted — Discord →</a>
+  </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+    // FAQ filter
+    window.filterFaq = function(cat, btn) {
+      document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.faq-item').forEach(item => {
+        document.querySelectorAll('.faq-item').forEach(item => {
+        const cat = item.dataset.cat;
+        item.style.display = (cat === 'all' || cat === cat) ? '' : 'none';
+      });
+    };
+  </script>
+</body>
+</html>
