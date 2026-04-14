@@ -1506,15 +1506,17 @@ input[type="range"]:active::-moz-range-thumb {
 
       <!-- Background video -->
       <div class="hero-video-wrap" aria-hidden="true">
-        <iframe
+        <video
           id="heroVideo"
-          src="https://www.youtube.com/embed/Sux2XfDazt8?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&playlist=Sux2XfDazt8&rel=0&modestbranding=1&playsinline=1&disablekb=1&vq=hd1080"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          loading="eager"
-          title="The Finals gameplay background"
-        ></iframe>
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover;"
+        >
+          <source src="images/23232131312321.mp4" type="video/mp4">
+        </video>
         <div class="hero-video-overlay"></div>
       </div>
 
