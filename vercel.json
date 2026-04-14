@@ -178,6 +178,14 @@
     {
       "source": "/the-finals-solo-queue-guide",
       "destination": "/the-finals-solo-queue-guide.html"
+    },
+    {
+      "source": "/the-finals-vs-valorant",
+      "destination": "/the-finals-vs-valorant.html"
+    },
+    {
+      "source": "/the-finals-vs-apex-legends",
+      "destination": "/the-finals-vs-apex-legends.html"
     }
   ]
 }
