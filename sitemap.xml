@@ -65,6 +65,27 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Boost landing pages -->
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-cheap-boost</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-diamond-boost</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-platinum-boost</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Trust -->
   <url>
     <loc>https://www.thefinalsboosting.com/reviews</loc>
@@ -173,6 +194,25 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-hardest-rank-to-climb</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-why-am-i-stuck</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-how-long-to-reach-diamond</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Season guides -->
   <url>
     <loc>https://www.thefinalsboosting.com/the-finals-season-10-tier-list</loc>
@@ -274,6 +314,19 @@
   </url>
   <url>
     <loc>https://www.thefinalsboosting.com/the-finals-vs-apex-legends</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-vs-overwatch-2</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-vs-call-of-duty</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
