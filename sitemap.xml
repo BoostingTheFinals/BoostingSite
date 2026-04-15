@@ -4,7 +4,7 @@
   <!-- Core -->
   <url>
     <loc>https://www.thefinalsboosting.com/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,31 +12,55 @@
   <!-- Services -->
   <url>
     <loc>https://www.thefinalsboosting.com/boosting-services</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.thefinalsboosting.com/account-driver-boosting</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.thefinalsboosting.com/selfplay-boosting</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.thefinalsboosting.com/ruby-boosting</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/world-tour-boosting</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/placement-boosting</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/account-leveling</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.thefinalsboosting.com/coaching</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thefinalsboosting.com/accounts</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -44,69 +68,213 @@
   <!-- Trust -->
   <url>
     <loc>https://www.thefinalsboosting.com/reviews</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.thefinalsboosting.com/is-the-finals-boosting-safe</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.thefinalsboosting.com/orders</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.thefinalsboosting.com/orders-per-season</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-boosting-vs-competitors</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-boosting-worth-it</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.thefinalsboosting.com/account-driver-vs-selfplay-boosting</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.thefinalsboosting.com/faq</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Guides -->
+  <!-- Guides index -->
   <url>
     <loc>https://www.thefinalsboosting.com/guides</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Ranked guides -->
   <url>
     <loc>https://www.thefinalsboosting.com/how-to-rank-up-in-the-finals</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.thefinalsboosting.com/the-finals-ranking-system-explained</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.thefinalsboosting.com/the-finals-best-loadouts-season-9</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://www.thefinalsboosting.com/the-finals-ranked-tips</loc>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.thefinalsboosting.com/the-finals-tips-for-beginners</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://www.thefinalsboosting.com/the-finals-solo-queue-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-how-does-matchmaking-work</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-beginner-to-diamond-roadmap</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-team-comp-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-cashout-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-ruby-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Season guides -->
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-season-10-tier-list</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-season-10-ranked-guide</loc>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.thefinalsboosting.com/the-finals-season-10-patch-notes</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-best-loadouts-season-9</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- General guides -->
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-best-settings</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/how-to-improve-kd-in-the-finals</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-aim-training-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-world-tour-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-worth-playing-in-2026</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-tips-for-beginners</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Beginner guides -->
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-beginner-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Class guides -->
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-light-build-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-medium-build-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-heavy-build-guide</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Comparison pages -->
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-vs-valorant</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thefinalsboosting.com/the-finals-vs-apex-legends</loc>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -114,13 +282,13 @@
   <!-- Info -->
   <url>
     <loc>https://www.thefinalsboosting.com/about</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.thefinalsboosting.com/contact</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
