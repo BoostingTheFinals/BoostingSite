@@ -1558,21 +1558,21 @@ input[type="range"]:active::-moz-range-thumb {
       <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
       <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
     </svg>
-    <span class="hero-stat-val">77</span>
+    <span class="hero-stat-val" data-count="77">77</span>
     <span class="hero-stat-label">orders completed</span>
   </div>
   <div class="hero-stat">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--accent)" stroke="none" aria-hidden="true">
       <path d="M3 18h18v2H3zM2 8l4 6h12l4-6-5 2-5-8-5 8-5-2z"/>
     </svg>
-    <span class="hero-stat-val">5 ★</span>
+    <span class="hero-stat-val">5★</span>
     <span class="hero-stat-label">average rating</span>
   </div>
   <div class="hero-stat">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
     </svg>
-    <span class="hero-stat-val">0</span>
+    <span class="hero-stat-val" data-count="0">0</span>
     <span class="hero-stat-label">bans ever</span>
   </div>
   <div class="hero-stat">
@@ -2430,6 +2430,37 @@ document.querySelectorAll('input[type="range"]').forEach(updateSliderFill);
       if (target) smoothScroll(target, 800);
     });
   });
+})();
+
+(function() {
+  var counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
+
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-count'));
+    var duration = 1600;
+    var start = null;
+    function ease(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.round(ease(progress) * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(function(el) { obs.observe(el); });
 })();
   </script>
 </body>
