@@ -1480,6 +1480,29 @@ input[type="range"]:active::-moz-range-thumb {
 .process-footnote a:hover {
   border-color: var(--text);
 }
+.proof-footer a,
+.process-footnote a,
+.safety-note a {
+  color: var(--text-2);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-hover);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.proof-footer a:hover,
+.process-footnote a:hover,
+.safety-note a:hover {
+  color: var(--text);
+  border-color: var(--text-2);
+}
+.proof-footer {
+  font-size: 0.875rem;
+  color: var(--text-3);
+}
+.process-footnote p {
+  font-size: 0.875rem;
+  color: var(--text-3);
+}
   </style>
 </head>
 <body>
