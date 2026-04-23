@@ -229,6 +229,203 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+/* ACCOUNT CARDS */
+.acc-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  position: relative;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.acc-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  transform: translateY(-2px);
+}
+.acc-card.sold {
+  opacity: 0.45;
+  pointer-events: none;
+}
+.acc-card-top-bar {
+  height: 3px;
+  width: 100%;
+  flex-shrink: 0;
+}
+.acc-card-inner {
+  padding: 1.625rem 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.acc-sold-badge {
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  background: #3a3835;
+  color: var(--text-3);
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.acc-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.acc-title {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.acc-price {
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  line-height: 1;
+  padding-top: 0.1rem;
+}
+.acc-season-bar {
+  background: var(--bg-3);
+  border-radius: 8px;
+  padding: 0.625rem 0.875rem;
+  margin-bottom: 1.125rem;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-3);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+.acc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 1.125rem;
+}
+.acc-stat {
+  background: var(--bg-3);
+  border-radius: 8px;
+  padding: 0.625rem 0.625rem 0.5rem;
+}
+.acc-stat-label {
+  font-size: 0.625rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+.acc-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+.acc-section-label {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 0.5rem;
+}
+.acc-skins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1.125rem;
+}
+.acc-skin-tag {
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+  border: 1px solid transparent;
+}
+.acc-skin-diamond { background: rgba(56,197,255,0.1); border-color: rgba(56,197,255,0.18); color: var(--diamond); }
+.acc-skin-platinum { background: rgba(184,188,196,0.1); border-color: rgba(184,188,196,0.18); color: var(--platinum); }
+.acc-skin-gold { background: rgba(245,200,66,0.1); border-color: rgba(245,200,66,0.18); color: var(--gold); }
+.acc-coins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1.125rem;
+}
+.acc-coin-tag {
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.acc-coin-tag .qty {
+  opacity: 0.5;
+  font-weight: 500;
+  font-size: 0.65rem;
+}
+.acc-mb-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-3);
+  border-radius: 8px;
+  padding: 0.6rem 0.875rem;
+  margin-bottom: 1.125rem;
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+.acc-mb-row-left {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.acc-mb-amount {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.9375rem;
+}
+.acc-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+.acc-perk {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+.acc-perk svg { flex-shrink: 0; }
+.acc-cta {
+  margin-top: auto;
+}
   </style>
 </head>
 <body>
@@ -313,327 +510,206 @@
 
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:3rem;" class="accounts-grid">
 
-        <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;transition:border-color 0.2s;">
-          
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
-            <h3 style="font-family:var(--font-display);font-size:1.375rem;font-weight:700;color:var(--platinum);">Platinum</h3>
-            <span style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:var(--text);">€40</span>
-          </div>
-          <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.875rem;margin-bottom:1.25rem;font-family:var(--font-display);font-size:0.875rem;font-weight:600;color:var(--text-2);letter-spacing:0.02em;">S8 <span style="color:var(--platinum);">Platinum</span> · S9 <span style="color:var(--platinum);">Platinum</span>· S10 <span style="color:var(--platinum);">Platinum</span></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:1.5rem;">
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Games</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">200+</div>
+        <!-- CARD 1: Platinum -->
+        <div class="acc-card">
+          <div class="acc-card-top-bar" style="background:linear-gradient(90deg,var(--platinum),#d0d4dc);"></div>
+          <div class="acc-card-inner">
+            <div class="acc-header">
+              <h3 class="acc-title" style="color:var(--platinum);">Platinum</h3>
+              <span class="acc-price">€40</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Win Rate</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">71%</div>
+            <div class="acc-season-bar">
+              S8 <span style="color:var(--platinum);">Platinum</span> · S9 <span style="color:var(--platinum);">Platinum</span> · S10 <span style="color:var(--platinum);">Platinum</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">K/D</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">1.6</div>
+            <div class="acc-stats">
+              <div class="acc-stat"><div class="acc-stat-label">Games</div><div class="acc-stat-value">200+</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Win Rate</div><div class="acc-stat-value">71%</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">K/D</div><div class="acc-stat-value">1.6</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Battle Pass</div><div class="acc-stat-value">No</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Level</div><div class="acc-stat-value">34</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Kills</div><div class="acc-stat-value">1,200+</div></div>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Battle Pass</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">No</div>
+            <div class="acc-perks">
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Full email access included</div>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Level</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">34</div>
-            </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Kills</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">1200+</div>
+            <div class="acc-cta">
+              <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" style="width:100%;justify-content:center;" rel="noopener">Discord: rankclimbertf</a>
             </div>
           </div>
-          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.25rem;font-size:0.8125rem;color:var(--text-3);">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-            Full email access included
-          </div>
-          <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" style="width:100%;justify-content:center;" rel="noopener">Discord: rankclimbertf</a>
         </div>
 
-        <div style="background:var(--bg-2);border:1px solid rgba(255,255,255,0.04);border-radius:var(--radius-lg);padding:1.75rem;position:relative;opacity:0.5;transition:border-color 0.2s;">
-          <div style="position:absolute;top:-0.75rem;right:1rem;background:#5a5754;color:var(--bg);font-family:var(--font-display);font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.75rem;border-radius:999px;">SOLD</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
-            <h3 style="font-family:var(--font-display);font-size:1.375rem;font-weight:700;"><span style="color:var(--diamond);">Diamond</span> / <span style="color:var(--platinum);">Platinum</span></h3>
-            <span style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:var(--text);">€50</span>
-          </div>
-          <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.875rem;margin-bottom:1.25rem;font-family:var(--font-display);font-size:0.875rem;font-weight:600;color:var(--text-2);letter-spacing:0.02em;">S7 <span style="color:var(--platinum);">Platinum</span> · S8 <span style="color:var(--diamond);">Diamond</span> · S9 <span style="color:var(--platinum);">Platinum</span></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:1.5rem;">
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Games</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">280+</div>
+        <!-- CARD 2: Diamond / Platinum — SOLD -->
+        <div class="acc-card sold">
+          <div class="acc-card-top-bar" style="background:linear-gradient(90deg,var(--diamond),var(--platinum));"></div>
+          <div class="acc-sold-badge">SOLD</div>
+          <div class="acc-card-inner">
+            <div class="acc-header">
+              <h3 class="acc-title"><span style="color:var(--diamond);">Diamond</span> / <span style="color:var(--platinum);">Platinum</span></h3>
+              <span class="acc-price">€50</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Win Rate</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">65%</div>
+            <div class="acc-season-bar">
+              S7 <span style="color:var(--platinum);">Platinum</span> · S8 <span style="color:var(--diamond);">Diamond</span> · S9 <span style="color:var(--platinum);">Platinum</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">K/D</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">1.5</div>
+            <div class="acc-stats">
+              <div class="acc-stat"><div class="acc-stat-label">Games</div><div class="acc-stat-value">280+</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Win Rate</div><div class="acc-stat-value">65%</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">K/D</div><div class="acc-stat-value">1.5</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Battle Pass</div><div class="acc-stat-value">No</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Level</div><div class="acc-stat-value">72</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Kills</div><div class="acc-stat-value">1,900+</div></div>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Battle Pass</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">No</div>
-            </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Level</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">72</div>
-            </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Kills</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">1900+</div>
+            <div class="acc-perks">
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Full email access included</div>
             </div>
           </div>
-          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.25rem;font-size:0.8125rem;color:var(--text-3);">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-            Full email access included
-          </div>
-          
         </div>
 
-        <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;transition:border-color 0.2s;">
-          
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
-            <h3 style="font-family:var(--font-display);font-size:1.375rem;font-weight:700;"><span style="color:var(--diamond);">Diamond</span> / <span style="color:var(--platinum);">Platinum</span> / <span style="color:var(--gold);">Gold</span></h3>
-            <span style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:var(--text);">€60</span>
-          </div>
-
-          <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.875rem;margin-bottom:1.25rem;font-family:var(--font-display);font-size:0.875rem;font-weight:600;color:var(--text-2);letter-spacing:0.02em;">S7 <span style="color:var(--platinum);">Platinum</span> · S8 <span style="color:var(--diamond);">Diamond</span> · S9 <span style="color:var(--gold);">Gold</span> · S10 <span style="color:var(--platinum);">Platinum</span></div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:1.5rem;">
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Games</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">350+</div>
+        <!-- CARD 3: Diamond / Platinum / Gold -->
+        <div class="acc-card">
+          <div class="acc-card-top-bar" style="background:linear-gradient(90deg,var(--diamond),var(--platinum),var(--gold));"></div>
+          <div class="acc-card-inner">
+            <div class="acc-header">
+              <h3 class="acc-title"><span style="color:var(--diamond);">Diamond</span> / <span style="color:var(--platinum);">Platinum</span> / <span style="color:var(--gold);">Gold</span></h3>
+              <span class="acc-price">€60</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Win Rate</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">66%</div>
+            <div class="acc-season-bar">
+              S7 <span style="color:var(--platinum);">Platinum</span> · S8 <span style="color:var(--diamond);">Diamond</span> · S9 <span style="color:var(--gold);">Gold</span> · S10 <span style="color:var(--platinum);">Platinum</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">K/D</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">1.8</div>
+            <div class="acc-stats">
+              <div class="acc-stat"><div class="acc-stat-label">Games</div><div class="acc-stat-value">350+</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Win Rate</div><div class="acc-stat-value">66%</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">K/D</div><div class="acc-stat-value">1.8</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Battle Pass</div><div class="acc-stat-value">No</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Level</div><div class="acc-stat-value">53</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Kills</div><div class="acc-stat-value">2,150+</div></div>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Battle Pass</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">No</div>
+            <div class="acc-section-label">Notable Skins</div>
+            <div class="acc-skins">
+              <span class="acc-skin-tag acc-skin-diamond">Diamond P90</span>
+              <span class="acc-skin-tag acc-skin-platinum">Plat BFR</span>
+              <span class="acc-skin-tag acc-skin-platinum">Plat KS-23</span>
+              <span class="acc-skin-tag acc-skin-gold">Gold Sniper</span>
+              <span class="acc-skin-tag acc-skin-gold">Gold CL-40</span>
+              <span class="acc-skin-tag acc-skin-gold">Gold Gateway</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Level</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">53</div>
+            <div class="acc-mb-row">
+              <div class="acc-mb-row-left">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M9 9h4.5a2.5 2.5 0 0 1 0 5H9"/></svg>
+                Multibucks
+              </div>
+              <span class="acc-mb-amount">350 MB</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Kills</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">2150+</div>
+            <div class="acc-perks">
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Every gadget, weapon &amp; spec unlocked</div>
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Full email access included</div>
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Full account video available — <span style="color:var(--accent);font-weight:600;">every skin &amp; detail on request</span></div>
             </div>
-          </div>
-
-          <!-- Notable skins -->
-          <div style="margin-bottom:1.25rem;">
-            <p style="font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.6rem;">Notable Skins</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--diamond);">Diamond P90</span>
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--platinum);">Plat BFR</span>
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--platinum);">Plat KS-23</span>
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold Sniper</span>
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold CL-40</span>
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold Gateway</span>
+            <div class="acc-cta">
+              <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" style="width:100%;justify-content:center;" rel="noopener">Discord: rankclimbertf</a>
             </div>
           </div>
-
-          <!-- Multibucks -->
-          <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;gap:0.75rem;">
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M9 9h4.5a2.5 2.5 0 0 1 0 5H9"/></svg>
-              Multibucks
-            </div>
-            <span style="font-family:var(--font-display);font-weight:700;color:var(--text);font-size:0.9375rem;">350 MB</span>
-          </div>
-
-          <!-- Included -->
-          <div style="display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.25rem;">
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-              Every gadget, weapon &amp; spec unlocked
-            </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-              Full email access included
-            </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-              Full account video available — <span style="color:var(--accent);font-weight:600;">every skin & detail on request</span>
-            </div>
-          </div>
-
-          <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" style="width:100%;justify-content:center;" rel="noopener">Discord: rankclimbertf</a>
         </div>
 
-        <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;transition:border-color 0.2s;">
+        <!-- CARD 4: Diamond / Gold (€99) -->
+        <div class="acc-card">
+          <div class="acc-card-top-bar" style="background:linear-gradient(90deg,var(--diamond),var(--gold));"></div>
+          <div class="acc-card-inner">
+            <div class="acc-header">
+              <h3 class="acc-title"><span style="color:var(--diamond);">Diamond</span> / <span style="color:var(--gold);">Gold</span></h3>
+              <span class="acc-price">€99</span>
+            </div>
+            <div class="acc-season-bar">
+              S6 <span style="color:var(--gold);">Gold</span> · S7 <span style="color:var(--diamond);">Diamond</span> · S8 <span style="color:var(--diamond);">Diamond</span> · S9 <span style="color:var(--diamond);">Diamond</span> · S10 <span style="color:var(--diamond);">Diamond</span>
+            </div>
 
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
-            <h3 style="font-family:var(--font-display);font-size:1.375rem;font-weight:700;"><span style="color:var(--diamond);">Diamond</span> / <span style="color:var(--gold);">Gold</span></h3>
-            <span style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:var(--text);">€99</span>
+            <div class="acc-stats">
+              <div class="acc-stat"><div class="acc-stat-label">Games</div><div class="acc-stat-value">700+</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Win Rate</div><div class="acc-stat-value">70%</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">K/D</div><div class="acc-stat-value">1.6</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Battle Pass</div><div class="acc-stat-value">No</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Level</div><div class="acc-stat-value">82</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Kills</div><div class="acc-stat-value">4,600+</div></div>
+            </div>
+            <div class="acc-section-label">Notable Skins</div>
+            <div class="acc-skins">
+              <span class="acc-skin-tag acc-skin-diamond">Diamond Defib</span>
+              <span class="acc-skin-tag acc-skin-diamond">Diamond P90</span>
+              <span class="acc-skin-tag acc-skin-diamond">Diamond Sniper</span>
+              <span class="acc-skin-tag acc-skin-platinum">Plat BFR</span>
+              <span class="acc-skin-tag acc-skin-platinum">Plat FCAR</span>
+              <span class="acc-skin-tag acc-skin-platinum">Plat KS-23</span>
+              <span class="acc-skin-tag acc-skin-gold">Gold RPG</span>
+              <span class="acc-skin-tag acc-skin-gold">Gold Sniper</span>
+              <span class="acc-skin-tag acc-skin-gold">Gold CL-40</span>
+              <span class="acc-skin-tag acc-skin-gold">Gold Minigun</span>
+            </div>
+            <div class="acc-mb-row">
+              <div class="acc-mb-row-left">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M9 9h4.5a2.5 2.5 0 0 1 0 5H9"/></svg>
+                Multibucks
+              </div>
+              <span class="acc-mb-amount">150 MB</span>
+            </div>
+            <div class="acc-perks">
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Every gadget, weapon &amp; spec unlocked</div>
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Full email access included</div>
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Full account video available — <span style="color:var(--accent);font-weight:600;">every skin &amp; detail on request</span></div>
+            </div>
+            <div class="acc-cta">
+              <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" style="width:100%;justify-content:center;" rel="noopener">Discord: rankclimbertf</a>
+            </div>
           </div>
-
-          <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.875rem;margin-bottom:1.25rem;font-family:var(--font-display);font-size:0.875rem;font-weight:600;color:var(--text-2);letter-spacing:0.02em;">S6 <span style="color:var(--gold);">Gold</span> · S7 <span style="color:var(--diamond);">Diamond</span> · S8 <span style="color:var(--diamond);">Diamond</span> · S9 <span style="color:var(--diamond);">Diamond</span> · S10 <span style="color:var(--diamond);">Diamond</span></div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:1.5rem;">
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Games</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">700+</div>
-            </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Win Rate</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">70%</div>
-            </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">K/D</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">1.6</div>
-            </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Battle Pass</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">No</div>
-            </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Level</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">82</div>
-            </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Kills</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">4600+</div>
-            </div>
-          </div>
-
-<!-- Notable skins -->
-<div style="margin-bottom:1.25rem;">
-  <p style="font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.6rem;">Notable Skins</p>
-  <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--diamond);">Diamond Defib</span>
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--diamond);">Diamond P90</span>
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--diamond);">Diamond Sniper</span>
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--platinum);">Plat BFR</span>
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--platinum);">Plat FCAR</span>
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--platinum);">Plat KS-23</span>
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold RPG</span>
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold Sniper</span>
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold CL-40</span>
-    <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold Minigun</span>
-  </div>
-</div>
-
-<div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;gap:0.75rem;">
-  <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M9 9h4.5a2.5 2.5 0 0 1 0 5H9"/></svg>
-    Multibucks
-  </div>
-  <span style="font-family:var(--font-display);font-weight:700;color:var(--text);font-size:0.9375rem;">150 MB</span>
-</div>
-
-          <!-- Included -->
-          <div style="display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.25rem;">
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-              Every gadget, weapon &amp; spec unlocked
-            </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-              Full email access included
-            </div>
-<div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-  Full account video available — <span style="color:var(--accent);font-weight:600;">every skin & detail on request</span>
-</div>
-          </div>
-
-          <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" style="width:100%;justify-content:center;" rel="noopener">Discord: rankclimbertf</a>
         </div>
 
-        <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;position:relative;transition:border-color 0.2s;">
-
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
-            <h3 style="font-family:var(--font-display);font-size:1.375rem;font-weight:700;"><span style="color:var(--bronze);">Bronze</span> / <span style="color:var(--gold);">Gold</span> / <span style="color:var(--diamond);">Diamond</span></h3>
-            <span style="font-family:var(--font-display);font-size:1.75rem;font-weight:700;color:var(--text);">€129</span>
-          </div>
-
-          <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.875rem;margin-bottom:1.25rem;font-family:var(--font-display);font-size:0.875rem;font-weight:600;color:var(--text-2);letter-spacing:0.02em;">OB <span style="color:var(--bronze);">Bronze</span> · S7 <span style="color:var(--gold);">Gold</span> · S8 <span style="color:var(--diamond);">Diamond</span> · S9 <span style="color:var(--diamond);">Diamond</span> · S10 <span style="color:var(--diamond);">Diamond</span></div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;margin-bottom:1.5rem;">
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Matches</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">780+</div>
+        <!-- CARD 5: Bronze / Gold / Diamond (new) -->
+        <div class="acc-card">
+          <div class="acc-card-top-bar" style="background:linear-gradient(90deg,var(--bronze),var(--gold),var(--diamond));"></div>
+          <div class="acc-card-inner">
+            <div class="acc-header">
+              <h3 class="acc-title"><span style="color:var(--bronze);">Bronze</span> / <span style="color:var(--gold);">Gold</span> / <span style="color:var(--diamond);">Diamond</span></h3>
+              <span class="acc-price">€129</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Win Rate</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">66%</div>
+            <div class="acc-season-bar">
+              OB <span style="color:var(--bronze);">Bronze</span> · S7 <span style="color:var(--gold);">Gold</span> · S8 <span style="color:var(--diamond);">Diamond</span> · S9 <span style="color:var(--diamond);">Diamond</span> · S10 <span style="color:var(--diamond);">Diamond</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">K/D</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">1.9</div>
+            <div class="acc-stats">
+              <div class="acc-stat"><div class="acc-stat-label">Matches</div><div class="acc-stat-value">780+</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Win Rate</div><div class="acc-stat-value">66%</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">K/D</div><div class="acc-stat-value">1.9</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Battle Pass</div><div class="acc-stat-value">No</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Level</div><div class="acc-stat-value">68</div></div>
+              <div class="acc-stat"><div class="acc-stat-label">Kills</div><div class="acc-stat-value">6,150+</div></div>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Battle Pass</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">No</div>
+            <div class="acc-section-label">Notable Skins</div>
+            <div class="acc-skins">
+              <span class="acc-skin-tag acc-skin-diamond">Diamond P90</span>
+              <span class="acc-skin-tag acc-skin-platinum">Plat BFR-Titan</span>
+              <span class="acc-skin-tag acc-skin-gold">Gold Sniper</span>
+              <span class="acc-skin-tag acc-skin-gold">Gold CL-40</span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Level</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">68</div>
+            <div class="acc-section-label">Choosable Ranked Coins <span style="font-weight:400;text-transform:none;letter-spacing:0;">(S9 + S10)</span></div>
+            <div class="acc-coins">
+              <span class="acc-coin-tag" style="background:rgba(52,211,153,0.08);border-color:rgba(52,211,153,0.2);color:#34d399;">Emerald Coin<span class="qty">×1</span></span>
+              <span class="acc-coin-tag" style="background:rgba(245,200,66,0.08);border-color:rgba(245,200,66,0.2);color:var(--gold);">Gold Coin<span class="qty">×2</span></span>
+              <span class="acc-coin-tag" style="background:rgba(184,188,196,0.08);border-color:rgba(184,188,196,0.2);color:var(--platinum);">Platinum Coin<span class="qty">×2</span></span>
+              <span class="acc-coin-tag" style="background:rgba(56,197,255,0.08);border-color:rgba(56,197,255,0.2);color:var(--diamond);">Diamond Coin<span class="qty">×2</span></span>
             </div>
-            <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;">
-              <div style="font-size:0.6875rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">Kills</div>
-              <div style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;color:var(--text);">6150+</div>
+            <div class="acc-mb-row">
+              <div class="acc-mb-row-left">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M9 9h4.5a2.5 2.5 0 0 1 0 5H9"/></svg>
+                Multibucks
+              </div>
+              <span class="acc-mb-amount">1,525 MB</span>
             </div>
-          </div>
-
-          <!-- Notable skins -->
-          <div style="margin-bottom:1.25rem;">
-            <p style="font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.6rem;">Notable Skins</p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--diamond);">Diamond P90</span>
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--platinum);">Plat BFR-Titan</span>
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold Sniper</span>
-              <span style="background:var(--bg-3);border:1px solid var(--border);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold CL-40</span>
+            <div class="acc-perks">
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Every gadget, weapon &amp; spec unlocked</div>
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Full email access included</div>
+              <div class="acc-perk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>Full account video available — <span style="color:var(--accent);font-weight:600;">every skin &amp; detail on request</span></div>
             </div>
-          </div>
-
-          <!-- Ranked coins -->
-          <div style="margin-bottom:1.25rem;">
-            <p style="font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:0.6rem;">Choosable Ranked Coins <span style="color:var(--text-3);font-weight:500;">(S9 + S10)</span></p>
-            <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
-              <span style="background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:#34d399;">Emerald Coin <span style="opacity:0.6;">×1</span></span>
-              <span style="background:rgba(245,200,66,0.08);border:1px solid rgba(245,200,66,0.2);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--gold);">Gold Coin <span style="opacity:0.6;">×2</span></span>
-              <span style="background:rgba(184,188,196,0.08);border:1px solid rgba(184,188,196,0.2);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--platinum);">Platinum Coin <span style="opacity:0.6;">×2</span></span>
-              <span style="background:rgba(56,197,255,0.08);border:1px solid rgba(56,197,255,0.2);border-radius:6px;padding:0.2rem 0.55rem;font-size:0.75rem;font-weight:600;color:var(--diamond);">Diamond Coin <span style="opacity:0.6;">×2</span></span>
+            <div class="acc-cta">
+              <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" style="width:100%;justify-content:center;" rel="noopener">Discord: rankclimbertf</a>
             </div>
           </div>
-
-          <!-- Multibucks -->
-          <div style="background:var(--bg-3);border-radius:var(--radius);padding:0.75rem;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;gap:0.75rem;">
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12"/><path d="M9 9h4.5a2.5 2.5 0 0 1 0 5H9"/></svg>
-              Multibucks
-            </div>
-            <span style="font-family:var(--font-display);font-weight:700;color:var(--text);font-size:0.9375rem;">1,525 MB</span>
-          </div>
-
-          <!-- Included -->
-          <div style="display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.25rem;">
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-              Every gadget, weapon &amp; spec unlocked
-            </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-              Full email access included
-            </div>
-            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-2);">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5 10 10 3"/></svg>
-              Full account video available — <span style="color:var(--accent);font-weight:600;">every skin &amp; detail on request</span>
-            </div>
-          </div>
-
-          <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" style="width:100%;justify-content:center;" rel="noopener">Discord: rankclimbertf</a>
         </div>
 
       </div>
