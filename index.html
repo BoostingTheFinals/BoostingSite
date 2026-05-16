@@ -69,7 +69,7 @@
       --text:         #f0ede8;
       --text-2:       #9a9690;
       --text-3:       #5a5754;
-      --ruby:         #ff2c12;
+      --ruby:         #ff0000;
       --diamond:      #38c5ff;
       --platinum:     #b8bcc4;
       --gold:         #f5c842;
@@ -452,7 +452,10 @@
     }
     .hero-title em {
       font-style: normal;
-      color: var(--accent);
+      color: #ff0000;
+    }
+    .hero-title .hero-ruby-word em {
+      color: var(--ruby);
     }
 
     .hero-sub {
@@ -497,6 +500,23 @@
       color: var(--text-2);
     }
 
+
+    .hero-ruby-word {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35em;
+      vertical-align: middle;
+    }
+    .hero-ruby-badge {
+      height: 0.85em;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+      object-fit: contain;
+      filter: drop-shadow(0 0 6px rgba(255,44,18,0.5));
+      position: relative;
+      top: -0.05em;
+    }
     /* =============================================
        SERVICES
     ============================================= */
@@ -642,7 +662,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(8, 8, 8, 0.75);
+  background: rgba(8, 8, 8, 0.55);
   z-index: 0;
 }
 
@@ -1618,7 +1638,7 @@ input[type="range"]:active::-moz-range-thumb {
           </div>
 
           <h1 class="hero-title fade-up fade-up-d1">
-            Reach <em>Ruby</em><br>
+            Reach <em class="rank-ruby">Ruby</em><br>
             in The Finals.<br>
             Guaranteed.
           </h1>
