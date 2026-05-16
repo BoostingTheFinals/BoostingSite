@@ -497,6 +497,23 @@
       color: var(--text-2);
     }
 
+
+    .hero-ruby-word {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35em;
+      vertical-align: middle;
+    }
+    .hero-ruby-badge {
+      height: 0.85em;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+      object-fit: contain;
+      filter: drop-shadow(0 0 6px rgba(255,44,18,0.5));
+      position: relative;
+      top: -0.05em;
+    }
     /* =============================================
        SERVICES
     ============================================= */
@@ -1618,7 +1635,7 @@ input[type="range"]:active::-moz-range-thumb {
           </div>
 
           <h1 class="hero-title fade-up fade-up-d1">
-            Reach <em>Ruby</em><br>
+            Reach <span class="hero-ruby-word"><img src="/images/League_Ruby.png" alt="Ruby rank" class="hero-ruby-badge"><em class="rank-ruby" style="text-shadow:0 0 18px rgba(255,44,18,0.55);">Ruby</em></span><br>
             in The Finals.<br>
             Guaranteed.
           </h1>
