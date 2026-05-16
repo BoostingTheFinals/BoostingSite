@@ -69,7 +69,7 @@
       --text:         #f0ede8;
       --text-2:       #9a9690;
       --text-3:       #5a5754;
-      --ruby:         #ff0000;
+      --ruby:         #ff2c12;
       --diamond:      #38c5ff;
       --platinum:     #b8bcc4;
       --gold:         #f5c842;
@@ -452,10 +452,7 @@
     }
     .hero-title em {
       font-style: normal;
-      color: #ff0000;
-    }
-    .hero-title .hero-ruby-word em {
-      color: var(--ruby);
+      color: var(--accent);
     }
 
     .hero-sub {
@@ -500,23 +497,6 @@
       color: var(--text-2);
     }
 
-
-    .hero-ruby-word {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35em;
-      vertical-align: middle;
-    }
-    .hero-ruby-badge {
-      height: 0.85em;
-      width: auto;
-      display: inline-block;
-      vertical-align: middle;
-      object-fit: contain;
-      filter: drop-shadow(0 0 6px rgba(255,44,18,0.5));
-      position: relative;
-      top: -0.05em;
-    }
     /* =============================================
        SERVICES
     ============================================= */
@@ -662,7 +642,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(8, 8, 8, 0.55);
+  background: rgba(8, 8, 8, 0.75);
   z-index: 0;
 }
 
@@ -1043,6 +1023,102 @@
     .guide-card:hover .guide-arrow { color: var(--text); gap: 0.6rem; }
     .guide-arrow svg { width: 14px; height: 14px; }
 
+
+    /* =============================================
+       FAQ
+    ============================================= */
+    .faq { padding: var(--section-py) 0; }
+
+    .faq-list {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-2);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.75rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      transition: background 0.15s;
+    }
+
+    .faq-question:hover { background: var(--bg-3); }
+
+    .faq-chevron {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      color: var(--text-3);
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-item.open .faq-question { background: var(--bg-3); color: var(--accent); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.2s ease;
+      padding: 0 1.75rem;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding: 0.25rem 1.75rem 1.5rem;
+    }
+
+    .faq-answer p {
+      font-size: 0.9375rem;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+
+    .faq-answer a {
+      color: var(--accent);
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,77,28,0.3);
+      transition: border-color 0.15s;
+    }
+
+    .faq-answer a:hover { border-color: var(--accent); }
+
+    .faq-footer {
+      margin-top: 1.75rem;
+      text-align: center;
+      font-size: 0.9375rem;
+      color: var(--text-3);
+    }
+
+    .faq-footer a {
+      color: var(--text-2);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-hover);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .faq-footer a:hover { color: var(--text); border-color: var(--text-2); }
     /* =============================================
        FINAL CTA
     ============================================= */
@@ -1638,7 +1714,7 @@ input[type="range"]:active::-moz-range-thumb {
           </div>
 
           <h1 class="hero-title fade-up fade-up-d1">
-            Reach <em class="rank-ruby">Ruby</em><br>
+            Reach <em>Ruby</em><br>
             in The Finals.<br>
             Guaranteed.
           </h1>
@@ -2184,6 +2260,84 @@ input[type="range"]:active::-moz-range-thumb {
       </div>
     </section>
 
+
+    <!-- ==========================================
+         SECTION: FAQ
+    ========================================== -->
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title" id="faq-heading">Common questions</h2>
+        <p class="section-sub">Everything you need to know before ordering.</p>
+
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              Is The Finals boosting safe? Will I get banned?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes — completely safe. We use 100% manual play, no scripts, no hacks, no third-party software. Our record is <strong>0 bans</strong> across 95+ completed orders. For extra security, Account Driver orders can optionally enable VPN to match your usual login region.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              What is the difference between Account Driver and Selfplay?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Account Driver</strong>: we log into your account and play for you. You can watch via optional live stream. Available on Steam only. Fastest option.<br><br><strong>Selfplay</strong>: you play on your own account while two of our boosters queue as your teammates. Works on all platforms and you keep full account access throughout.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              How long does a boost take?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Speed depends on the range boosted and current queue times, but most orders start the same day you contact us. Smaller boosts (e.g. Bronze → Gold) typically complete within 24–48 hours. We send you real-time progress updates throughout.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              What payment methods do you accept?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>We accept <strong>Wise</strong>, <strong>Crypto</strong> (BTC, ETH, USDT and others), and <strong>Bank Transfer</strong>. Payment is typically made upfront before the boost begins. If you have questions about a specific payment method, just ask us on Discord or Telegram.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              What if the target rank isn't reached?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Full refund, no questions asked. We stand behind every order — if we commit to a rank and don't deliver, you get your money back. Simple as that.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              How do I get started?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Contact us on <a href="https://discord.com/users/1405275924630343902" rel="noopener">Discord (rankclimbertf)</a> or <a href="https://t.me/TheFinalsBoosting" rel="noopener">Telegram</a>. Tell us your current rank, target rank, and preferred service. We'll give you a final price and get started as soon as payment is confirmed — usually within a few hours.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="faq-footer">Have a question not listed here? <a href="/faq">See the full FAQ →</a></p>
+      </div>
+    </section>
+
     <!-- ==========================================
          SECTION 7: FINAL CTA
     ========================================== -->
@@ -2572,6 +2726,25 @@ function startEditing(which) {
   input.addEventListener('keydown', function(e) { if (e.key === 'Enter') commit(); if (e.key === 'Escape') { done = true; updateCalc(); } });
   input.addEventListener('blur', function() { setTimeout(commit, 100); });
 }
+
+/* ---- FAQ accordion ---- */
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(function(el) {
+      el.classList.remove('open');
+      el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
 /* Init */
 updateCalc();
 document.querySelectorAll('input[type="range"]').forEach(updateSliderFill);
