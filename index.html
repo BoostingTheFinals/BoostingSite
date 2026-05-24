@@ -462,17 +462,37 @@
 
 <div class="calc-addons">
   <div style="padding:0.75rem 0;display:flex;flex-direction:column;gap:0.6rem;">
-    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">
-      <span style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.8125rem;color:var(--text-2);">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Wise
+    <div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;">
+      <!-- Wise badge -->
+      <span style="display:inline-flex;align-items:center;gap:0.35rem;font-size:0.8rem;font-weight:600;color:#fff;background:#163300;border:1px solid #2a5500;border-radius:5px;padding:0.2rem 0.5rem;">
+        <!-- Wise logo: green circle with W -->
+        <svg width="14" height="14" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+          <circle cx="14" cy="14" r="14" fill="#9FE870"/>
+          <path d="M7 9.5l3.2 9 2.3-6 2.3 6 3.2-9" stroke="#163300" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Wise
       </span>
-      <span style="color:var(--border-hover);">·</span>
-      <span style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.8125rem;color:var(--text-2);">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Crypto
+      <!-- Crypto badge -->
+      <span style="display:inline-flex;align-items:center;gap:0.35rem;font-size:0.8rem;font-weight:600;color:#fff;background:#1a1230;border:1px solid #3d2fa0;border-radius:5px;padding:0.2rem 0.5rem;">
+        <!-- Bitcoin-style ₿ icon -->
+        <svg width="14" height="14" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+          <circle cx="14" cy="14" r="14" fill="#F7931A"/>
+          <text x="14" y="19" font-size="14" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial">₿</text>
+        </svg>
+        Crypto
       </span>
-      <span style="color:var(--border-hover);">·</span>
-      <span style="display:inline-flex;align-items:center;gap:0.3rem;font-size:0.8125rem;color:var(--text-2);">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Bank Transfer
+      <!-- Bank Transfer badge -->
+      <span style="display:inline-flex;align-items:center;gap:0.35rem;font-size:0.8rem;font-weight:600;color:#fff;background:#0d1f35;border:1px solid #1d3d6b;border-radius:5px;padding:0.2rem 0.5rem;">
+        <!-- Bank building icon -->
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b9cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+          <line x1="3" y1="22" x2="21" y2="22"/>
+          <line x1="6" y1="18" x2="6" y2="11"/>
+          <line x1="10" y1="18" x2="10" y2="11"/>
+          <line x1="14" y1="18" x2="14" y2="11"/>
+          <line x1="18" y1="18" x2="18" y2="11"/>
+          <polygon points="12 2 20 7 4 7"/>
+        </svg>
+        Bank Transfer
       </span>
     </div>
     <span style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8125rem;color:var(--text-3);">
@@ -497,7 +517,56 @@
 </section>
 
     <!-- ==========================================
-         SECTION 4: SOCIAL PROOF
+         SECTION 4: HOW IT WORKS
+    ========================================== -->
+    <section class="process" aria-labelledby="process-heading">
+      <div class="container">
+        <p class="section-label">Process</p>
+        <h2 class="section-title" id="process-heading">How it works</h2>
+
+        <div class="process-steps">
+
+          <div class="process-step">
+            <div class="process-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="process-step-title">Contact us</h3>
+            <p class="process-step-desc">
+              Reach out on Discord or Telegram. Tell us your current rank, target rank, and preferred service type.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3 class="process-step-title">Boost begins</h3>
+            <p class="process-step-desc">
+              We assign your booster and get started. You receive live updates throughout — or watch via stream for an extra 20%.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </div>
+            <h3 class="process-step-title">Rank achieved</h3>
+            <p class="process-step-desc">
+              Your target rank is delivered. We notify you when complete. If we don't reach the agreed rank — full refund, no questions.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="process-footnote">
+          <p>Still have questions? <a href="/faq">Read our full FAQ →</a></p>
+          <p style="color:var(--text-3);font-size:0.8125rem;">Payment accepted: Wise · Crypto · Bank Transfer</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: SOCIAL PROOF
     ========================================== -->
     <section class="proof" id="reviews" aria-labelledby="proof-heading">
       <div class="container">
@@ -584,55 +653,6 @@
           Still worried?
           <a href="/is-the-finals-boosting-safe">Is boosting safe?</a>
         </p>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         SECTION 5: HOW IT WORKS
-    ========================================== -->
-    <section class="process" aria-labelledby="process-heading">
-      <div class="container">
-        <p class="section-label">Process</p>
-        <h2 class="section-title" id="process-heading">How it works</h2>
-
-        <div class="process-steps">
-
-          <div class="process-step">
-            <div class="process-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <h3 class="process-step-title">Contact us</h3>
-            <p class="process-step-desc">
-              Reach out on Discord or Telegram. Tell us your current rank, target rank, and preferred service type.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <div class="process-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
-            <h3 class="process-step-title">Boost begins</h3>
-            <p class="process-step-desc">
-              We assign your booster and get started. You receive live updates throughout — or watch via stream for an extra 20%.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <div class="process-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-            </div>
-            <h3 class="process-step-title">Rank achieved</h3>
-            <p class="process-step-desc">
-              Your target rank is delivered. We notify you when complete. If we don't reach the agreed rank — full refund, no questions.
-            </p>
-          </div>
-
-        </div>
-
-        <div class="process-footnote">
-          <p>Still have questions? <a href="/faq">Read our full FAQ →</a></p>
-          <p style="color:var(--text-3);font-size:0.8125rem;">Payment accepted: Wise · Crypto · Bank Transfer</p>
-        </div>
       </div>
     </section>
 
@@ -784,9 +804,31 @@
           </div>
 
           <div class="payment-badges" aria-label="Accepted payment methods">
-            <span class="payment-badge">Wise</span>
-            <span class="payment-badge">Crypto</span>
-            <span class="payment-badge">Bank Transfer</span>
+            <span class="payment-badge" style="display:inline-flex;align-items:center;gap:0.35rem;">
+              <svg width="14" height="14" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+                <circle cx="14" cy="14" r="14" fill="#9FE870"/>
+                <path d="M7 9.5l3.2 9 2.3-6 2.3 6 3.2-9" stroke="#163300" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Wise
+            </span>
+            <span class="payment-badge" style="display:inline-flex;align-items:center;gap:0.35rem;">
+              <svg width="14" height="14" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+                <circle cx="14" cy="14" r="14" fill="#F7931A"/>
+                <text x="14" y="19" font-size="14" text-anchor="middle" fill="white" font-weight="bold" font-family="Arial">₿</text>
+              </svg>
+              Crypto
+            </span>
+            <span class="payment-badge" style="display:inline-flex;align-items:center;gap:0.35rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5b9cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                <line x1="3" y1="22" x2="21" y2="22"/>
+                <line x1="6" y1="18" x2="6" y2="11"/>
+                <line x1="10" y1="18" x2="10" y2="11"/>
+                <line x1="14" y1="18" x2="14" y2="11"/>
+                <line x1="18" y1="18" x2="18" y2="11"/>
+                <polygon points="12 2 20 7 4 7"/>
+              </svg>
+              Bank Transfer
+            </span>
           </div>
 
           <p class="safety-note">
