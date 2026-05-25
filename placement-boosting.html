@@ -16,7 +16,7 @@
   <meta name="twitter:image" content="https://i.imgur.com/6U3J2pY.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="shortcut icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/favicon.png">
@@ -30,7 +30,7 @@
       --ruby: #ff2c12; --diamond: #38c5ff; --platinum: #b8bcc4; --gold: #f5c842; --silver: #c8ccd4; --bronze: #d4834a;
       --radius: 10px; --radius-lg: 16px; --radius-xl: 24px;
       --max-w: 1120px; --section-py: 5rem; --nav-h: 68px;
-      --font-display: 'Barlow Condensed', sans-serif; --font-body: 'Barlow', sans-serif;
+      --font-display: 'Barlow Condensed', sans-serif; --font-body: 'Outfit', sans-serif;
     }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
@@ -45,8 +45,10 @@
     .announce-bar a:hover { text-decoration: underline; }
 
     /* NAV */
-    .nav-wrap { position: sticky; top: 0; z-index: 100; background: rgba(8,8,8,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-wrap { position: sticky; top: 0; z-index: 100; background: rgb(8 8 8 / .92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
     nav { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); gap: 2rem; }
+    .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
+    .nav-logo img { height: 38px; width: auto; display: block; object-fit: contain; }
     .logo-img { height: 38px !important; width: auto !important; display: block; }
     .logo, .logo-left { display: flex; align-items: center; }
     .nav-links { display: flex; align-items: center; gap: 0.25rem; }
@@ -55,9 +57,9 @@
     .nav-dropdown { position: relative; }
     .nav-dropdown-chevron { width: 12px; height: 12px; opacity: 0.5; transition: transform 0.2s; }
     .nav-dropdown:hover .nav-dropdown-chevron { transform: rotate(180deg); }
-    .nav-dropdown:hover .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown:hover .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translateY(0); }
     .nav-dropdown-panel { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-6px); min-width: 220px; background: var(--bg-2); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); padding: 0.5rem; opacity: 0; visibility: hidden; transition: all 0.18s ease; }
-    .nav-dropdown-panel a { display: block; padding: 0.55rem 0.85rem; border-radius: 8px; font-size: 0.875rem; color: var(--text-2); transition: all 0.15s; }
+    .nav-dropdown-panel a { display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.85rem; border-radius: 8px; font-size: 0.875rem; color: var(--text-2); transition: all 0.15s; }
     .nav-dropdown-panel a:hover { color: var(--text); background: var(--bg-3); }
     .nav-dropdown-panel .panel-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 0.5rem 0.85rem 0.25rem; }
     .nav-cta { margin-left: 0.5rem; }
@@ -210,7 +212,7 @@
     .footer-bottom-links { display: flex; gap: 1.25rem; }
     .footer-bottom-links a { font-size: 0.8125rem; color: var(--text-3); transition: color 0.15s; }
     .footer-bottom-links a:hover { color: var(--text-2); }
-    .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 0.875rem 1.5rem; background: rgba(8,8,8,0.96); border-top: 1px solid var(--border); backdrop-filter: blur(12px); z-index: 98; }
+    .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 0.875rem 1.5rem; background: rgb(8 8 8 / .96); border-top: 1px solid var(--border); backdrop-filter: blur(12px); z-index: 98; }
     .mobile-sticky-cta .btn { width: 100%; justify-content: center; }
 
     /* RESPONSIVE */
@@ -223,17 +225,12 @@
       .footer-brand { grid-column: 1 / -1; } .page-hero { padding: 3.5rem 0 2.5rem; }
     }
     @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } .reviews-stats { grid-template-columns: 1fr 1fr; } }
-.nav-dropdown-panel a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
   </style>
 </head>
 <body>
   <div class="announce-bar">
-    Season 10 is live — boosts starting from <strong>€12</strong>.
-    <a href="/#calculator">Calculate your price →</a>
+    Season 10 is live. Boosts starting from <strong>€12</strong>.
+    <a href="/#calculator">Check your price →</a>
   </div>
   <div class="nav-wrap">
     <nav class="container">
