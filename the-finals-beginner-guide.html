@@ -39,42 +39,7 @@
     ul { list-style: none; }
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
 
-    /* ANNOUNCE */
-    .announce-bar { background: var(--accent-dim); border-bottom: 1px solid var(--accent-glow); text-align: center; padding: 0.5rem 1rem; font-size: 0.8125rem; font-weight: 500; color: var(--text-2); }
-    .announce-bar a { color: var(--accent); font-weight: 600; }
-    .announce-bar a:hover { text-decoration: underline; }
-
-    /* NAV */
-    .nav-wrap { position: sticky; top: 0; z-index: 100; background: rgb(8 8 8 / .92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
-    nav { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); gap: 2rem; }
-    .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
-    .nav-logo img { height: 38px; width: auto; display: block; object-fit: contain; }
-    .logo-img { height: 38px !important; width: auto !important; display: block; }
-    .logo, .logo-left { display: flex; align-items: center; }
-    .nav-links { display: flex; align-items: center; gap: 0.25rem; }
-    .nav-links a, .nav-dropdown > button { font-size: 0.875rem; font-weight: 500; color: var(--text-2); padding: 0.4rem 0.75rem; border-radius: 8px; transition: color 0.15s, background 0.15s; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; font-family: var(--font-body); }
-    .nav-links a:hover, .nav-dropdown > button:hover { color: var(--text); background: var(--bg-3); }
-    .nav-dropdown { position: relative; }
-    .nav-dropdown-chevron { width: 12px; height: 12px; opacity: 0.5; transition: transform 0.2s; }
-    .nav-dropdown:hover .nav-dropdown-chevron { transform: rotate(180deg); }
-    .nav-dropdown:hover .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translateY(0); }
-    .nav-dropdown-panel { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-6px); min-width: 220px; background: var(--bg-2); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); padding: 0.5rem; opacity: 0; visibility: hidden; transition: all 0.18s ease; }
-    .nav-dropdown-panel a { display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.85rem; border-radius: 8px; font-size: 0.875rem; color: var(--text-2); transition: all 0.15s; }
-    .nav-dropdown-panel a:hover { color: var(--text); background: var(--bg-3); }
-    .nav-dropdown-panel .panel-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 0.5rem 0.85rem 0.25rem; }
-    .nav-cta { margin-left: 0.5rem; }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-2); border-radius: 2px; transition: all 0.25s; }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { display: none; position: fixed; inset: 0; top: var(--nav-h); background: var(--bg); z-index: 99; padding: 1.5rem; overflow-y: auto; }
-    .mobile-menu.open { display: block; }
-    .mobile-menu a { display: block; padding: 0.85rem 0; font-size: 1.0625rem; font-weight: 500; color: var(--text-2); border-bottom: 1px solid var(--border); }
-    .mobile-menu a:hover { color: var(--text); }
-    .mobile-menu .mobile-section-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-3); margin: 1.25rem 0 0.25rem; }
-    .mobile-menu .btn { width: 100%; justify-content: center; margin-top: 1.5rem; }
-
+    .announce-bar{background:var(--accent-dim);border-bottom:1px solid var(--accent-glow);text-align:center;padding:.5rem 1rem;font-size:.8125rem;font-weight:500;color:var(--text-2)}.announce-bar a{color:var(--accent);font-weight:600}.announce-bar a:hover{text-decoration:underline}.nav-wrap{position:sticky;top:0;z-index:100;background:rgb(8 8 8 / .92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}nav{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);position:relative}.nav-logo{display:flex;align-items:center;flex-shrink:0}.nav-logo img{height:38px;width:auto;display:block;object-fit:contain}.nav-links{display:flex;align-items:center;gap:.25rem;position:absolute;left:0;right:0;justify-content:center;pointer-events:none}.nav-links>*{pointer-events:auto}.nav-links a,.nav-dropdown>button{font-size:.875rem;font-weight:500;color:var(--text-2);padding:.4rem .75rem;border-radius:8px;transition:color 0.15s,background 0.15s;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:.3rem;font-family:var(--font-body)}.nav-links a:hover,.nav-dropdown>button:hover{color:var(--text);background:var(--bg-3)}.nav-dropdown{position:relative}.nav-dropdown-chevron{width:12px;height:12px;opacity:.5;transition:transform 0.2s}.nav-dropdown:hover .nav-dropdown-chevron{transform:rotate(180deg)}.nav-dropdown:hover .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0)}.nav-dropdown-panel{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:220px;background:var(--bg-2);border:1px solid var(--border-hover);border-radius:var(--radius-lg);padding:.5rem;opacity:0;visibility:hidden;transition:all 0.18s ease}.nav-dropdown-panel a{display:block;padding:.55rem .85rem;border-radius:8px;font-size:.875rem;color:var(--text-2);transition:all 0.15s}.nav-dropdown-panel a:hover{color:var(--text);background:var(--bg-3)}.nav-dropdown-panel .panel-label{font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);padding:.5rem .85rem .25rem}.nav-cta{margin-left:.5rem}.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-2);border-radius:2px;transition:all 0.25s}.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav-hamburger.open span:nth-child(2){opacity:0}.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.mobile-menu{display:none;position:fixed;inset:0;top:var(--nav-h);background:var(--bg);z-index:99;padding:1.5rem;overflow-y:auto}.mobile-menu.open{display:block}.mobile-menu a{display:block;padding:.85rem 0;font-size:1.0625rem;font-weight:500;color:var(--text-2);border-bottom:1px solid var(--border)}.mobile-menu a:hover{color:var(--text)}.mobile-menu .mobile-section-label{font-size:.6875rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-3);margin:1.25rem 0 .25rem}.mobile-menu .btn{width:100%;justify-content:center;margin-top:1.5rem}
     /* BUTTONS */
     .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: var(--radius); font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: all 0.18s ease; border: 1px solid transparent; white-space: nowrap; }
     .btn-primary { background: var(--accent); color: #fff !important; }
@@ -228,22 +193,31 @@
   </style>
 </head>
 <body>
-  <div class="announce-bar">
+  <!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
     Season 10 is live. Boosts starting from <strong>€12</strong>.
-    <a href="/#calculator">Check your price →</a>
+    <a href="#calculator">Check your price →</a>
   </div>
-  <div class="nav-wrap">
+
+  <!-- NAVIGATION -->
+<div class="nav-wrap">
     <nav class="container">
       <a href="/" aria-label="The Finals Boosting home" style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
-        <img src="/favicon.png" alt="The Finals Boosting" style="height:38px;width:auto;display:block;object-fit:contain;flex-shrink:0;">
+        <div class="logo"><div class="logo-left">
+          <img src="/favicon.png" alt="The Finals Boosting" class="logo-img">
+        </div></div>
         <span style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;letter-spacing:0.04em;color:var(--text);">
           THE FINALS <span style="color:var(--accent);">BOOSTING</span>
         </span>
       </a>
+
       <ul class="nav-links" role="list">
         <li class="nav-dropdown">
-          <button aria-haspopup="true" aria-expanded="false">Services
-            <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+          <button aria-haspopup="true" aria-expanded="false">
+            Services
+            <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 4l4 4 4-4"/>
+            </svg>
           </button>
 <div class="nav-dropdown-panel">
   <p class="panel-label">Boosting</p>
@@ -258,36 +232,43 @@
   <a href="/orders-per-season"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Orders per season</a>
   <a href="/the-finals-boosting-vs-competitors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>Why choose us?</a>
 </div>
-
         </li>
         <li><a href="/reviews">Reviews</a></li>
         <li><a href="/guides">Guides</a></li>
         <li><a href="/about">About</a></li>
       </ul>
-      <a href="/contact" class="btn btn-primary nav-cta" rel="noopener">
+
+      <a href="/contact" class="btn btn-primary nav-cta">
         Get boosted
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 7h10M8 3l4 4-4 4"/>
+        </svg>
       </a>
+
       <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
   </div>
+  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
     <p class="mobile-section-label">Services</p>
     <a href="/account-driver-boosting">Account Driver boosting</a>
     <a href="/selfplay-boosting">Selfplay boosting</a>
     <a href="/boosting-services">All services</a>
     <a href="/coaching">Coaching</a>
+    <a href="/accounts">Accounts for sale</a>
     <p class="mobile-section-label">Info</p>
     <a href="/reviews">Reviews</a>
-    <a href="/how-to-rank-up-in-the-finals">Guides</a>
+    <a href="/guides">Guides</a>
+    <a href="/orders-per-season">Orders per season</a>
     <a href="/faq">FAQ</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
-    <a href="https://discord.com/channels/@me" class="btn btn-primary" rel="noopener">Get boosted on Discord →</a>
-    <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener" style="margin-top:0.5rem">Open Telegram →</a>
+    <a href="/contact" class="btn btn-primary">Get boosted →</a>
+    <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener" style="margin-top:0.5rem">Telegram →</a>
   </div>
+
 <main>
   <section class="page-hero">
     <div class="container">
