@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Finals Ranking System Explained — Season 9 Guide</title>
-  <meta name="description" content="Complete breakdown of The Finals ranking system — every rank, how RP works, rank distribution, and tips to climb faster in Season 9.">
+  <title>The Finals Ranking System Explained — Season 10 Guide</title>
+  <meta name="description" content="Complete breakdown of The Finals ranking system — every rank, how RP works, rank distribution, and tips to climb faster in Season 10.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.thefinalsboosting.com/the-finals-ranking-system-explained">
-  <meta property="og:title" content="The Finals Ranking System Explained — Season 9 Guide">
-  <meta property="og:description" content="Complete breakdown of The Finals ranking system — every rank, how RP works, rank distribution, and tips to climb faster in Season 9.">
+  <meta property="og:title" content="The Finals Ranking System Explained — Season 10 Guide">
+  <meta property="og:description" content="Complete breakdown of The Finals ranking system — every rank, how RP works, rank distribution, and tips to climb faster in Season 10.">
   <meta property="og:url" content="https://www.thefinalsboosting.com/the-finals-ranking-system-explained">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://i.imgur.com/6U3J2pY.png">
@@ -133,7 +133,7 @@
     .steps-list { display: flex; flex-direction: column; gap: 0; margin: 1rem 0 1.5rem; list-style: none; padding: 0; }
     .steps-list li { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); font-size: 0.9375rem; color: var(--text-2); line-height: 1.65; counter-increment: steps; }
     .steps-list li:last-child { border-bottom: none; }
-    .steps-list li::before { content: counter(steps); font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg-4); line-height: 1; flex-shrink: 0; min-width: 28px; }
+    .steps-list li::before { content: counter(steps); font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--accent); line-height: 1; flex-shrink: 0; min-width: 28px; }
     .steps-list { counter-reset: steps; }
 
     /* BLOG CTA */
@@ -294,10 +294,16 @@
     <div class="container">
       <p class="page-hero-label">Guide</p>
       <h1>The Finals Ranking System Explained</h1>
-      <p>A complete breakdown of every rank, how points work, and what it actually takes to climb in Season 9.</p>
+      <p>A complete breakdown of every rank, how points work, and what it actually takes to climb in Season 10.</p>
       <div class="page-meta">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated June 2026</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>6 min read</span>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-badge-pill">Season 10</span>
+        <span class="hero-badge-pill">All ranks covered</span>
+        <span class="hero-badge-pill">RS & seed explained</span>
+        <span class="hero-badge-pill">Rank distribution included</span>
       </div>
     </div>
   </section>
@@ -318,16 +324,29 @@
             <div class="info-card"><div class="info-card-icon">🔴</div><h3><span class="rank-pill pill-ruby">Ruby</span></h3><p>The top tier. Only a small percentage of the playerbase reaches Ruby in any given season.</p></div>
           </div>
 
-          <h2>How Ranking Points Work</h2>
-          <p>The Finals awards Ranking Points (RP) based on your team's final placement, with bonuses for performance:</p>
+          <h2>How the RS System Works</h2>
+          <p>The Finals uses a <strong>Ranking Score (RS)</strong> system — not a fixed-point system. Your RS gain or loss after each match is <strong>not a fixed number</strong>. It's calculated dynamically based on two things:</p>
+          <div class="info-grid" style="margin:1.25rem 0;">
+            <div class="info-card">
+              <div class="info-card-icon">📊</div>
+              <h3>Your RS Total</h3>
+              <p>The higher your current RS, the harder it is to gain points and the more you lose. The system naturally pulls you toward your "true" skill level.</p>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon">🌱</div>
+              <h3>Your Seed</h3>
+              <p>Your seed is your relative standing going into each match. Outperforming your seed earns more RS; underperforming it loses more. Beating a higher-seeded lobby is rewarded heavily.</p>
+            </div>
+          </div>
+          <p>This means two players who both finish 2nd in the same match can gain completely different amounts of RS — depending on where they were seeded coming in. There are no fixed "+50 for 2nd place" values. The system is designed to be self-correcting: if you're placed below your skill level, you'll climb fast. If you're placed above it, you'll drop back down.</p>
           <table class="comparison-table">
-            <tr><th>Placement</th><th>Base RP</th><th>Notes</th></tr>
-            <tr><td>1st Place</td><td>+High</td><td>Largest gain, cashout bonuses apply</td></tr>
-            <tr><td>2nd Place</td><td>+Medium</td><td>Positive gain in most ranks</td></tr>
-            <tr><td>3rd Place</td><td>+Small / 0</td><td>Breakeven zone depending on rank</td></tr>
-            <tr><td>4th Place</td><td>−Points</td><td>Lose RP — avoid at all costs</td></tr>
+            <tr><th>Placement</th><th>RS Impact</th><th>Notes</th></tr>
+            <tr><td>1st Place</td><td><strong style="color:var(--text);">Positive (variable)</strong></td><td>Always a gain; size depends on your seed vs lobby</td></tr>
+            <tr><td>2nd Place</td><td><strong style="color:var(--text);">Positive (variable)</strong></td><td>Gain is smaller the higher your seed was</td></tr>
+            <tr><td>3rd Place</td><td><strong style="color:var(--text);">Small gain or neutral</strong></td><td>Can be near-zero if you were seeded above the lobby</td></tr>
+            <tr><td>4th Place</td><td><strong style="color:var(--text);">Negative or neutral (variable)</strong></td><td>Usually a loss, but seed can soften or negate it</td></tr>
           </table>
-          <p>Performance bonuses are awarded for cashout steals, high damage, and eliminations — so even a 3rd place finish can be positive if you played well.</p>
+          <p>Performance within a match (eliminations, cashout involvement, damage dealt) can shift your RS outcome on the margins, but <strong>placement is the dominant factor</strong> at every rank.</p>
 
           <h2>Why Do People Get Stuck?</h2>
           <p>The number one reason players plateau is not lack of aim — it's decision-making. Specifically:</p>
@@ -345,16 +364,28 @@
             <li><strong>Gold:</strong> ~33%</li>
             <li><strong>Platinum:</strong> ~35% — the largest single rank</li>
             <li><strong>Diamond:</strong> ~15%</li>
-            <li><strong>Ruby:</strong> ~1% — truly the elite</li>
+            <li><strong>Ruby:</strong> &lt;0.1% — truly the elite</li>
           </ul>
 
           <h2>Tips to Climb Faster</h2>
-          <ul>
-            <li>Focus on placements above kills — a 2nd place finish is always better than a 4th with more kills</li>
-            <li>Play the same build every game to build muscle memory and decision-making consistency</li>
-            <li>Don't play ranked when you're tired, frustrated, or distracted</li>
-            <li>Review your losses — identify one specific mistake per game and focus on fixing that</li>
-          </ul>
+          <ol class="steps-list">
+            <li>Focus on placements above kills — a 2nd place finish is always better than a 4th with more kills. RS is awarded based on placement relative to your seed, not raw stats.</li>
+            <li>Play the same build every game to build muscle memory and decision-making consistency. Switching loadouts mid-grind resets your adaptation curve.</li>
+            <li>Don't play ranked when you're tired, frustrated, or distracted. Tilt sessions accelerate RS loss faster than you can recover it.</li>
+            <li>Review your losses — identify one specific mistake per game and focus on fixing that. Most players bleed RS making the same two or three errors repeatedly.</li>
+          </ol>
+
+          <h2>Rank Progression Bar</h2>
+          <p>Each rank tier has four divisions (IV → I). The bar below shows the relative size of each tier in the playerbase:</p>
+          <div class="rank-progress-bar" style="margin:1.5rem 0 0.5rem;display:flex;border-radius:10px;overflow:hidden;height:40px;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.06em;">
+            <div style="flex:1.2;background:rgba(212,131,74,0.35);color:var(--bronze);display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(0,0,0,0.3);">BRONZE</div>
+            <div style="flex:1.3;background:rgba(200,204,212,0.18);color:var(--silver);display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(0,0,0,0.3);">SILVER</div>
+            <div style="flex:1.6;background:rgba(245,200,66,0.2);color:var(--gold);display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(0,0,0,0.3);">GOLD</div>
+            <div style="flex:1.6;background:rgba(184,188,196,0.18);color:var(--platinum);display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(0,0,0,0.3);">PLAT</div>
+            <div style="flex:1.2;background:rgba(56,197,255,0.18);color:var(--diamond);display:flex;align-items:center;justify-content:center;border-right:1px solid rgba(0,0,0,0.3);">DIAMOND</div>
+            <div style="flex:0.15;background:rgba(255,44,18,0.25);color:var(--ruby);display:flex;align-items:center;justify-content:center;font-size:0.6rem;">R</div>
+          </div>
+          <p style="font-size:0.8125rem;color:var(--text-3);margin-top:0.25rem;">Each tier has 4 divisions (IV–I). Width reflects approximate playerbase share.</p>
 
           <div class="blog-cta">
             <h3>Want to Skip Straight to Your Target Rank?</h3>
@@ -364,6 +395,38 @@
               <a href="/#calculator" class="btn btn-ghost">See pricing</a>
             </div>
           </div>
+
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-cats">
+            <button class="faq-cat-btn active" onclick="filterFaq('all',this)">All</button>
+            <button class="faq-cat-btn" onclick="filterFaq('rp',this)">RS &amp; Points</button>
+            <button class="faq-cat-btn" onclick="filterFaq('ranks',this)">Ranks</button>
+            <button class="faq-cat-btn" onclick="filterFaq('climbing',this)">Climbing</button>
+          </div>
+          <div class="faq-item" data-cat="rp">
+            <div class="faq-q"><h3>Does RS reset at the start of a new season?</h3><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+            <div class="faq-a"><p>Yes. Every new season applies a soft reset — your rank drops by approximately 3–4 divisions from where you ended. So a Diamond I player would typically start a new season around Platinum I or Platinum II. This resets seeding expectations and keeps early-season lobbies competitive.</p></div>
+          </div>
+          <div class="faq-item" data-cat="rp">
+            <div class="faq-q"><h3>Do performance bonuses apply at all ranks?</h3><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+            <div class="faq-a"><p>Yes, in-match performance (eliminations, cashout involvement, damage) can nudge your RS outcome up or down on the margins. But the primary driver is always placement relative to your seed — performance is a modifier, not the main event.</p></div>
+          </div>
+          <div class="faq-item" data-cat="ranks">
+            <div class="faq-q"><h3>How many divisions does each rank have?</h3><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+            <div class="faq-a"><p>Every rank from Bronze to Diamond has 4 divisions: IV (lowest), III, II, and I (highest). Ruby is a single unified tier with no divisions. Division advancement is RS-based — there's no fixed RS threshold per division since the system is dynamic and seed-dependent.</p></div>
+          </div>
+          <div class="faq-item" data-cat="ranks">
+            <div class="faq-q"><h3>What percentage of players reach Diamond or Ruby?</h3><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+            <div class="faq-a"><p>Based on community tracking and our experience across hundreds of accounts: roughly 15% of ranked players reach Diamond, and fewer than 0.1% reach Ruby in a given season. Most of the playerbase (about 68%) sits in Gold or Platinum.</p></div>
+          </div>
+          <div class="faq-item" data-cat="climbing">
+            <div class="faq-q"><h3>Is it faster to solo queue or play with a team?</h3><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+            <div class="faq-a"><p>A coordinated premade trio will almost always climb faster than a solo queue player, because communication and composition synergy directly translate to better placements. That said, solo queue is viable up to Diamond — many players reach Diamond grinding solo, though it's slower and more variance-heavy.</p></div>
+          </div>
+          <div class="faq-item" data-cat="climbing">
+            <div class="faq-q"><h3>Why do I lose more RS than I gain?</h3><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+            <div class="faq-a"><p>This is the RS system self-correcting. If you're seeded higher than your actual performance warrants, the system will penalise losses heavily and reward wins modestly until you stabilise at your true level. The fix is consistency: reduce poor placements and work on converting 3rd into 2nd. Even 4th place can be near-neutral depending on your seed — but a run of them while seeded low will bleed RS fast.</p></div>
+          </div>
         </div>
         <aside class="page-sidebar">
           <div class="sidebar-card">
@@ -372,13 +435,13 @@
             <div class="sidebar-stat"><span class="sidebar-stat-label" style="color:var(--gold);">Gold</span><span class="sidebar-stat-value">~33%</span></div>
             <div class="sidebar-stat"><span class="sidebar-stat-label" style="color:var(--platinum);">Platinum</span><span class="sidebar-stat-value">~35%</span></div>
             <div class="sidebar-stat"><span class="sidebar-stat-label" style="color:var(--diamond);">Diamond</span><span class="sidebar-stat-value">~15%</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label" style="color:var(--ruby);">Ruby</span><span class="sidebar-stat-value">~1%</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label" style="color:var(--ruby);">Ruby</span><span class="sidebar-stat-value">&lt;0.1%</span></div>
           </div>
           <div class="sidebar-card">
             <h4>Related guides</h4>
             <div class="sidebar-links">
               <a href="/how-to-rank-up-in-the-finals">How to rank up</a>
-              <a href="/the-finals-best-loadouts-season-9">Best loadouts S9</a>
+              <a href="/the-finals-best-loadouts-season-10">Best loadouts S10</a>
               <a href="/the-finals-tips-for-beginners">Tips for beginners</a>
             </div>
           </div>
@@ -387,6 +450,40 @@
     </div>
   </section>
 </main>
+  <section style="padding:5rem 0;border-top:1px solid var(--border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:2.5rem;">
+        <p style="font-family:var(--font-display);font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;">Verified customers</p>
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--text);margin:0;">What our customers say</h2>
+      </div>
+      <div class="reviews-stats">
+        <div class="reviews-stat"><span class="reviews-stat-value">95+</span><span class="reviews-stat-label">Orders completed</span></div>
+        <div class="reviews-stat"><span class="reviews-stat-value">5.0</span><span class="reviews-stat-label">Average rating</span></div>
+        <div class="reviews-stat"><span class="reviews-stat-value">0</span><span class="reviews-stat-label">Bans ever</span></div>
+        <div class="reviews-stat"><span class="reviews-stat-value">24h</span><span class="reviews-stat-label">Avg delivery time</span></div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Was in Gold II for three weeks straight. Ordered a boost to Platinum and it was done overnight. Communication was great the whole time, no issues at all."</p>
+          <div class="review-author"><div class="review-avatar">M</div><div><div class="review-name">Marcus T.</div><div class="review-rank">Gold II → Platinum III</div></div></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Tried selfplay and the coach was incredibly patient. Explained exactly why I kept dying in 4th place finishes and what to fix. Hit Diamond within the week."</p>
+          <div class="review-author"><div class="review-avatar">S</div><div><div class="review-name">Sara L.</div><div class="review-rank">Platinum I → Diamond III</div></div></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Second time ordering, both times delivered perfectly. Really fast, really safe, and the booster plays well enough that the account stats actually look legitimate."</p>
+          <div class="review-author"><div class="review-avatar">K</div><div><div class="review-name">Kira D.</div><div class="review-rank">Silver I → Gold II</div></div></div>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <a href="/reviews" class="btn btn-ghost">Read all reviews →</a>
+      </div>
+    </div>
+  </section>
   <footer>
     <div class="container">
       <div class="footer-grid">
