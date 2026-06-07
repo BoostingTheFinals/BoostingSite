@@ -17,9 +17,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="/favicon.png" type="image/png">
-<link rel="shortcut icon" href="/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -40,14 +40,13 @@
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
 
     .announce-bar{background:var(--accent-dim);border-bottom:1px solid var(--accent-glow);text-align:center;padding:.5rem 1rem;font-size:.8125rem;font-weight:500;color:var(--text-2)}.announce-bar a{color:var(--accent);font-weight:600}.announce-bar a:hover{text-decoration:underline}.nav-wrap{position:sticky;top:0;z-index:100;background:rgb(8 8 8 / .92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}nav{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);position:relative}.nav-logo{display:flex;align-items:center;flex-shrink:0}.nav-logo img{height:38px;width:auto;display:block;object-fit:contain}.nav-links{display:flex;align-items:center;gap:.25rem;position:absolute;left:0;right:0;justify-content:center;pointer-events:none}.nav-links>*{pointer-events:auto}.nav-links a,.nav-dropdown>button{font-size:.875rem;font-weight:500;color:var(--text-2);padding:.4rem .75rem;border-radius:8px;transition:color 0.15s,background 0.15s;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:.3rem;font-family:var(--font-body)}.nav-links a:hover,.nav-dropdown>button:hover{color:var(--text);background:var(--bg-3)}.nav-dropdown{position:relative}.nav-dropdown-chevron{width:12px;height:12px;opacity:.5;transition:transform 0.2s}.nav-dropdown:hover .nav-dropdown-chevron{transform:rotate(180deg)}.nav-dropdown:hover .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0)}.nav-dropdown-panel{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:220px;background:var(--bg-2);border:1px solid var(--border-hover);border-radius:var(--radius-lg);padding:.5rem;opacity:0;visibility:hidden;transition:all 0.18s ease}.nav-dropdown-panel a{display:block;padding:.55rem .85rem;border-radius:8px;font-size:.875rem;color:var(--text-2);transition:all 0.15s}.nav-dropdown-panel a{display:flex;align-items:center;gap:.5rem}.nav-dropdown-panel a:hover{color:var(--text);background:var(--bg-3)}.nav-dropdown-panel .panel-label{font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);padding:.5rem .85rem .25rem}.nav-cta{margin-left:.5rem}.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-2);border-radius:2px;transition:all 0.25s}.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav-hamburger.open span:nth-child(2){opacity:0}.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.mobile-menu{display:none;position:fixed;inset:0;top:var(--nav-h);background:var(--bg);z-index:99;padding:1.5rem;overflow-y:auto}.mobile-menu.open{display:block}.mobile-menu a{display:block;padding:.85rem 0;font-size:1.0625rem;font-weight:500;color:var(--text-2);border-bottom:1px solid var(--border)}.mobile-menu a:hover{color:var(--text)}.mobile-menu .mobile-section-label{font-size:.6875rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-3);margin:1.25rem 0 .25rem}.mobile-menu .btn{width:100%;justify-content:center;margin-top:1.5rem}.logo-img{height:38px;width:auto;display:block}
-    /* BUTTONS */
+
     .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: var(--radius); font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: all 0.18s ease; border: 1px solid transparent; white-space: nowrap; }
     .btn-primary { background: var(--accent); color: #fff !important; }
     .btn-primary:hover { background: #ff6038; transform: translateY(-1px); color: #fff !important; }
     .btn-ghost { background: transparent; border-color: var(--border-hover); color: var(--text-2); }
     .btn-ghost:hover { color: var(--text); background: var(--bg-3); }
 
-    /* PAGE HERO */
     .page-hero { padding: 5rem 0 3.5rem; border-bottom: 1px solid var(--border); }
     .page-hero-label { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
     .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1rem; }
@@ -55,59 +54,67 @@
     .page-meta { display: flex; align-items: center; gap: 1.25rem; margin-top: 1rem; font-size: 0.8125rem; color: var(--text-3); flex-wrap: wrap; }
     .page-meta span { display: flex; align-items: center; gap: 0.35rem; }
     .page-meta svg { width: 13px; height: 13px; color: var(--accent); }
-    .hero-badges { display: flex; gap: 0.625rem; flex-wrap: wrap; margin-top: 1.5rem; }
-    .hero-badge-pill { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--bg-3); border: 1px solid var(--border-hover); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.8125rem; font-weight: 500; color: var(--text-2); }
 
-    /* CONTENT */
     .page-content { padding: var(--section-py) 0; }
     .page-layout { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; align-items: start; }
     .page-body { min-width: 0; }
     .page-sidebar { position: sticky; top: calc(var(--nav-h) + 2rem); display: flex; flex-direction: column; gap: 1.25rem; }
 
-    /* TYPOGRAPHY */
     .page-body h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--text); margin: 2.5rem 0 1rem; padding-top: 2rem; border-top: 1px solid var(--border); }
     .page-body h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
     .page-body h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin: 1.75rem 0 0.75rem; }
     .page-body p { font-size: 0.9375rem; color: var(--text-2); line-height: 1.75; margin-bottom: 1rem; }
     .page-body p:last-child { margin-bottom: 0; }
-    .page-body ul, .page-body ol { margin: 0.75rem 0 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
-    .page-body li { font-size: 0.9375rem; color: var(--text-2); line-height: 1.7; }
-    .page-body ul li { list-style: disc; }
-    .page-body ol li { list-style: decimal; }
     .page-body strong { color: var(--text); font-weight: 600; }
-    .page-body em { color: var(--text-2); font-style: italic; }
     .page-body a:not(.btn) { color: var(--accent); border-bottom: 1px solid var(--accent-glow); transition: border-color 0.15s; }
     .page-body a:not(.btn):hover { border-color: var(--accent); }
 
-    /* INFO GRID */
     .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
     .info-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: border-color 0.2s; }
     .info-card:hover { border-color: var(--border-hover); }
-    .info-card-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
     .info-card h3 { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
     .info-card p { font-size: 0.875rem; color: var(--text-2); line-height: 1.6; margin: 0; }
 
-    /* TABLE */
     .comparison-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.875rem; }
     .comparison-table th { font-family: var(--font-display); font-weight: 700; color: var(--text); text-align: left; padding: 0.75rem 1rem; background: var(--bg-3); border-bottom: 1px solid var(--border); }
     .comparison-table td { padding: 0.7rem 1rem; color: var(--text-2); border-bottom: 1px solid var(--border); }
     .comparison-table tr:last-child td { border-bottom: none; }
     .comparison-table tr:nth-child(even) td { background: var(--bg-2); }
 
-    /* STEPS LIST */
-    .steps-list { display: flex; flex-direction: column; gap: 0; margin: 1rem 0 1.5rem; list-style: none; padding: 0; }
-    .steps-list li { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); font-size: 0.9375rem; color: var(--text-2); line-height: 1.65; counter-increment: steps; }
-    .steps-list li:last-child { border-bottom: none; }
-    .steps-list li::before { content: counter(steps); font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg-4); line-height: 1; flex-shrink: 0; min-width: 28px; }
-    .steps-list { counter-reset: steps; }
+    /* COLLAPSIBLE */
+    .collapsible-section { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin: 1.25rem 0; transition: border-color 0.2s; }
+    .collapsible-section:hover { border-color: var(--border-hover); }
+    .collapsible-section.open { border-color: var(--border-hover); }
+    .collapsible-trigger { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; cursor: pointer; background: var(--bg-2); gap: 1rem; user-select: none; transition: background 0.15s; }
+    .collapsible-trigger:hover { background: var(--bg-3); }
+    .collapsible-section.open .collapsible-trigger { background: var(--bg-3); border-bottom: 1px solid var(--border); }
+    .collapsible-title { display: flex; align-items: center; gap: 0.75rem; }
+    .collapsible-title span { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--text); }
+    .collapsible-count { display: inline-flex; align-items: center; justify-content: center; background: var(--bg-4); border: 1px solid var(--border); border-radius: 6px; padding: 0.1rem 0.55rem; font-size: 0.75rem; font-weight: 600; color: var(--text-3); font-family: var(--font-display); }
+    .collapsible-meta { display: flex; align-items: center; gap: 0.75rem; }
+    .collapsible-hint { font-size: 0.8rem; color: var(--text-3); }
+    .collapsible-section.open .collapsible-hint { display: none; }
+    .collapsible-chevron { width: 18px; height: 18px; color: var(--text-3); transition: transform 0.25s ease, color 0.15s; flex-shrink: 0; }
+    .collapsible-section.open .collapsible-chevron { transform: rotate(180deg); color: var(--accent); }
+    .collapsible-body { display: none; padding: 0; }
+    .collapsible-section.open .collapsible-body { display: block; }
+    .collapsible-body .comparison-table { margin: 0; border-radius: 0; }
+    .collapsible-body .comparison-table th { border-radius: 0; }
+    .collapsible-tier-preview { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .tier-preview-pill { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.15rem 0.5rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; font-family: var(--font-display); }
+    .tier-s { background: rgba(255,77,28,0.15); color: #ff4d1c; }
+    .tier-a { background: rgba(245,200,66,0.15); color: #f5c842; }
+    .tier-b { background: rgba(184,188,196,0.12); color: #b8bcc4; }
+    .tier-c { background: rgba(90,87,84,0.2); color: #7a7774; }
 
-    /* BLOG CTA */
+    .section-heading-collapsible { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--text); margin: 2.5rem 0 0.75rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .section-heading-collapsible:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
     .blog-cta { background: var(--bg-2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius-lg); padding: 1.5rem; margin: 2rem 0; }
     .blog-cta h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
     .blog-cta p { font-size: 0.9375rem; color: var(--text-2); margin-bottom: 1rem; }
     .blog-cta-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
-    /* SIDEBAR */
     .sidebar-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; }
     .sidebar-card h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
     .sidebar-stat { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
@@ -120,48 +127,6 @@
     .sidebar-links a:hover { color: var(--accent); }
     .sidebar-links a::after { content: "→"; font-size: 0.75rem; opacity: 0.4; }
 
-    /* REVIEWS */
-    .reviews-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
-    .reviews-stat { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center; }
-    .reviews-stat-value { display: block; font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.4rem; }
-    .reviews-stat-label { font-size: 0.8125rem; color: var(--text-3); }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2rem; }
-    .review-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; flex-direction: column; transition: border-color 0.2s; }
-    .review-card:hover { border-color: var(--border-hover); }
-    .review-stars { color: var(--gold); font-size: 0.875rem; margin-bottom: 0.875rem; letter-spacing: 2px; }
-    .review-text { font-size: 0.9375rem; color: var(--text-2); line-height: 1.65; flex: 1; margin-bottom: 1.25rem; font-style: italic; }
-    .review-author { display: flex; align-items: center; gap: 0.75rem; }
-    .review-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--bg-4); border: 1px solid var(--border-hover); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 0.9375rem; flex-shrink: 0; }
-    .review-name { font-size: 0.875rem; font-weight: 600; color: var(--text); }
-    .review-rank { font-size: 0.75rem; color: var(--text-3); margin-top: 2px; font-family: var(--font-display); }
-
-    /* FAQ */
-    .faq-cats { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .faq-cat-btn { padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.875rem; font-weight: 500; cursor: pointer; border: 1px solid var(--border-hover); background: none; color: var(--text-2); font-family: var(--font-body); transition: all 0.15s; }
-    .faq-cat-btn.active, .faq-cat-btn:hover { background: var(--bg-3); color: var(--text); border-color: var(--border-hover); }
-    .faq-cat-btn.active { border-color: var(--accent); color: var(--accent); }
-    .faq-item { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 0.75rem; transition: border-color 0.2s; }
-    .faq-item:hover, .faq-item.open { border-color: var(--border-hover); }
-    .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 1.125rem 1.25rem; cursor: pointer; gap: 1rem; }
-    .faq-q h3 { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; color: var(--text); }
-    .faq-chevron { width: 18px; height: 18px; flex-shrink: 0; color: var(--text-3); transition: transform 0.2s; }
-    .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--accent); }
-    .faq-a { display: none; padding: 0 1.25rem 1.25rem; }
-    .faq-a p { font-size: 0.9375rem; color: var(--text-2); line-height: 1.75; margin: 0; }
-    .faq-item.open .faq-a { display: block; }
-
-    /* RANK COLORS */
-    .rank-bronze { color: var(--bronze); } .rank-silver { color: var(--silver); } .rank-gold { color: var(--gold); }
-    .rank-platinum { color: var(--platinum); } .rank-diamond { color: var(--diamond); } .rank-ruby { color: var(--ruby); }
-    .rank-pill { display: inline-block; padding: 0.1rem 0.6rem; border-radius: 999px; font-size: 0.8125rem; font-weight: 700; font-family: var(--font-display); }
-    .pill-bronze { background: rgba(212,131,74,0.15); color: var(--bronze); }
-    .pill-silver { background: rgba(200,204,212,0.12); color: var(--silver); }
-    .pill-gold { background: rgba(245,200,66,0.15); color: var(--gold); }
-    .pill-platinum { background: rgba(184,188,196,0.12); color: var(--platinum); }
-    .pill-diamond { background: rgba(56,197,255,0.12); color: var(--diamond); }
-    .pill-ruby { background: rgba(255,44,18,0.12); color: var(--ruby); }
-
-    /* FOOTER */
     footer { background: var(--bg); border-top: 1px solid var(--border); padding: 4rem 0 2rem; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
     .footer-brand p { font-size: 0.875rem; color: var(--text-2); line-height: 1.65; margin-bottom: 1.25rem; }
@@ -180,356 +145,405 @@
     .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; padding: 0.875rem 1.5rem; background: rgb(8 8 8 / .96); border-top: 1px solid var(--border); backdrop-filter: blur(12px); z-index: 98; }
     .mobile-sticky-cta .btn { width: 100%; justify-content: center; }
 
-    /* RESPONSIVE */
-    @media (max-width: 960px) { .page-layout { grid-template-columns: 1fr; } .page-sidebar { position: static; } .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 960px) { .page-layout { grid-template-columns: 1fr; } .page-sidebar { position: static; } }
     @media (max-width: 768px) {
       :root { --section-py: 3.5rem; }
       .nav-links, .nav-cta { display: none; } .nav-hamburger { display: flex; } .mobile-sticky-cta { display: block; }
-      .info-grid { grid-template-columns: 1fr; } .reviews-stats { grid-template-columns: repeat(2, 1fr); }
-      .reviews-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .info-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
       .footer-brand { grid-column: 1 / -1; } .page-hero { padding: 3.5rem 0 2.5rem; }
+      .collapsible-tier-preview { display: none; }
     }
-    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } .reviews-stats { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <!-- ANNOUNCEMENT BAR -->
-<!-- ANNOUNCEMENT BAR -->
-<!-- ANNOUNCEMENT BAR -->
-<div class="announce-bar">
-    Season 10 is live. Boosts starting from <strong>€12</strong>.
-    <a href="#calculator">Check your price →</a>
-  </div>
+  <div class="announce-bar">Season 10 is live. Boosts starting from <strong>€12</strong>. <a href="#calculator">Check your price →</a></div>
 
-
-
-  <!-- NAVIGATION -->
-<!-- NAVIGATION -->
-<!-- NAVIGATION -->
-<div class="nav-wrap">
+  <div class="nav-wrap">
     <nav class="container">
       <a href="/" aria-label="The Finals Boosting home" style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
-        <div class="logo"><div class="logo-left">
-          <img src="/favicon.png" alt="The Finals Boosting" class="logo-img">
-        </div></div>
-        <span style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;letter-spacing:0.04em;color:var(--text);">
-          THE FINALS <span style="color:var(--accent);">BOOSTING</span>
-        </span>
+        <img src="/favicon.png" alt="The Finals Boosting" style="height:38px;width:auto;display:block;">
+        <span style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;letter-spacing:0.04em;color:var(--text);">THE FINALS <span style="color:var(--accent);">BOOSTING</span></span>
       </a>
-
       <ul class="nav-links" role="list">
         <li class="nav-dropdown">
-          <button aria-haspopup="true" aria-expanded="false">
-            Services
-            <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M2 4l4 4 4-4"/>
-            </svg>
-          </button>
-<div class="nav-dropdown-panel">
-  <p class="panel-label">Boosting</p>
-  <a href="/account-driver-boosting"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Account Driver</a>
-  <a href="/selfplay-boosting"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Selfplay</a>
-  <a href="/placement-boosting"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Placement</a>
-  <a href="/boosting-services"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>All services</a>
-  <p class="panel-label">Other</p>
-  <a href="/coaching"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Coaching</a>
-  <a href="/accounts"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Accounts for sale</a>
-  <p class="panel-label">Trust</p>
-  <a href="/orders-per-season"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Orders per season</a>
-  <a href="/the-finals-boosting-vs-competitors"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>Why choose us?</a>
-</div>
+          <button aria-haspopup="true" aria-expanded="false">Services <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown-panel">
+            <p class="panel-label">Boosting</p>
+            <a href="/account-driver-boosting">Account Driver</a>
+            <a href="/selfplay-boosting">Selfplay</a>
+            <a href="/placement-boosting">Placement</a>
+            <a href="/boosting-services">All services</a>
+            <p class="panel-label">Other</p>
+            <a href="/coaching">Coaching</a>
+          </div>
         </li>
         <li><a href="/reviews">Reviews</a></li>
         <li><a href="/guides">Guides</a></li>
         <li><a href="/about">About</a></li>
       </ul>
-
-      <a href="/contact" class="btn btn-primary nav-cta">
-        Get boosted
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M2 7h10M8 3l4 4-4 4"/>
-        </svg>
-      </a>
-
-      <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="/contact" class="btn btn-primary nav-cta">Get boosted <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
   </div>
-  <!-- MOBILE MENU -->
+
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
     <p class="mobile-section-label">Services</p>
     <a href="/account-driver-boosting">Account Driver boosting</a>
     <a href="/selfplay-boosting">Selfplay boosting</a>
     <a href="/boosting-services">All services</a>
     <a href="/coaching">Coaching</a>
-    <a href="/accounts">Accounts for sale</a>
     <p class="mobile-section-label">Info</p>
     <a href="/reviews">Reviews</a>
     <a href="/guides">Guides</a>
-    <a href="/orders-per-season">Orders per season</a>
     <a href="/faq">FAQ</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
     <a href="/contact" class="btn btn-primary">Get boosted →</a>
-    <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener" style="margin-top:0.5rem">Telegram →</a>
   </div>
 
-
-
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <p class="page-hero-label">Season 10</p>
-      <h1>The Finals Season 10 Tier List</h1>
-      <p>Every weapon, gadget and specialisation ranked by our professional boosters — updated for the Season 10 Fantasy League meta.</p>
-      <div class="page-meta">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated June 2026</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8 min read</span>
-      </div>
-    </div>
-  </section>
-  <section class="page-content">
-    <div class="container">
-      <div class="page-layout">
-        <div class="page-body">
-
-          <p>Season 10 brought significant changes — the new Aerialist playstyle for Medium, the Chimera-XB crossbow, Hover Pad gadget, and balance tweaks across every class. Here's how everything shakes out in the current meta.</p>
-
-          <h2>Tier key</h2>
-          <div class="info-grid">
-            <div class="info-card"><h3 style="color:#ff4d1c;">S Tier</h3><p>Best in slot. Pick these every game.</p></div>
-            <div class="info-card"><h3 style="color:#f5c842;">A Tier</h3><p>Highly competitive. Strong in most situations.</p></div>
-            <div class="info-card"><h3 style="color:#b8bcc4;">B Tier</h3><p>Situationally strong. Viable with the right team.</p></div>
-            <div class="info-card"><h3 style="color:#5a5754;">C Tier</h3><p>Outclassed. Only in niche scenarios.</p></div>
-          </div>
-
-          <h2>Light — Weapon Tier List</h2>
-          <table class="comparison-table">
-            <tr><th>Weapon</th><th>Tier</th><th>Notes</th></tr>
-            <tr><td>M11</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Dominant close range, unchanged from S9</td></tr>
-            <tr><td>LH1</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Best Mid/Long range, exceptional with Cloak</td></tr>
-            <tr><td>93R</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Hitscan burst melts at close-mid range, devastating TTK when bursts land clean</td></tr>
-            <tr><td>V9S</td><td style="color:#f5c842;font-weight:700;">A</td><td>Fast TTK, but gets outclassed at long range</td></tr>
-            <tr><td>ARN-220</td><td style="color:#f5c842;font-weight:700;">A</td><td>Strong hybrid weapon overall, though it lacks damage at close range</td></tr>
-            <tr><td>XP-54</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Consistent but outclassed by M11</td></tr>
-            <tr><td>SR-84</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>One-shots Lights, struggles up close</td></tr>
-            <tr><td>M26 Matter</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Outclassed by SH1900, sharp range falloff</td></tr>
-            <tr><td>SH1900</td><td style="color:#5a5754;font-weight:700;">C</td><td>Point-blank only, 2 shots before reload</td></tr>
-          </table>
-
-          <h2>Light — Specialisation Tier List</h2>
-          <table class="comparison-table">
-            <tr><th>Specialisation</th><th>Tier</th><th>Notes</th></tr>
-            <tr><td>Cloaking Device</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Buffed in S10 — now 13–29s duration</td></tr>
-            <tr><td>Evasive Dash</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Nerfed cooldown but still strong aggressive play</td></tr>
-            <tr><td>Grappling Hook</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Buffed cooldown — better traversal builds</td></tr>
-          </table>
-
-          <h2>Light — Gadget Tier List</h2>
-          <table class="comparison-table">
-            <tr><th>Gadget</th><th>Tier</th><th>Notes</th></tr>
-            <tr><td>H+ Infuser</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Heals allies from range — rare Light support tool</td></tr>
-            <tr><td>Gateway</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Portal for instant repositioning up to 70m</td></tr>
-            <tr><td>Glitch Grenade</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Disables enemy specs and gadgets — must-pick</td></tr>
-            <tr><td>Vanishing Bomb</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Cloaks your whole team for ambushes or escapes</td></tr>
-            <tr><td>Sonar Grenade</td><td style="color:#f5c842;font-weight:700;">A</td><td>Tracks enemies through walls — great intel tool</td></tr>
-            <tr><td>Nullifier</td><td style="color:#f5c842;font-weight:700;">A</td><td>Renders one enemy immune but untouchable — niche</td></tr>
-            <tr><td>Gravity Vortex</td><td style="color:#f5c842;font-weight:700;">A</td><td>Pulls enemies into a zone, good for crowd control</td></tr>
-            <tr><td>Goo Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Creates cover or blocks paths on impact</td></tr>
-            <tr><td>Frag Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Reliable damage, outclassed by more utility options</td></tr>
-            <tr><td>Smoke Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Obscures vision, situational but occasionally clutch</td></tr>
-            <tr><td>Flashbang</td><td style="color:#5a5754;font-weight:700;">C</td><td>Disorients enemies, affects allies too — risky</td></tr>
-            <tr><td>Breach Charge</td><td style="color:#5a5754;font-weight:700;">C</td><td>Opens walls but better options exist for entry</td></tr>
-            <tr><td>Thermal Bore</td><td style="color:#5a5754;font-weight:700;">C</td><td>Drills through surfaces, very niche use cases</td></tr>
-            <tr><td>Pyro Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Low damage fire zone, easily avoided</td></tr>
-          </table>
-
-          <h2>Medium — Weapon Tier List</h2>
-          <table class="comparison-table">
-            <tr><th>Weapon</th><th>Tier</th><th>Notes</th></tr>
-            <tr><td>FCAR</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Most reliable all-round Medium weapon</td></tr>
-            <tr><td>Chimera-XB</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>High damage, destroys lights</td></tr>
-            <tr><td>CB-01 Repeater</td><td style="color:#f5c842;font-weight:700;">A</td><td>Rewards precision, excellent at range</td></tr>
-            <tr><td>P90</td><td style="color:#f5c842;font-weight:700;">A</td><td>Shreds enemies who push into you</td></tr>
-            <tr><td>R.357</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Situational — great in hands of skilled players</td></tr>
-            <tr><td>Pike-556</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Good at range, punished in CQC</td></tr>
-            <tr><td>FAMAS</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Solid burst, accuracy fades in long fights</td></tr>
-            <tr><td>AKM</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Forgiving mag, no standout range</td></tr>
-          </table>
-
-<h2>Medium — Specialisation Tier List</h2>
-<table class="comparison-table">
-  <tr><th>Specialisation</th><th>Tier</th><th>Notes</th></tr>
-  <tr><td>Heal Beam</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Non-negotiable in most team comps</td></tr>
-  <tr><td>Dematerializer</td><td style="color:#f5c842;font-weight:700;">A</td><td>Great for repositioning and unexpected plays</td></tr>
-  <tr><td>Shockwave (new)</td><td style="color:#f5c842;font-weight:700;">A</td><td>New S10 Aerialist spec — huge skill ceiling</td></tr>
-  <tr><td>Guardian Turret</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Strong on defence, weak on offence</td></tr>
-</table>
-
-          <h2>Medium — Gadget Tier List</h2>
-          <table class="comparison-table">
-            <tr><th>Gadget</th><th>Tier</th><th>Notes</th></tr>
-            <tr><td>Jump Pad</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Instant vertical mobility for the whole team</td></tr>
-            <tr><td>Defibrillator</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Instant revive at 40% HP — non-negotiable utility</td></tr>
-            <tr><td>Goo Grenade</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Creates instant cover or walls off choke points</td></tr>
-            <tr><td>Zipline</td><td style="color:#f5c842;font-weight:700;">A</td><td>Fast team traversal across long distances</td></tr>
-            <tr><td>Glitch Trap</td><td style="color:#f5c842;font-weight:700;">A</td><td>Disables enemy specs on trigger — great on objectives</td></tr>
-            <tr><td>Gas Mine</td><td style="color:#f5c842;font-weight:700;">A</td><td>Strong area denial, punishes clustered enemies</td></tr>
-            <tr><td>APS Turret</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Auto-destroys incoming grenades and projectiles</td></tr>
-            <tr><td>Data Reshaper</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Converts enemy gadgets into decor — situational</td></tr>
-            <tr><td>Frag Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Reliable burst damage, no frills</td></tr>
-            <tr><td>Explosive Mine</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Good cashout trap, requires pre-positioning</td></tr>
-            <tr><td>Pyro Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Low damage fire zone, easily avoided</td></tr>
-            <tr><td>Smoke Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Obscures vision but rarely changes outcomes</td></tr>
-            <tr><td>Flashbang</td><td style="color:#5a5754;font-weight:700;">C</td><td>Disorients enemies, affects allies too — risky</td></tr>
-            <tr><td>Proximity Sensor</td><td style="color:#5a5754;font-weight:700;">C</td><td>Detects nearby enemies, very niche use</td></tr>
-            <tr><td>Gas Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Weak damage zone, outclassed by Gas Mine</td></tr>
-            <tr><td>Hover Pad</td><td style="color:#5a5754;font-weight:700;">C</td><td>Slows falling, rarely worth the gadget slot</td></tr>
-            <tr><td>Breach Drill</td><td style="color:#5a5754;font-weight:700;">C</td><td>Drills through surfaces, very niche use cases</td></tr>
-          </table>
-
-          <h2>Heavy — Weapon Tier List</h2>
-          <table class="comparison-table">
-            <tr><th>Weapon</th><th>Tier</th><th>Notes</th></tr>
-            <tr><td>Lewis Gun</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Best sustained DPS for cashout holding</td></tr>
-            <tr><td>SA1216</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Devastating at close range in cashout rooms</td></tr>
-            <tr><td>Shak-50</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>High Damage — excellent on close range maps</td></tr>
-            <tr><td>M60</td><td style="color:#f5c842;font-weight:700;">A</td><td>High ammo, sustained pressure</td></tr>
-            <tr><td>BFR Titan</td><td style="color:#f5c842;font-weight:700;">A</td><td>Excellent at long range, but struggles heavily in close range</td></tr>
-            <tr><td>KS-23</td><td style="color:#f5c842;font-weight:700;">A</td><td>High damage slug, very punishing to miss</td></tr>
-            <tr><td>.50 AKIMBO</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Heavy's long-range niche, demands precision</td></tr>
-            <tr><td>Flamethrower</td><td style="color:#5a5754;font-weight:700;">C</td><td>Buffed in S10 — viable at low ranks</td></tr>
-          </table>
-
-<h2>Heavy — Specialisation Tier List</h2>
-<table class="comparison-table">
-  <tr><th>Specialisation</th><th>Tier</th><th>Notes</th></tr>
-  <tr><td>Winch Claw</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Great for isolating targets, consistent in chaotic fights</td></tr>
-  <tr><td>Mesh Shield</td><td style="color:#f5c842;font-weight:700;">A</td><td>Buffed to 12s — now a real defensive tool</td></tr>
-  <tr><td>Charge N Slam</td><td style="color:#f5c842;font-weight:700;">A</td><td>Best gap-closer and structure destroyer</td></tr>
-</table>
-
-          <h2>Heavy — Gadget Tier List</h2>
-          <table class="comparison-table">
-            <tr><th>Gadget</th><th>Tier</th><th>Notes</th></tr>
-            <tr><td>Dome Shield</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Blocks all incoming fire — essential on cashout</td></tr>
-            <tr><td>C4</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>High explosive for breaching or cashout defence</td></tr>
-            <tr><td>RPG-7</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Long-range burst that destroys structures and enemies</td></tr>
-            <tr><td>Barricade</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Durable shield wall, controls choke points</td></tr>
-            <tr><td>Healing Emitter</td><td style="color:#f5c842;font-weight:700;">A</td><td>Tosses a healing zone for nearby allies</td></tr>
-            <tr><td>LockBolt</td><td style="color:#f5c842;font-weight:700;">A</td><td>Pins enemies in place, great for isolating targets</td></tr>
-            <tr><td>Explosive Mine</td><td style="color:#f5c842;font-weight:700;">A</td><td>Good cashout trap, requires pre-positioning</td></tr>
-            <tr><td>Goo Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Creates cover or blocks paths on impact</td></tr>
-            <tr><td>Anti-Gravity Cube</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Lifts enemies and objects, disruptive but situational</td></tr>
-            <tr><td>Proximity Sensor</td><td style="color:#5a5754;font-weight:700;">C</td><td>Detects nearby enemies, very niche use</td></tr>
-            <tr><td>Pyro Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Low damage fire zone, easily avoided</td></tr>
-            <tr><td>Flashbang</td><td style="color:#5a5754;font-weight:700;">C</td><td>Disorients enemies, affects allies too — risky</td></tr>
-            <tr><td>Gas Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Weak damage zone, outclassed by other options</td></tr>
-            <tr><td>Frag Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Reliable burst damage, no frills</td></tr>
-          </table>
-
-          <div class="blog-cta">
-            <h3>Want to climb with S-tier plays?</h3>
-            <p>Our boosters use these exact builds every match. Let them carry you to your target rank.</p>
-            <div class="blog-cta-actions">
-              <a href="/boosting-services" class="btn btn-primary">View services →</a>
-              <a href="/#calculator" class="btn btn-ghost">See pricing</a>
-            </div>
-          </div>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero-label">Season 10</p>
+        <h1>The Finals Season 10 Tier List</h1>
+        <p>Every weapon, gadget and specialisation ranked by our professional boosters — updated for the Season 10 Fantasy League meta.</p>
+        <div class="page-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated June 2026</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8 min read</span>
         </div>
-        <aside class="page-sidebar">
-          <div class="sidebar-card">
-            <h4>S-tier picks</h4>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Light weapon</span><span class="sidebar-stat-value">M11 / LH1</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Medium weapon</span><span class="sidebar-stat-value">FCAR / Chimera-XB</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Heavy weapon</span><span class="sidebar-stat-value">Lewis / SA1216</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Best spec</span><span class="sidebar-stat-value">Winch Claw</span></div>
-          </div>
-          <div class="sidebar-card">
-            <h4>Related guides</h4>
-            <div class="sidebar-links">
-              <a href="/the-finals-season-10-patch-notes">S10 patch notes</a>
-              <a href="/the-finals-best-loadouts-season-9">S9 loadouts</a>
-              <a href="/how-to-rank-up-in-the-finals">How to rank up</a>
-              <a href="/the-finals-ranking-system-explained">Ranking system</a>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container">
+        <div class="page-layout">
+          <div class="page-body">
+            <p>Season 10 brought significant changes — the new Aerialist playstyle for Medium, the Chimera-XB crossbow, Hover Pad gadget, and balance tweaks across every class. Here's how everything shakes out in the current meta.</p>
+
+            <h2 class="section-heading-collapsible">Tier key</h2>
+            <div class="info-grid">
+              <div class="info-card"><h3 style="color:#ff4d1c;">S Tier</h3><p>Best in slot. Pick these every game.</p></div>
+              <div class="info-card"><h3 style="color:#f5c842;">A Tier</h3><p>Highly competitive. Strong in most situations.</p></div>
+              <div class="info-card"><h3 style="color:#b8bcc4;">B Tier</h3><p>Situationally strong. Viable with the right team.</p></div>
+              <div class="info-card"><h3 style="color:#5a5754;">C Tier</h3><p>Outclassed. Only in niche scenarios.</p></div>
+            </div>
+
+            <!-- LIGHT -->
+            <h2 class="section-heading-collapsible">Light</h2>
+
+            <div class="collapsible-section" data-section>
+              <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+                <div class="collapsible-title">
+                  <span>Weapons</span>
+                  <span class="collapsible-count">9</span>
+                  </div>
+                <div class="collapsible-meta">
+                  <span class="collapsible-hint">Click to expand</span>
+                  <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="collapsible-body">
+                <table class="comparison-table">
+                  <tr><th>Weapon</th><th>Tier</th><th>Notes</th></tr>
+                  <tr><td>M11</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Dominant close range, unchanged from S9</td></tr>
+                  <tr><td>LH1</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Best Mid/Long range, exceptional with Cloak</td></tr>
+                  <tr><td>93R</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Hitscan burst melts at close-mid range, devastating TTK when bursts land clean</td></tr>
+                  <tr><td>V9S</td><td style="color:#f5c842;font-weight:700;">A</td><td>Fast TTK, but gets outclassed at long range</td></tr>
+                  <tr><td>ARN-220</td><td style="color:#f5c842;font-weight:700;">A</td><td>Strong hybrid weapon overall, though it lacks damage at close range</td></tr>
+                  <tr><td>XP-54</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Consistent but outclassed by M11</td></tr>
+                  <tr><td>SR-84</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>One-shots Lights, struggles up close</td></tr>
+                  <tr><td>M26 Matter</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Outclassed by SH1900, sharp range falloff</td></tr>
+                  <tr><td>SH1900</td><td style="color:#5a5754;font-weight:700;">C</td><td>Point-blank only, 2 shots before reload</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="collapsible-section" data-section>
+              <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+                <div class="collapsible-title">
+                  <span>Specialisations</span>
+                  <span class="collapsible-count">3</span>
+                  </div>
+                <div class="collapsible-meta">
+                  <span class="collapsible-hint">Click to expand</span>
+                  <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="collapsible-body">
+                <table class="comparison-table">
+                  <tr><th>Specialisation</th><th>Tier</th><th>Notes</th></tr>
+                  <tr><td>Cloaking Device</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Buffed in S10 — now 13–29s duration</td></tr>
+                  <tr><td>Evasive Dash</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Nerfed cooldown but still strong aggressive play</td></tr>
+                  <tr><td>Grappling Hook</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Buffed cooldown — better traversal builds</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="collapsible-section" data-section>
+              <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+                <div class="collapsible-title">
+                  <span>Gadgets</span>
+                  <span class="collapsible-count">14</span>
+                  </div>
+                <div class="collapsible-meta">
+                  <span class="collapsible-hint">Click to expand</span>
+                  <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="collapsible-body">
+                <table class="comparison-table">
+                  <tr><th>Gadget</th><th>Tier</th><th>Notes</th></tr>
+                  <tr><td>H+ Infuser</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Heals allies from range — rare Light support tool</td></tr>
+                  <tr><td>Gateway</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Portal for instant repositioning up to 70m</td></tr>
+                  <tr><td>Glitch Grenade</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Disables enemy specs and gadgets — must-pick</td></tr>
+                  <tr><td>Vanishing Bomb</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Cloaks your whole team for ambushes or escapes</td></tr>
+                  <tr><td>Sonar Grenade</td><td style="color:#f5c842;font-weight:700;">A</td><td>Tracks enemies through walls — great intel tool</td></tr>
+                  <tr><td>Nullifier</td><td style="color:#f5c842;font-weight:700;">A</td><td>Renders one enemy immune but untouchable — niche</td></tr>
+                  <tr><td>Gravity Vortex</td><td style="color:#f5c842;font-weight:700;">A</td><td>Pulls enemies into a zone, good for crowd control</td></tr>
+                  <tr><td>Goo Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Creates cover or blocks paths on impact</td></tr>
+                  <tr><td>Frag Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Reliable damage, outclassed by more utility options</td></tr>
+                  <tr><td>Smoke Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Obscures vision, situational but occasionally clutch</td></tr>
+                  <tr><td>Flashbang</td><td style="color:#5a5754;font-weight:700;">C</td><td>Disorients enemies, affects allies too — risky</td></tr>
+                  <tr><td>Breach Charge</td><td style="color:#5a5754;font-weight:700;">C</td><td>Opens walls but better options exist for entry</td></tr>
+                  <tr><td>Thermal Bore</td><td style="color:#5a5754;font-weight:700;">C</td><td>Drills through surfaces, very niche use cases</td></tr>
+                  <tr><td>Pyro Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Low damage fire zone, easily avoided</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <!-- MEDIUM -->
+            <h2 class="section-heading-collapsible">Medium</h2>
+
+            <div class="collapsible-section" data-section>
+              <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+                <div class="collapsible-title">
+                  <span>Weapons</span>
+                  <span class="collapsible-count">8</span>
+                  </div>
+                <div class="collapsible-meta">
+                  <span class="collapsible-hint">Click to expand</span>
+                  <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="collapsible-body">
+                <table class="comparison-table">
+                  <tr><th>Weapon</th><th>Tier</th><th>Notes</th></tr>
+                  <tr><td>FCAR</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Most reliable all-round Medium weapon</td></tr>
+                  <tr><td>Chimera-XB</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>High damage, destroys lights</td></tr>
+                  <tr><td>CB-01 Repeater</td><td style="color:#f5c842;font-weight:700;">A</td><td>Rewards precision, excellent at range</td></tr>
+                  <tr><td>P90</td><td style="color:#f5c842;font-weight:700;">A</td><td>Shreds enemies who push into you</td></tr>
+                  <tr><td>R.357</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Situational — great in hands of skilled players</td></tr>
+                  <tr><td>Pike-556</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Good at range, punished in CQC</td></tr>
+                  <tr><td>FAMAS</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Solid burst, accuracy fades in long fights</td></tr>
+                  <tr><td>AKM</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Forgiving mag, no standout range</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="collapsible-section" data-section>
+              <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+                <div class="collapsible-title">
+                  <span>Specialisations</span>
+                  <span class="collapsible-count">4</span>
+                  </div>
+                <div class="collapsible-meta">
+                  <span class="collapsible-hint">Click to expand</span>
+                  <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="collapsible-body">
+                <table class="comparison-table">
+                  <tr><th>Specialisation</th><th>Tier</th><th>Notes</th></tr>
+                  <tr><td>Heal Beam</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Non-negotiable in most team comps</td></tr>
+                  <tr><td>Dematerializer</td><td style="color:#f5c842;font-weight:700;">A</td><td>Great for repositioning and unexpected plays</td></tr>
+                  <tr><td>Shockwave (new)</td><td style="color:#f5c842;font-weight:700;">A</td><td>New S10 Aerialist spec — huge skill ceiling</td></tr>
+                  <tr><td>Guardian Turret</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Strong on defence, weak on offence</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="collapsible-section" data-section>
+              <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+                <div class="collapsible-title">
+                  <span>Gadgets</span>
+                  <span class="collapsible-count">17</span>
+                  </div>
+                <div class="collapsible-meta">
+                  <span class="collapsible-hint">Click to expand</span>
+                  <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="collapsible-body">
+                <table class="comparison-table">
+                  <tr><th>Gadget</th><th>Tier</th><th>Notes</th></tr>
+                  <tr><td>Jump Pad</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Instant vertical mobility for the whole team</td></tr>
+                  <tr><td>Defibrillator</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Instant revive at 40% HP — non-negotiable utility</td></tr>
+                  <tr><td>Goo Grenade</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Creates instant cover or walls off choke points</td></tr>
+                  <tr><td>Zipline</td><td style="color:#f5c842;font-weight:700;">A</td><td>Fast team traversal across long distances</td></tr>
+                  <tr><td>Glitch Trap</td><td style="color:#f5c842;font-weight:700;">A</td><td>Disables enemy specs on trigger — great on objectives</td></tr>
+                  <tr><td>Gas Mine</td><td style="color:#f5c842;font-weight:700;">A</td><td>Strong area denial, punishes clustered enemies</td></tr>
+                  <tr><td>APS Turret</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Auto-destroys incoming grenades and projectiles</td></tr>
+                  <tr><td>Data Reshaper</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Converts enemy gadgets into decor — situational</td></tr>
+                  <tr><td>Frag Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Reliable burst damage, no frills</td></tr>
+                  <tr><td>Explosive Mine</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Good cashout trap, requires pre-positioning</td></tr>
+                  <tr><td>Pyro Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Low damage fire zone, easily avoided</td></tr>
+                  <tr><td>Smoke Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Obscures vision but rarely changes outcomes</td></tr>
+                  <tr><td>Flashbang</td><td style="color:#5a5754;font-weight:700;">C</td><td>Disorients enemies, affects allies too — risky</td></tr>
+                  <tr><td>Proximity Sensor</td><td style="color:#5a5754;font-weight:700;">C</td><td>Detects nearby enemies, very niche use</td></tr>
+                  <tr><td>Gas Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Weak damage zone, outclassed by Gas Mine</td></tr>
+                  <tr><td>Hover Pad</td><td style="color:#5a5754;font-weight:700;">C</td><td>Slows falling, rarely worth the gadget slot</td></tr>
+                  <tr><td>Breach Drill</td><td style="color:#5a5754;font-weight:700;">C</td><td>Drills through surfaces, very niche use cases</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <!-- HEAVY -->
+            <h2 class="section-heading-collapsible">Heavy</h2>
+
+            <div class="collapsible-section" data-section>
+              <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+                <div class="collapsible-title">
+                  <span>Weapons</span>
+                  <span class="collapsible-count">8</span>
+                  </div>
+                <div class="collapsible-meta">
+                  <span class="collapsible-hint">Click to expand</span>
+                  <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="collapsible-body">
+                <table class="comparison-table">
+                  <tr><th>Weapon</th><th>Tier</th><th>Notes</th></tr>
+                  <tr><td>Lewis Gun</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Best sustained DPS for cashout holding</td></tr>
+                  <tr><td>SA1216</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Devastating at close range in cashout rooms</td></tr>
+                  <tr><td>Shak-50</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>High Damage — excellent on close range maps</td></tr>
+                  <tr><td>M60</td><td style="color:#f5c842;font-weight:700;">A</td><td>High ammo, sustained pressure</td></tr>
+                  <tr><td>BFR Titan</td><td style="color:#f5c842;font-weight:700;">A</td><td>Excellent at long range, but struggles heavily in close range</td></tr>
+                  <tr><td>KS-23</td><td style="color:#f5c842;font-weight:700;">A</td><td>High damage slug, very punishing to miss</td></tr>
+                  <tr><td>.50 AKIMBO</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Heavy's long-range niche, demands precision</td></tr>
+                  <tr><td>Flamethrower</td><td style="color:#5a5754;font-weight:700;">C</td><td>Buffed in S10 — viable at low ranks</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="collapsible-section" data-section>
+              <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+                <div class="collapsible-title">
+                  <span>Specialisations</span>
+                  <span class="collapsible-count">3</span>
+                  </div>
+                <div class="collapsible-meta">
+                  <span class="collapsible-hint">Click to expand</span>
+                  <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="collapsible-body">
+                <table class="comparison-table">
+                  <tr><th>Specialisation</th><th>Tier</th><th>Notes</th></tr>
+                  <tr><td>Winch Claw</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Great for isolating targets, consistent in chaotic fights</td></tr>
+                  <tr><td>Mesh Shield</td><td style="color:#f5c842;font-weight:700;">A</td><td>Buffed to 12s — now a real defensive tool</td></tr>
+                  <tr><td>Charge N Slam</td><td style="color:#f5c842;font-weight:700;">A</td><td>Best gap-closer and structure destroyer</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="collapsible-section" data-section>
+              <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+                <div class="collapsible-title">
+                  <span>Gadgets</span>
+                  <span class="collapsible-count">14</span>
+                  </div>
+                <div class="collapsible-meta">
+                  <span class="collapsible-hint">Click to expand</span>
+                  <svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="collapsible-body">
+                <table class="comparison-table">
+                  <tr><th>Gadget</th><th>Tier</th><th>Notes</th></tr>
+                  <tr><td>Dome Shield</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Blocks all incoming fire — essential on cashout</td></tr>
+                  <tr><td>C4</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>High explosive for breaching or cashout defence</td></tr>
+                  <tr><td>RPG-7</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Long-range burst that destroys structures and enemies</td></tr>
+                  <tr><td>Barricade</td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Durable shield wall, controls choke points</td></tr>
+                  <tr><td>Healing Emitter</td><td style="color:#f5c842;font-weight:700;">A</td><td>Tosses a healing zone for nearby allies</td></tr>
+                  <tr><td>LockBolt</td><td style="color:#f5c842;font-weight:700;">A</td><td>Pins enemies in place, great for isolating targets</td></tr>
+                  <tr><td>Explosive Mine</td><td style="color:#f5c842;font-weight:700;">A</td><td>Good cashout trap, requires pre-positioning</td></tr>
+                  <tr><td>Goo Grenade</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Creates cover or blocks paths on impact</td></tr>
+                  <tr><td>Anti-Gravity Cube</td><td style="color:#b8bcc4;font-weight:700;">B</td><td>Lifts enemies and objects, disruptive but situational</td></tr>
+                  <tr><td>Proximity Sensor</td><td style="color:#5a5754;font-weight:700;">C</td><td>Detects nearby enemies, very niche use</td></tr>
+                  <tr><td>Pyro Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Low damage fire zone, easily avoided</td></tr>
+                  <tr><td>Flashbang</td><td style="color:#5a5754;font-weight:700;">C</td><td>Disorients enemies, affects allies too — risky</td></tr>
+                  <tr><td>Gas Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Weak damage zone, outclassed by other options</td></tr>
+                  <tr><td>Frag Grenade</td><td style="color:#5a5754;font-weight:700;">C</td><td>Reliable burst damage, no frills</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="blog-cta">
+              <h3>Want to climb with S-tier plays?</h3>
+              <p>Our boosters use these exact builds every match. Let them carry you to your target rank.</p>
+              <div class="blog-cta-actions">
+                <a href="/boosting-services" class="btn btn-primary">View services →</a>
+                <a href="/#calculator" class="btn btn-ghost">See pricing</a>
+              </div>
             </div>
           </div>
-        </aside>
+
+          <aside class="page-sidebar">
+            <div class="sidebar-card">
+              <h4>S-tier picks</h4>
+              <div class="sidebar-stat"><span class="sidebar-stat-label">Light weapon</span><span class="sidebar-stat-value">M11 / LH1</span></div>
+              <div class="sidebar-stat"><span class="sidebar-stat-label">Medium weapon</span><span class="sidebar-stat-value">FCAR / Chimera-XB</span></div>
+              <div class="sidebar-stat"><span class="sidebar-stat-label">Heavy weapon</span><span class="sidebar-stat-value">Lewis / SA1216</span></div>
+              <div class="sidebar-stat"><span class="sidebar-stat-label">Best spec</span><span class="sidebar-stat-value">Winch Claw</span></div>
+            </div>
+            <div class="sidebar-card">
+              <h4>Related guides</h4>
+              <div class="sidebar-links">
+                <a href="/the-finals-season-10-patch-notes">S10 patch notes</a>
+                <a href="/the-finals-best-loadouts-season-9">S9 loadouts</a>
+                <a href="/how-to-rank-up-in-the-finals">How to rank up</a>
+                <a href="/the-finals-ranking-system-explained">Ranking system</a>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
+
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="/" aria-label="The Finals Boosting home" style="display:inline-flex;align-items:center;width:fit-content;gap:0.75rem;margin-bottom:0.75rem;">
-            <img src="/favicon.png" alt="The Finals Boosting" style="height:32px;width:auto;display:block;">
-            <span style="font-family:var(--font-display);font-size:1rem;font-weight:700;letter-spacing:0.04em;color:var(--text);">THE FINALS <span style="color:var(--accent);">BOOSTING</span></span>
+          <a href="/" style="display:inline-flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+            <img src="/favicon.png" alt="The Finals Boosting" style="height:32px;width:auto;">
+            <span style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text);">THE FINALS <span style="color:var(--accent);">BOOSTING</span></span>
           </a>
-          <p>Professional rank boosting for The Finals. 95 orders, 5★ rating, zero bans. Account Driver, Selfplay, and Coaching available worldwide.</p>
+          <p>Professional rank boosting for The Finals. 95 orders, 5★ rating, zero bans.</p>
           <div class="footer-social">
-            <a href="https://discord.com/channels/@me" rel="noopener" aria-label="Discord">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.032.055a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-            </a>
-            <a href="https://t.me/TheFinalsBoosting" rel="noopener" aria-label="Telegram">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-            </a>
-            <a href="mailto:boostingthefinals@gmail.com" aria-label="Email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-            </a>
+            <a href="https://discord.com/channels/@me" rel="noopener" aria-label="Discord"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.032.055a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg></a>
+            <a href="https://t.me/TheFinalsBoosting" rel="noopener" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="/account-driver-boosting">Account Driver</a></li>
-            <li><a href="/selfplay-boosting">Selfplay</a></li>
-            <li><a href="/coaching">Coaching</a></li>
-            <li><a href="/placement-boosting">Placement</a></li>
-            <li><a href="/boosting-services">All services</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Learn</h4>
-          <ul>
-            <li><a href="/how-to-rank-up-in-the-finals">How to rank up</a></li>
-            <li><a href="/the-finals-ranking-system-explained">Ranking system</a></li>
-            <li><a href="/the-finals-tips-for-beginners">Tips for beginners</a></li>
-            <li><a href="/the-finals-season-10-tier-list">Season 10 tier list</a></li>
-            <li><a href="/the-finals-beginner-to-diamond-roadmap">Beginner to Diamond</a></li>
-            <li><a href="/the-finals-best-settings">Best settings</a></li>
-            <li><a href="/how-to-improve-kd-in-the-finals">Improve your K/D</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Info</h4>
-          <ul>
-            <li><a href="/is-the-finals-boosting-safe">Is boosting safe?</a></li>
-            <li><a href="/account-driver-vs-selfplay-boosting">Driver vs Selfplay</a></li>
-            <li><a href="/reviews">Reviews</a></li>
-            <li><a href="/orders-per-season">Orders per season</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
+        <div class="footer-col"><h4>Services</h4><ul><li><a href="/account-driver-boosting">Account Driver</a></li><li><a href="/selfplay-boosting">Selfplay</a></li><li><a href="/coaching">Coaching</a></li><li><a href="/boosting-services">All services</a></li></ul></div>
+        <div class="footer-col"><h4>Learn</h4><ul><li><a href="/how-to-rank-up-in-the-finals">How to rank up</a></li><li><a href="/the-finals-ranking-system-explained">Ranking system</a></li><li><a href="/the-finals-season-10-tier-list">Season 10 tier list</a></li></ul></div>
+        <div class="footer-col"><h4>Info</h4><ul><li><a href="/reviews">Reviews</a></li><li><a href="/faq">FAQ</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li></ul></div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 The Finals Boosting. Not affiliated with Embark Studios.</p>
-        <div class="footer-bottom-links">
-          <a href="/faq">FAQ</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-        </div>
+        <div class="footer-bottom-links"><a href="/faq">FAQ</a><a href="/about">About</a><a href="/contact">Contact</a></div>
       </div>
     </div>
   </footer>
+
   <div class="mobile-sticky-cta" aria-hidden="true">
     <a href="https://discord.com/channels/@me" class="btn btn-primary" rel="noopener">Get boosted — Discord →</a>
   </div>
+
   <script>
+    // Nav hamburger
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => {
@@ -546,24 +560,18 @@
         document.body.style.overflow = '';
       });
     });
-    // FAQ accordion
-    document.querySelectorAll('.faq-q').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
+
+    // Collapsible sections
+    document.querySelectorAll('[data-section]').forEach(section => {
+      const trigger = section.querySelector('.collapsible-trigger');
+      trigger.addEventListener('click', () => {
+        const isOpen = section.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', isOpen);
+      });
+      trigger.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger.click(); }
       });
     });
-    // FAQ filter
-    window.filterFaq = function(cat, btn) {
-      document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.faq-item').forEach(item => {
-        if (cat === 'all' || item.dataset.cat === cat) item.style.display = '';
-        else item.style.display = 'none';
-      });
-    };
   </script>
 </body>
 </html>
