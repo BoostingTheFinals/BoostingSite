@@ -158,6 +158,9 @@
     .gadget-icon { width: 32px; height: 32px; object-fit: contain; border-radius: 5px; flex-shrink: 0; background: rgba(255,255,255,0.12); padding: 3px; vertical-align: middle; margin-right: 0.5rem; }
     .page-body li.gadget-li { display: flex; align-items: flex-start; gap: 0; list-style: none !important; margin-left: -1.25rem; }
     .page-body li.gadget-li .gadget-icon { margin-top: 0.1rem; }
+    .spec-row { display: flex; align-items: flex-start; gap: 0.65rem; margin-bottom: 1rem; }
+    .spec-row .gadget-icon { margin: 0.1rem 0 0 0; }
+    .spec-row p { margin: 0; }
     @media (max-width: 768px) { .collapsible-tier-preview { display: none; } }
 
     /* STEPS LIST */
@@ -365,7 +368,14 @@
           </ul>
 
           <h3>Specialisation</h3>
-          <p><img src="images/cloaking-device.png" alt="Cloaking Device" class="gadget-icon"><strong>Invisibility (Cloaking Device)</strong> remains the top pick for ranked Light play, pairing especially well with the LH1's long-range power. <img src="images/evasive-dash.png" alt="Evasive Dash" class="gadget-icon" style="margin-left:0.5rem;"><strong>Evasive Dash</strong> is a strong second choice for players who prefer a more aggressive playstyle.</p>
+          <div class="spec-row">
+            <img src="images/cloaking-device.png" alt="Cloaking Device" class="gadget-icon">
+            <p><strong>Invisibility (Cloaking Device)</strong> remains the top pick for ranked Light play, pairing especially well with the LH1's long-range power.</p>
+          </div>
+          <div class="spec-row">
+            <img src="images/evasive-dash.png" alt="Evasive Dash" class="gadget-icon">
+            <p><strong>Evasive Dash</strong> is a strong second choice for players who prefer a more aggressive playstyle.</p>
+          </div>
 
           <h3>How to Play Light in Ranked</h3>
           <p>Light is not a front-line fighter — your job is to flank, finish off low-health targets, and steal cashouts. Never engage a full-health Heavy head-on. Pick your fights, delete isolated targets, and get out.</p>
@@ -396,7 +406,10 @@
           </ul>
 
           <h3>Specialisation</h3>
-          <p><img src="images/heal-beam.png" alt="Heal Beam" class="gadget-icon"><strong>Heal Beam</strong> is the dominant pick for ranked Medium play. A Medium with Heal Beam keeping a Heavy alive is almost impossible to contest in a straight fight.</p>
+          <div class="spec-row">
+            <img src="images/heal-beam.png" alt="Heal Beam" class="gadget-icon">
+            <p><strong>Heal Beam</strong> is the dominant pick for ranked Medium play. A Medium with Heal Beam keeping a Heavy alive is almost impossible to contest in a straight fight.</p>
+          </div>
 
           <h3>How to Play Medium in Ranked</h3>
           <p>Your job is to keep your team alive. Stay close to your Heavy, use the Defibrillator constantly, and only push when you have a clear advantage. Your presence in a fight is more valuable than your kills.</p>
@@ -427,7 +440,10 @@
           </ul>
 
           <h3>Specialisation</h3>
-          <p><img src="images/winch-claw.png" alt="Winch Claw" class="gadget-icon"><strong>Winch Claw</strong> is the dominant ranked pick — pull enemies out of position, off cashouts, or into your team for an instant kill. Extremely high impact in the right hands.</p>
+          <div class="spec-row">
+            <img src="images/winch-claw.png" alt="Winch Claw" class="gadget-icon">
+            <p><strong>Winch Claw</strong> is the dominant ranked pick — pull enemies out of position, off cashouts, or into your team for an instant kill. Extremely high impact in the right hands.</p>
+          </div>
 
           <h2>Best Team Compositions</h2>
           <table class="comparison-table">
