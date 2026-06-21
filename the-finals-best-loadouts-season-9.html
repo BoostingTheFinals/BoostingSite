@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Finals Best Loadouts Season 9 — Meta Builds Guide</title>
-  <meta name="description" content="The strongest Light, Medium, and Heavy builds for Season 9 in The Finals. Used by our professional boosters across hundreds of ranked matches.">
+  <title>The Finals Best Loadouts (Season 10)</title>
+  <meta name="description" content="The strongest Light, Medium, and Heavy builds in The Finals right now. Updated for Season 10 with the current competitive meta, used by our professional boosters.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.thefinalsboosting.com/the-finals-best-loadouts-season-9">
-  <meta property="og:title" content="The Finals Best Loadouts Season 9 — Meta Builds Guide">
-  <meta property="og:description" content="The strongest Light, Medium, and Heavy builds for Season 9 in The Finals. Used by our professional boosters across hundreds of ranked matches.">
+  <meta property="og:title" content="The Finals Best Loadouts (Updated for Season 10)">
+  <meta property="og:description" content="The strongest Light, Medium, and Heavy builds in The Finals right now. Updated for Season 10 with the current competitive meta, used by our professional boosters.">
   <meta property="og:url" content="https://www.thefinalsboosting.com/the-finals-best-loadouts-season-9">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://i.imgur.com/6U3J2pY.png">
@@ -128,6 +128,37 @@
     .comparison-table td { padding: 0.7rem 1rem; color: var(--text-2); border-bottom: 1px solid var(--border); }
     .comparison-table tr:last-child td { border-bottom: none; }
     .comparison-table tr:nth-child(even) td { background: var(--bg-2); }
+
+    /* COLLAPSIBLE SECTIONS (matching tier list format) */
+    .collapsible-section { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin: 1.25rem 0; transition: border-color 0.2s; }
+    .collapsible-section:hover { border-color: var(--border-hover); }
+    .collapsible-section.open { border-color: var(--border-hover); }
+    .collapsible-trigger { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; cursor: pointer; background: var(--bg-2); gap: 1rem; user-select: none; transition: background 0.15s; }
+    .collapsible-trigger:hover { background: var(--bg-3); }
+    .collapsible-section.open .collapsible-trigger { background: var(--bg-3); border-bottom: 1px solid var(--border); }
+    .collapsible-title { display: flex; align-items: center; gap: 0.75rem; }
+    .collapsible-title span { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--text); }
+    .collapsible-count { display: inline-flex; align-items: center; justify-content: center; background: var(--bg-4); border: 1px solid var(--border); border-radius: 6px; padding: 0.1rem 0.55rem; font-size: 0.75rem; font-weight: 600; color: var(--text-3); font-family: var(--font-display); }
+    .collapsible-meta { display: flex; align-items: center; gap: 0.75rem; }
+    .collapsible-hint { font-size: 0.8rem; color: var(--text-3); }
+    .collapsible-section.open .collapsible-hint { display: none; }
+    .collapsible-chevron { width: 18px; height: 18px; color: var(--text-3); transition: transform 0.25s ease, color 0.15s; flex-shrink: 0; }
+    .collapsible-section.open .collapsible-chevron { transform: rotate(180deg); color: var(--accent); }
+    .collapsible-body { display: none; padding: 0; }
+    .collapsible-section.open .collapsible-body { display: block; }
+    .collapsible-body .comparison-table { margin: 0; border-radius: 0; }
+    .collapsible-body .comparison-table th { border-radius: 0; }
+    .collapsible-tier-preview { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .section-heading-collapsible { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--text); margin: 2.5rem 0 0.75rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .section-heading-collapsible:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .class-heading { display: flex; align-items: center; gap: 0.75rem; }
+    .class-heading-icon { width: 40px; height: 40px; object-fit: cover; object-position: center 0%; border-radius: 6px; flex-shrink: 0; }
+    .item-cell { display: flex; align-items: center; gap: 0.6rem; }
+    .item-icon { width: 56px; height: 56px; object-fit: contain; border-radius: 6px; flex-shrink: 0; background: rgba(255,255,255,0.12); padding: 5px; }
+    .gadget-icon { width: 32px; height: 32px; object-fit: contain; border-radius: 5px; flex-shrink: 0; background: rgba(255,255,255,0.12); padding: 3px; vertical-align: middle; margin-right: 0.5rem; }
+    .page-body li.gadget-li { display: flex; align-items: flex-start; gap: 0; list-style: none !important; margin-left: -1.25rem; }
+    .page-body li.gadget-li .gadget-icon { margin-top: 0.1rem; }
+    @media (max-width: 768px) { .collapsible-tier-preview { display: none; } }
 
     /* STEPS LIST */
     .steps-list { display: flex; flex-direction: column; gap: 0; margin: 1rem 0 1.5rem; list-style: none; padding: 0; }
@@ -292,11 +323,11 @@
 <main>
   <section class="page-hero">
     <div class="container">
-      <p class="page-hero-label">Season 9 Guide</p>
-      <h1>The Finals Best Loadouts — Season 9 Meta</h1>
-      <p>The exact builds our professional boosters use to reach Ruby every season — Light, Medium, and Heavy.</p>
+      <p class="page-hero-label">Season 10</p>
+      <h1>The Finals Best Loadouts</h1>
+      <p>The exact Season 10 builds our professional boosters use to reach Ruby every season — Light, Medium, and Heavy.</p>
       <div class="page-meta">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated March 2026</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated June 2026</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>8 min read</span>
       </div>
     </div>
@@ -305,56 +336,99 @@
     <div class="container">
       <div class="page-layout">
         <div class="page-body">
-          <p>The meta in The Finals shifts each season as new weapons and balance patches drop. This guide covers the strongest builds heading into Season 9 — based on what our professional boosters use across hundreds of ranked matches.</p>
+          <p>The meta in The Finals shifts each season as new weapons and balance patches drop. This guide covers the strongest builds heading into Season 10 — based on what our professional boosters use across hundreds of ranked matches.</p>
 
-          <h2>Light — Best Season 9 Build</h2>
-          <h3>Primary Weapons: M11, LH1, V9S</h3>
-          <p>The Light class rewards aggressive, high-mobility play. The <strong>M11</strong> SMG dominates at close range. The <strong>LH1</strong> is the go-to for mid-range duels — high damage per shot rewards precision. The <strong>V9S</strong> pistol is a strong sidearm that punishes enemies at close quarters.</p>
+          <h2 class="section-heading-collapsible"><div class="class-heading"><img src="images/Light_Build_Default.webp" alt="Light" class="class-heading-icon">Light — Best Season 10 Build</div></h2>
+
+          <div class="collapsible-section" data-section>
+            <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+              <div class="collapsible-title"><span>Light weapons</span><span class="collapsible-count">3</span></div>
+              <div class="collapsible-meta"><span class="collapsible-hint">Click to expand</span><svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+            <div class="collapsible-body">
+              <table class="comparison-table">
+                <tr><th>Weapon</th><th>Tier</th><th>Why</th></tr>
+                <tr><td><div class="item-cell"><img src="images/93r.png" alt="93R" class="item-icon">93R</div></td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Hitscan burst melts at close-mid range, devastating TTK when bursts land clean</td></tr>
+                <tr><td><div class="item-cell"><img src="images/m11.png" alt="M11" class="item-icon">M11</div></td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Dominant close range, unchanged from last season</td></tr>
+                <tr><td><div class="item-cell"><img src="images/lh1.png" alt="LH1" class="item-icon">LH1</div></td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Best mid/long range, exceptional with Cloak</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <p>The Light class rewards aggressive, high-mobility play. The <strong>93R</strong> and <strong>M11</strong> dominate at close range with devastating time-to-kill. The <strong>LH1</strong> is the go-to for mid-range duels — high damage per shot rewards precision.</p>
 
           <h3>Recommended Gadgets</h3>
           <ul>
-            <li><strong>Gateway</strong> — Creates a two-way portal for instant repositioning and surprising enemies from unexpected angles</li>
-            <li><strong>H+ Infuser</strong> — Heals nearby teammates, giving Light players rare team utility</li>
-            <li><strong>Glitch Grenade</strong> — Disables enemy gadgets and specialisations, shutting down Dome Shields and Heal Beams in critical moments</li>
+            <li class="gadget-li"><img src="images/gateway.png" alt="Gateway" class="gadget-icon"><span><strong>Gateway</strong> — Creates a two-way portal for instant repositioning and surprising enemies from unexpected angles</span></li>
+            <li class="gadget-li"><img src="images/h-infuser.png" alt="H+ Infuser" class="gadget-icon"><span><strong>H+ Infuser</strong> — Heals nearby teammates, giving Light players rare team utility</span></li>
+            <li class="gadget-li"><img src="images/glitch-grenade.png" alt="Glitch Grenade" class="gadget-icon"><span><strong>Glitch Grenade</strong> — Disables enemy gadgets and specialisations, shutting down Dome Shields and Heal Beams in critical moments</span></li>
           </ul>
 
           <h3>Specialisation</h3>
-          <p><strong>Invisibility (Cloaking Device)</strong> remains the top pick for ranked Light play. <strong>Evasive Dash</strong> is a strong second choice for players who prefer a more aggressive playstyle.</p>
+          <p><img src="images/cloaking-device.png" alt="Cloaking Device" class="gadget-icon"><strong>Invisibility (Cloaking Device)</strong> remains the top pick for ranked Light play, pairing especially well with the LH1's long-range power. <img src="images/evasive-dash.png" alt="Evasive Dash" class="gadget-icon" style="margin-left:0.5rem;"><strong>Evasive Dash</strong> is a strong second choice for players who prefer a more aggressive playstyle.</p>
 
           <h3>How to Play Light in Ranked</h3>
           <p>Light is not a front-line fighter — your job is to flank, finish off low-health targets, and steal cashouts. Never engage a full-health Heavy head-on. Pick your fights, delete isolated targets, and get out.</p>
 
-          <h2>Medium — Best Season 9 Build</h2>
-          <h3>Primary Weapons: CB-01 Repeater, FCAR, P90</h3>
-          <p>Medium is the backbone of every strong team composition. The <strong>CB-01 Repeater</strong> rewards precision at medium range. The <strong>FCAR</strong> is consistent and reliable in almost any situation. The <strong>P90</strong> shreds enemies who push into your space.</p>
+          <h2 class="section-heading-collapsible"><div class="class-heading"><img src="images/Medium_Build_Default.webp" alt="Medium" class="class-heading-icon">Medium — Best Season 10 Build</div></h2>
+
+          <div class="collapsible-section" data-section>
+            <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+              <div class="collapsible-title"><span>Medium weapons</span><span class="collapsible-count">2</span></div>
+              <div class="collapsible-meta"><span class="collapsible-hint">Click to expand</span><svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+            <div class="collapsible-body">
+              <table class="comparison-table">
+                <tr><th>Weapon</th><th>Tier</th><th>Why</th></tr>
+                <tr><td><div class="item-cell"><img src="images/fcar.png" alt="FCAR" class="item-icon">FCAR</div></td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Consistent and reliable in almost any engagement range</td></tr>
+                <tr><td><div class="item-cell"><img src="images/chimera-xb.png" alt="Chimera-XB" class="item-icon">Chimera-XB</div></td><td style="color:#ff4d1c;font-weight:700;">S</td><td>New Season 10 addition, strong versatile damage profile</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <p>Medium is the backbone of every strong team composition. The <strong>FCAR</strong> remains the safest, most consistent pick across all matchups. The <strong>Chimera-XB</strong> is this season's standout addition, offering excellent versatility for players who want to flex between support and damage roles.</p>
 
           <h3>Recommended Gadgets</h3>
           <ul>
-            <li><strong>Defibrillator</strong> — Non-negotiable. Reviving teammates mid-fight is the single highest-value action in the game</li>
-            <li><strong>Jump Pad</strong> — Launches teammates to elevated positions, enabling fast rotations and unexpected angles</li>
-            <li><strong>Goo Grenade</strong> — Instantly creates cover, blocks doorways, and slows enemy pushes</li>
+            <li class="gadget-li"><img src="images/defibrillator.png" alt="Defibrillator" class="gadget-icon"><span><strong>Defibrillator</strong> — Non-negotiable. Reviving teammates mid-fight is the single highest-value action in the game</span></li>
+            <li class="gadget-li"><img src="images/jump-pad.png" alt="Jump Pad" class="gadget-icon"><span><strong>Jump Pad</strong> — Launches teammates to elevated positions, enabling fast rotations and unexpected angles</span></li>
+            <li class="gadget-li"><img src="images/goo-grenade.png" alt="Goo Grenade" class="gadget-icon"><span><strong>Goo Grenade</strong> — Instantly creates cover, blocks doorways, and slows enemy pushes</span></li>
           </ul>
 
           <h3>Specialisation</h3>
-          <p><strong>Heal Beam</strong> is the dominant pick for ranked Medium play. A Medium with Heal Beam keeping a Heavy alive is almost impossible to contest in a straight fight.</p>
+          <p><img src="images/heal-beam.png" alt="Heal Beam" class="gadget-icon"><strong>Heal Beam</strong> is the dominant pick for ranked Medium play. A Medium with Heal Beam keeping a Heavy alive is almost impossible to contest in a straight fight.</p>
 
           <h3>How to Play Medium in Ranked</h3>
           <p>Your job is to keep your team alive. Stay close to your Heavy, use the Defibrillator constantly, and only push when you have a clear advantage. Your presence in a fight is more valuable than your kills.</p>
 
-          <h2>Heavy — Best Season 9 Build</h2>
-          <h3>Primary Weapons: Lewis Gun, Shak-50, SA1216</h3>
-          <p>Heavy is the objective anchor. The <strong>Lewis Gun</strong> has outstanding sustained DPS perfect for holding cashouts. The <strong>Shak-50</strong> sniper is devastating for long-range objective denial. The <strong>SA1216</strong> shotgun deletes enemies at point-blank range in confined cashout rooms.</p>
+          <h2 class="section-heading-collapsible"><div class="class-heading"><img src="images/Heavy_Build_Default.webp" alt="Heavy" class="class-heading-icon">Heavy — Best Season 10 Build</div></h2>
+
+          <div class="collapsible-section" data-section>
+            <div class="collapsible-trigger" role="button" tabindex="0" aria-expanded="false">
+              <div class="collapsible-title"><span>Heavy weapons</span><span class="collapsible-count">2</span></div>
+              <div class="collapsible-meta"><span class="collapsible-hint">Click to expand</span><svg class="collapsible-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+            </div>
+            <div class="collapsible-body">
+              <table class="comparison-table">
+                <tr><th>Weapon</th><th>Tier</th><th>Why</th></tr>
+                <tr><td><div class="item-cell"><img src="images/lewis-gun.png" alt="Lewis Gun" class="item-icon">Lewis Gun</div></td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Outstanding sustained DPS, perfect for holding cashouts</td></tr>
+                <tr><td><div class="item-cell"><img src="images/sa1216.png" alt="SA1216" class="item-icon">SA1216</div></td><td style="color:#ff4d1c;font-weight:700;">S</td><td>Deletes enemies at point-blank range in confined cashout rooms</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <p>Heavy is the objective anchor. The <strong>Lewis Gun</strong> has outstanding sustained DPS perfect for holding cashouts. The <strong>SA1216</strong> shotgun deletes enemies at point-blank range in confined cashout rooms — the two best picks in the current meta.</p>
 
           <h3>Recommended Gadgets</h3>
           <ul>
-            <li><strong>Dome Shield</strong> — Creates an impenetrable bubble that blocks all ranged damage — game-changing on cashout</li>
-            <li><strong>RPG-7</strong> — High damage explosive for destroying cover, collapsing structures, and punishing grouped enemies from range</li>
-            <li><strong>C4</strong> — Stick it to walls, floors or ceilings near the cashout and detonate when enemies push — devastating in enclosed spaces</li>
+            <li class="gadget-li"><img src="images/dome-shield.png" alt="Dome Shield" class="gadget-icon"><span><strong>Dome Shield</strong> — Creates an impenetrable bubble that blocks all ranged damage — game-changing on cashout</span></li>
+            <li class="gadget-li"><img src="images/rpg-7.png" alt="RPG-7" class="gadget-icon"><span><strong>RPG-7</strong> — High damage explosive for destroying cover, collapsing structures, and punishing grouped enemies from range</span></li>
+            <li class="gadget-li"><img src="images/c4.png" alt="C4" class="gadget-icon"><span><strong>C4</strong> — Stick it to walls, floors or ceilings near the cashout and detonate when enemies push — devastating in enclosed spaces</span></li>
           </ul>
 
-<h3>Specialisation</h3>
-          <p><strong>Winch Claw</strong> is the dominant ranked pick — pull enemies out of position, off cashouts, or into your team for an instant kill. Extremely high impact in the right hands.</p>
-          
+          <h3>Specialisation</h3>
+          <p><img src="images/winch-claw.png" alt="Winch Claw" class="gadget-icon"><strong>Winch Claw</strong> is the dominant ranked pick — pull enemies out of position, off cashouts, or into your team for an instant kill. Extremely high impact in the right hands.</p>
+
           <h2>Best Team Compositions</h2>
           <table class="comparison-table">
             <tr><th>Composition</th><th>Strengths</th><th>Best for</th></tr>
@@ -365,27 +439,36 @@
 
           <div class="blog-cta">
             <h3>Want to Climb With These Builds?</h3>
-            <p>Our pro boosters use these exact loadouts every match. Let them carry you to your target rank.</p>
+            <p>Our pro boosters use these exact loadouts every match. Platinum → Diamond from €70, Diamond → Ruby from €90. 5★ rating, 0 bans, 107 orders completed.</p>
             <div class="blog-cta-actions">
-              <a href="/boosting-services" class="btn btn-primary">View services →</a>
-              <a href="https://www.thefinalsboosting.com/#calculator" class="btn btn-ghost">See pricing</a>
+              <a href="https://www.thefinalsboosting.com/#calculator" class="btn btn-primary">See my exact price →</a>
+              <a href="https://discord.com/users/1405275924630343902" class="btn btn-ghost" rel="noopener">Message on Discord</a>
             </div>
           </div>
         </div>
         <aside class="page-sidebar">
+          <div class="sidebar-card" style="border-color:var(--accent-glow);">
+            <h4 style="color:var(--accent);">Want to climb with the meta?</h4>
+            <p style="font-size:0.875rem;color:var(--text-2);line-height:1.6;margin-bottom:1rem;">Our boosters run these exact Season 10 builds every match — Diamond and Ruby, every day.</p>
+            <a href="https://www.thefinalsboosting.com/#calculator" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:0.5rem;">Check your price →</a>
+            <a href="/boosting-services" class="btn btn-ghost" style="width:100%;justify-content:center;font-size:0.875rem;">View all services</a>
+            <p style="font-size:0.75rem;color:var(--text-3);margin-top:0.75rem;text-align:center;">107 orders · 5★ rating · 0 bans</p>
+          </div>
           <div class="sidebar-card">
-            <h4>Best S9 picks</h4>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Light weapon</span><span class="sidebar-stat-value">M11 / LH1</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Medium weapon</span><span class="sidebar-stat-value">CB-01 / FCAR</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Heavy weapon</span><span class="sidebar-stat-value">Lewis Gun / ShAK-50</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Best team</span><span class="sidebar-stat-value">1L + 2H</span></div>
+            <h4>Best S10 picks</h4>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Light</span><span class="sidebar-stat-value" style="display:flex;align-items:center;gap:6px;"><img src="images/93r.png" alt="93R" style="width:38px;height:38px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.12);padding:3px;">93R / <img src="images/m11.png" alt="M11" style="width:38px;height:38px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.12);padding:3px;">M11 / <img src="images/lh1.png" alt="LH1" style="width:38px;height:38px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.12);padding:3px;">LH1</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Medium</span><span class="sidebar-stat-value" style="display:flex;align-items:center;gap:6px;"><img src="images/fcar.png" alt="FCAR" style="width:38px;height:38px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.12);padding:3px;">FCAR / <img src="images/chimera-xb.png" alt="Chimera-XB" style="width:38px;height:38px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.12);padding:3px;">Chimera-XB</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Heavy</span><span class="sidebar-stat-value" style="display:flex;align-items:center;gap:6px;"><img src="images/lewis-gun.png" alt="Lewis" style="width:38px;height:38px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.12);padding:3px;">Lewis / <img src="images/sa1216.png" alt="SA1216" style="width:38px;height:38px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.12);padding:3px;">SA1216</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Best spec</span><span class="sidebar-stat-value" style="display:flex;align-items:center;gap:5px;flex-wrap:nowrap;white-space:nowrap;"><img src="images/winch-claw.png" alt="Winch Claw" style="width:38px;height:38px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.12);padding:3px;">Winch / <img src="images/cloaking-device.png" alt="Cloaking Device" style="width:38px;height:38px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.12);padding:3px;">Cloak</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Best team</span><span class="sidebar-stat-value">1H + 1M + 1L</span></div>
           </div>
           <div class="sidebar-card">
             <h4>Related guides</h4>
             <div class="sidebar-links">
+              <a href="/the-finals-season-10-tier-list">Full Season 10 tier list</a>
               <a href="/how-to-rank-up-in-the-finals">How to rank up</a>
               <a href="/the-finals-ranking-system-explained">Ranking system</a>
-              <a href="/the-finals-tips-for-beginners">Tips for beginners</a>
+              <a href="/the-finals-team-comp-guide">Team comp guide</a>
               <a href="/the-finals-season-10-patch-notes">S10 patch notes</a>
             </div>
           </div>
@@ -478,6 +561,17 @@
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+      });
+    });
+    // Collapsible weapon tables
+    document.querySelectorAll('[data-section]').forEach(section => {
+      const trigger = section.querySelector('.collapsible-trigger');
+      trigger.addEventListener('click', () => {
+        const isOpen = section.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', isOpen);
+      });
+      trigger.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger.click(); }
       });
     });
     // FAQ accordion
