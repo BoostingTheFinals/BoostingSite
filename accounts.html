@@ -551,7 +551,7 @@
           <div class="acc-card-top-bar" style="background:linear-gradient(90deg,var(--diamond),var(--gold));"></div>
           <div class="acc-card-inner">
             <div class="acc-header">
-              <h3 class="acc-title"><span style="color:var(--diamond);">Diamond</span> / <span style="color:var(--gold);">Gold</span></h3>
+              <h3 class="acc-title"><span style="color:var(--diamond);">Diamond</span> / <span style="color:var(--gold);">Gold</span> / <span style="color:var(--emerald);">Emerald 1</span></h3>
               <span class="acc-price">€149</span>
             </div>
             <div class="acc-season-bar">
@@ -759,7 +759,8 @@
     'silver': '/images/League_Silver_1.png',
     'gold': '/images/League_Gold_1.png',
     'platinum': '/images/League_Platinum_1.png',
-    'diamond': '/images/League_Diamond_1.png'
+    'diamond': '/images/League_Diamond_1.png',
+    'emerald': '/images/emerald1-removebg-preview.png'
   };
 
   // Map CSS var name -> rank key
@@ -768,7 +769,8 @@
     'var(--silver)': 'silver',
     'var(--gold)': 'gold',
     'var(--platinum)': 'platinum',
-    'var(--diamond)': 'diamond'
+    'var(--diamond)': 'diamond',
+    'var(--emerald)': 'emerald'
   };
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -780,6 +782,7 @@
         else if (color.includes('245') && color.includes('200')) rankKey = 'gold';
         else if (color.includes('184') && color.includes('188')) rankKey = 'platinum';
         else if (color.includes('56') && color.includes('197')) rankKey = 'diamond';
+        else if (color.includes('46') && color.includes('204')) rankKey = 'emerald';
 
         // Use computed color to detect
         var computed = window.getComputedStyle(span).color;
@@ -789,6 +792,7 @@
           else if (computed === 'rgb(245, 200, 66)') rankKey = 'gold';
           else if (computed === 'rgb(184, 188, 196)') rankKey = 'platinum';
           else if (computed === 'rgb(56, 197, 255)') rankKey = 'diamond';
+          else if (computed === 'rgb(46, 204, 113)') rankKey = 'emerald';
         }
 
         if (rankKey && rankImgs[rankKey]) {
