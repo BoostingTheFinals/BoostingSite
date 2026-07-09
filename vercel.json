@@ -20,6 +20,11 @@
       "source": "/the-finals-season-10-tier-list",
       "destination": "/the-finals-season-11-tier-list",
       "permanent": true
+    },
+    {
+      "source": "/the-finals-season-10-patch-notes",
+      "destination": "/the-finals-season-11-patch-notes",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -84,8 +89,8 @@
       "destination": "/guides.html"
     },
     {
-      "source": "/the-finals-season-10-patch-notes",
-      "destination": "/the-finals-season-10-patch-notes.html"
+      "source": "/the-finals-season-11-patch-notes",
+      "destination": "/the-finals-season-11-patch-notes.html"
     },
     {
       "source": "/orders-per-season",
