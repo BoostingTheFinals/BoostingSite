@@ -84,7 +84,8 @@
     .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
     .info-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: border-color 0.2s; }
     .info-card:hover { border-color: var(--border-hover); }
-    .info-card-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .info-card-icon { width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; background: var(--accent-dim); border: 1px solid var(--accent-glow); border-radius: var(--radius); color: var(--accent); margin-bottom: 0.875rem; }
+    .info-card-icon svg { width: 20px; height: 20px; }
     .info-card h3 { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
     .info-card p { font-size: 0.875rem; color: var(--text-2); line-height: 1.6; margin: 0; }
 
@@ -276,22 +277,22 @@
           <h2>What we stand for</h2>
           <div class="info-grid">
             <div class="info-card">
-              <div class="info-card-icon">🔒</div>
+              <div class="info-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
               <h3>Security first</h3>
               <p>Zero third-party software. Region-matched VPN on every order. Single active session. We treat your account like our own.</p>
             </div>
             <div class="info-card">
-              <div class="info-card-icon">💬</div>
+              <div class="info-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
               <h3>Real communication</h3>
               <p>You hear from us before, during, and after your order. No radio silence, no vague updates — just honest communication throughout.</p>
             </div>
             <div class="info-card">
-              <div class="info-card-icon">✅</div>
+              <div class="info-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
               <h3>Guaranteed delivery</h3>
               <p>We don't take payment and disappear. If we don't reach the agreed rank, you get a full refund. No exceptions, no arguments.</p>
             </div>
             <div class="info-card">
-              <div class="info-card-icon">🏆</div>
+              <div class="info-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
               <h3>Genuine expertise</h3>
               <p>Our boosters are active ranked players, not retired ones. We know the current meta, current patch, and current strategies — not last season's.</p>
             </div>
