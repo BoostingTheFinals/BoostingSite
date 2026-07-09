@@ -25,6 +25,11 @@
       "source": "/the-finals-season-10-patch-notes",
       "destination": "/the-finals-season-11-patch-notes",
       "permanent": true
+    },
+    {
+      "source": "/the-finals-season-10-ranked-guide",
+      "destination": "/the-finals-season-11-ranked-guide",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -117,8 +122,8 @@
       "destination": "/the-finals-season-11-tier-list.html"
     },
     {
-      "source": "/the-finals-season-10-ranked-guide",
-      "destination": "/the-finals-season-10-ranked-guide.html"
+      "source": "/the-finals-season-11-ranked-guide",
+      "destination": "/the-finals-season-11-ranked-guide.html"
     },
     {
       "source": "/the-finals-beginner-to-diamond-roadmap",
