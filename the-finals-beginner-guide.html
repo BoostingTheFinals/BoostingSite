@@ -83,7 +83,7 @@
     .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
     .info-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; transition: border-color 0.2s; }
     .info-card:hover { border-color: var(--border-hover); }
-    .info-card-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .info-card-icon { width: 44px; height: 44px; object-fit: cover; object-position: center 15%; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 0.875rem; flex-shrink: 0; display: block; }
     .info-card h3 { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
     .info-card p { font-size: 0.875rem; color: var(--text-2); line-height: 1.6; margin: 0; }
 
@@ -314,17 +314,17 @@
 
           <div class="info-grid">
             <div class="info-card">
-              <div class="info-card-icon">🟡</div>
+              <img class="info-card-icon" src="images/Medium_Build_Default.webp" alt="Medium class">
               <h3>Medium — Start here</h3>
               <p>The best class for beginners. You have a Healing Beam to keep teammates alive, a Defibrillator to revive them instantly, and solid weapons. Your team will love you and you'll learn the game through the eyes of a support player.</p>
             </div>
             <div class="info-card">
-              <div class="info-card-icon">🔴</div>
+              <img class="info-card-icon" src="images/Heavy_Build_Default.webp" alt="Heavy class">
               <h3>Heavy — Good second pick</h3>
               <p>High health, powerful weapons, and gadgets that create cover or destroy the environment. Forgiving to play because you can take more punishment. Good choice once you understand how fights work.</p>
             </div>
             <div class="info-card">
-              <div class="info-card-icon">⚪</div>
+              <img class="info-card-icon" src="images/Light_Build_Default.webp" alt="Light class">
               <h3>Light — Not for beginners</h3>
               <p>Low health, high mobility, high skill ceiling. Light rewards players who already understand the map, enemy positions, and escape routes. If you're new, Light will feel frustrating — save it for later.</p>
             </div>
