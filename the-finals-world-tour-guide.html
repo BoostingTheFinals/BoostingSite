@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How Long Does It Take to Reach Diamond in The Finals?</title>
-  <meta name="description" content="How long does it take to reach Diamond in The Finals? Realistic time estimates by rank, what affects your speed, and how to climb faster.">
+  <title>The Finals World Tour Guide — How to Climb Every Stage</title>
+  <meta name="description" content="Complete World Tour guide for The Finals. Learn how every stage works, best strategies, and how to climb from Bronze to Emerald efficiently.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.thefinalsboosting.com/the-finals-how-long-to-reach-diamond">
-  <meta property="og:title" content="How Long Does It Take to Reach Diamond in The Finals?">
-  <meta property="og:description" content="How long does it take to reach Diamond in The Finals? Realistic time estimates by rank, what affects your speed, and how to climb faster.">
-  <meta property="og:url" content="https://www.thefinalsboosting.com/the-finals-how-long-to-reach-diamond">
+  <link rel="canonical" href="https://www.thefinalsboosting.com/the-finals-world-tour-guide">
+  <meta property="og:title" content="The Finals World Tour Guide — How to Climb Every Stage">
+  <meta property="og:description" content="Complete World Tour guide for The Finals. Learn how every stage works, best strategies, and how to climb from Bronze to Emerald efficiently.">
+  <meta property="og:url" content="https://www.thefinalsboosting.com/the-finals-world-tour-guide">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://i.imgur.com/6U3J2pY.png">
   <meta name="twitter:card" content="summary">
@@ -39,42 +39,7 @@
     ul { list-style: none; }
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
 
-    /* ANNOUNCE */
-    .announce-bar { background: var(--accent-dim); border-bottom: 1px solid var(--accent-glow); text-align: center; padding: 0.5rem 1rem; font-size: 0.8125rem; font-weight: 500; color: var(--text-2); }
-    .announce-bar a { color: var(--accent); font-weight: 600; }
-    .announce-bar a:hover { text-decoration: underline; }
-
-    /* NAV */
-    .nav-wrap { position: sticky; top: 0; z-index: 100; background: rgb(8 8 8 / .92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
-    nav { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); position: relative; }
-    .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
-    .nav-logo img { height: 38px; width: auto; display: block; object-fit: contain; }
-    .logo-img { height: 38px !important; width: auto !important; display: block; }
-    .logo, .logo-left { display: flex; align-items: center; }
-    .nav-links { display: flex; align-items: center; gap: 0.25rem; position: absolute; left: 0; right: 0; justify-content: center; pointer-events: none; } .nav-links > * { pointer-events: auto; }
-    .nav-links a, .nav-dropdown > button { font-size: 0.875rem; font-weight: 500; color: var(--text-2); padding: 0.4rem 0.75rem; border-radius: 8px; transition: color 0.15s, background 0.15s; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; font-family: var(--font-body); }
-    .nav-links a:hover, .nav-dropdown > button:hover { color: var(--text); background: var(--bg-3); }
-    .nav-dropdown { position: relative; }
-    .nav-dropdown-chevron { width: 12px; height: 12px; opacity: 0.5; transition: transform 0.2s; }
-    .nav-dropdown:hover .nav-dropdown-chevron { transform: rotate(180deg); }
-    .nav-dropdown:hover .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translateY(0); }
-    .nav-dropdown-panel { position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-6px); min-width: 220px; background: var(--bg-2); border: 1px solid var(--border-hover); border-radius: var(--radius-lg); padding: 0.5rem; opacity: 0; visibility: hidden; transition: all 0.18s ease; }
-    .nav-dropdown-panel a { display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.85rem; border-radius: 8px; font-size: 0.875rem; color: var(--text-2); transition: all 0.15s; }
-    .nav-dropdown-panel a:hover { color: var(--text); background: var(--bg-3); }
-    .nav-dropdown-panel .panel-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); padding: 0.5rem 0.85rem 0.25rem; }
-    .nav-cta { margin-left: 0.5rem; }
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-2); border-radius: 2px; transition: all 0.25s; }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { display: none; position: fixed; inset: 0; top: var(--nav-h); background: var(--bg); z-index: 99; padding: 1.5rem; overflow-y: auto; }
-    .mobile-menu.open { display: block; }
-    .mobile-menu a { display: block; padding: 0.85rem 0; font-size: 1.0625rem; font-weight: 500; color: var(--text-2); border-bottom: 1px solid var(--border); }
-    .mobile-menu a:hover { color: var(--text); }
-    .mobile-menu .mobile-section-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-3); margin: 1.25rem 0 0.25rem; }
-    .mobile-menu .btn { width: 100%; justify-content: center; margin-top: 1.5rem; }
-
+    .announce-bar{background:var(--accent-dim);border-bottom:1px solid var(--accent-glow);text-align:center;padding:.5rem 1rem;font-size:.8125rem;font-weight:500;color:var(--text-2)}.announce-bar a{color:var(--accent);font-weight:600}.announce-bar a:hover{text-decoration:underline}.nav-wrap{position:sticky;top:0;z-index:100;background:rgb(8 8 8 / .92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}nav{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);position:relative}.nav-logo{display:flex;align-items:center;flex-shrink:0}.nav-logo img{height:38px;width:auto;display:block;object-fit:contain}.nav-links{display:flex;align-items:center;gap:.25rem;position:absolute;left:0;right:0;justify-content:center;pointer-events:none}.nav-links>*{pointer-events:auto}.nav-links a,.nav-dropdown>button{font-size:.875rem;font-weight:500;color:var(--text-2);padding:.4rem .75rem;border-radius:8px;transition:color 0.15s,background 0.15s;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:.3rem;font-family:var(--font-body)}.nav-links a:hover,.nav-dropdown>button:hover{color:var(--text);background:var(--bg-3)}.nav-dropdown{position:relative}.nav-dropdown-chevron{width:12px;height:12px;opacity:.5;transition:transform 0.2s}.nav-dropdown:hover .nav-dropdown-chevron{transform:rotate(180deg)}.nav-dropdown:hover .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0)}.nav-dropdown-panel{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:220px;background:var(--bg-2);border:1px solid var(--border-hover);border-radius:var(--radius-lg);padding:.5rem;opacity:0;visibility:hidden;transition:all 0.18s ease}.nav-dropdown-panel a{display:block;padding:.55rem .85rem;border-radius:8px;font-size:.875rem;color:var(--text-2);transition:all 0.15s}.nav-dropdown-panel a:hover{color:var(--text);background:var(--bg-3)}.nav-dropdown-panel .panel-label{font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);padding:.5rem .85rem .25rem}.nav-cta{margin-left:.5rem}.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-2);border-radius:2px;transition:all 0.25s}.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav-hamburger.open span:nth-child(2){opacity:0}.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.mobile-menu{display:none;position:fixed;inset:0;top:var(--nav-h);background:var(--bg);z-index:99;padding:1.5rem;overflow-y:auto}.mobile-menu.open{display:block}.mobile-menu a{display:block;padding:.85rem 0;font-size:1.0625rem;font-weight:500;color:var(--text-2);border-bottom:1px solid var(--border)}.mobile-menu a:hover{color:var(--text)}.mobile-menu .mobile-section-label{font-size:.6875rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-3);margin:1.25rem 0 .25rem}.mobile-menu .btn{width:100%;justify-content:center;margin-top:1.5rem}.logo-img{height:38px;width:auto;display:block}
     /* BUTTONS */
     .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: var(--radius); font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: all 0.18s ease; border: 1px solid transparent; white-space: nowrap; }
     .btn-primary { background: var(--accent); color: #fff !important; }
@@ -228,22 +193,34 @@
   </style>
 </head>
 <body>
-  <div class="announce-bar">
+  <!-- ANNOUNCEMENT BAR -->
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
     Season 11 is live. Boosts starting from <strong>€12</strong>.
     <a href="https://www.thefinalsboosting.com/#calculator">Check your price →</a>
   </div>
-  <div class="nav-wrap">
+
+
+  <!-- NAVIGATION -->
+<!-- NAVIGATION -->
+<div class="nav-wrap">
     <nav class="container">
       <a href="/" aria-label="The Finals Boosting home" style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
-        <img src="/favicon.png" alt="The Finals Boosting" style="height:38px;width:auto;display:block;object-fit:contain;flex-shrink:0;">
+        <div class="logo"><div class="logo-left">
+          <img src="/favicon.png" alt="The Finals Boosting" class="logo-img">
+        </div></div>
         <span style="font-family:var(--font-display);font-size:1.125rem;font-weight:700;letter-spacing:0.04em;color:var(--text);">
           THE FINALS <span style="color:var(--accent);">BOOSTING</span>
         </span>
       </a>
+
       <ul class="nav-links" role="list">
         <li class="nav-dropdown">
-          <button aria-haspopup="true" aria-expanded="false">Services
-            <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
+          <button aria-haspopup="true" aria-expanded="false">
+            Services
+            <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 4l4 4 4-4"/>
+            </svg>
           </button>
 <div class="nav-dropdown-panel">
   <p class="panel-label">Boosting</p>
@@ -263,15 +240,20 @@
         <li><a href="/guides">Guides</a></li>
         <li><a href="/about">About</a></li>
       </ul>
+
       <a href="/contact" class="btn btn-primary nav-cta">
         Get boosted
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 7h10M8 3l4 4-4 4"/>
+        </svg>
       </a>
+
       <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
   </div>
+  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
     <p class="mobile-section-label">Services</p>
     <a href="/account-driver-boosting">Account Driver boosting</a>
@@ -289,21 +271,23 @@
     <a href="/contact" class="btn btn-primary">Get boosted →</a>
     <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener" style="margin-top:0.5rem">Telegram →</a>
   </div>
+
+
 <main>
   <section class="page-hero">
     <div class="container">
       <p class="page-hero-label">Guide</p>
-      <h1>How Long Does It Take to Reach Diamond in The Finals?</h1>
-      <p>Wondering how long the climb to Diamond actually takes? Here are realistic estimates based on starting rank, hours per week, and skill level — plus what you can do to speed it up.</p>
+      <h1>The Finals World Tour Guide</h1>
+      <p>Everything you need to climb from Bronze to Emerald in World Tour — how the mode works, how stages are won, and what changes at the top.</p>
       <div class="page-meta">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>July 10, 2026</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>6 min read</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>9 min read</span>
       </div>
       <div class="hero-badges">
-        <span class="hero-badge-pill">Time to Diamond</span>
+        <span class="hero-badge-pill">World Tour</span>
         <span class="hero-badge-pill">Season 11</span>
         <span class="hero-badge-pill">All ranks</span>
-        <span class="hero-badge-pill">Realistic guide</span>
+        <span class="hero-badge-pill">Full guide</span>
       </div>
     </div>
   </section>
@@ -311,52 +295,84 @@
     <div class="container">
       <div class="page-layout">
         <div class="page-body">
-          <p>Diamond in The Finals requires reaching 40,000 Rank Score. How long that takes depends on where you're starting, how much you play, and how efficiently you convert playtime into RS gains.</p>
-          <p>The Platinum → Diamond section is deliberately wide because it's the most variable tier in the game. Some players pass through it quickly; others stall for an entire season.</p>
+          <h2>What is World Tour?</h2>
+          <p>World Tour is The Finals' alternative competitive mode. Instead of earning and losing Rank Score like in Ranked, you progress through 24 named stages — from Bronze 4 all the way to Emerald 1. Each stage requires you to win enough matches at that level to advance.</p>
+          <p>The key difference from Ranked is that World Tour uses a series-based system. You play a set of matches at your current stage, and your wins versus losses determine whether you advance, hold, or drop back. One bad match doesn't end your run — consistent performance across a series is what matters.</p>
 
-          <h2>What makes the climb slower</h2>
+          <h2>How stages work</h2>
+          <p>At each stage you play a series of matches. Win the majority and you advance to the next stage. Lose too many and you risk being demoted. The exact win threshold varies slightly by stage but generally you need to win more than you lose across each series to progress.</p>
+          <p>Unlike Ranked where every single match moves your RS up or down, World Tour rewards consistency over a run of games. This makes it slightly more forgiving of individual bad matches — but it also means sustained poor performance will eventually push you down.</p>
+
+          <div class="info-grid">
+            <div class="info-card"><div class="info-card-icon">🗺️</div><h3>24 stages total</h3><p>Bronze 4 → Bronze 1, Silver 4 → Silver 1, Gold 4 → Gold 1, Platinum 4 → Platinum 1, Diamond 4 → Diamond 1, Emerald 4 → Emerald 1.</p></div>
+            <div class="info-card"><div class="info-card-icon">🎯</div><h3>Series-based</h3><p>Each stage is a series of matches. Your win rate across the series determines advancement — not individual RS points.</p></div>
+            <div class="info-card"><div class="info-card-icon">⚡</div><h3>Faster than Ranked</h3><p>For many players World Tour stages move faster than Ranked ranks, especially in the lower stages where competition is thinner.</p></div>
+            <div class="info-card"><div class="info-card-icon">🏆</div><h3>Separate rewards</h3><p>World Tour has its own exclusive cosmetics and rewards that can't be earned in Ranked mode.</p></div>
+          </div>
+
+          <h2>Stage-by-stage breakdown</h2>
+          <h3>Bronze (Stages 1–4)</h3>
+          <p>These stages are primarily about learning the mode. Most opponents here are either new to World Tour or casual players. Focus on objectives — securing and contesting cashouts — rather than trying to frag out. Wins come from surviving the final cashout fight, not from eliminations.</p>
+
+          <h3>Silver (Stages 5–8)</h3>
+          <p>Silver introduces players who understand basic rotations. Start paying attention to where cashouts spawn relative to your position. Teams that rotate to cashouts faster than opponents win more series at this stage than teams that have better aim.</p>
+
+          <h3>Gold (Stages 9–12)</h3>
+          <p>Gold is where team composition begins to matter. Running a double Medium with Heal Beam becomes increasingly effective here — opponents in Gold rarely have the sustained DPS to overwhelm a healing-supported team. This is the last stage range where you can carry with individual skill alone.</p>
+
+          <h3>Platinum (Stages 13–16)</h3>
+          <p>Platinum World Tour is roughly equivalent to Diamond Ranked in difficulty. Teams are coordinated, builds are optimised, and cashout theft becomes a regular occurrence. The ability to hold a cashout under sustained pressure from multiple teams is the key skill to develop here.</p>
+
+          <h3>Diamond (Stages 17–20)</h3>
+          <p>At Diamond World Tour, every team is running structured comps. HHL and HML compositions dominate. Individual positioning errors are punished immediately. Learn to communicate with teammates about when to contest and when to wait — forcing a 3v3 into a cashout fight you can't win is the most common Diamond mistake.</p>
+
+          <h3>Emerald (Stages 21–24)</h3>
+          <p>Emerald is the top tier of World Tour. Players here have deep game knowledge, near-perfect builds, and read rotations accurately. The gap between Emerald 4 and Emerald 1 is significant — Emerald 1 players are among the best in the game.</p>
+
+          <h2>Tips for climbing World Tour efficiently</h2>
           <ul>
-            <li>Solo queuing through Platinum without a reliable teammate</li>
-            <li>Switching class or playstyle frequently — consistency builds hidden MMR faster</li>
-            <li>Playing through tilt — two losses in a row should end your session</li>
-            <li>Starting mid-season — the matchmaking seasonal journey means later starters climb more slowly</li>
+            <li><strong>Play your best role</strong> — World Tour punishes switching classes between matches. Pick your strongest class and commit to it for the entire series.</li>
+            <li><strong>Queue with a stack</strong> — solo queue in World Tour is harder than in Ranked because coordination is even more important. Two or three premade players massively improves your series win rate.</li>
+            <li><strong>Protect early cashouts</strong> — in the lower stages many players ignore early cashouts entirely. Banking a cashout in round one puts you ahead before the final fight even starts.</li>
+            <li><strong>Don't tilt mid-series</strong> — losing two matches in a row feels bad but doesn't end the series. Stay composed and play your best game every match.</li>
           </ul>
 
-          <h2>The fastest route to Diamond</h2>
-          <p>If you want to reach Diamond as fast as possible without grinding through dozens of solo queue games, our <a href="/selfplay-boosting">Selfplay boosting</a> service queues you with two Ruby-ranked players every game. For Account Driver, we simply take your account to Diamond directly — typically in 2–7 days depending on starting rank.</p>
-
           <div class="blog-cta">
-            <h3>Want to skip the wait?</h3>
-            <p>Our boosting service can reach Diamond in days rather than weeks. Account Driver and Selfplay options from any rank.</p>
+            <h3>Want to skip the grind?</h3>
+            <p>Our World Tour boosting service covers all 24 stages. Prices from €2.</p>
             <div class="blog-cta-actions">
-              <a href="https://www.thefinalsboosting.com/#calculator" class="btn btn-primary">Calculate price →</a>
-              <a href="/the-finals-diamond-boost" class="btn btn-ghost">Diamond boost info</a>
+              <a href="/world-tour-boosting" class="btn btn-primary">World Tour Boosting →</a>
+              <a href="https://www.thefinalsboosting.com/#calculator" class="btn btn-ghost">See pricing</a>
             </div>
           </div>
         </div>
         <aside class="page-sidebar">
           <div class="sidebar-card">
-            <h4>Our service</h4>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">RS needed</span><span class="sidebar-stat-value">40,000</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">From Platinum</span><span class="sidebar-stat-value">2 weeks</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Boosted (Driver)</span><span class="sidebar-stat-value rank-diamond">1-2 days</span></div>
-            <div class="sidebar-stat"><span class="sidebar-stat-label">Best shortcut</span><span class="sidebar-stat-value">Selfplay boost</span></div>
-            <a href="/contact" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1rem;">Get boosted →</a>
+            <h4>World Tour at a glance</h4>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Total stages</span><span class="sidebar-stat-value">24</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Format</span><span class="sidebar-stat-value">Series-based</span></div>
+            <div class="sidebar-stat"><span class="sidebar-stat-label">Top stage</span><span class="sidebar-stat-value">Emerald 1</span></div>
           </div>
+          
           <div class="sidebar-card">
+            <h4>Skip the grind</h4>
+            <p style="font-size:0.875rem;color:var(--text-2);margin-bottom:1rem;line-height:1.6;">Account Driver or Selfplay boosting — from any rank to Ruby. Starting from €12.</p>
+            <a href="https://www.thefinalsboosting.com/#calculator" class="btn btn-primary" style="width:100%;justify-content:center;">Calculate price →</a>
+          </div>
+<div class="sidebar-card">
             <h4>Related</h4>
             <div class="sidebar-links">
-              <a href="/the-finals-diamond-boost">Diamond boost</a>
-              <a href="/the-finals-beginner-to-diamond-roadmap">Beginner to Diamond</a>
-              <a href="/the-finals-hardest-rank-to-climb">Hardest rank explained</a>
-              <a href="/the-finals-ranking-system-explained">Ranking system</a>
+              <a href="/world-tour-boosting">World Tour Boosting</a>
+              <a href="/the-finals-season-11-ranked-guide">S11 Ranked Guide</a
+              <a href="/the-finals-team-comp-guide">Team Comp Guide</a>
+              <a href="/the-finals-cashout-guide">Cashout Guide</a>
             </div>
           </div>
         </aside>
       </div>
     </div>
   </section>
-</main></main>
+</main>
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -373,7 +389,7 @@
             <a href="https://t.me/TheFinalsBoosting" rel="noopener" aria-label="Telegram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
             </a>
-            <a href="https://mail.google.com/mail/?view=cm&to=boostingthefinals@gmail.com&su=Boost Order" target="_blank" rel="noopener" aria-label="Email">
+            <a href="mailto:boostingthefinals@gmail.com" aria-label="Email">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
             </a>
           </div>
@@ -424,9 +440,9 @@
     </div>
   </footer>
   <div class="mobile-sticky-cta" aria-hidden="true">
-    <a href="/contact" class="btn btn-primary">Get boosted →</a>
+    <a href="https://discord.com/users/1405275924630343902" class="btn btn-primary" rel="noopener">Get boosted — Discord →</a>
   </div>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => {
