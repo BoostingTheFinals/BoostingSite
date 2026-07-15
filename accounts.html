@@ -212,6 +212,14 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
+.acc-card-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.acc-card-bg .acc-card-inner {
+  background: linear-gradient(180deg, rgba(8,8,8,0.55) 0%, rgba(8,8,8,0.88) 45%, var(--bg-2) 78%);
+}
 .acc-card::after {
   content: "";
   position: absolute;
@@ -546,7 +554,7 @@
 
 
         <!-- CARD 5: Diamond (S10 + S11) (€69) -->
-        <div class="acc-card" style="--rank-color:var(--diamond);">
+        <div class="acc-card acc-card-bg" style="--rank-color:var(--diamond); background-image:url('/images/Wall1.png');">
           <div class="acc-card-top-bar" style="background:linear-gradient(90deg,var(--diamond),var(--diamond));"></div>
           <div class="acc-card-inner">
             <div class="acc-header">
@@ -572,7 +580,7 @@
             </div>
             <div class="acc-mb-row">
               <div class="acc-mb-row-left">
-                <img src="/images/multibucks.png" alt="Multibucks" style="width:28px;height:28px;object-fit:contain;display:inline-block;">
+                <img src="/images/multibucks.png" alt="Multibucks" style="width:16px;height:16px;object-fit:contain;display:inline-block;">
                 Multibucks
               </div>
               <span class="acc-mb-amount">350 MB</span>
@@ -589,7 +597,7 @@
         </div>
 
 
-        <div class="acc-card" style="--rank-color:var(--diamond);">
+        <div class="acc-card acc-card-bg" style="--rank-color:var(--diamond); background-image:url('/images/Wall2.png');">
           <div class="acc-card-top-bar" style="background:linear-gradient(90deg,var(--diamond),var(--platinum),var(--gold));"></div>
           <div class="acc-card-inner">
             <div class="acc-header">
@@ -624,7 +632,7 @@
             </div>
             <div class="acc-mb-row">
               <div class="acc-mb-row-left">
-                <img src="/images/multibucks.png" alt="Multibucks" style="width:28px;height:28px;object-fit:contain;display:inline-block;">
+                <img src="/images/multibucks.png" alt="Multibucks" style="width:16px;height:16px;object-fit:contain;display:inline-block;">
                 Multibucks
               </div>
               <span class="acc-mb-amount">650 MB</span>
@@ -641,7 +649,7 @@
         </div>
 
         <!-- CARD 4: Diamond / Gold (€99) -->
-        <div class="acc-card" style="--rank-color:var(--diamond);">
+        <div class="acc-card acc-card-bg" style="--rank-color:var(--diamond); background-image:url('/images/Wall3.png');">
           <div class="acc-card-top-bar" style="background:linear-gradient(90deg,var(--diamond),var(--gold));"></div>
           <div class="acc-card-inner">
             <div class="acc-header">
@@ -682,7 +690,7 @@
             </div>
             <div class="acc-mb-row">
               <div class="acc-mb-row-left">
-                <img src="/images/multibucks.png" alt="Multibucks" style="width:28px;height:28px;object-fit:contain;display:inline-block;">
+                <img src="/images/multibucks.png" alt="Multibucks" style="width:16px;height:16px;object-fit:contain;display:inline-block;">
                 Multibucks
               </div>
               <span class="acc-mb-amount">425 MB</span>
