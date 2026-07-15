@@ -96,7 +96,11 @@
     .payment-card p { font-size: 0.8125rem; color: var(--text-3); margin: 0; line-height: 1.5; }
 
     /* BOTTOM CTA */
-    .bottom-cta { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 3rem 2rem; text-align: center; }
+    .bottom-cta { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    .bottom-cta.has-bg { background-image: url('/images/Wall4.png'); background-size: cover; background-position: center; border-color: #0d0d0d; }
+    .bottom-cta.has-bg::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(10,10,10,0.55) 0%, rgba(8,8,8,0.82) 65%, rgba(8,8,8,0.94) 100%); pointer-events: none; }
+    .bottom-cta.has-bg::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 50px rgba(0,0,0,0.8), inset 0 0 110px rgba(0,0,0,0.5); pointer-events: none; }
+    .bottom-cta > * { position: relative; z-index: 1; }
     .bottom-cta h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
     .bottom-cta p { font-size: 1rem; color: var(--text-2); margin-bottom: 2rem; }
     .bottom-cta-btns { display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap; }
@@ -323,7 +327,7 @@
         </div>
 
         <!-- BOTTOM CTA -->
-        <div class="bottom-cta">
+        <div class="bottom-cta has-bg">
           <h2>Still have questions?</h2>
           <p>Check our <a href="/faq" style="color:var(--accent);border-bottom:1px solid var(--accent-glow);">FAQ page</a> for answers to common questions, or message us directly — we're happy to help with anything.</p>
           <div class="bottom-cta-btns">
