@@ -48,7 +48,10 @@
     .btn-ghost:hover { color: var(--text); background: var(--bg-3); }
 
     /* PAGE HERO */
-    .page-hero { padding: 5rem 0 3.5rem; border-bottom: 1px solid var(--border); }
+    .page-hero { position: relative; overflow: hidden; padding: 5rem 0 3.5rem; border-bottom: 1px solid var(--border); background-image: url('/images/Wall17.png'); background-size: cover; background-position: center 10%; background-clip: padding-box; background-origin: padding-box; }
+    .page-hero::before { content: ""; position: absolute; inset: 0; background: rgba(8,8,8,0.3); pointer-events: none; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(10,10,10,0) 0%, rgba(8,8,8,0.35) 45%, rgba(8,8,8,0.75) 75%, rgba(8,8,8,0.97) 100%); box-shadow: inset 0 0 60px 30px rgba(8,8,8,0.8); pointer-events: none; }
+    .page-hero > * { position: relative; z-index: 1; }
     .page-hero-label { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
     .page-hero h1 { font-family: var(--font-display); font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1rem; }
     .page-hero p { font-size: 1.0625rem; color: var(--text-2); max-width: 600px; line-height: 1.7; }
@@ -582,7 +585,7 @@
     <div class="container">
       <p class="page-hero-label">Accounts for sale</p>
       <h1>Premium Accounts</h1>
-      <p>Ready-to-play The Finals accounts with verified rank history, full email access, and instant delivery.</p>
+      <p style="font-size:0.9375rem;color:var(--text-2);line-height:1.65;margin:0;text-shadow:0 1px 6px rgba(0,0,0,0.8);">Ready-to-play The Finals accounts with verified rank history, full email access, and instant delivery.</p>
       <div class="hero-badges">
         <span class="hero-badge-pill">Full Email Access</span>
         <span class="hero-badge-pill">Instant Delivery</span>
