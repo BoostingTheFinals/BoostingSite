@@ -22,6 +22,10 @@
 <link rel="apple-touch-icon" href="/favicon.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .season-active-card { position: relative; overflow: hidden; background-image: url('/images/Wall8.png'); background-size: cover; background-position: center; background-clip: padding-box; background-origin: padding-box; }
+    .season-active-card::before { content: ""; position: absolute; inset: 0; background: rgba(8,8,8,0.3); pointer-events: none; }
+    .season-active-card::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(10,10,10,0) 0%, rgba(8,8,8,0.35) 45%, rgba(8,8,8,0.75) 75%, rgba(8,8,8,0.97) 100%); box-shadow: inset 0 0 60px 30px rgba(8,8,8,0.8); pointer-events: none; }
+    .season-active-card > * { position: relative; z-index: 1; }
     :root {
       --accent: #ff4d1c; --accent-dim: rgba(255,77,28,0.12); --accent-glow: rgba(255,77,28,0.25);
       --bg: #080808; --bg-2: #0f0f0f; --bg-3: #161616; --bg-4: #1e1e1e;
@@ -503,7 +507,7 @@
       </div>
 
       <!-- Season 11 in progress -->
-      <div style="background:var(--bg-2);border:1px solid var(--accent-glow);border-radius:var(--radius-lg);padding:2rem;margin-bottom:3rem;position:relative;overflow:hidden;">
+      <div class="season-active-card" style="background:var(--bg-2);border:1px solid var(--accent-glow);border-radius:var(--radius-lg);padding:2rem;margin-bottom:3rem;position:relative;overflow:hidden;">
         <div style="position:absolute;top:1rem;right:1rem;background:var(--accent-dim);border:1px solid var(--accent-glow);color:var(--accent);font-family:var(--font-display);font-size:0.6875rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.7rem;border-radius:999px;">Active</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
           <div>
