@@ -3911,12 +3911,12 @@ var l = !1;
 function i() {
 if (!l) {
 l = !0;
-var t = 100 * Math.round(Math.max(0, Math.min(62e3, parseInt(r.value) || 0)) / 100);
+var t = 250 * Math.round(Math.max(0, Math.min(62e3, parseInt(r.value) || 0)) / 250);
 ((n.value = t), updateSliderFill(n));
 var a = "start" === e ? "end-rank" : "start-rank",
 i = document.getElementById(a);
-("start" === e && parseInt(i.value) <= t && ((i.value = Math.min(t + 100, 62e3)), updateSliderFill(i)),
-"end" === e && parseInt(i.value) >= t && ((i.value = Math.max(t - 100, 0)), updateSliderFill(i)),
+("start" === e && parseInt(i.value) <= t && ((i.value = Math.min(t + 250, 62e3)), updateSliderFill(i)),
+"end" === e && parseInt(i.value) >= t && ((i.value = Math.max(t - 250, 0)), updateSliderFill(i)),
 updateCalc());
 }
 }
