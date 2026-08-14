@@ -2556,7 +2556,7 @@ style="max-height: 60px; width: auto; display: block; margin-bottom: -0.5rem"
 </p>
 <div style="display: flex; align-items: flex-end; gap: 0.5rem; margin-bottom: 0.5rem">
 <p class="calc-price" id="calc-price" aria-live="polite">
-<span>€</span><span id="price-val">70</span>
+<span>€</span><span id="price-val">70.00</span>
 </p>
 </div>
 <p class="calc-route" id="calc-route" style="margin-bottom: 1.25rem">Platinum 4 → Platinum 1</p>
@@ -3904,8 +3904,7 @@ const a = Math.max(e, r.start),
 l = Math.min(t, r.end);
 l > a && (n += (r.price * (l - a)) / (r.end - r.start));
 }
-const r = Math.round(n);
-return "selfplay" === selectedService ? 2 * r : r;
+return "selfplay" === selectedService ? 2 * n : n;
 }
 function updateCalc() {
 const e = document.getElementById("start-rank"),
@@ -3918,7 +3917,7 @@ l = getRankName(a);
 (setRankDisplay("start-display", r, n), setRankDisplay("end-display", l, a));
 const i = calcRankedPrice(n, a),
 o = document.getElementById("ls-toggle").checked;
-((document.getElementById("price-val").textContent = o ? Math.ceil(1.2 * i) : i),
+((document.getElementById("price-val").textContent = (o ? 1.2 * i : i).toFixed(2)),
 (document.getElementById("calc-route").style.display = "flex"),
 (document.getElementById("calc-route").style.alignItems = "center"),
 (document.getElementById("calc-route").style.gap = "0.4rem"),
@@ -3942,7 +3941,7 @@ const i = Math.max(
 (worldTourPricing[selectedService][a] || 0) - (worldTourPricing[selectedService][n] || 0),
 ),
 o = document.getElementById("ls-toggle").checked;
-((document.getElementById("price-val").textContent = o ? Math.ceil(1.2 * i) : i),
+((document.getElementById("price-val").textContent = (o ? 1.2 * i : i).toFixed(2)),
 (document.getElementById("calc-route").style.display = "flex"),
 (document.getElementById("calc-route").style.alignItems = "center"),
 (document.getElementById("calc-route").style.gap = "0.4rem"),
