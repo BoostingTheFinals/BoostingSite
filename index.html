@@ -1734,6 +1734,17 @@ article:hover .platform-badge {
 border-color: var(--accent-glow);
 color: var(--text);
 }
+.chunks-info-wrap {
+position: relative;
+display: inline-flex;
+}
+.chunks-info-popup {
+display: none;
+}
+.chunks-info-wrap:hover .chunks-info-popup,
+.chunks-info-wrap.open .chunks-info-popup {
+display: block;
+}
 </style>
 </head>
 <body>
@@ -2559,6 +2570,9 @@ style="max-height: 60px; width: auto; display: block; margin-bottom: -0.5rem"
 <span>€</span><span id="price-val">70.00</span>
 </p>
 </div>
+<p id="calc-price-converted" style="margin: -0.35rem 0 0.5rem; font-size: 0.78rem; color: var(--text-3)" aria-live="polite">
+≈ <span id="price-val-usd">75.99</span> USD / <span id="price-val-cad">104.86</span> CAD / <span id="price-val-aud">106.61</span> AUD
+</p>
 <p class="calc-route" id="calc-route" style="margin-bottom: 1.25rem">Platinum 4 → Platinum 1</p>
 <div style="height: 1px; background: var(--border); margin-bottom: 1.25rem"></div>
 <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem">
@@ -2571,20 +2585,11 @@ onchange="'ranked' === currentMode ? updateCalc() : updateCalcWT()"
 Add live stream <span style="color: var(--text-3)">(+20%)</span></label
 >
 <p style="font-size: 0.8rem; color: var(--text-3); display: flex; align-items: center; gap: 0.35rem">
-<svg
-width="12"
-height="12"
-viewBox="0 0 24 24"
-fill="none"
-stroke="var(--text-3)"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round"
->
-<circle cx="12" cy="12" r="10" />
-<line x1="12" y1="8" x2="12" y2="12" />
-<line x1="12" y1="16" x2="12.01" y2="16" />
-</svg>
+<img
+src="/images/League_Ruby.png"
+alt="Ruby rank"
+style="width: 14px; height: 14px; flex-shrink: 0; object-fit: contain"
+/>
 Safe Ruby range: <span style="color: var(--text-2); font-weight: 600">~57,500 – 59,000 RS</span
 ><span style="color: var(--text-3)">(Top 500 estimate)</span>
 </p>
@@ -2729,22 +2734,55 @@ margin-bottom: 1rem;
 line-height: 1.5;
 "
 >
-<svg
-width="12"
-height="12"
-viewBox="0 0 24 24"
-fill="none"
-stroke="var(--text-3)"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round"
-style="flex-shrink: 0; margin-top: 0.2rem"
+<span style="display: inline-flex; align-items: center; gap: 0.35rem">
+<span
+class="chunks-info-wrap"
+tabindex="0"
+role="button"
+aria-label="More info about paying in chunks"
+onclick="event.stopPropagation(); toggleChunksInfo(this)"
+onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChunksInfo(this);}"
 >
-<circle cx="12" cy="12" r="10" />
-<line x1="12" y1="8" x2="12" y2="12" />
-<line x1="12" y1="16" x2="12.01" y2="16" />
-</svg>
-<span>Can pay in chunks to build trust — e.g. pay for +2.5k, then the next +2.5k once that's done. <span style="color: var(--text-2); font-weight: 600">Each payment may have a small extra fee.</span></span>
+<span
+style="
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 15px;
+height: 15px;
+flex-shrink: 0;
+border-radius: 50%;
+border: 1px solid var(--border-hover);
+color: var(--text-3);
+font-size: 0.68rem;
+font-weight: 700;
+line-height: 1;
+cursor: pointer;
+user-select: none;
+"
+>?</span>
+<span
+class="chunks-info-popup"
+style="
+position: absolute;
+bottom: calc(100% + 8px);
+left: 0;
+z-index: 20;
+width: 280px;
+max-width: 80vw;
+background: var(--bg-2, #16161d);
+border: 1px solid var(--border);
+border-radius: 8px;
+padding: 0.65rem 0.75rem;
+font-size: 0.75rem;
+line-height: 1.5;
+color: var(--text-2);
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+"
+>For example, if you need 5,000 RS boosted, you can pay for the first 2,500 RS, wait until that part is completed, then pay for the remaining 2,500 RS afterward. <span style="color: var(--text-2); font-weight: 600">Splitting the payment like this may add a small extra fee.</span></span>
+</span>
+Pay in small chunks to gain trust
+</span>
 </p>
 <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem">
 <span
@@ -3946,11 +3984,32 @@ l = getRankName(a);
 const i = calcRankedPrice(n, a),
 o = document.getElementById("ls-toggle").checked;
 ((document.getElementById("price-val").textContent = (o ? 1.2 * i : i).toFixed(2)),
+updatePriceConversions(o ? 1.2 * i : i),
 (document.getElementById("calc-route").style.display = "flex"),
 (document.getElementById("calc-route").style.alignItems = "center"),
 (document.getElementById("calc-route").style.gap = "0.4rem"),
 (document.getElementById("calc-route").innerHTML =
 `${rankImg(r)}<span class="${getRankClass(r)}">${r}</span><span style="color:var(--text-3);">→</span>${rankImg(l)}<span class="${getRankClass(l)}">${l}</span>`));
+}
+function toggleChunksInfo(e) {
+const wasOpen = e.classList.contains("open");
+document
+.querySelectorAll(".chunks-info-wrap.open")
+.forEach((w) => w.classList.remove("open"));
+if (!wasOpen) e.classList.add("open");
+}
+document.addEventListener("click", () =>
+document
+.querySelectorAll(".chunks-info-wrap.open")
+.forEach((w) => w.classList.remove("open")),
+);
+function updatePriceConversions(e) {
+const usd = e * 1.17,
+cad = e * 1.61,
+aud = e * 1.64;
+(document.getElementById("price-val-usd").textContent = usd.toFixed(2)),
+(document.getElementById("price-val-cad").textContent = cad.toFixed(2)),
+(document.getElementById("price-val-aud").textContent = aud.toFixed(2));
 }
 function updateCalcWT() {
 const e = document.getElementById("start-wt"),
@@ -3970,6 +4029,7 @@ const i = Math.max(
 ),
 o = document.getElementById("ls-toggle").checked;
 ((document.getElementById("price-val").textContent = (o ? 1.2 * i : i).toFixed(2)),
+updatePriceConversions(o ? 1.2 * i : i),
 (document.getElementById("calc-route").style.display = "flex"),
 (document.getElementById("calc-route").style.alignItems = "center"),
 (document.getElementById("calc-route").style.gap = "0.4rem"),
