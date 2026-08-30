@@ -42,6 +42,10 @@
       "destination": "/selfplay-boosting.html"
     },
     {
+      "source": "/selfplay-1-booster-boosting",
+      "destination": "/selfplay-1-booster-boosting.html"
+    },
+    {
       "source": "/about",
       "destination": "/about.html"
     },
