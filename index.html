@@ -505,7 +505,7 @@ flex-wrap: wrap;
 }
 .services-grid {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(2, 1fr);
 gap: 1px;
 background: var(--border);
 border: 1px solid var(--border);
@@ -1607,14 +1607,16 @@ transform: scale(1.2);
 }
 .service-card-coaching,
 .service-card-driver,
-.service-card-selfplay {
+.service-card-selfplay,
+.service-card-selfplay1 {
 background-size: cover;
 background-position: center;
 position: relative;
 }
 .service-card-coaching::after,
 .service-card-driver::after,
-.service-card-selfplay::after {
+.service-card-selfplay::after,
+.service-card-selfplay1::after {
 content: "";
 position: absolute;
 inset: 0;
@@ -1624,7 +1626,8 @@ pointer-events: none;
 }
 .service-card-coaching > *,
 .service-card-driver > *,
-.service-card-selfplay > * {
+.service-card-selfplay > *,
+.service-card-selfplay1 > * {
 position: relative;
 z-index: 1;
 }
@@ -1632,6 +1635,9 @@ z-index: 1;
 background-image: url(images/resized.png);
 }
 .service-card-selfplay {
+background-image: url(images/resized_2000_0.png);
+}
+.service-card-selfplay1 {
 background-image: url(images/resized_2000_0.png);
 }
 .service-card-coaching {
@@ -1836,6 +1842,22 @@ style="flex-shrink: 0; opacity: 0.5"
 <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg
 >Selfplay</a
 >
+<a href="/selfplay-1-booster-boosting"
+><svg
+width="13"
+height="13"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+style="flex-shrink: 0; opacity: 0.5"
+>
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+<circle cx="12" cy="7" r="4" /></svg
+>Selfplay (1 Booster)</a
+>
 <a href="/placement-boosting"
 ><svg
 width="13"
@@ -1982,6 +2004,7 @@ stroke-linejoin="round"
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
 <p class="mobile-section-label">Services</p>
 <a href="/account-driver-boosting">Account Driver boosting</a> <a href="/selfplay-boosting">Selfplay boosting</a>
+<a href="/selfplay-1-booster-boosting">Selfplay (1 Booster)</a>
 <a href="/boosting-services">All services</a> <a href="/coaching">Coaching</a>
 <a href="/accounts">Accounts for sale</a>
 <p class="mobile-section-label">Info</p>
@@ -2144,7 +2167,7 @@ aria-hidden="true"
 <div class="services-header">
 <div>
 <p class="section-label">Services</p>
-<h2 class="section-title" id="services-heading">Three ways to climb</h2>
+<h2 class="section-title" id="services-heading">Four ways to climb</h2>
 <p class="section-sub">Pick the option that fits your playstyle. All platforms, all ranks.</p>
 </div>
 </div>
@@ -2301,6 +2324,95 @@ Learn while you rank up
 </li>
 </ul>
 <a href="/selfplay-boosting" class="service-link"
+>Learn more
+<svg
+viewBox="0 0 14 14"
+fill="none"
+stroke="currentColor"
+stroke-width="2.2"
+stroke-linecap="round"
+stroke-linejoin="round"
+>
+<path d="M2 7h10M8 3l4 4-4 4" /></svg
+></a>
+</article>
+<article class="service-card service-card-selfplay1">
+<div class="service-icon" aria-hidden="true">
+<svg
+width="28"
+height="28"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+>
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+<circle cx="12" cy="7" r="4" />
+</svg>
+</div>
+<h3 class="service-name">Selfplay <span style="opacity: 0.7; font-weight: 500; font-size: 0.8em">(1 Booster)</span></h3>
+<div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.75rem">
+<span class="platform-badge"
+><svg
+width="12"
+height="12"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+aria-hidden="true"
+>
+<circle cx="12" cy="12" r="10" />
+<line x1="2" y1="12" x2="22" y2="12" />
+<path
+d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+/>
+</svg>
+All platforms · Up to Diamond</span
+>
+</div>
+<p class="service-desc">
+Queue with a single expert booster as your teammate. A cheaper way to climb on your own account, up to
+Diamond.
+</p>
+<ul class="service-features">
+<li class="service-feature">
+<svg
+width="13"
+height="13"
+viewBox="0 0 24 24"
+fill="none"
+stroke="var(--accent)"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+>
+<rect x="3" y="11" width="18" height="11" rx="2" />
+<path d="M7 11V7a5 5 0 0 1 10 0v4" />
+</svg>
+Keep full account access
+</li>
+<li class="service-feature">
+<svg
+width="13"
+height="13"
+viewBox="0 0 24 24"
+fill="none"
+stroke="var(--accent)"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+>
+<path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+</svg>
+Cheaper — 1.5× vs 2× rate
+</li>
+</ul>
+<a href="/selfplay-1-booster-boosting" class="service-link"
 >Learn more
 <svg
 viewBox="0 0 14 14"
@@ -3351,7 +3463,9 @@ stroke-linejoin="round"
 <strong>Account Driver</strong>: we log into your account and play for you. You can watch via optional
 live stream. Available on Steam only. Fastest option.<br /><br /><strong>Selfplay</strong>: you play
 on your own account while two of our boosters queue as your teammates. Works on all platforms and you
-keep full account access throughout.
+keep full account access throughout.<br /><br /><strong>Selfplay (1 Booster)</strong>: the same as
+Selfplay, but with a single pro teammate instead of two. Cheaper (1.5× vs 2× the Driver rate), available
+up to Diamond only.
 </p>
 </div>
 </div>
@@ -3638,6 +3752,7 @@ stroke-linejoin="round"
 <ul>
 <li><a href="/account-driver-boosting">Account Driver</a></li>
 <li><a href="/selfplay-boosting">Selfplay</a></li>
+<li><a href="/selfplay-1-booster-boosting">Selfplay (1 Booster)</a></li>
 <li><a href="/coaching">Coaching</a></li>
 <li><a href="/placement-boosting">Placement</a></li>
 <li><a href="/boosting-services">All services</a></li>
