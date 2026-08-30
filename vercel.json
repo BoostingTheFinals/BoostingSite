@@ -34,6 +34,10 @@
   ],
   "rewrites": [
     {
+      "source": "/become-a-booster",
+      "destination": "/become-a-booster.html"
+    },
+    {
       "source": "/selfplay-boosting",
       "destination": "/selfplay-boosting.html"
     },
