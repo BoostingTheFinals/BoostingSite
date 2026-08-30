@@ -1497,6 +1497,27 @@ background: var(--bg);
 border-color: var(--border-hover);
 color: var(--text);
 }
+.calc-seg-btn.calc-seg-btn-full {
+flex-direction: column;
+gap: 0.15rem;
+white-space: normal;
+line-height: 1.35;
+padding: 0.6rem 1rem 0.65rem;
+}
+.calc-seg-btn.calc-seg-btn-full .calc-seg-sub {
+display: block;
+font-size: 0.6875rem;
+font-weight: 500;
+color: var(--text-3);
+letter-spacing: 0.01em;
+}
+.calc-seg-btn.calc-seg-btn-full.active .calc-seg-sub {
+color: var(--text-2);
+}
+.calc-seg-btn.calc-seg-btn-disabled {
+opacity: 0.4;
+pointer-events: none;
+}
 .calc-toggle-group {
 display: inline-flex;
 background: var(--bg-3);
@@ -2492,6 +2513,24 @@ stroke-linejoin="round"
 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
 </svg>
 Selfplay
+</button>
+<button class="calc-seg-btn calc-seg-btn-full" id="btn-selfplay1" onclick="setService('selfplay1')" style="grid-column: 1 / -1">
+<svg
+width="14"
+height="14"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+>
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+<circle cx="9" cy="7" r="4" />
+<path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+<path d="M16 3.13a4 4 0 0 1 0 7.75" />
+</svg>
+<span>Selfplay <span style="opacity: 0.7; font-weight: 500">(1 Booster)</span><span class="calc-seg-sub">Up to Diamond only · 40,000 RS cap</span></span>
 </button>
 </div>
 </div>
@@ -3989,7 +4028,7 @@ const a = Math.max(e, r.start),
 l = Math.min(t, r.end);
 l > a && (n += (r.price * (l - a)) / (r.end - r.start));
 }
-return "selfplay" === selectedService ? 2 * n : n;
+return "selfplay" === selectedService ? 2 * n : "selfplay1" === selectedService ? 1.5 * n : n;
 }
 function updateCalc() {
 const e = document.getElementById("start-rank"),
@@ -4044,7 +4083,10 @@ l = getWTRankName(a);
 `<span class="${getRankClass(l)}">${l}</span><span style="color:var(--text-3);font-size:0.75rem;margin-left:0.4rem;">${a}</span>`));
 const i = Math.max(
 0,
-(worldTourPricing[selectedService][a] || 0) - (worldTourPricing[selectedService][n] || 0),
+"selfplay1" === selectedService
+? 1.5 *
+((worldTourPricing.driver[a] || 0) - (worldTourPricing.driver[n] || 0))
+: (worldTourPricing[selectedService][a] || 0) - (worldTourPricing[selectedService][n] || 0),
 ),
 o = document.getElementById("ls-toggle").checked;
 ((document.getElementById("price-val").textContent = (o ? 1.2 * i : i).toFixed(2)),
@@ -4061,22 +4103,38 @@ document.getElementById("btn-ranked").classList.toggle("active", "ranked" === e)
 document.getElementById("btn-worldtour").classList.toggle("active", "worldtour" === e),
 (document.getElementById("ranked-sliders").style.display = "ranked" === e ? "" : "none"),
 (document.getElementById("worldtour-sliders").style.display = "ranked" === e ? "none" : ""),
+document.getElementById("btn-selfplay1").classList.toggle("calc-seg-btn-disabled", "worldtour" === e),
+"worldtour" === e && "selfplay1" === selectedService && setService("driver"),
 "ranked" === e ? updateCalc() : updateCalcWT());
+}
+function applyServiceRankCap(e) {
+const t = document.getElementById("start-rank"),
+n = document.getElementById("end-rank"),
+a = "selfplay1" === e;
+((t.max = a ? 40000 : 61750),
+(n.max = a ? 40000 : 62000),
+a && parseInt(n.value) > 40000 && (n.value = 40000),
+a && parseInt(t.value) > 40000 && (t.value = 39750),
+updateSliderFill(t),
+updateSliderFill(n));
 }
 function setService(e) {
 ((selectedService = e),
 document.getElementById("btn-driver").classList.toggle("active", "driver" === e),
 document.getElementById("btn-selfplay").classList.toggle("active", "selfplay" === e),
+document.getElementById("btn-selfplay1").classList.toggle("active", "selfplay1" === e),
+applyServiceRankCap(e),
 "ranked" === currentMode ? updateCalc() : updateCalcWT());
 }
 function startEditing(e) {
 var t = document.getElementById(e + "-display"),
 n = document.getElementById(e + "-rank"),
 a = parseInt(n.value),
+capMax = "selfplay1" === selectedService ? 40000 : 62e3,
 r = document.createElement("input");
 ((r.type = "number"),
 (r.min = 0),
-(r.max = 62e3),
+(r.max = capMax),
 (r.step = 250),
 (r.value = a),
 (r.style.cssText =
@@ -4089,11 +4147,11 @@ var l = !1;
 function i() {
 if (!l) {
 l = !0;
-var t = 250 * Math.round(Math.max(0, Math.min(62e3, parseInt(r.value) || 0)) / 250);
+var t = 250 * Math.round(Math.max(0, Math.min(capMax, parseInt(r.value) || 0)) / 250);
 ((n.value = t), updateSliderFill(n));
 var a = "start" === e ? "end-rank" : "start-rank",
 i = document.getElementById(a);
-("start" === e && parseInt(i.value) <= t && ((i.value = Math.min(t + 250, 62e3)), updateSliderFill(i)),
+("start" === e && parseInt(i.value) <= t && ((i.value = Math.min(t + 250, capMax)), updateSliderFill(i)),
 "end" === e && parseInt(i.value) >= t && ((i.value = Math.max(t - 250, 0)), updateSliderFill(i)),
 updateCalc());
 }
