@@ -505,7 +505,7 @@ flex-wrap: wrap;
 }
 .services-grid {
 display: grid;
-grid-template-columns: repeat(2, 1fr);
+grid-template-columns: repeat(4, 1fr);
 gap: 1px;
 background: var(--border);
 border: 1px solid var(--border);
@@ -1327,6 +1327,11 @@ z-index: 98;
 .mobile-sticky-cta .btn {
 width: 100%;
 justify-content: center;
+}
+@media (max-width: 1180px) {
+.services-grid {
+grid-template-columns: repeat(2, 1fr);
+}
 }
 @media (max-width: 960px) {
 .calc-inner {
