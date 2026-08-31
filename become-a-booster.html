@@ -2266,7 +2266,7 @@ applications get skipped.
 </div>
 
 <div class="form-msg error" id="formError">Please fill in all required fields — your bio needs at least 150 characters.</div>
-<div class="form-msg success" id="formSuccess">Your email app should now be open with your application pre-filled — just hit send. We'll get back to you within a few days.</div>
+<div class="form-msg success" id="formSuccess">A Gmail tab should now be open with your application pre-filled — just hit send. We'll get back to you within a few days.</div>
 
 <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
 Submit application
@@ -2530,13 +2530,13 @@ const body =
 "Previous boosting/coaching experience:\n" + (experience || "N/A") + "\n\n" +
 "Additional notes:\n" + (notes || "N/A");
 
-const mailto =
-"mailto:boostingthefinals@gmail.com?subject=" +
+const gmailUrl =
+"https://mail.google.com/mail/?view=cm&fs=1&to=boostingthefinals@gmail.com&su=" +
 encodeURIComponent(subject) +
 "&body=" +
 encodeURIComponent(body);
 
-window.location.href = mailto;
+window.open(gmailUrl, "_blank", "noopener");
 formSuccess.classList.add("show");
 formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
 });
