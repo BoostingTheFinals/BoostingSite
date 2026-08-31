@@ -165,237 +165,7 @@ width: 100%;
 height: 1px;
 background: var(--border);
 }
-.announce-bar {
-background: var(--accent-dim);
-border-bottom: 1px solid var(--accent-glow);
-text-align: center;
-padding: 0.5rem 1rem;
-font-size: 0.8125rem;
-font-weight: 500;
-color: var(--text-2);
-}
-.announce-bar a {
-color: var(--accent);
-font-weight: 600;
-}
-.announce-bar a:hover {
-text-decoration: underline;
-}
-.nav-wrap {
-position: sticky;
-top: 0;
-z-index: 100;
-background: rgb(8 8 8 / 0.92);
-backdrop-filter: blur(16px);
--webkit-backdrop-filter: blur(16px);
-border-bottom: 1px solid var(--border);
-}
-nav {
-display: flex;
-align-items: center;
-justify-content: space-between;
-height: var(--nav-h);
-position: relative;
-}
-.nav-logo {
-display: flex;
-align-items: center;
-flex-shrink: 0;
-}
-.nav-logo img {
-height: 38px;
-width: auto;
-display: block;
-object-fit: contain;
-}
-.nav-links {
-display: flex;
-align-items: center;
-gap: 0.25rem;
-position: absolute;
-left: 0;
-right: 0;
-justify-content: center;
-pointer-events: none;
-}
-.nav-links > * {
-pointer-events: auto;
-}
-.nav-dropdown > button,
-.nav-links a {
-font-size: 0.875rem;
-font-weight: 500;
-color: var(--text-2);
-padding: 0.4rem 0.75rem;
-border-radius: 8px;
-transition:
-color 0.15s,
-background 0.15s;
-background: 0 0;
-border: none;
-cursor: pointer;
-display: flex;
-align-items: center;
-gap: 0.3rem;
-font-family: var(--font-body);
-}
-.nav-dropdown > button:hover,
-.nav-links a:hover {
-color: var(--text);
-background: var(--bg-3);
-}
-.nav-dropdown {
-position: relative;
-}
-.nav-dropdown-chevron {
-width: 12px;
-height: 12px;
-opacity: 0.5;
-transition: transform 0.2s;
-}
-.nav-dropdown:hover .nav-dropdown-chevron {
-transform: rotate(180deg);
-}
-.nav-dropdown:hover .nav-dropdown-panel {
-opacity: 1;
-visibility: visible;
-transform: translateY(0);
-}
-.nav-dropdown-panel {
-position: absolute;
-top: calc(100% + 8px);
-left: 50%;
-transform: translateX(-50%) translateY(-6px);
-display: grid;
-grid-template-columns: repeat(2, 190px);
-gap: 0.25rem 0.5rem;
-background: var(--bg-2);
-border: 1px solid var(--border-hover);
-border-radius: var(--radius-lg);
-padding: 1rem 0.5rem 0.5rem;
-box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-opacity: 0;
-visibility: hidden;
-transition: all 0.18s ease;
-}
-.nav-dropdown-panel.single-col {
-display: flex;
-flex-direction: column;
-min-width: 210px;
-padding: 0.5rem;
-}
-.nav-panel-col {
-display: flex;
-flex-direction: column;
-padding: 0 0.25rem;
-}
-.nav-panel-col + .nav-panel-col {
-border-left: 1px solid var(--border);
-padding-left: 0.75rem;
-margin-left: 0.25rem;
-}
-.nav-dropdown-panel a {
-display: flex;
-align-items: center;
-gap: 0.5rem;
-padding: 0.55rem 0.6rem;
-border-radius: 8px;
-font-size: 0.875rem;
-color: var(--text-2);
-transition: all 0.15s;
-}
-.nav-dropdown-panel a:hover {
-color: var(--text);
-background: var(--bg-3);
-}
-.nav-dropdown-panel .panel-label {
-font-size: 0.6875rem;
-font-weight: 600;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: var(--text-3);
-padding: 0 0.6rem 0.5rem;
-}
-.nav-panel-footer {
-grid-column: 1 / -1;
-border-top: 1px solid var(--border);
-margin-top: 0.35rem;
-padding-top: 0.35rem;
-}
-.nav-panel-footer a {
-color: var(--accent);
-font-weight: 600;
-justify-content: space-between;
-}
-.nav-panel-footer a:hover {
-background: var(--accent-dim);
-}
-.nav-cta {
-margin-left: 0.5rem;
-}
-.nav-hamburger {
-display: none;
-flex-direction: column;
-gap: 5px;
-background: 0 0;
-border: none;
-cursor: pointer;
-padding: 6px;
-}
-.nav-hamburger span {
-display: block;
-width: 22px;
-height: 2px;
-background: var(--text-2);
-border-radius: 2px;
-transition: all 0.25s;
-}
-.nav-hamburger.open span:first-child {
-transform: translateY(7px) rotate(45deg);
-}
-.nav-hamburger.open span:nth-child(2) {
-opacity: 0;
-}
-.nav-hamburger.open span:nth-child(3) {
-transform: translateY(-7px) rotate(-45deg);
-}
-.mobile-menu {
-display: none;
-position: fixed;
-inset: 0;
-top: var(--nav-h);
-background: var(--bg);
-z-index: 99;
-padding: 1.5rem;
-overflow-y: auto;
-}
-.mobile-menu.open {
-display: block;
-}
-.mobile-menu a {
-display: block;
-padding: 0.85rem 0;
-font-size: 1.0625rem;
-font-weight: 500;
-color: var(--text-2);
-border-bottom: 1px solid var(--border);
-}
-.mobile-menu a:hover {
-color: var(--text);
-}
-.mobile-menu .mobile-section-label {
-font-size: 0.6875rem;
-font-weight: 600;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: var(--text-3);
-margin: 1.25rem 0 0.25rem;
-}
-.mobile-menu .btn {
-width: 100%;
-justify-content: center;
-margin-top: 1.5rem;
-}
+.announce-bar {background: var(--accent-dim);border-bottom: 1px solid var(--accent-glow);text-align: center;padding: 0.5rem 1rem;font-size: 0.8125rem;font-weight: 500;color: var(--text-2);}.announce-bar a {color: var(--accent);font-weight: 600;}.announce-bar a:hover {text-decoration: underline;}.nav-wrap {position: sticky;top: 0;z-index: 100;background: rgb(8 8 8 / 0.92);backdrop-filter: blur(16px);-webkit-backdrop-filter: blur(16px);border-bottom: 1px solid var(--border);}nav {display: flex;align-items: center;justify-content: space-between;height: var(--nav-h);position: relative;}.nav-logo {display: flex;align-items: center;flex-shrink: 0;}.nav-logo img {height: 38px;width: auto;display: block;object-fit: contain;}.nav-links {display: flex;align-items: center;gap: 0.25rem;position: absolute;left: 0;right: 0;justify-content: center;pointer-events: none;}.nav-links > * {pointer-events: auto;}.nav-dropdown > button,.nav-links a {font-size: 0.875rem;font-weight: 500;color: var(--text-2);padding: 0.4rem 0.75rem;border-radius: 8px;transition:color 0.15s,background 0.15s;background: 0 0;border: none;cursor: pointer;display: flex;align-items: center;gap: 0.3rem;font-family: var(--font-body);}.nav-dropdown > button:hover,.nav-links a:hover {color: var(--text);background: var(--bg-3);}.nav-dropdown {position: relative;}.nav-dropdown-chevron {width: 12px;height: 12px;opacity: 0.5;transition: transform 0.2s;}.nav-dropdown:hover .nav-dropdown-chevron {transform: rotate(180deg);}.nav-dropdown:hover .nav-dropdown-panel {opacity: 1;visibility: visible;transform: translateY(0);}.nav-dropdown-panel {position: absolute;top: calc(100% + 8px);left: 50%;transform: translateX(-50%) translateY(-6px);display: grid;grid-template-columns: repeat(2, 190px);gap: 0.25rem 0.5rem;background: var(--bg-2);border: 1px solid var(--border-hover);border-radius: var(--radius-lg);padding: 1rem 0.5rem 0.5rem;box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);opacity: 0;visibility: hidden;transition: all 0.18s ease;}.nav-dropdown-panel.single-col {display: flex;flex-direction: column;min-width: 210px;padding: 0.5rem;}.nav-panel-col {display: flex;flex-direction: column;padding: 0 0.25rem;}.nav-panel-col + .nav-panel-col {border-left: 1px solid var(--border);padding-left: 0.75rem;margin-left: 0.25rem;}.nav-dropdown-panel a {display: flex;align-items: center;gap: 0.5rem;padding: 0.55rem 0.6rem;border-radius: 8px;font-size: 0.875rem;color: var(--text-2);transition: all 0.15s;}.nav-dropdown-panel a:hover {color: var(--text);background: var(--bg-3);}.nav-dropdown-panel .panel-label {font-size: 0.6875rem;font-weight: 600;letter-spacing: 0.1em;text-transform: uppercase;color: var(--text-3);padding: 0 0.6rem 0.5rem;}.nav-panel-footer {grid-column: 1 / -1;border-top: 1px solid var(--border);margin-top: 0.35rem;padding-top: 0.35rem;}.nav-panel-footer a {color: var(--accent);font-weight: 600;justify-content: space-between;}.nav-panel-footer a:hover {background: var(--accent-dim);}.nav-cta {margin-left: 0.5rem;}.nav-hamburger {display: none;flex-direction: column;gap: 5px;background: 0 0;border: none;cursor: pointer;padding: 6px;}.nav-hamburger span {display: block;width: 22px;height: 2px;background: var(--text-2);border-radius: 2px;transition: all 0.25s;}.nav-hamburger.open span:first-child {transform: translateY(7px) rotate(45deg);}.nav-hamburger.open span:nth-child(2) {opacity: 0;}.nav-hamburger.open span:nth-child(3) {transform: translateY(-7px) rotate(-45deg);}.mobile-menu {display: none;position: fixed;inset: 0;top: var(--nav-h);background: var(--bg);z-index: 99;padding: 1.5rem;overflow-y: auto;}.mobile-menu.open {display: block;}.mobile-menu a {display: block;padding: 0.85rem 0;font-size: 1.0625rem;font-weight: 500;color: var(--text-2);border-bottom: 1px solid var(--border);}.mobile-menu a:hover {color: var(--text);}.mobile-menu .mobile-section-label {font-size: 0.6875rem;font-weight: 600;letter-spacing: 0.15em;text-transform: uppercase;color: var(--text-3);margin: 1.25rem 0 0.25rem;}.mobile-menu .btn {width: 100%;justify-content: center;margin-top: 1.5rem;}
 .hero {
 padding: 6rem 0 5rem;
 position: relative;
@@ -2073,6 +1843,22 @@ style="flex-shrink: 0; opacity: 0.5"
 <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg
 >Selfplay</a
 >
+<a href="/selfplay-1-booster-boosting"
+><svg
+width="13"
+height="13"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+style="flex-shrink: 0; opacity: 0.5"
+>
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+<circle cx="12" cy="7" r="4" /></svg
+>Selfplay (1 Booster)</a
+>
 <a href="/placement-boosting"
 ><svg
 width="13"
@@ -2226,6 +2012,23 @@ style="flex-shrink: 0; opacity: 0.5"
 <path d="M12 2l3 6.5 7 1-5.2 5 1.2 7-6-3.2-6 3.2 1.2-7-5.2-5 7-1z" /></svg
 >Become a booster</a
 >
+<a href="/faq"
+><svg
+width="13"
+height="13"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+style="flex-shrink: 0; opacity: 0.5"
+>
+<circle cx="12" cy="12" r="10" />
+<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+<path d="M12 17h.01" /></svg
+>FAQ</a
+>
 </div>
 </li>
 <li><a href="/reviews">Reviews</a></li>
@@ -2253,14 +2056,15 @@ stroke-linejoin="round"
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
 <p class="mobile-section-label">Services</p>
 <a href="/account-driver-boosting">Account Driver boosting</a> <a href="/selfplay-boosting">Selfplay boosting</a>
+<a href="/selfplay-1-booster-boosting">Selfplay (1 Booster)</a>
 <a href="/placement-boosting">Placement boosting</a> <a href="/boosting-services">All services</a>
 <a href="/coaching">Coaching</a> <a href="/accounts">Accounts for sale</a>
 <p class="mobile-section-label">Info</p>
 <a href="/the-finals-boosting-vs-competitors">Why choose us?</a> <a href="/orders-per-season">Orders per season</a>
-<a href="/become-a-booster">Become a booster</a> <a href="/about">About Us</a>
+<a href="/become-a-booster">Become a booster</a> <a href="/about">About Us</a> <a href="/faq">FAQ</a>
 <p class="mobile-section-label">Support</p>
 <a href="/reviews">Reviews</a> <a href="/guides">Guides</a>
-<a href="/faq">FAQ</a> <a href="/contact">Contact</a>
+<a href="/contact">Contact</a>
 <a href="/contact" class="btn btn-primary">Get boosted →</a>
 <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener" style="margin-top: 0.5rem"
 ><svg
