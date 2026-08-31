@@ -266,18 +266,39 @@ position: absolute;
 top: calc(100% + 8px);
 left: 50%;
 transform: translateX(-50%) translateY(-6px);
-min-width: 220px;
+display: grid;
+grid-template-columns: repeat(2, 190px);
+gap: 0.25rem 0.5rem;
 background: var(--bg-2);
 border: 1px solid var(--border-hover);
 border-radius: var(--radius-lg);
-padding: 0.5rem;
+padding: 1rem 0.5rem 0.5rem;
+box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 opacity: 0;
 visibility: hidden;
 transition: all 0.18s ease;
 }
+.nav-dropdown-panel.single-col {
+display: flex;
+flex-direction: column;
+min-width: 210px;
+padding: 0.5rem;
+}
+.nav-panel-col {
+display: flex;
+flex-direction: column;
+padding: 0 0.25rem;
+}
+.nav-panel-col + .nav-panel-col {
+border-left: 1px solid var(--border);
+padding-left: 0.75rem;
+margin-left: 0.25rem;
+}
 .nav-dropdown-panel a {
-display: block;
-padding: 0.55rem 0.85rem;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+padding: 0.55rem 0.6rem;
 border-radius: 8px;
 font-size: 0.875rem;
 color: var(--text-2);
@@ -293,7 +314,21 @@ font-weight: 600;
 letter-spacing: 0.1em;
 text-transform: uppercase;
 color: var(--text-3);
-padding: 0.5rem 0.85rem 0.25rem;
+padding: 0 0.6rem 0.5rem;
+}
+.nav-panel-footer {
+grid-column: 1 / -1;
+border-top: 1px solid var(--border);
+margin-top: 0.35rem;
+padding-top: 0.35rem;
+}
+.nav-panel-footer a {
+color: var(--accent);
+font-weight: 600;
+justify-content: space-between;
+}
+.nav-panel-footer a:hover {
+background: var(--accent-dim);
 }
 .nav-cta {
 margin-left: 0.5rem;
@@ -1999,6 +2034,7 @@ Services
 </svg>
 </button>
 <div class="nav-dropdown-panel">
+<div class="nav-panel-col">
 <p class="panel-label">Boosting</p>
 <a href="/account-driver-boosting"
 ><svg
@@ -2050,25 +2086,9 @@ style="flex-shrink: 0; opacity: 0.5"
 <polyline points="17 6 23 6 23 12" /></svg
 >Placement</a
 >
-<a href="/boosting-services"
-><svg
-width="13"
-height="13"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round"
-style="flex-shrink: 0; opacity: 0.5"
->
-<rect x="3" y="3" width="7" height="7" />
-<rect x="14" y="3" width="7" height="7" />
-<rect x="3" y="14" width="7" height="7" />
-<rect x="14" y="14" width="7" height="7" /></svg
->All services</a
->
-<p class="panel-label">Other</p>
+</div>
+<div class="nav-panel-col">
+<p class="panel-label">Add-ons</p>
 <a href="/coaching"
 ><svg
 width="13"
@@ -2101,7 +2121,42 @@ style="flex-shrink: 0; opacity: 0.5"
 <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /></svg
 >Accounts for sale</a
 >
-<a href="/become-a-booster"
+</div>
+<div class="nav-panel-footer">
+<a href="/boosting-services"
+><span style="display: flex; align-items: center; gap: 0.5rem"
+><svg
+width="13"
+height="13"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+style="flex-shrink: 0"
+>
+<rect x="3" y="3" width="7" height="7" />
+<rect x="14" y="3" width="7" height="7" />
+<rect x="3" y="14" width="7" height="7" />
+<rect x="14" y="14" width="7" height="7" /></svg
+>All services</span
+><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M5 12h14M13 6l6 6-6 6" /></svg
+></a
+>
+</div>
+</div>
+</li>
+<li class="nav-dropdown">
+<button aria-haspopup="true" aria-expanded="false">
+Info
+<svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M2 4l4 4 4-4" />
+</svg>
+</button>
+<div class="nav-dropdown-panel single-col">
+<a href="/about"
 ><svg
 width="13"
 height="13"
@@ -2113,24 +2168,10 @@ stroke-linecap="round"
 stroke-linejoin="round"
 style="flex-shrink: 0; opacity: 0.5"
 >
-<path d="M12 2l3 6.5 7 1-5.2 5 1.2 7-6-3.2-6 3.2 1.2-7-5.2-5 7-1z" /></svg
->Become a booster</a
->
-<p class="panel-label">Trust</p>
-<a href="/orders-per-season"
-><svg
-width="13"
-height="13"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-stroke-linecap="round"
-stroke-linejoin="round"
-style="flex-shrink: 0; opacity: 0.5"
->
-<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg
->Orders per season</a
+<circle cx="12" cy="12" r="10" />
+<path d="M12 16v-4" />
+<path d="M12 8h.01" /></svg
+>About Us</a
 >
 <a href="/the-finals-boosting-vs-competitors"
 ><svg
@@ -2152,11 +2193,57 @@ style="flex-shrink: 0; opacity: 0.5"
 <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg
 >Why choose us?</a
 >
+<a href="/orders-per-season"
+><svg
+width="13"
+height="13"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+style="flex-shrink: 0; opacity: 0.5"
+>
+<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg
+>Orders per season</a
+>
+<a href="/become-a-booster"
+><svg
+width="13"
+height="13"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+style="flex-shrink: 0; opacity: 0.5"
+>
+<path d="M12 2l3 6.5 7 1-5.2 5 1.2 7-6-3.2-6 3.2 1.2-7-5.2-5 7-1z" /></svg
+>Become a booster</a
+>
+<a href="/faq"
+><svg
+width="13"
+height="13"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+style="flex-shrink: 0; opacity: 0.5"
+>
+<circle cx="12" cy="12" r="10" />
+<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+<path d="M12 17h.01" /></svg
+>FAQ</a
+>
 </div>
 </li>
 <li><a href="/reviews">Reviews</a></li>
 <li><a href="/guides">Guides</a></li>
-<li><a href="/about">About</a></li>
 </ul>
 <a href="/contact" class="btn btn-primary nav-cta"
 >Get boosted
@@ -2180,12 +2267,14 @@ stroke-linejoin="round"
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
 <p class="mobile-section-label">Services</p>
 <a href="/account-driver-boosting">Account Driver boosting</a> <a href="/selfplay-boosting">Selfplay boosting</a>
-<a href="/boosting-services">All services</a> <a href="/coaching">Coaching</a>
-<a href="/accounts">Accounts for sale</a>
+<a href="/placement-boosting">Placement boosting</a> <a href="/boosting-services">All services</a>
+<a href="/coaching">Coaching</a> <a href="/accounts">Accounts for sale</a>
 <p class="mobile-section-label">Info</p>
-<a href="/reviews">Reviews</a> <a href="/guides">Guides</a> <a href="/orders-per-season">Orders per season</a>
-<a href="/faq">FAQ</a> <a href="/about">About</a> <a href="/contact">Contact</a>
-<a href="/become-a-booster">Become a booster</a>
+<a href="/the-finals-boosting-vs-competitors">Why choose us?</a> <a href="/orders-per-season">Orders per season</a>
+<a href="/become-a-booster">Become a booster</a> <a href="/about">About Us</a> <a href="/faq">FAQ</a>
+<p class="mobile-section-label">Support</p>
+<a href="/reviews">Reviews</a> <a href="/guides">Guides</a>
+<a href="/contact">Contact</a>
 <a href="/contact" class="btn btn-primary">Get boosted →</a>
 <a href="https://t.me/TheFinalsBoosting" class="btn btn-ghost" rel="noopener" style="margin-top: 0.5rem"
 ><svg
