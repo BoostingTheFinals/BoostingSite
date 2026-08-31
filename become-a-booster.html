@@ -1759,6 +1759,21 @@ border-bottom: 1px dashed var(--border-hover);
 color: var(--accent);
 border-color: var(--accent);
 }
+.form-group.invalid input[type="text"],
+.form-group.invalid input[type="email"],
+.form-group.invalid input[type="url"],
+.form-group.invalid input[type="number"],
+.form-group.invalid select,
+.form-group.invalid textarea {
+border-color: var(--accent);
+background: rgba(255, 77, 28, 0.06);
+}
+.form-group.invalid label {
+color: var(--accent);
+}
+.form-group.invalid .checkbox-row {
+color: var(--accent);
+}
 @media (max-width: 800px) {
 .benefit-grid {
 grid-template-columns: 1fr;
@@ -2265,7 +2280,7 @@ applications get skipped.
 </label>
 </div>
 
-<div class="form-msg error" id="formError">Please fill in all required fields — your bio needs at least 150 characters.</div>
+<div class="form-msg error" id="formError">Please complete all required fields.</div>
 <div class="form-msg success" id="formSuccess">A Gmail tab should now be open with your application pre-filled — just hit send. We'll get back to you within a few days.</div>
 
 <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
@@ -2480,6 +2495,21 @@ bioField.addEventListener("input", function () {
 const len = bioField.value.trim().length;
 bioCount.textContent = len + " / 150";
 bioCount.classList.toggle("ok", len >= 150);
+if (len >= 150) {
+const group = bioField.closest(".form-group");
+if (group) group.classList.remove("invalid");
+}
+});
+
+document.querySelectorAll("#boosterForm input, #boosterForm select, #boosterForm textarea").forEach(function (field) {
+const eventType = field.tagName === "SELECT" || field.type === "checkbox" ? "change" : "input";
+field.addEventListener(eventType, function () {
+const hasValue = field.type === "checkbox" ? field.checked : field.value.trim().length > 0;
+if (hasValue) {
+const group = field.closest(".form-group");
+if (group) group.classList.remove("invalid");
+}
+});
 });
 
 const form = document.getElementById("boosterForm"),
@@ -2510,10 +2540,47 @@ fullName && discord && age && platform && currentRank && hours &&
 availability && proof && bio.length >= 150 && agree;
 
 if (!valid) {
+const missing = [];
+if (!fullName) missing.push({ id: "fullName", label: "Full name / IGN" });
+if (!discord) missing.push({ id: "discord", label: "Discord username" });
+if (!age) missing.push({ id: "age", label: "Age" });
+if (!platform) missing.push({ id: "platform", label: "Platform" });
+if (!currentRank) missing.push({ id: "currentRank", label: "Current rank" });
+if (!hours) missing.push({ id: "hours", label: "Hours in The Finals" });
+if (!availability) missing.push({ id: "availability", label: "Hours available per week" });
+if (!proof) missing.push({ id: "proof", label: "Proof of rank" });
+if (!bio) {
+missing.push({ id: "bio", label: "Bio" });
+} else if (bio.length < 150) {
+missing.push({ id: "bio", label: "Bio (" + bio.length + "/150 characters — needs " + (150 - bio.length) + " more)" });
+}
+if (!agree) missing.push({ id: "agree", label: "Confirmation checkbox" });
+
+document.querySelectorAll(".form-group.invalid").forEach(function (el) {
+el.classList.remove("invalid");
+});
+missing.forEach(function (m) {
+const field = document.getElementById(m.id);
+const group = field.closest(".form-group");
+if (group) group.classList.add("invalid");
+});
+
+const listText = missing.map(function (m) { return m.label; }).join(", ");
+formError.textContent =
+missing.length === 1
+? "Please complete this field: " + listText
+: "Please complete these fields: " + listText;
 formError.classList.add("show");
-formError.scrollIntoView({ behavior: "smooth", block: "center" });
+
+const firstField = document.getElementById(missing[0].id);
+firstField.scrollIntoView({ behavior: "smooth", block: "center" });
+firstField.focus({ preventScroll: true });
 return;
 }
+
+document.querySelectorAll(".form-group.invalid").forEach(function (el) {
+el.classList.remove("invalid");
+});
 
 const subject = "Booster Application - " + fullName;
 const body =
