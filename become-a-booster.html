@@ -44,6 +44,7 @@ margin: 0;
 padding: 0;
 }
 :root {
+color-scheme: dark;
 --accent: #ff4d1c;
 --accent-dim: rgba(255, 77, 28, 0.12);
 --accent-glow: rgba(255, 77, 28, 0.25);
@@ -1697,10 +1698,15 @@ line-height: 1.6;
 }
 .form-group select {
 appearance: none;
+color-scheme: dark;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' stroke='%239a9690' stroke-width='2'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
 background-repeat: no-repeat;
 background-position: right 0.9rem center;
 padding-right: 2.25rem;
+}
+.form-group select option {
+background: var(--bg-3);
+color: var(--text);
 }
 .char-count {
 font-size: 0.75rem;
