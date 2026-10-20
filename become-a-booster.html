@@ -2542,7 +2542,7 @@ notes = document.getElementById("notes").value.trim(),
 agree = document.getElementById("agree").checked;
 
 const valid =
-fullName && discord && age && Number(age) >= 18 && Number(age) <= 40 &&
+fullName && discord && age && Number(age) >= 18 && Number(age) <= 30 &&
 platform && currentRank && hours &&
 availability && proof && bio.length >= 150 && agree;
 
@@ -2552,10 +2552,8 @@ if (!fullName) missing.push({ id: "fullName", label: "Full name / IGN" });
 if (!discord) missing.push({ id: "discord", label: "Discord username" });
 if (!age) {
 missing.push({ id: "age", label: "Age" });
-} else if (Number(age) < 18) {
-missing.push({ id: "age", label: "Age (must be 18 or older)" });
-} else if (Number(age) > 40) {
-missing.push({ id: "age", label: "Age (must be 40 or under)" });
+} else if (Number(age) < 18 || Number(age) > 30) {
+missing.push({ id: "age", label: "Age (must be between 18 and 30)" });
 }
 if (!platform) missing.push({ id: "platform", label: "Platform" });
 if (!currentRank) missing.push({ id: "currentRank", label: "Current rank" });
