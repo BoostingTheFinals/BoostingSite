@@ -2832,14 +2832,73 @@
               <p class="calc-route" id="calc-route" style="margin-bottom: 1.25rem">Platinum 4 → Platinum 1</p>
               <div style="background: var(--border); height: 1px; margin-bottom: 1.25rem"></div>
               <div style="flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; display: flex">
-                <label class="calc-livestream-toggle" style="margin: 0"
-                  ><input
-                    onchange="'ranked' === currentMode ? updateCalc() : updateCalcWT()"
-                    id="ls-toggle"
-                    type="checkbox"
-                  />
-                  Add live stream <span style="color: var(--text-3)">(+20%)</span></label
-                >
+                <div style="align-items: center; gap: 0.5rem; display: flex">
+                  <label class="calc-livestream-toggle" style="margin: 0"
+                    ><input
+                      onchange="'ranked' === currentMode ? updateCalc() : updateCalcWT()"
+                      id="ls-toggle"
+                      type="checkbox"
+                    />
+                    Add live stream <span style="color: var(--text-3)">(+20%)</span></label
+                  >
+                  <span
+                    aria-label="More info about the live stream"
+                    onclick="
+                      event.stopPropagation();
+                      toggleChunksInfo(this);
+                    "
+                    onkeydown="
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        toggleChunksInfo(this);
+                      }
+                    "
+                    class="chunks-info-wrap"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      style="
+                        border: 1px solid var(--accent);
+                        background: var(--accent-dim);
+                        width: 16px;
+                        height: 16px;
+                        color: var(--accent);
+                        cursor: pointer;
+                        user-select: none;
+                        border-radius: 50%;
+                        flex-shrink: 0;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 0.7rem;
+                        font-weight: 800;
+                        line-height: 1;
+                        display: inline-flex;
+                      "
+                      >?</span
+                    >
+                    <span
+                      style="
+                        z-index: 20;
+                        background: var(--bg-2, #16161d);
+                        border: 1px solid var(--border);
+                        width: 280px;
+                        max-width: 80vw;
+                        color: var(--text-2);
+                        border-radius: 8px;
+                        padding: 0.65rem 0.75rem;
+                        font-size: 0.75rem;
+                        line-height: 1.5;
+                        position: absolute;
+                        bottom: calc(100% + 8px);
+                        left: 0;
+                        box-shadow: 0 8px 24px #00000059;
+                      "
+                      class="chunks-info-popup"
+                      >Streamed on an anonymous Twitch account. Names and lobby info are hidden.</span
+                    >
+                  </span>
+                </div>
                 <p style="color: var(--text-3); align-items: center; gap: 0.35rem; font-size: 0.8rem; display: flex">
                   <img
                     alt="Ruby rank"
