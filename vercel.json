@@ -248,6 +248,10 @@
     {
       "source": "/the-finals-vs-call-of-duty",
       "destination": "/the-finals-vs-call-of-duty.html"
+    },
+    {
+      "source": "/the-finals-season-12-patch-notes",
+      "destination": "/the-finals-season-12-patch-notes.html"
     }
   ]
 }
