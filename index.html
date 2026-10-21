@@ -4402,8 +4402,6 @@
           document.getElementById(`btn-worldtour`).classList.toggle(`active`, e === `worldtour`),
           (document.getElementById(`ranked-sliders`).style.display = e === `ranked` ? `` : `none`),
           (document.getElementById(`worldtour-sliders`).style.display = e === `ranked` ? `none` : ``),
-          document.getElementById(`btn-selfplay1`).classList.toggle(`calc-seg-btn-disabled`, e === `worldtour`),
-          e === `worldtour` && selectedService === `selfplay1` && setService(`driver`),
           e === `ranked` ? updateCalc() : updateCalcWT());
       }
       function applyServiceRankCap(e) {
